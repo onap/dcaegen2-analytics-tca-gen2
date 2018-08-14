@@ -1,0 +1,24 @@
+{
+  "tca_handle_in": {
+    "aaf_username": "USER",
+    "aaf_password": "PASSWORD",
+    "type": "message_router",
+    "dmaap_info": {
+      "client_role": "ves-subscriber",
+      "client_id": "ves-sub-1",
+      "location": "ecomp",
+      "topic_url": "https://HOSTNAME:3905/events/org.onap.dcae.dmaap.mtnje2.DcaeTestVESSub"
+    }
+  },
+  "tca_handle_out": {
+    "aaf_username": "USER",
+    "aaf_password": "PASSWORD",
+    "type": "message_router",
+    "dmaap_info": {
+      "client_role": "policy-publisher",
+      "client_id": "policy-pub-1",
+      "location": "ecomp",
+      "topic_url": "https://HOSTNAME:3905/events/org.onap.dcae.dmaap.mtnje2.DcaeTestVESPub"
+    }
+  }
+}

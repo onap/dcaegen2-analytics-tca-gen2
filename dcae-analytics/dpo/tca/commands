@@ -1,0 +1,19 @@
+unset http_proxy; unset https_proxy
+
+dcae_cli data_format add --update tca_output.json
+dcae_cli component add --update tca_spec.json
+dcae_cli component run --dmaap-file dmaap.json --force docker.tca
+
+# publish
+dcae_cli data_format publish "TCA Alert Definition"
+dcae_cli component publish docker.tca
+
+# to un-deploy
+dcae_cli component undeploy docker.tca
+
+# to inspect
+dcae_cli component show docker.tca
+dcae_cli component list
+dcae_cli component list --deployed
+
+dcae_cli catalog list --expanded

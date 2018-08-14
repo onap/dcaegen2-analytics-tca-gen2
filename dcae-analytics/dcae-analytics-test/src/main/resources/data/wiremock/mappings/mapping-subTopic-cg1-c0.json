@@ -1,0 +1,21 @@
+{
+  "id": "e4a02fea-17d7-3090-a443-56384f45c101",
+  "request": {
+    "url": "/events/SubTopic/cg1/c0",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "body-subTopic-cg1-c0.txt",
+    "headers": {
+      "Date": "Tue, 12 Dec 2017 02:54:22 GMT",
+      "Server": "Apache/2.2.22",
+      "Vary": "Accept-Encoding",
+      "Keep-Alive": "timeout=5, max=100",
+      "Connection": "Keep-Alive",
+      "Transfer-Encoding": "chunked",
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  },
+  "uuid": "e4a02fea-17d7-3090-a443-56384f45c101"
+}

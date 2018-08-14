@@ -1,0 +1,64 @@
+# SPRING SETTINGS
+spring:
+  application:
+    name: "dcae-analytics-tca"
+  main:
+    banner-mode: "off"
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      # Enable multi part file uploads / download
+      enabled: true
+      # Threshold after which files are written to disk.
+      file-size-threshold: 100KB
+      # Max file size
+      max-file-size: 512MB
+      # Max Request size
+      max-request-size: 600MB
+  data:
+    redis:
+      repositories:
+        enabled: false
+    mongodb:
+      repositories:
+        type: none
+  output:
+    ansi:
+      enabled: always
+
+# ENDPOINTS
+management:
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  info:
+    git:
+      mode: full
+  health:
+    redis:
+      enabled: false
+
+# SERVER
+server:
+  port: 9091
+  compression:
+    # Enable gzip compression of response
+    enabled: true
+    mime-types: application/json,text/plain
+    min-response-size: 4096
+  http2:
+    enabled: true
+
+# LOGGING LEVEL
+logging:
+  file: logs/dcae-anlaytics-tca.log
+  level:
+    org:
+      onap: DEBUG

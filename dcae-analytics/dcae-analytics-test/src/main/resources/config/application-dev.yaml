@@ -1,0 +1,50 @@
+# DEV PROFILE SETTINGS
+config-binding-service:
+  tca:
+    policy: "{\"domain\":\"measurementsForVfScaling\",\"metricsPerEventName\":[{\"eventName\":\"Mfvs_eNodeB_RANKPI\",\"controlLoopSchemaType\":\"VNF\",\"policyScope\":\"resource=vFirewall;type=configuration\",\"policyName\":\"configuration.dcae.microservice.tca.xml\",\"policyVersion\":\"v0.0.1\",\"thresholds\":[{\"closedLoopControlName\":\"CL-FRWL-LOW-TRAFFIC-SIG-d925ed73-8231-4d02-9545-db4e101f88f8\",\"closedLoopEventStatus\":\"ONSET\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\"thresholdValue\":4000,\"direction\":\"LESS_OR_EQUAL\",\"severity\":\"MAJOR\"},{\"closedLoopControlName\":\"CL-FRWL-HIGH-TRAFFIC-SIG-EA36FE84-9342-5E13-A656-EC5F21309A09\",\"closedLoopEventStatus\":\"ONSET\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\"thresholdValue\":20000,\"direction\":\"GREATER_OR_EQUAL\",\"severity\":\"CRITICAL\"},{\"closedLoopControlName\":\"CL-FRWL-HIGH-TRAFFIC-SIG-EA36FE84-9342-5E13-A656-EC5F21309A09\",\"closedLoopEventStatus\":\"ABATED\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\"thresholdValue\":0,\"direction\":\"EQUAL\",\"severity\":\"CRITICAL\"}]},{\"eventName\":\"vLoadBalancer\",\"controlLoopSchemaType\":\"VNF\",\"policyScope\":\"resource=vLoadBalancer;type=configuration\",\"policyName\":\"configuration.dcae.microservice.tca.xml\",\"policyVersion\":\"v0.0.1\",\"thresholds\":[{\"closedLoopControlName\":\"CL-LBAL-LOW-TRAFFIC-SIG-FB480F95-A453-6F24-B767-FD703241AB1A\",\"closedLoopEventStatus\":\"ONSET\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\"thresholdValue\":500,\"direction\":\"LESS_OR_EQUAL\",\"severity\":\"MAJOR\"},{\"closedLoopControlName\":\"CL-LBAL-LOW-TRAFFIC-SIG-0C5920A6-B564-8035-C878-0E814352BC2B\",\"closedLoopEventStatus\":\"ONSET\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\"thresholdValue\":5000,\"direction\":\"GREATER_OR_EQUAL\",\"severity\":\"CRITICAL\"}]},{\"eventName\":\"virtualVMEventName\",\"controlLoopSchemaType\":\"VM\",\"policyScope\":\"resource=virtualVM;type=configuration\",\"policyName\":\"configuration.dcae.microservice.tca.xml\",\"policyVersion\":\"v0.0.1\",\"thresholds\":[{\"closedLoopControlName\":\"CL-LBAL-LOW-TRAFFIC-SIG-FB480F95-A453-6F24-B767-FD703241AB1A\",\"closedLoopEventStatus\":\"ONSET\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\"thresholdValue\":500,\"direction\":\"LESS_OR_EQUAL\",\"severity\":\"MAJOR\"}]}]}"
+    processing_batch_size: 10000
+    enable_abatement: true
+    enable_ecomp_logging: false
+    aai:
+      enable_enrichment: true
+      url: "http://localhost:8443"
+      username: "DCAE"
+      password: "DCAE"
+      generic_vnf_path: "aai/v11/network/generic-vnfs/generic-vnf"
+      node_query_path: "aai/v11/search/nodes-query"
+  service_calls:
+    aai_broker_handle:
+      - "135.205.226.128:32768"
+  streams_publishes:
+    tca_handle_out:
+      type: "message_router"
+      aaf_username: "USER"
+      aaf_password: "PASSWORD"
+      dmaap_info:
+        client_role: "publisher"
+        client_id: "tca-pub-0"
+        location: "ecomp"
+        topic_url: "http://localhost:8080/events/PubTopic"
+  streams_subscribes:
+    tca_handle_in:
+      type: "message_router"
+      aaf_username: "USER"
+      aaf_password : "PASSWORD"
+      dmaap_info:
+        client_role: "subscriber"
+        client_id: "tca-sub-0"
+        location: "ecomp"
+        topic_url: "http://localhost:8080/events/SubTopic"
+      consumer_group: "cg1"
+      consumer_ids:
+        - "c0"
+        - "c1"
+      message_limit: 50000
+      timeout: -1
+      polling:
+        fixed_rate: 0
+        auto_adjusting:
+          min: 30000
+          step_up: 10000
+          max: 60000
+          step_down: 30000

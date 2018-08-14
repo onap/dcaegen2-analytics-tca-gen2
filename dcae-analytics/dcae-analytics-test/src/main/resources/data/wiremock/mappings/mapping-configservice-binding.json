@@ -1,0 +1,17 @@
+{
+  "id": "e4a02fea-17d7-3090-a443-56384f45c111",
+  "request": {
+    "url": "/v1/catalog/service/config_binding_service",
+    "method": "GET"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "body-configservice-binding.json",
+    "headers": {
+      "Content-Type": "application/json",
+      "Server": "Apache/2.2.22",
+      "Date": "Tue, 02 Jan 2018 19:13:42 GMT"
+    }
+  },
+  "uuid": "e4a02fea-17d7-3090-a443-56384f45c111"
+}
