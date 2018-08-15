@@ -50,6 +50,176 @@
       "revId": "40f9bdf5f7e0fe512b1d13828537fad0f69b6b67",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_4105930f",
+        "filename": "dcae-analytics/dcae-analytics-tca-core/src/main/java/org/onap/dcae/analytics/tca/core/util/function/calculation/TcaEventListenerExtractor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2018-08-15T18:37:40Z",
+      "side": 1,
+      "message": "curl braces \u003d\u003e curly brace",
+      "revId": "40f9bdf5f7e0fe512b1d13828537fad0f69b6b67",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_81488b5c",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2018-08-15T18:37:40Z",
+      "side": 1,
+      "message": "why /dev/./urandom instead of /dev/urandom ?",
+      "revId": "40f9bdf5f7e0fe512b1d13828537fad0f69b6b67",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_e16e1fc9",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/docker/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2018-08-15T18:37:40Z",
+      "side": 1,
+      "message": "why /dev/./urandom instead of /dev/urandom ?",
+      "revId": "40f9bdf5f7e0fe512b1d13828537fad0f69b6b67",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_a113475b",
+        "filename": "dcae-analytics/dcae-analytics-test/src/main/java/org/onap/dcae/analytics/test/BaseAnalyticsTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2018-08-15T18:37:40Z",
+      "side": 1,
+      "message": "logger",
+      "revId": "40f9bdf5f7e0fe512b1d13828537fad0f69b6b67",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_818deb7d",
+        "filename": "dcae-analytics/dcae-analytics-web/src/main/java/org/onap/dcae/analytics/web/http/EelfAuditLogInterceptor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2018-08-15T18:37:40Z",
+      "side": 1,
+      "message": "logger",
+      "revId": "40f9bdf5f7e0fe512b1d13828537fad0f69b6b67",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_a1dd8772",
+        "filename": "dcae-analytics/dcae-analytics-web/src/main/java/org/onap/dcae/analytics/web/spring/ConfigBindingServiceEnvironmentPostProcessor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2018-08-15T18:37:40Z",
+      "side": 1,
+      "message": "LOGGER \u003d\u003e logger",
+      "revId": "40f9bdf5f7e0fe512b1d13828537fad0f69b6b67",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_c148c32f",
+        "filename": "eelf-logger/eelf-logger-logback-impl/src/test/java/org/onap/dcae/utils/eelf/logger/logback/log/AuditLogImplTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2018-08-15T18:37:40Z",
+      "side": 1,
+      "message": "LOG \u003d\u003e log",
+      "revId": "40f9bdf5f7e0fe512b1d13828537fad0f69b6b67",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_61552fc5",
+        "filename": "eelf-logger/eelf-logger-logback-impl/src/test/java/org/onap/dcae/utils/eelf/logger/logback/log/DebugLogImplTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2018-08-15T18:37:40Z",
+      "side": 1,
+      "message": "LOG \u003d\u003e log",
+      "revId": "40f9bdf5f7e0fe512b1d13828537fad0f69b6b67",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_4164b3b8",
+        "filename": "eelf-logger/eelf-logger-logback-impl/src/test/java/org/onap/dcae/utils/eelf/logger/logback/log/ErrorLogImplTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2018-08-15T18:37:40Z",
+      "side": 1,
+      "message": "LOG \u003d\u003e log",
+      "revId": "40f9bdf5f7e0fe512b1d13828537fad0f69b6b67",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_015ebbe6",
+        "filename": "eelf-logger/eelf-logger-logback-impl/src/test/java/org/onap/dcae/utils/eelf/logger/logback/log/MetricLogImplTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2018-08-15T18:37:40Z",
+      "side": 1,
+      "message": "LOG \u003d\u003e log",
+      "revId": "40f9bdf5f7e0fe512b1d13828537fad0f69b6b67",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
