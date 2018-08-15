@@ -1,0 +1,4 @@
+# Config Binding Service Environment Post processor
+org.springframework.boot.env.EnvironmentPostProcessor=\
+  org.onap.dcae.analytics.web.spring.ConfigBindingServiceEnvironmentPostProcessor,\
+  org.onap.dcae.analytics.web.spring.MongoAutoConfigurationPostProcessor

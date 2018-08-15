@@ -1,0 +1,68 @@
+{
+  "dmaap_subscribers": [
+    {
+      "id": "subscriber1",
+      "type": "message_router",
+      "url": "https://HOSTNAME:3905/events/DcaeTestVESSub1",
+      "username": "username",
+      "password": "password",
+      "message_limit": -1,
+      "timeout": 30000,
+      "consumer_group": "cg1",
+      "consumers": [
+        "c1",
+        "c2"
+      ],
+      "polling_strategy": {
+        "fixedRate": 30000
+      },
+      "proxy_url": "https//user:password@proxyhost:proxyport"
+    },
+    {
+      "id": "subscriber2",
+      "type": "message_router",
+      "url": "https://HOSTNAME:3905/events/DcaeTestVESSub2",
+      "username": "username",
+      "password": "password",
+      "message_limit": 50000,
+      "timeout": 30000,
+      "consumer_group": "cg2",
+      "consumers": [
+        "c1",
+        "c2"
+      ],
+      "polling_strategy": {
+        "auto_adjusting": {
+          "minimum": 20000,
+          "step_up": 20000,
+          "maximum": 120000,
+          "step_down": 100000
+        }
+      }
+    }
+  ],
+  "dmaap_publishers": [
+    {
+      "id": "publisher1",
+      "type": "message_router",
+      "url": "https://HOSTNAME:3905/events/DcaeTestVESPub1",
+      "username": "username",
+      "password": "password",
+      "batching": {
+        "enabled": true,
+        "maximum_messages": 10,
+        "maximum_time": 20000
+      }
+    },
+    {
+      "id": "publisher2",
+      "type": "message_router",
+      "url": "https://HOSTNAME:3905/events/DcaeTestVESPub1",
+      "username": "username",
+      "password": "password",
+      "batching": {
+        "enabled": false
+      }
+    }
+  ]
+}
