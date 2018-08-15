@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1a76adc5_069fb153",
+        "filename": "dcae-analytics/dcae-analytics-model/src/main/java/org/onap/dcae/analytics/model/util/function/StringToURLFunction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2018-08-15T16:32:43Z",
+      "side": 1,
+      "message": "\"LOGGER\" should be \"logger\"\n\nhttps://wiki.onap.org/display/DW/Java+code+style\nhttps://google.github.io/styleguide/javaguide.html#s5.2.4-constant-names",
+      "revId": "40f9bdf5f7e0fe512b1d13828537fad0f69b6b67",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_c6a0d992",
+        "filename": "dcae-analytics/dcae-analytics-model/src/main/java/org/onap/dcae/analytics/model/util/function/URLToHttpGetFunction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2018-08-15T16:32:43Z",
+      "side": 1,
+      "message": "\"LOGGER\" should be \"logger\"\n\nhttps://wiki.onap.org/display/DW/Java+code+style\nhttps://google.github.io/styleguide/javaguide.html#s5.2.4-constant-names",
+      "revId": "40f9bdf5f7e0fe512b1d13828537fad0f69b6b67",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1a76adc5_460a898b",
+        "filename": "dcae-analytics/dcae-analytics-model/src/main/java/org/onap/dcae/analytics/model/util/supplier/RandomIdSupplier.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2018-08-15T16:32:43Z",
+      "side": 1,
+      "message": "what are the randomness requirements for this class?\njava.util.Random is considered decent, but is not as good as some other mechanisms. The oracle docs say:\n\nInstances of java.util.Random are not cryptographically secure. Consider instead using SecureRandom to get a cryptographically secure pseudo-random number generator for use by security-sensitive applications.",
+      "revId": "40f9bdf5f7e0fe512b1d13828537fad0f69b6b67",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
