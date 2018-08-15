@@ -1,0 +1,26 @@
+[
+  {
+    "ID": "81bc2a17-8cfa-3f6f-30a9-a545a9b6ac2f",
+    "Node": "zldcrdm5bdcc2dokr00",
+    "Address": "135.25.108.161",
+    "Datacenter": "zldcrdm5bdcc2",
+    "TaggedAddresses": {
+      "lan": "135.25.108.161",
+      "wan": "135.25.108.161"
+    },
+    "NodeMeta": {
+      "fqdn": "zldcrdm5bdcc2dokr00.2f3fb3.rdm5b.tci.att.com"
+    },
+    "ServiceID": "20299a144716:config_binding_service:10000",
+    "ServiceName": "config_binding_service",
+    "ServiceTags": [
+      "config_binding_service",
+      "no-op"
+    ],
+    "ServiceAddress": "135.25.108.161",
+    "ServicePort": 32769,
+    "ServiceEnableTagOverride": false,
+    "CreateIndex": 2991593,
+    "ModifyIndex": 2997835
+  }
+]

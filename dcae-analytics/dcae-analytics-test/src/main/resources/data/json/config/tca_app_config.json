@@ -1,0 +1,57 @@
+{
+  "application.name": "dcae-analytics",
+  "application.description": "DCAE Analytics Threshold Crossing Alert Application",
+  "application.tca_policy": "{}",
+  "application.tca_batch_size": 10000,
+  "streams_subscribes.tca_handle_in.consumer_group": "cg1",
+  "streams_subscribes.tca_handle_in.consumer_ids[0]": "c0",
+  "streams_subscribes.tca_handle_in.consumer_ids[1]": "c1",
+  "streams_subscribes.tca_handle_in.message_limit": 50000,
+  "streams_subscribes.tca_handle_in.timeout": -1,
+  "streams_subscribes.tca_handle_in.polling.fixed_rate": 0,
+  "streams_subscribes.tca_handle_in.polling.auto_adjusting.min": 30000,
+  "streams_subscribes.tca_handle_in.polling.auto_adjusting.step_up": 20000,
+  "streams_subscribes.tca_handle_in.polling.auto_adjusting.max": 60000,
+  "streams_subscribes.tca_handle_in.polling.auto_adjusting.step_down": 40000,
+  "service_calls": {
+    "aai_broker_handle": [
+      "135.205.226.128:32768"
+    ]
+  },
+  "streams_publishes": {
+    "tca_handle_out": {
+      "type": "message_router",
+      "aaf_username": "USER",
+      "aaf_password": "PASSWORD",
+      "dmaap_info": {
+        "client_role": "publisher",
+        "client_id": "tca-pub-0",
+        "location": "ecomp",
+        "topic_url": "http://localhost:8080/events/PubTopic"
+      }
+    }
+  },
+  "streams_subscribes": {
+    "tca_handle_in": {
+      "type": "message_router",
+      "aaf_username": "USER",
+      "aaf_password": "PASSWORD",
+      "dmaap_info": {
+        "client_role": "subscriber",
+        "client_id": "tca-sub-0",
+        "location": "ecomp",
+        "topic_url": "http://localhost:8080/events/SubTopic"
+      }
+    }
+  },
+  "spring": {
+    "main": {
+      "banner-mode": "off"
+    },
+    "data": {
+      "mongodb": {
+        "uri": "mongodb://localhost:27017/analytics-tca"
+      }
+    }
+  }
+}

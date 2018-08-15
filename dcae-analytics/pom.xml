@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ ================================================================================
+  ~ Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+  ~ ================================================================================
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~ ============LICENSE_END=========================================================
+  ~
+  -->
+
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+	
+	<parent>
+		<groupId>org.onap.dcaegen2</groupId>
+		<artifactId>tca-gen2</artifactId>
+		<version>3.0.0-SNAPSHOT</version>
+	</parent>
+
+    <groupId>org.onap.dcaegen2.analytics</groupId>
+    <artifactId>dcae-analytics</artifactId>
+    <version>3.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>DCAE Analytics Parent</name>
+    <description>Parent project for all DCAE Analytics Applications</description>
+
+
+    <modules>
+        <module>dcae-analytics-test</module>
+        <module>dcae-analytics-model</module>
+        <module>dcae-analytics-tca-model</module>
+        <module>dcae-analytics-tca-core</module>
+        <module>dcae-analytics-web</module>
+        <module>dcae-analytics-tca-web</module>
+    </modules>
+
+    <properties>
+
+        <!-- PROJECT SETTINGS-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <main.basedir>${project.basedir}</main.basedir>
+
+        <!-- DEPENDENCIES VERSION -->
+        <eelf.logger.version>3.0.0-SNAPSHOT</eelf.logger.version>
+        <spring.boot.version>2.0.1.RELEASE</spring.boot.version>
+        <spring.cloud.version>Finchley.RC2</spring.cloud.version>
+        <commons.text.version>1.4</commons.text.version>
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <findbugs.jsr305.version>3.0.2</findbugs.jsr305.version>
+        <findbugs.annotations.version>3.0.1</findbugs.annotations.version>
+
+        <!-- TEST DEPENDENCIES -->
+        <junit-jupiter.version>5.0.2</junit-jupiter.version>
+        <junit-platform.version>1.0.2</junit-platform.version>
+        <apiguardian-api.version>1.0.0</apiguardian-api.version>
+
+        <!--TEST SETTINGS -->
+        <surefire.redirectTestOutputToFile>true</surefire.redirectTestOutputToFile>
+        <!-- PLUGINS VERSIONS -->
+        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+        <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
+        <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
+        <maven-javadoc-plugin.version>3.0.0-M1</maven-javadoc-plugin.version>
+        <maven-surefire-plugin.version>2.19</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>2.19.1</maven-failsafe-plugin.version>
+        <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
+        <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+        <jacoco.plugin.version>0.8.1</jacoco.plugin.version>
+        <findbugs.plugin.version>3.0.5</findbugs.plugin.version>
+        <pmd.plugin.version>3.8</pmd.plugin.version>
+        <checkstyle.plugin.version>2.17</checkstyle.plugin.version>
+        <lombok.plugin.version>1.16.18.1</lombok.plugin.version>
+        <gitcommitid.plugin.version>2.2.3</gitcommitid.plugin.version>
+        <maven.build.helper.plugin.version>3.0.0</maven.build.helper.plugin.version>
+        <dockerfile-maven-version>1.4.3</dockerfile-maven-version>
+
+        <!--PLUGIN SETTINGS -->
+        <compiler.source.version>1.8</compiler.source.version>
+        <compiler.target.version>1.8</compiler.target.version>
+        <unit.test.pattern>**/*Test.java</unit.test.pattern>
+        <skip.unit.tests>false</skip.unit.tests>
+        <integration.test.pattern>**/*IT.java</integration.test.pattern>
+        <skip.integration.tests>false</skip.integration.tests>
+        <pmd.violation.buildfail>true</pmd.violation.buildfail>
+        <findbugs.failOnError>true</findbugs.failOnError>
+        <checkstyle.failOnViolation>true</checkstyle.failOnViolation>
+        <checkstyle.file.name>checkstyle.xml</checkstyle.file.name>
+        <checkstyle.suppression.file.name>checkstyle-suppressions.xml</checkstyle.suppression.file.name>
+
+
+        <dependency.locations.enabled>false</dependency.locations.enabled>
+        <nexusproxy>https://nexus.onap.org</nexusproxy>
+        <snapshots.path>content/repositories/snapshots/</snapshots.path>
+        <releases.path>content/repositories/releases/</releases.path>
+        <docker.repository>nexus3.onap.org:10003</docker.repository>
+
+    </properties>
+
+  
+
+    <dependencyManagement>
+
+        <dependencies>
+
+            <!-- PROJECT DEPENDENCIES -->
+            <dependency>
+                <groupId>org.onap.dcaegen2.analytics</groupId>
+                <artifactId>dcae-analytics-test</artifactId>
+                <version>${project.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.onap.dcaegen2.analytics</groupId>
+                <artifactId>dcae-analytics-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.onap.dcaegen2.analytics</groupId>
+                <artifactId>dcae-analytics-web</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.onap.dcaegen2.analytics</groupId>
+                <artifactId>dcae-analytics-tca-model</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.onap.dcaegen2.analytics</groupId>
+                <artifactId>dcae-analytics-tca-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+
+            <!-- EELF LOGGER -->
+            <dependency>
+                <groupId>org.onap.dcaegen2.utils</groupId>
+                <artifactId>eelf-logger-logback-impl</artifactId>
+                <version>${eelf.logger.version}</version>
+            </dependency>
+
+            <!-- UTILITIES -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+                <version>${commons.text.version}</version>
+            </dependency>
+
+            <!-- REST API SWAGGER -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+
+            <!-- FIND BUGS -->
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>jsr305</artifactId>
+                <version>${findbugs.jsr305.version}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.findbugs</groupId>
+                <artifactId>annotations</artifactId>
+                <version>${findbugs.annotations.version}</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <!-- JUNIT 5 DEPENDENCIES -->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-params</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-engine</artifactId>
+                <version>${junit-platform.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-launcher</artifactId>
+                <version>${junit-platform.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.apiguardian</groupId>
+                <artifactId>apiguardian-api</artifactId>
+                <version>${apiguardian-api.version}</version>
+                <scope>test</scope>
+            </dependency>
+
+            <!-- IMPORT DEPENDENCY MANAGEMENT FROM SPRING BOOT -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- IMPORT DEPENDENCY MANAGEMENT FROM SPRING CLOUD -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+
+        <pluginManagement>
+
+            <plugins>
+
+                <!-- COMPILER PLUGIN -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <fork>true</fork>
+                        <debug>true</debug>
+                        <meminitial>256m</meminitial>
+                        <maxmem>1024m</maxmem>
+                        <source>${compiler.target.version}</source>
+                        <target>${compiler.source.version}</target>
+                        <showWarnings>true</showWarnings>
+                        <showDeprecation>true</showDeprecation>
+                    </configuration>
+                </plugin>
+
+                <!-- MAVEN SOURCE PLUGIN -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin.version}</version>
+                    <configuration>
+                        <excludeResources>true</excludeResources>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <phase>verify</phase>
+                            <goals>
+                                <goal>jar-no-fork</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- MAVEN JAVADOC PLUGIN -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${maven-javadoc-plugin.version}</version>
+                    <configuration>
+                        <!-- minimize console output messages -->
+                        <quiet>true</quiet>
+                        <verbose>false</verbose>
+                        <useStandardDocletOptions>false</useStandardDocletOptions>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>aggregate</id>
+                            <phase>site</phase>
+                            <goals>
+                                <goal>aggregate</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>attach-javadoc</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- MAVEN DEPLOY PLUGIN -->
+                <plugin>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${maven-deploy-plugin.version}</version>
+                    <configuration>
+                        <deployAtEnd>true</deployAtEnd>
+                    </configuration>
+                </plugin>
+
+                <!-- SUREFIRE TEST PLUGIN -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
+                    <configuration>
+                        <skipTests>${skip.unit.tests}</skipTests>
+                        <argLine>-Xmx2048m -Djava.awt.headless=true -XX:+UseConcMarkSweepGC
+                            -XX:OnOutOfMemoryError="kill -9 %p" -XX:+HeapDumpOnOutOfMemoryError ${surefireArgLine}
+                        </argLine>
+                        <redirectTestOutputToFile>${surefire.redirectTestOutputToFile}</redirectTestOutputToFile>
+                        <parallel>classesAndMethods</parallel>
+                        <threadCount>4</threadCount>
+                        <forkCount>4</forkCount>
+                        <reuseForks>false</reuseForks>
+                        <reportFormat>xml</reportFormat>
+                        <trimStackTrace>false</trimStackTrace>
+                        <systemPropertyVariables>
+                            <java.io.tmpdir>${project.build.directory}</java.io.tmpdir>
+                            <logback.configurationFile>
+                                ${basedir}/src/test/resources/logback-test.xml
+                            </logback.configurationFile>
+                            <logging.config>classpath:logback-test.xml</logging.config>
+                        </systemPropertyVariables>
+                        <includes>
+                            <include>${unit.test.pattern}</include>
+                        </includes>
+                        <excludes>
+                            <exclude>${integration.test.pattern}</exclude>
+                        </excludes>
+                    </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.junit.platform</groupId>
+                            <artifactId>junit-platform-surefire-provider</artifactId>
+                            <version>${junit-platform.version}</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+                <!-- FAIL SAFE PLUGIN FOR INTEGRATION TEST -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>${maven-failsafe-plugin.version}</version>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.junit.platform</groupId>
+                            <artifactId>junit-platform-surefire-provider</artifactId>
+                            <version>${junit-platform.version}</version>
+                        </dependency>
+                    </dependencies>
+                    <executions>
+                        <execution>
+                            <id>integration-tests</id>
+                            <goals>
+                                <goal>integration-test</goal>
+                                <goal>verify</goal>
+                            </goals>
+                            <configuration>
+                                <argLine>${failsafeArgLine}</argLine>
+                                <redirectTestOutputToFile>true</redirectTestOutputToFile>
+                                <skipTests>${skip.integration.tests}</skipTests>
+                                <includes>
+                                    <include>${integration.test.pattern}</include>
+                                </includes>
+                                <excludes>
+                                    <exclude>${unit.test.pattern}</exclude>
+                                </excludes>
+                                <systemPropertyVariables>
+                                    <java.io.tmpdir>${project.build.directory}</java.io.tmpdir>
+                                    <logging.config>classpath:logback-test.xml</logging.config>
+                                </systemPropertyVariables>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${jacoco.plugin.version}</version>
+                    <configuration>
+                        <excludes>
+                            <exclude>**/generated/**</exclude>
+                            <exclude>**/generated-sources/**</exclude>
+                        </excludes>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>pre-unit-test</id>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                            <configuration>
+                                <!-- Sets the path to the file which contains the execution data. -->
+                                <destFile>${project.build.directory}/jacoco/jacoco-ut.exec</destFile>
+                                <propertyName>surefireArgLine</propertyName>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>post-unit-test</id>
+                            <phase>test</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                            <configuration>
+                                <!-- Sets the path to the file which contains the execution data. -->
+                                <dataFile>${project.build.directory}/jacoco/jacoco-ut.exec</dataFile>
+                                <outputDirectory>${project.reporting.outputDirectory}/jacoco-ut</outputDirectory>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>pre-integration-test</id>
+                            <phase>pre-integration-test</phase>
+                            <goals>
+                                <goal>prepare-agent</goal>
+                            </goals>
+                            <configuration>
+                                <!-- Sets the path to the file which contains the execution data. -->
+                                <destFile>${project.build.directory}/jacoco/jacoco-it.exec</destFile>
+                                <propertyName>failsafeArgLine</propertyName>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>post-integration-test</id>
+                            <phase>post-integration-test</phase>
+                            <goals>
+                                <goal>report</goal>
+                            </goals>
+                            <configuration>
+                                <!-- Sets the path to the file which contains the execution data. -->
+                                <dataFile>${project.build.directory}/jacoco/jacoco-it.exec</dataFile>
+                                <outputDirectory>${project.reporting.outputDirectory}/jacoco-it</outputDirectory>
+                            </configuration>
+                        </execution>
+                    </executions>
+
+                </plugin>
+
+                <!-- FIND BUGS (STATIC CODE ANALYSIS) PLUGIN -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>findbugs-maven-plugin</artifactId>
+                    <version>${findbugs.plugin.version}</version>
+                    <configuration>
+                        <effort>Max</effort>
+                        <threshold>Low</threshold>
+                        <xmlOutput>true</xmlOutput>
+                        <!-- BUILD FAIL ON FINDBUGS ERRORS -->
+                        <failOnError>${findbugs.failOnError}</failOnError>
+                        <excludeFilterFile>${main.basedir}/findbugs-exclude.xml</excludeFilterFile>
+                        <outputDirectory>${project.reporting.outputDirectory}/findbugs</outputDirectory>
+                        <findbugsXmlOutputDirectory>${project.reporting.outputDirectory}/findbugs
+                        </findbugsXmlOutputDirectory>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>analyze-compile</id>
+                            <phase>compile</phase>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- PMD PLUGIN SETUP -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-pmd-plugin</artifactId>
+                    <version>${pmd.plugin.version}</version>
+                    <configuration>
+                        <sourceEncoding>${project.build.sourceEncoding}</sourceEncoding>
+                        <targetJdk>${compiler.target.version}</targetJdk>
+                        <linkXRef>false</linkXRef>
+                        <excludes>
+                            <exclude>**/*Mixin.java</exclude>
+                        </excludes>
+                        <!-- BUILD FAIL ON PMD VIOLATION -->
+                        <failOnViolation>${pmd.violation.buildfail}</failOnViolation>
+                        <targetDirectory>${project.reporting.outputDirectory}/pmd</targetDirectory>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>pmd-check</id>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                            <configuration>
+                                <printFailingErrors>true</printFailingErrors>
+                                <excludeFromFailureFile>${main.basedir}/pmd-exclude.properties</excludeFromFailureFile>
+                            </configuration>
+                        </execution>
+                        <execution>
+                            <id>cpd-check</id>
+                            <goals>
+                                <goal>cpd-check</goal>
+                            </goals>
+                            <configuration>
+                                <printFailingErrors>true</printFailingErrors>
+                                <excludeFromFailureFile>${main.basedir}/cpd-exclude.properties</excludeFromFailureFile>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- CHECKSTYLE PLUGIN -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-checkstyle-plugin</artifactId>
+                    <version>${checkstyle.plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>validate</id>
+                            <phase>validate</phase>
+                            <configuration>
+                                <configLocation>${checkstyle.file.name}</configLocation>
+                                <suppressionsLocation>${checkstyle.suppression.file.name}</suppressionsLocation>
+                                <encoding>UTF-8</encoding>
+                                <consoleOutput>true</consoleOutput>
+                                <!-- BUILD FAIL ON CHECKSTYLE VIOLATION -->
+                                <failOnViolation>${checkstyle.failOnViolation}</failOnViolation>
+                                <includeTestSourceDirectory>true</includeTestSourceDirectory>
+                                <outputFile>${project.reporting.outputDirectory}/checkstyle</outputFile>
+                            </configuration>
+                            <goals>
+                                <goal>check</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                    <dependencies>
+                        <dependency>
+                            <groupId>com.puppycrawl.tools</groupId>
+                            <artifactId>checkstyle</artifactId>
+                            <version>6.19</version>
+                        </dependency>
+                    </dependencies>
+                </plugin>
+
+                <!-- LOMBOK PLUGIN -->
+                <plugin>
+                    <groupId>org.projectlombok</groupId>
+                    <artifactId>lombok-maven-plugin</artifactId>
+                    <version>${lombok.plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>delombok</id>
+                            <phase>generate-sources</phase>
+                            <goals>
+                                <goal>delombok</goal>
+                            </goals>
+                            <configuration>
+                                <addOutputDirectory>false</addOutputDirectory>
+                                <sourceDirectory>src/main/java</sourceDirectory>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- GIT COMMIT ID PLUGIN -->
+                <plugin>
+                    <groupId>pl.project13.maven</groupId>
+                    <artifactId>git-commit-id-plugin</artifactId>
+                    <version>${gitcommitid.plugin.version}</version>
+                    <executions>
+                        <execution>
+                            <id>generate-git-properties</id>
+                            <phase>generate-resources</phase>
+                            <goals>
+                                <goal>revision</goal>
+                            </goals>
+                            <configuration>
+                                <failOnNoGitDirectory>false</failOnNoGitDirectory>
+                                <generateGitPropertiesFile>true</generateGitPropertiesFile>
+                                <generateGitPropertiesFilename>
+                                    ${project.build.directory}/git/git.properties
+                                </generateGitPropertiesFilename>
+                            </configuration>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- JAR PLUGIN -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${maven-jar-plugin.version}</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            </manifest>
+                            <manifestEntries>
+                                <Implementation-Build-Version>${project.version}</Implementation-Build-Version>
+                            </manifestEntries>
+                        </archive>
+                    </configuration>
+                </plugin>
+
+
+                <!-- ASSEMBLY PLUGIN -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>${maven-assembly-plugin.version}</version>
+                    <configuration>
+                        <descriptors>
+                            <descriptor>${main.basedir}/assembly/cdp-assembly-descriptor.xml</descriptor>
+                        </descriptors>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <id>cdp-assembly</id>
+                            <phase>package</phase>
+                            <goals>
+                                <goal>single</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- BUILD HELPER PLUGIN -->
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>build-helper-maven-plugin</artifactId>
+                    <version>${maven.build.helper.plugin.version}</version>
+                </plugin>
+
+                <!-- SPRING BOOT PLUGIN -->
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring.boot.version}</version>
+                    <executions>
+                        <execution>
+                            <id>build-info</id>
+                            <goals>
+                                <goal>build-info</goal>
+                            </goals>
+                        </execution>
+                        <execution>
+                            <id>spring-boot-uber-jar</id>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+
+                <!-- DOCKER PLUGIN -->
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>dockerfile-maven-plugin</artifactId>
+                    <version>${dockerfile-maven-version}</version>
+                    <configuration>
+                        <repository>${docker.repository}/${project.artifactId}</repository>
+                        <tag>${project.version}</tag>
+                    </configuration>
+                </plugin>
+
+            </plugins>
+
+        </pluginManagement>
+
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+            </plugin>
+
+        </plugins>
+    </build>
+
+</project>
