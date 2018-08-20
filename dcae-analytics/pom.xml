@@ -25,12 +25,11 @@
     <modelVersion>4.0.0</modelVersion>
 	
 	<parent>
-		<groupId>org.onap.dcaegen2</groupId>
-		<artifactId>tca-gen2</artifactId>
+		<groupId>org.onap.dcaegen2.analytics.tca-gen2</groupId>
+		<artifactId>tca-gen2-parent</artifactId>
 		<version>3.0.0-SNAPSHOT</version>
 	</parent>
 
-    <groupId>org.onap.dcaegen2.analytics</groupId>
     <artifactId>dcae-analytics</artifactId>
     <version>3.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
@@ -119,32 +118,32 @@
 
             <!-- PROJECT DEPENDENCIES -->
             <dependency>
-                <groupId>org.onap.dcaegen2.analytics</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>dcae-analytics-test</artifactId>
                 <version>${project.version}</version>
                 <scope>test</scope>
             </dependency>
 
             <dependency>
-                <groupId>org.onap.dcaegen2.analytics</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>dcae-analytics-model</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.onap.dcaegen2.analytics</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>dcae-analytics-web</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.onap.dcaegen2.analytics</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>dcae-analytics-tca-model</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
             <dependency>
-                <groupId>org.onap.dcaegen2.analytics</groupId>
+                <groupId>${project.groupId}</groupId>
                 <artifactId>dcae-analytics-tca-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -152,7 +151,7 @@
 
             <!-- EELF LOGGER -->
             <dependency>
-                <groupId>org.onap.dcaegen2.analytics</groupId>
+                <groupId>org.onap.dcaegen2.analytics.tca-gen2</groupId>
                 <artifactId>eelf-logger-logback-impl</artifactId>
                 <version>${eelf.logger.version}</version>
             </dependency>
