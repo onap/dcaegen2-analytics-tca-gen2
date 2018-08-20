@@ -1,0 +1,7 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+2: Tony Hansen <tony@att.com>
+Submitted-by: Tony Hansen <tony@att.com>
+Submitted-at: Mon, 20 Aug 2018 21:24:50 +0000
+Reviewed-on: https://gerrit.onap.org/r/61383
+Project: dcaegen2/analytics/tca-gen2
+Branch: refs/heads/master
