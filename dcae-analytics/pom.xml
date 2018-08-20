@@ -152,7 +152,7 @@
 
             <!-- EELF LOGGER -->
             <dependency>
-                <groupId>org.onap.dcaegen2.utils</groupId>
+                <groupId>org.onap.dcaegen2.analytics</groupId>
                 <artifactId>eelf-logger-logback-impl</artifactId>
                 <version>${eelf.logger.version}</version>
             </dependency>
