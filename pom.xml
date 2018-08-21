@@ -40,5 +40,18 @@
         <module>dcae-analytics</module>
     </modules>
 
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>enforce-no-snapshots</id>
+                        <phase>none</phase>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
