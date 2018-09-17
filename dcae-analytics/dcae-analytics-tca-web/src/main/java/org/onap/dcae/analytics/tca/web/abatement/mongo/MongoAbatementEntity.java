@@ -20,7 +20,6 @@
 package org.onap.dcae.analytics.tca.web.abatement.mongo;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
@@ -35,7 +34,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * @author Rajiv Singla
  */
 @Data
-@NoArgsConstructor
 @Document(collection = "tca_abatement")
 public class MongoAbatementEntity implements TcaAbatementEntity, TcaModel {
 

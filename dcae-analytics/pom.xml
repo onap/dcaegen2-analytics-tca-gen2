@@ -56,7 +56,7 @@
 
         <!-- DEPENDENCIES VERSION -->
         <eelf.logger.version>3.0.0-SNAPSHOT</eelf.logger.version>
-        <spring.boot.version>2.0.1.RELEASE</spring.boot.version>
+        <spring.boot.version>2.0.5.RELEASE</spring.boot.version>
         <spring.cloud.version>Finchley.RC2</spring.cloud.version>
         <commons.text.version>1.4</commons.text.version>
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
@@ -405,6 +405,7 @@
                 </plugin>
 
 
+                <!--
                 <plugin>
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
@@ -422,7 +423,6 @@
                                 <goal>prepare-agent</goal>
                             </goals>
                             <configuration>
-                                <!-- Sets the path to the file which contains the execution data. -->
                                 <destFile>${project.build.directory}/jacoco/jacoco-ut.exec</destFile>
                                 <propertyName>surefireArgLine</propertyName>
                             </configuration>
@@ -434,7 +434,6 @@
                                 <goal>report</goal>
                             </goals>
                             <configuration>
-                                <!-- Sets the path to the file which contains the execution data. -->
                                 <dataFile>${project.build.directory}/jacoco/jacoco-ut.exec</dataFile>
                                 <outputDirectory>${project.reporting.outputDirectory}/jacoco-ut</outputDirectory>
                             </configuration>
@@ -446,7 +445,6 @@
                                 <goal>prepare-agent</goal>
                             </goals>
                             <configuration>
-                                <!-- Sets the path to the file which contains the execution data. -->
                                 <destFile>${project.build.directory}/jacoco/jacoco-it.exec</destFile>
                                 <propertyName>failsafeArgLine</propertyName>
                             </configuration>
@@ -458,14 +456,13 @@
                                 <goal>report</goal>
                             </goals>
                             <configuration>
-                                <!-- Sets the path to the file which contains the execution data. -->
                                 <dataFile>${project.build.directory}/jacoco/jacoco-it.exec</dataFile>
                                 <outputDirectory>${project.reporting.outputDirectory}/jacoco-it</outputDirectory>
                             </configuration>
                         </execution>
                     </executions>
-
                 </plugin>
+                -->
 
                 <!-- FIND BUGS (STATIC CODE ANALYSIS) PLUGIN -->
                 <plugin>
