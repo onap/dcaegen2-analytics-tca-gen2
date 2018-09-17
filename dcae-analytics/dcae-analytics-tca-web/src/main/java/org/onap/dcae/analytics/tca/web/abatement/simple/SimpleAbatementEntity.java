@@ -20,7 +20,6 @@
 package org.onap.dcae.analytics.tca.web.abatement.simple;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
@@ -31,7 +30,6 @@ import org.onap.dcae.analytics.tca.model.TcaModel;
  * @author Rajiv Singla
  */
 @Data
-@NoArgsConstructor
 public class SimpleAbatementEntity implements TcaAbatementEntity, TcaModel {
 
     private static final long serialVersionUID = 1L;
