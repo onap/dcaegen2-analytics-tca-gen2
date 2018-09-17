@@ -23,7 +23,7 @@
     <property scope="context" name="componentName" value="dcae-analytics-tca"/>
     <contextName>${componentName}</contextName>
 
-    <include resource="ecomp-logback.xml"/>
+    <include resource="eelf-logback.xml"/>
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
     <logger name="org.springframework" level="INFO"/>

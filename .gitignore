@@ -49,3 +49,8 @@ dependency-reduced-pom.xml
 blackDuckHubProjectName.txt
 blackDuckHubProjectVersionName.txt
 /bin/
+
+
+#ECOMP LOGS
+**/debug-logs/
+**/logs/

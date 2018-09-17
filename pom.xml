@@ -30,7 +30,7 @@
     <artifactId>tca-gen2-parent</artifactId>
     <version>3.0.0-SNAPSHOT</version>
 
-    <name>TCA Standalone Parent</name>
+    <name>dcaegen2-analytics-tca-gen2</name>
     <packaging>pom</packaging>
 
     <modules>
