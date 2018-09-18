@@ -97,7 +97,7 @@
         <skip.integration.tests>false</skip.integration.tests>
         <pmd.violation.buildfail>true</pmd.violation.buildfail>
         <findbugs.failOnError>true</findbugs.failOnError>
-        <checkstyle.failOnViolation>true</checkstyle.failOnViolation>
+        <checkstyle.failOnViolation>false</checkstyle.failOnViolation>
         <checkstyle.file.name>checkstyle.xml</checkstyle.file.name>
         <checkstyle.suppression.file.name>checkstyle-suppressions.xml</checkstyle.suppression.file.name>
 
@@ -112,10 +112,12 @@
         <!-- SONAR EXCLUSIONS -->
         <!-- EXCLUDE TEST COVERAGE ON
           TEST PACKAGES - USED FOR TESTING - NOT FOR DEPLOYMENT
-          MODEL PACAKGES - MODELS ONLY CONTAINS POJOs AND NO BUSINESS LOGIC,
-          CONFIG PACKAGE -  CONATINS WIRINGS OF SPRING BEANS,
+          MODEL PACKAGES - MODELS ONLY CONTAINS POJOs AND NO BUSINESS LOGIC,
+          CONFIG PACKAGE -  CONTAINS WIRINGS OF SPRING BEANS,
+          EXCEPTIONS PACKAGE - CONTAINS CUSTOM EXCEPTIONS - NO BUSINESS LOGIC,
+          PREFERENCES CLASSES - JUST POJOS
           -->
-        <sonar.coverage.exclusions>**/test/**,**/model/**,**/config/**</sonar.coverage.exclusions>
+        <sonar.coverage.exclusions>**/test/**,**/model/**,**/config/**,**/exception/**,**/*Preferences.java</sonar.coverage.exclusions>
 
     </properties>
 
