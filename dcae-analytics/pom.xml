@@ -630,7 +630,7 @@
                     <artifactId>dockerfile-maven-plugin</artifactId>
                     <version>${dockerfile-maven-version}</version>
                     <configuration>
-                        <repository>${docker.repository}/${project.artifactId}</repository>
+                        <repository>${docker.repository}/onap/${project.groupId}.${project.artifactId}</repository>
                         <tag>${project.version}</tag>
                     </configuration>
                 </plugin>
