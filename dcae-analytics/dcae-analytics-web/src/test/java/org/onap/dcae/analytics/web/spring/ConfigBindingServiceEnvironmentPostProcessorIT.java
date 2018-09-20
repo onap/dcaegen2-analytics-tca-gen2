@@ -19,29 +19,23 @@
 
 package org.onap.dcae.analytics.web.spring;
 
-import static org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceConstants
-        .CONFIG_BINDING_SERVICE_ENV_VARIABLE_KEY;
-import static org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceConstants
-        .CONFIG_BINDING_SERVICE_PROPERTIES_KEY;
-import static org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceConstants
-        .CONSUL_HOST_ENV_VARIABLE_KEY;
-import static org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceConstants
-        .SERVICE_NAME_ENV_VARIABLE_KEY;
-
-import java.util.HashMap;
-import java.util.Map;
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.onap.dcae.analytics.model.AnalyticsProfile;
 import org.onap.dcae.analytics.web.BaseAnalyticsWebSpringBootIT;
+import org.onap.dcae.analytics.web.BaseAnalyticsWebTest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.AbstractEnvironment;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.MapPropertySource;
 import org.springframework.core.env.PropertySource;
 import org.springframework.test.context.ActiveProfiles;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import static org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceConstants.CONFIG_BINDING_SERVICE_PROPERTIES_KEY;
 
 /**
  * @author Rajiv Singla
@@ -52,15 +46,7 @@ class ConfigBindingServiceEnvironmentPostProcessorIT extends BaseAnalyticsWebSpr
 
     @BeforeAll
     static void beforeAll() throws Exception {
-        // sets up environment variables for testing purposes
-        final HashMap<String, String> testEnvironmentVariables = new HashMap<>();
-        final String testConsulHostValue = "localhost";
-        final String testConfigBindingService = "config_binding_service";
-        final String testServiceName = "tca_dev";
-        testEnvironmentVariables.put(CONSUL_HOST_ENV_VARIABLE_KEY, testConsulHostValue);
-        testEnvironmentVariables.put(CONFIG_BINDING_SERVICE_ENV_VARIABLE_KEY, testConfigBindingService);
-        testEnvironmentVariables.put(SERVICE_NAME_ENV_VARIABLE_KEY, testServiceName);
-        setEnvironmentVariables(testEnvironmentVariables);
+        BaseAnalyticsWebTest.initializeConfigBindingServiceEnvironmentVariables();
     }
 
     @Autowired

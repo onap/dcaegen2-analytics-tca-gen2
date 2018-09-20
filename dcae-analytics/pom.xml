@@ -116,8 +116,10 @@
           CONFIG PACKAGE -  CONTAINS WIRINGS OF SPRING BEANS,
           EXCEPTIONS PACKAGE - CONTAINS CUSTOM EXCEPTIONS - NO BUSINESS LOGIC,
           PREFERENCES CLASSES - JUST POJOS
+          CONTEXTS CLASSES - JUST POJOS
+          ENTITY CLASSES - JUST POJOS
           -->
-        <sonar.coverage.exclusions>**/test/**,**/model/**,**/config/**,**/exception/**,**/*Preferences.java</sonar.coverage.exclusions>
+        <sonar.coverage.exclusions>**/test/**,**/model/**,**/config/**,**/exception/**,**/*Preferences.java,**/*Context*.java,**/*Entity.java</sonar.coverage.exclusions>
 
     </properties>
 

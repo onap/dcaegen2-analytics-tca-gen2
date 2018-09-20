@@ -19,10 +19,30 @@
 
 package org.onap.dcae.analytics.web;
 
+import org.junit.jupiter.api.BeforeAll;
 import org.onap.dcae.analytics.test.BaseAnalyticsUnitTest;
+
+import java.util.HashMap;
+
+import static org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceConstants.CONFIG_BINDING_SERVICE_ENV_VARIABLE_KEY;
+import static org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceConstants.CONSUL_HOST_ENV_VARIABLE_KEY;
+import static org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceConstants.SERVICE_NAME_ENV_VARIABLE_KEY;
 
 /**
  * @author Rajiv Singla
  */
 public abstract class BaseAnalyticsWebTest extends BaseAnalyticsUnitTest {
+
+    public static void initializeConfigBindingServiceEnvironmentVariables() throws Exception {
+        // sets up environment variables for testing purposes
+        final HashMap<String, String> testEnvironmentVariables = new HashMap<>();
+        final String testConsulHostValue = "localhost";
+        final String testConfigBindingService = "config_binding_service";
+        final String testServiceName = "tca_dev";
+        testEnvironmentVariables.put(CONSUL_HOST_ENV_VARIABLE_KEY, testConsulHostValue);
+        testEnvironmentVariables.put(CONFIG_BINDING_SERVICE_ENV_VARIABLE_KEY, testConfigBindingService);
+        testEnvironmentVariables.put(SERVICE_NAME_ENV_VARIABLE_KEY, testServiceName);
+        setEnvironmentVariables(testEnvironmentVariables);
+    }
+
 }

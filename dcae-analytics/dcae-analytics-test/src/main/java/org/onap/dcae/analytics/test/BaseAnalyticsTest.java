@@ -395,7 +395,7 @@ abstract class BaseAnalyticsTest {
      * @throws NoSuchFieldException no such method exception
      */
     @SuppressWarnings("unchecked")
-    protected static void setEnvironmentVariables(final Map<String, String> testEnvironmentVariables)
+    public static void setEnvironmentVariables(final Map<String, String> testEnvironmentVariables)
             throws ClassNotFoundException, IllegalAccessException, NoSuchFieldException {
         try {
             final Class<?> processEnvironmentClass = Class.forName("java.lang.ProcessEnvironment");
