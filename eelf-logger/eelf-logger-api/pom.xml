@@ -45,4 +45,40 @@
 
     <!-- NOTE: THIS API MODULE MUST NOT HAVE ANY DEPENDENCIES IN COMPILE SCOPE-->
 
+
+    <build>
+            <plugins>
+<!--
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>dockerfile-maven-plugin</artifactId>
+                    <configuration>
+		<baseImage>openjdk:8-jre</baseImage>
+
+                                  <skip>true</skip>
+                        <repository>${docker.repository}/${project.artifactId}</repository>
+                        <tag>${project.version}</tag>
+                    </configuration>
+                </plugin>
+-->
+
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>dockerfile-maven-plugin</artifactId>
+                    <version>1.4.3</version>
+                    <configuration>
+			<dockerfile>
+                                  <skip>true</skip>
+                        </dockerfile>
+			<dockerfile.skip>true</dockerfile.skip>
+                        <skipDocker>true</skipDocker>
+                        <skip>true</skip>
+		
+                    </configuration>
+                </plugin>
+
+            </plugins>
+    </build>
+
+
 </project>

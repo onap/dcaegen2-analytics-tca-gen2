@@ -407,7 +407,17 @@
                     </configuration>
                 </plugin>
 
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>dockerfile-maven-plugin</artifactId>
+		    <version>1.4.3</version>
+                    <configuration>
+                        <skipDocker>true</skipDocker>
+                                  <skip>true</skip>
+                    </configuration>
+                </plugin>
             </plugins>
+
 
         </pluginManagement>
 
@@ -457,6 +467,10 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
+            </plugin>
+                <plugin>
+                    <groupId>com.spotify</groupId>
+                    <artifactId>dockerfile-maven-plugin</artifactId>
             </plugin>
         </plugins>
 
