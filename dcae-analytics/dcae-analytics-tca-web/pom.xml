@@ -139,7 +139,7 @@
             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
-                <executions>
+                <!-- executions>
                     <execution>
                         <id>build-image</id>
                         <phase>package</phase>
@@ -154,7 +154,7 @@
                             <goal>push</goal>
                         </goals>
                     </execution>
-                </executions>
+                </executions -->
             </plugin>
         </plugins>
     </build>
