@@ -8,13 +8,12 @@ FROM openjdk:8-jre-alpine
 MAINTAINER Rajiv Singla <rs153v@att.com>
 
 VOLUME /tmp
-ADD docker/logback.xml logback.xml
-ADD target/dcae-analytics-tca-web-3.0.0-SNAPSHOT.jar dcae-analytics-tca-web.jar
+ADD logback.xml logback.xml
 EXPOSE 9091
 
 ENTRYPOINT ["java", \
             "-Djava.security.egd=file:/dev/./urandom", \
             "-Dlogging.config=logback.xml", \
-            "-Dlogging.file=logs/dcae-analytics-tca-web.log", \
+            "-Dlogging.file=logs/${project.artifactId}.log", \
             "-Dspring.profiles.active=dev", \
-            "-jar", "dcae-analytics-tca-web.jar"]
+            "-jar", "${project.build.finalName}.jar"]
