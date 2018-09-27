@@ -107,7 +107,6 @@
         <nexusproxy>https://nexus.onap.org</nexusproxy>
         <snapshots.path>content/repositories/snapshots/</snapshots.path>
         <releases.path>content/repositories/releases/</releases.path>
-        <docker.repository>nexus3.onap.org:10003</docker.repository>
 
 
         <!-- SONAR EXCLUSIONS -->

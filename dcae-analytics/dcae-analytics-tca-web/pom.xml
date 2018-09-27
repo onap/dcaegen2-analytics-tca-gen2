@@ -133,8 +133,9 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <configuration>
                         <skipDocker>false</skipDocker>
-                        <imageName>${docker.repository}/onap/${project.groupId}.${project.artifactId}</imageName>
-                        <dockerDirectory>${project.basedir}</dockerDirectory>
+                    	<imageName>${onap.nexus.dockerregistry.daily}/onap/${project.groupId}.${project.artifactId}</imageName>
+                    	<baseImage>openjdk:8-jre-alpine</baseImage>
+                    	<entryPoint>["java", "-Djava.security.egd=file:/dev/./urandom", "-Dlogging.config=logback.xml", "-Dlogging.file=logs/${project.artifactId}.log", "-Dspring.profiles.active=dev", "-jar", "${project.build.finalName}.jar"]</entryPoint>
                         <resources>
                                <resource>
                                      <targetPath>${project.basedir}</targetPath>
@@ -142,10 +143,14 @@
                                      <include>${project.build.finalName}.jar</include>
                               </resource>
                         </resources>
+                        <exposes>
+                              <expose>9091</expose>
+                        </exposes>
                         <imageTags>
                                      <imageTag>${project.version}</imageTag>
                                      <imageTag>latest</imageTag>
                         </imageTags>
+                        <serverId>${onap.nexus.dockerregistry.daily}</serverId>
                 </configuration>
             </plugin>
         </plugins>
