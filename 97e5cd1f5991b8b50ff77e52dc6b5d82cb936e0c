@@ -1,0 +1,7 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+2: Vijay Venkatesh Kumar <vv770d@att.com>
+Submitted-by: Vijay Venkatesh Kumar <vv770d@att.com>
+Submitted-at: Thu, 27 Sep 2018 15:13:28 +0000
+Reviewed-on: https://gerrit.onap.org/r/69349
+Project: dcaegen2/analytics/tca-gen2
+Branch: refs/heads/master
