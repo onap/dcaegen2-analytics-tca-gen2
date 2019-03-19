@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c9e575a4_0789556e",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2019-03-19T15:01:27Z",
+      "side": 1,
+      "message": "2018-2019",
+      "revId": "a5488f31d53bd7d8ee375bb880dcab26d13c156f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
