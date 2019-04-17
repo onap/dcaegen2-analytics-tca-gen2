@@ -1,0 +1,176 @@
+# ============LICENSE_START====================================================
+# =============================================================================
+# Copyright (C) 2019 IBM
+# =============================================================================
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ============LICENSE_END======================================================
+
+tosca_definitions_version: cloudify_dsl_1_3
+
+imports:
+  - 'http://www.getcloudify.org/spec/cloudify/3.4/types.yaml'
+  - https://nexus.onap.org/service/local/repositories/raw/content/org.onap.dcaegen2.platform.plugins/R4/k8splugin/1.4.12/k8splugin_types.yaml
+
+
+inputs:
+  tag_version:
+    type: string
+    default: 'nexus.onap.org:10003/onap/org.onap.dcaegen2.analytics.tca-gen2.dcae-analytics-tca-web:3.0.0-SNAPSHOT'
+  service_name:
+    type: string
+    default: 'dcae-analytics-tca-web'
+  replicas:
+    type: integer
+    description: number of instances
+    default: 1
+  aaf_username:
+    type: string
+    description: AAF user name
+    default: "username"
+  aaf_password:
+    type: string
+    description: AAF password
+    default: "password"
+  client_role:
+    type: string
+    description: Client role to request secure access to topic
+    default: "ves-publisher"
+  client_id:
+    type: string
+    description: Client id for given AAF client
+    default: "ves-pub-1"
+  dmaap_dr_username:
+    type: string
+    description: dmaap datarouter user name
+    default: "username"
+  dmaap_dr_password:
+    type: string
+    description: dmaap datarouter password
+    default: "password"
+  dcae_location:
+    type: string
+    description: DCAE location for the subscriber, used to set up routing
+    default: "location"
+  subscriber_id:
+    type: string
+    description: Subscriber id in Data Router
+    default: ""
+  dmaap_dr_service_host:
+    type: string
+    description: DMAAP Data Router host address
+    default: "dmaap-dr-node.onap.svc.cluster.local"
+  dmaap_dr_service_port:
+    type: string
+    description: DMAAP Data Router host port
+    default: "8443"
+  dmaap_mr_service_host:
+    type: string
+    description: DMAAP Data Router host address
+    default: "message-router.onap.svc.cluster.local"
+  dmaap_mr_service_port:
+    type: string
+    description: DMAAP Data Router host port
+    default: "3904"
+  dmaap_mr_topic_name:
+    type: string
+    description: Name of MR topic events will be published to
+    default: "tca-gen2-ves"
+  host_port:
+    description: port on Kubernetes host where API will be exposed
+    default: 0
+  aai_enrichment_host:
+    type: string
+    default: "aai"
+  aai_enrichment_port:
+    type: integer
+    default: 8443
+  aai_enrichment_protocol:
+    type: string
+    default: "https"
+  aai_username:
+    type: string
+    description: AAI user name
+    default: "username"
+  aai_password:
+    type: string
+    description: AAI password
+    default: "password"      
+    
+node_templates:
+  dcae-analytics-tca-web:
+    type: dcae.nodes.ContainerizedPlatformComponent
+    properties:
+      application_config:
+        streams_subscribes:
+          dmaap_subscriber:
+            type:
+              "data_router"
+            dmaap_info:
+              username:
+                get_input: dmaap_dr_username
+              password:
+                get_input: dmaap_dr_password
+              location:
+                get_input: dcae_location
+              subscriber_id:
+                get_input: subscriber_id
+              delivery_url:
+                { concat: ["http://", { get_input: service_name }, ".onap.svc.cluster.local",
+                           ":8081/delivery"]}
+        streams_publishes:
+          dmaap_publisher:
+            aaf_username:
+              get_input: aaf_username
+            aaf_password:
+              get_input: aaf_password
+            type:
+              "message_router"
+            dmaap_info:
+              client_role:
+                get_input: client_role
+              client_id:
+                get_input: client_id
+              topic_url:
+                { concat: ["http://", { get_input: dmaap_mr_service_host },
+                           ":", { get_input: dmaap_mr_service_port }, "/events/", { get_input: dmaap_mr_topic_name }]}
+              location:
+                get_input: dcae_location
+        tca.policy: 
+        tca.processingBatchSize: 10_000
+        tca.enableAbatement: true
+        tca.enableEcompLogging: true
+        tca.aai.enableEnrichment: false
+        tca.aai.url: 
+        tca.aai.username: { get_input: aai_username }
+        tca.aai.password: { get_input: aai_password }          
+      host_port:
+          { get_input: host_port }
+      container_port:
+        8100         
+      docker_config:
+        healthcheck:
+          endpoint: /healthcheck
+          interval: 180s
+          timeout: 5s
+          type: http
+      image:
+        get_input: tag_version
+      replicas: { get_input: replicas }
+      name: { get_input: service_name }
+      dns_name: { get_input: service_name }
+      log_info:
+        log_directory: "/var/log/ONAP/dcaegen2/analytics/tca-gen2"
+      tls_info:
+        cert_directory: '/opt/app/dcae-analytics-tca-web/etc/cert/'
+        use_tls: false  
+    

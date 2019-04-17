@@ -1,0 +1,33 @@
+# ============LICENSE_START====================================================
+# =============================================================================
+# Copyright (C) 2019 IBM
+# =============================================================================
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ============LICENSE_END======================================================
+
+tag_version: 'nexus.onap.org:10003/onap/org.onap.dcaegen2.analytics.tca-gen2.dcae-analytics-tca-web:3.0.0-SNAPSHOT'
+service_name: 'dcae-analytics-tca-web'
+replicas: 1
+aaf_username: "username"
+aaf_password: "password"
+client_role: "ves-publisher"
+client_id: "ves-pub-1"
+dmaap_dr_username: "dradmin"
+dmaap_dr_password: "dradmin"
+dcae_location: "location"
+subscriber_id: ""
+dmaap_dr_service_host: "dmaap-dr-node.onap.svc.cluster.local"
+dmaap_dr_service_port: "8443"
+dmaap_mr_service_host: "message-router.onap.svc.cluster.local"
+dmaap_mr_service_port: "3904"
+dmaap_mr_topic_name: "tca-gen2-ves"
