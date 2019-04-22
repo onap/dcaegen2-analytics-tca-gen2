@@ -1,0 +1,142 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "43b13606_1b6a04a3",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/dpo/blueprint/k8s-tca-gen2-web-inputs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-22T20:27:55Z",
+      "side": 1,
+      "message": "Not required for TCA-gen2",
+      "range": {
+        "startLine": 25,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 28
+      },
+      "revId": "550feb963a45499e6589dc76bb807f81cb6d89ae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3d536bb4_a1cd97c5",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/dpo/blueprint/k8s-tca-gen2-web-inputs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-22T20:27:55Z",
+      "side": 1,
+      "message": "not required for TCA-gen2",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 29
+      },
+      "revId": "550feb963a45499e6589dc76bb807f81cb6d89ae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "77b6e73a_ab3785ec",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/dpo/blueprint/k8s-tca-gen2-web.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-22T20:27:55Z",
+      "side": 1,
+      "message": "gen2",
+      "range": {
+        "startLine": 31,
+        "startChar": 32,
+        "endLine": 31,
+        "endChar": 36
+      },
+      "revId": "550feb963a45499e6589dc76bb807f81cb6d89ae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf44bae0_9f30ab37",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/dpo/blueprint/k8s-tca-gen2-web.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-22T20:27:55Z",
+      "side": 1,
+      "message": "not required for TCA-gen2",
+      "range": {
+        "startLine": 52,
+        "startChar": 0,
+        "endLine": 63,
+        "endChar": 23
+      },
+      "revId": "550feb963a45499e6589dc76bb807f81cb6d89ae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "50664d31_9f0d3f1b",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/dpo/blueprint/k8s-tca-gen2-web.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-22T20:27:55Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 75,
+        "endChar": 19
+      },
+      "revId": "550feb963a45499e6589dc76bb807f81cb6d89ae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "094a752b_972ec55f",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/dpo/blueprint/k8s-tca-gen2-web.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2019-04-22T20:27:55Z",
+      "side": 1,
+      "message": "to be removed",
+      "range": {
+        "startLine": 115,
+        "startChar": 0,
+        "endLine": 129,
+        "endChar": 45
+      },
+      "revId": "550feb963a45499e6589dc76bb807f81cb6d89ae",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
