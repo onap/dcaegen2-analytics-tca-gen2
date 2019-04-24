@@ -16,18 +16,8 @@
 # ============LICENSE_END======================================================
 
 tag_version: 'nexus.onap.org:10003/onap/org.onap.dcaegen2.analytics.tca-gen2.dcae-analytics-tca-web:3.0.0-SNAPSHOT'
-service_name: 'dcae-analytics-tca-web'
+service_name: 'dcae-analytics-tca-gen2'
 replicas: 1
-aaf_username: "username"
-aaf_password: "password"
-client_role: "ves-publisher"
-client_id: "ves-pub-1"
-dmaap_dr_username: "dradmin"
-dmaap_dr_password: "dradmin"
-dcae_location: "location"
-subscriber_id: ""
-dmaap_dr_service_host: "dmaap-dr-node.onap.svc.cluster.local"
-dmaap_dr_service_port: "8443"
-dmaap_mr_service_host: "message-router.onap.svc.cluster.local"
-dmaap_mr_service_port: "3904"
-dmaap_mr_topic_name: "tca-gen2-ves"
+tca_handle_in_subscribe_url: "message-router.onap.svc.cluster.local"
+tca_handle_out_publish_url: "message-router.onap.svc.cluster.local"
+log_directory: "/var/log/ONAP/dcaegen2/analytics/tca-gen2"
