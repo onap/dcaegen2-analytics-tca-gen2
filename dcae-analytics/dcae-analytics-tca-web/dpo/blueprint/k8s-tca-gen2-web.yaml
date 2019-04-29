@@ -1,0 +1,113 @@
+# ============LICENSE_START====================================================
+# =============================================================================
+# Copyright (C) 2019 IBM
+# =============================================================================
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+# ============LICENSE_END======================================================
+
+tosca_definitions_version: cloudify_dsl_1_3
+imports:
+- http://www.getcloudify.org/spec/cloudify/3.4/types.yaml
+- https://nexus.onap.org/service/local/repositories/raw/content/org.onap.dcaegen2.platform.plugins/R4/k8splugin/1.4.5/k8splugin_types.yaml
+- https://nexus.onap.org/service/local/repositories/raw/content/org.onap.dcaegen2.platform.plugins/R4/dcaepolicyplugin/2.3.0/dcaepolicyplugin_types.yaml
+inputs:
+  external_port:
+    type: string
+    description: Kubernetes node port on which collector is exposed
+    default: "30235"
+  service_name:
+    type: string
+    default: 'dcae-analytics-tca-gen2'
+  log_directory:
+    type: string
+  replicas:
+    type: integer
+    description: number of instances
+    default: 1
+  spring.mongodb.uri:
+    type: string
+    default: "mongodb://localhost:27017/analytics-tca"
+  tag_version:
+    type: string
+    default: "nexus.onap.org:10001/onap/org.onap.dcaegen2.analytics.tca-gen2.dcae-analytics-tca-web:3.0.0-SNAPSHOT"
+  tca.aai.password:
+    type: string
+    default: "DCAE"
+  tca.aai.url:
+    type: string
+    default: "http://localhost:8443"
+  tca.aai.username:
+    type: string
+    default: "DCAE"
+  tca_handle_in_subscribe_url:
+    type: string
+  tca_handle_out_publish_url:
+    type: string
+node_templates:
+  docker.tca:
+    type: dcae.nodes.ContainerizedPlatformComponent
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        start:
+          inputs:
+            ports: []
+    properties:
+      application_config:
+        service_calls: []
+        stream_publishes:
+          tca_handle_out:
+            dmaap_info:
+              topic_url:
+                get_input: tca_handle_out_publish_url
+            type: message router
+        stream_subcribes:
+          tca_handle_in:
+            dmaap_info:
+              topic_url:
+                get_input: tca_handle_in_subscribe_url
+            type: message router
+        spring.mongodb.uri:
+          get_input: spring.mongodb.uri
+        streams_subscribes.tca_handle_in.consumer_group: cg1
+        streams_subscribes.tca_handle_in.consumer_ids[0]: c0
+        streams_subscribes.tca_handle_in.consumer_ids[1]: c1
+        streams_subscribes.tca_handle_in.message_limit: 50000
+        streams_subscribes.tca_handle_in.polling.auto_adjusting.max: 60000
+        streams_subscribes.tca_handle_in.polling.auto_adjusting.min: 30000
+        streams_subscribes.tca_handle_in.polling.auto_adjusting.step_down: 30000
+        streams_subscribes.tca_handle_in.polling.auto_adjusting.step_up: 10000
+        streams_subscribes.tca_handle_in.polling.fixedRate: 0
+        streams_subscribes.tca_handle_in.timeout: -1
+        tca.aai.generic_vnf_path: aai/v11/network/generic-vnfs/generic-vnf
+        tca.aai.node_query_path: aai/v11/search/nodes-query
+        tca.aai.password:
+          get_input: tca.aai.password
+        tca.aai.url:
+          get_input: tca.aai.url
+        tca.aai.username:
+          get_input: tca.aai.username
+        tca.policy: {"domain":"measurementsForVfScaling","metricsPerEventName":[{"eventName":"Mfvs_eNodeB_RANKPI","controlLoopSchemaType":"VNF","policyScope":"resource=vFirewall;type=configuration","policyName":"configuration.dcae.microservice.tca.xml","policyVersion":"v0.0.1","thresholds":[{"closedLoopControlName":"CL-FRWL-LOW-TRAFFIC-SIG-d925ed73-8231-4d02-9545-db4e101f88f8","closedLoopEventStatus":"ONSET","version":"1.0.2","fieldPath":"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated","thresholdValue":4000,"direction":"LESS_OR_EQUAL","severity":"MAJOR"},{"closedLoopControlName":"CL-FRWL-HIGH-TRAFFIC-SIG-EA36FE84-9342-5E13-A656-EC5F21309A09","closedLoopEventStatus":"ONSET","version":"1.0.2","fieldPath":"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated","thresholdValue":20000,"direction":"GREATER_OR_EQUAL","severity":"CRITICAL"},{"closedLoopControlName":"CL-FRWL-HIGH-TRAFFIC-SIG-EA36FE84-9342-5E13-A656-EC5F21309A09","closedLoopEventStatus":"ABATED","version":"1.0.2","fieldPath":"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated","thresholdValue":0,"direction":"EQUAL","severity":"CRITICAL"}]},{"eventName":"vLoadBalancer","controlLoopSchemaType":"VNF","policyScope":"resource=vLoadBalancer;type=configuration","policyName":"configuration.dcae.microservice.tca.xml","policyVersion":"v0.0.1","thresholds":[{"closedLoopControlName":"CL-LBAL-LOW-TRAFFIC-SIG-FB480F95-A453-6F24-B767-FD703241AB1A","closedLoopEventStatus":"ONSET","version":"1.0.2","fieldPath":"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated","thresholdValue":500,"direction":"LESS_OR_EQUAL","severity":"MAJOR"},{"closedLoopControlName":"CL-LBAL-LOW-TRAFFIC-SIG-0C5920A6-B564-8035-C878-0E814352BC2B","closedLoopEventStatus":"ONSET","version":"1.0.2","fieldPath":"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated","thresholdValue":5000,"direction":"GREATER_OR_EQUAL","severity":"CRITICAL"}]},{"eventName":"virtualVMEventName","controlLoopSchemaType":"VM","policyScope":"resource=virtualVM;type=configuration","policyName":"configuration.dcae.microservice.tca.xml","policyVersion":"v0.0.1","thresholds":[{"closedLoopControlName":"CL-LBAL-LOW-TRAFFIC-SIG-FB480F95-A453-6F24-B767-FD703241AB1A","closedLoopEventStatus":"ONSET","version":"1.0.2","fieldPath":"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated","thresholdValue":500,"direction":"LESS_OR_EQUAL","severity":"MAJOR"}]}]}
+        tca.processing_batch_size: 10000
+      docker_config:
+        interval: 30s
+        timeout: 10s
+        type: http
+        endpoint: actuator/health
+      image:
+        get_input: tag_version
+      log_info:
+        get_input: log_directory
+      dns_name: { get_input: service_name }
+      replicas:
+        get_input: replicas
+      name: { get_input: service_name }
