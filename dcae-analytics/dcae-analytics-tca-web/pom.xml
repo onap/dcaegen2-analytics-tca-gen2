@@ -3,6 +3,8 @@
   ~ ================================================================================
   ~ Copyright (c) 2018-2019 AT&T Intellectual Property. All rights reserved.
   ~ ================================================================================
+  ~ Modifications Copyright (C) 2019 IBM
+  ~ ================================================================================
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
   ~ You may obtain a copy of the License at
@@ -39,6 +41,7 @@
 
     <properties>
         <main.basedir>${project.parent.basedir}</main.basedir>
+        <docker.image.name>onap/${project.groupId}.${project.artifactId}</docker.image.name>
     </properties>
 
     <dependencies>
@@ -138,25 +141,36 @@
             </plugin>
             <!-- DOCKER PLUGIN -->
             <plugin>
-                <groupId>com.spotify</groupId>
-                <artifactId>docker-maven-plugin</artifactId>
-                <configuration>
-                        <skipDocker>false</skipDocker>
-                        <imageName>${docker.repository}/onap/${project.groupId}.${project.artifactId}</imageName>
-                        <dockerDirectory>${project.basedir}</dockerDirectory>
-                        <resources>
-                               <resource>
-                                     <targetPath>${project.basedir}</targetPath>
-                                     <directory>${project.build.directory}</directory>
-                                     <include>${project.build.finalName}.jar</include>
-                              </resource>
-                        </resources>
-                        <imageTags>
-                                     <imageTag>${project.version}</imageTag>
-                                     <imageTag>latest</imageTag>
-                        </imageTags>
-                </configuration>
-            </plugin>
+              <groupId>com.spotify</groupId>
+              <artifactId>dockerfile-maven-plugin</artifactId>
+              <version>1.4.3</version>
+              <configuration>
+                <contextDirectory>${project.basedir}</contextDirectory>
+                <repository>${docker.repository}/${docker.image.name}</repository>
+                <imageTags>
+                  <tag>${project.version}</tag>
+                  <tag>latest</tag>
+                  <tag>${project.version}-${maven.build.timestamp}Z</tag>
+                </imageTags>
+                <buildArgs>
+                  <PROJECT_BUILD_DIR_NAME>target</PROJECT_BUILD_DIR_NAME>
+                  <DEPENDENCIES_DIR>${dependency.dir.name}</DEPENDENCIES_DIR>
+                  <DOCKER_ARTIFACT_DIR>/opt</DOCKER_ARTIFACT_DIR>
+                  <FINAL_JAR>${project.build.finalName}.jar</FINAL_JAR>
+                </buildArgs>
+              </configuration>
+              <executions>
+                <execution>
+                  <id>default</id>
+                  <phase>install</phase>
+                  <goals>
+                    <goal>build</goal>
+                    <goal>push</goal>
+                  </goals>
+                </execution>
+              </executions>
+
+           </plugin>
         </plugins>
     </build>
 </project>
