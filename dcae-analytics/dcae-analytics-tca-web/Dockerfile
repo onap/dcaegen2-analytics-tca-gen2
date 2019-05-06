@@ -7,13 +7,21 @@ FROM openjdk:8-jre-alpine
 
 MAINTAINER Rajiv Singla <rs153v@att.com>
 
-VOLUME /tmp
-ADD logback.xml logback.xml
+ARG PROJECT_BUILD_DIR_NAME
+ARG FINAL_JAR
+ARG DEPENDENCIES_DIR
+ARG DOCKER_ARTIFACT_DIR
+
+#Add a new user and group to allow container to be run as non-root
+RUN addgroup -S tca-gen2 && adduser -S -G tca-gen2 tca-gen2
+
+#Copy dependencies and executable jar
+WORKDIR ${DOCKER_ARTIFACT_DIR}
+COPY ${PROJECT_BUILD_DIR_NAME}/${FINAL_JAR} .
+#Overcome Docker limitation to put ARG inside ENTRYPOINT
+RUN ln -s ${FINAL_JAR} tca-gen2.jar
+
 EXPOSE 9091
 
-ENTRYPOINT ["java", \
-            "-Djava.security.egd=file:/dev/./urandom", \
-            "-Dlogging.config=logback.xml", \
-            "-Dlogging.file=logs/${project.artifactId}.log", \
-            "-Dspring.profiles.active=dev", \
-            "-jar", "${project.build.finalName}.jar"]
+USER tca-gen2:tca-gen2
+ENTRYPOINT ["java", "-jar", "tca-gen2.jar"]
