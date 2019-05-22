@@ -48,7 +48,7 @@ public abstract class ConfigBindingServiceConstants {
     public static final String CONFIG_BINDING_SERVICE_PROPERTIES_KEY = "config-binding-service";
 
 
-    public static final Set<String> SPRING_RESERVED_PROPERTIES_KEY_PREFIXES =
+    protected static final Set<String> SPRING_RESERVED_PROPERTIES_KEY_PREFIXES =
             Stream.of("spring", "endpoints", "server", "logging", "management").collect(Collectors.toSet());
     public static final String CONFIG_SERVICE_MESSAGE_ROUTER_VALUE = "message_router";
     // CONVERT JSON TO MAP

@@ -30,7 +30,7 @@ public abstract class DmaapMrConstants {
 
     // ================== DMaaP MR CONSTANTS ============================== //
 
-    public static final Set<String> DMAAP_MAPPED_HEADERS = Stream.of(
+    protected static final Set<String> DMAAP_MAPPED_HEADERS = Stream.of(
             AnalyticsHttpConstants.REQUEST_ID_HEADER_KEY,
             AnalyticsHttpConstants.REQUEST_TRANSACTION_ID_HEADER_KEY,
             AnalyticsHttpConstants.REQUEST_BEGIN_TS_HEADER_KEY,
