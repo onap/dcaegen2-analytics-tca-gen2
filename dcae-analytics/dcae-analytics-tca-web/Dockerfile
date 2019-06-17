@@ -24,4 +24,4 @@ RUN ln -s ${FINAL_JAR} tca-gen2.jar
 EXPOSE 8100
 
 USER tca-gen2:tca-gen2
-ENTRYPOINT ["java", "-jar", "tca-gen2.jar"]
+ENTRYPOINT ["java", "-Dspring.profiles.active=dmaap", "-jar", "tca-gen2.jar"]
