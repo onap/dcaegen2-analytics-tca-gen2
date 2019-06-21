@@ -11,9 +11,11 @@ ARG PROJECT_BUILD_DIR_NAME
 ARG FINAL_JAR
 ARG DEPENDENCIES_DIR
 ARG DOCKER_ARTIFACT_DIR
+ARG USER_GROUP=tca-gen2-group
+ARG NON_ROOT_USER=tca-gen2
 
 #Add a new user and group to allow container to be run as non-root
-RUN addgroup -S tca-gen2 && adduser -S -G tca-gen2 tca-gen2
+RUN addgroup -S ${USER_GROUP} && adduser -S ${NON_ROOT_USER} -G ${USER_GROUP}
 
 #Copy dependencies and executable jar
 WORKDIR ${DOCKER_ARTIFACT_DIR}
@@ -23,5 +25,5 @@ RUN ln -s ${FINAL_JAR} tca-gen2.jar
 
 EXPOSE 8100
 
-USER tca-gen2:tca-gen2
+USER ${NON_ROOT_USER}:${USER_GROUP}
 ENTRYPOINT ["java", "-jar", "tca-gen2.jar"]
