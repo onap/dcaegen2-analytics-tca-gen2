@@ -64,19 +64,19 @@ node_templates:
     properties:
       application_config:
         service_calls: []
-        stream_publishes:
+        streams_publishes:
           tca_handle_out:
             dmaap_info:
               topic_url:
                 get_input: tca_handle_out_publish_url
-            type: message router
-        stream_subcribes:
+            type: message_router
+        streams_subscribes:
           tca_handle_in:
             dmaap_info:
               topic_url:
                 get_input: tca_handle_in_subscribe_url
-            type: message router
-        spring.mongodb.uri:
+            type: message_router
+        mongodb:
           get_input: spring.mongodb.uri
         streams_subscribes.tca_handle_in.consumer_group: cg1
         streams_subscribes.tca_handle_in.consumer_ids[0]: c0
@@ -86,7 +86,7 @@ node_templates:
         streams_subscribes.tca_handle_in.polling.auto_adjusting.min: 30000
         streams_subscribes.tca_handle_in.polling.auto_adjusting.step_down: 30000
         streams_subscribes.tca_handle_in.polling.auto_adjusting.step_up: 10000
-        streams_subscribes.tca_handle_in.polling.fixedRate: 0
+        streams_subscribes.tca_handle_in.polling.fixed_rate: 0
         streams_subscribes.tca_handle_in.timeout: -1
         tca.aai.generic_vnf_path: aai/v11/network/generic-vnfs/generic-vnf
         tca.aai.node_query_path: aai/v11/search/nodes-query
