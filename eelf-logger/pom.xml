@@ -26,15 +26,15 @@
 	<parent>
 		<groupId>org.onap.dcaegen2.analytics.tca-gen2</groupId>
 		<artifactId>tca-gen2-parent</artifactId>
-		<version>3.0.0-SNAPSHOT</version>
+		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 
     <artifactId>eelf-logger</artifactId>
-    <version>3.0.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
 
     <name>EELF Logger Parent</name>
     <packaging>pom</packaging>
-    
+
     <modules>
         <module>eelf-logger-api</module>
         <module>eelf-logger-model</module>
