@@ -216,22 +216,21 @@ abstract class BaseAnalyticsTest {
         final Class<?> objectClass = object.getClass();
         try {
             final Field privateField = objectClass.getDeclaredField(fieldName);
-            try {
 
-                // mark private field to be accessible for testing purposes
-                AccessController.doPrivileged((PrivilegedAction) () -> {
-                    privateField.setAccessible(true);
-                    return null;
-                });
+            // mark private field to be accessible for testing purposes
+            AccessController.doPrivileged((PrivilegedAction) () -> {
+                privateField.setAccessible(true);
+                return null;
+            });
 
-                return privateFieldClass.cast(privateField.get(object));
+            return privateFieldClass.cast(privateField.get(object));
 
-            } catch (IllegalAccessException e) {
-                logger.error("Unable to access field: {}", fieldName);
-                throw new IllegalStateException(e);
-            }
+        } catch (IllegalAccessException e) {
+            logger.error("Unable to access field: {}", fieldName);
+            throw new IllegalStateException(e);
         } catch (NoSuchFieldException e) {
-            logger.error("Unable to locate field name: {} in class: {}", fieldName, objectClass.getSimpleName());
+            logger.error("Unable to locate field name: {} in class: {}", fieldName,
+                    objectClass.getSimpleName());
             throw new IllegalStateException(e);
         }
 
@@ -272,22 +271,14 @@ abstract class BaseAnalyticsTest {
      */
     public static <T> T deserializeJsonFileToModel(final String jsonFileLocation, final Class<T> modelClass,
                                                    final ObjectMapper objectMapper) {
-        final InputStream jsonFileInputStream =
-                BaseAnalyticsTest.class.getClassLoader().getResourceAsStream(jsonFileLocation);
-        assertThat(jsonFileInputStream).as("Input JSON File location must be valid").isNotNull();
-        try {
+        try( final InputStream jsonFileInputStream =
+                BaseAnalyticsTest.class.getClassLoader().getResourceAsStream(jsonFileLocation)) {
+            assertThat(jsonFileInputStream).as("Input JSON File location must be valid").isNotNull();
             return objectMapper.readValue(jsonFileInputStream, modelClass);
         } catch (IOException ex) {
             logger.error("Error while doing assert Json for fileLocation: {}, modelClass: {}, Exception {}",
                     jsonFileLocation, modelClass, ex);
             throw new RuntimeException(ex);
-        } finally {
-            try {
-                jsonFileInputStream.close();
-            } catch (IOException e) {
-                logger.error("Error while closing input stream at file location: {}", jsonFileLocation);
-                throw new RuntimeException(e);
-            }
         }
     }
 
@@ -417,6 +408,7 @@ abstract class BaseAnalyticsTest {
             Map<String, String> cienv = (Map<String, String>) theCaseInsensitiveEnvironmentField.get(null);
             cienv.putAll(testEnvironmentVariables);
         } catch (NoSuchFieldException e) {
+            logger.error("NoSuchFieldException in setEnvironmentVariables", e);
             Class[] classes = Collections.class.getDeclaredClasses();
             Map<String, String> env = System.getenv();
             for (Class cl : classes) {
