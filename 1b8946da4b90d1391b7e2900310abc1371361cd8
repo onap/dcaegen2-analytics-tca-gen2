@@ -1,0 +1,7 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+2: Jack Lucas <jflucas@research.att.com>
+Submitted-by: Jack Lucas <jflucas@research.att.com>
+Submitted-at: Wed, 17 Jul 2019 21:08:53 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/dcaegen2/analytics/tca-gen2/+/91629
+Project: dcaegen2/analytics/tca-gen2
+Branch: refs/heads/master
