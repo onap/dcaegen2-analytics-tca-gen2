@@ -38,7 +38,7 @@ public abstract class ConfigBindingServiceConstants {
     public static final String CONFIG_BINDING_SERVICE_ENV_VARIABLE_KEY = "CONFIG_BINDING_SERVICE";
     public static final String CONFIG_BINDING_SERVICE_ENV_VARIABLE_VALUE =
             System.getenv(CONFIG_BINDING_SERVICE_ENV_VARIABLE_KEY);
-    public static final String SERVICE_NAME_ENV_VARIABLE_KEY = "SERVICE_NAME";
+    public static final String SERVICE_NAME_ENV_VARIABLE_KEY = "HOSTNAME";
     public static final String SERVICE_NAME_ENV_VARIABLE_VALUE = System.getenv(SERVICE_NAME_ENV_VARIABLE_KEY);
     public static final String CONSUL_QUERY_URL_STRING = String.format("http://%s:8500/v1/catalog/service/%s",
             CONSUL_HOST_ENV_VARIABLE_VALUE, CONFIG_BINDING_SERVICE_ENV_VARIABLE_VALUE);
