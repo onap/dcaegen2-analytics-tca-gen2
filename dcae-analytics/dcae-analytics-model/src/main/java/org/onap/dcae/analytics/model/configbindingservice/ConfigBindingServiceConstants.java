@@ -34,6 +34,7 @@ public abstract class ConfigBindingServiceConstants {
 
     // ================== CONFIG SERVICE CONSTANTS ============================== //
     public static final String CONSUL_HOST_ENV_VARIABLE_KEY = "CONSUL_HOST";
+    public static final Integer  CONSUL_PORT_ENV_VARIABLE_VALUE = 8500;
     public static final String CONSUL_HOST_ENV_VARIABLE_VALUE = System.getenv(CONSUL_HOST_ENV_VARIABLE_KEY);
     public static final String CONFIG_BINDING_SERVICE_ENV_VARIABLE_KEY = "CONFIG_BINDING_SERVICE";
     public static final String CONFIG_BINDING_SERVICE_ENV_VARIABLE_VALUE =
@@ -53,6 +54,7 @@ public abstract class ConfigBindingServiceConstants {
     public static final String CONFIG_SERVICE_MESSAGE_ROUTER_VALUE = "message_router";
     // CONVERT JSON TO MAP
     public static final String KEY_SEPARATOR = ".";
+    public static final String CONFIG = "config";
 
     // ============== CONFIG BINDING SERVICE UTILS ========================= //
     /**
