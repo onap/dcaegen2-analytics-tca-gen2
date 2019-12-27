@@ -34,6 +34,7 @@ public abstract class ConfigBindingServiceConstants {
 
     // ================== CONFIG SERVICE CONSTANTS ============================== //
     public static final String CONSUL_HOST_ENV_VARIABLE_KEY = "CONSUL_HOST";
+    public static final Integer DEFAULT_CONSUL_PORT_ENV_VARIABLE_VALUE = 8500;
     public static final String CONSUL_HOST_ENV_VARIABLE_VALUE = System.getenv(CONSUL_HOST_ENV_VARIABLE_KEY);
     public static final String CONFIG_BINDING_SERVICE_ENV_VARIABLE_KEY = "CONFIG_BINDING_SERVICE";
     public static final String CONFIG_BINDING_SERVICE_ENV_VARIABLE_VALUE =
@@ -47,12 +48,13 @@ public abstract class ConfigBindingServiceConstants {
 
     public static final String CONFIG_BINDING_SERVICE_PROPERTIES_KEY = "config-binding-service";
 
-
     public static final Set<String> SPRING_RESERVED_PROPERTIES_KEY_PREFIXES =
             Stream.of("spring", "endpoints", "server", "logging", "management").collect(Collectors.toSet());
     public static final String CONFIG_SERVICE_MESSAGE_ROUTER_VALUE = "message_router";
     // CONVERT JSON TO MAP
     public static final String KEY_SEPARATOR = ".";
+    public static final String CONFIG = "config";
+    public static final int CONFIG_SERVICE_REFRESHPERIOD = 1;
 
     // ============== CONFIG BINDING SERVICE UTILS ========================= //
     /**
