@@ -38,9 +38,11 @@
     <name>DCAE Analytics Model</name>
     <description>Contains models (e.g. Common Event Format) which are common to DCAE Analytics</description>
 
-    <properties>
-        <main.basedir>${project.parent.basedir}</main.basedir>
-    </properties>
+	<properties>
+		<main.basedir>${project.parent.basedir}</main.basedir>
+		<sdk.version>1.1.6</sdk.version>
+		<immutable.version>2.7.1</immutable.version>
+	</properties>
 
     <dependencies>
 
@@ -75,6 +77,48 @@
             <artifactId>dcae-analytics-test</artifactId>
         </dependency>
 
-    </dependencies>
+	<dependency>
+		<groupId>org.onap.dcaegen2.services.sdk.rest.services</groupId>
+		<artifactId>cbs-client</artifactId>
+		<version>${sdk.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.onap.dcaegen2.services.sdk.rest.services</groupId>
+		<artifactId>dmaap-client</artifactId>
+		<version>${sdk.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.onap.dcaegen2.services.sdk.rest.services</groupId>
+		<artifactId>common-dependency</artifactId>
+		<version>${sdk.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-beans</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webflux</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-autoconfigure</artifactId>
+	</dependency>
+	<dependency>
+		<groupId>javax.validation</groupId>
+		<artifactId>validation-api</artifactId>
+	</dependency>
+        <dependency>
+                <groupId>org.immutables</groupId>
+                <artifactId>value</artifactId>
+                <version>${immutable.version}</version>
+                <scope>provided</scope>
+        </dependency>
+
+	</dependencies>
 
 </project>
