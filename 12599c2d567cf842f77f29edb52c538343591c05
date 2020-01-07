@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "53289a79_f8a086b0",
+        "filename": "dcae-analytics/dcae-analytics-web/src/main/java/org/onap/dcae/analytics/web/spring/ConfigBindingServiceEnvironmentPostProcessor.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-01-07T16:32:16Z",
+      "side": 1,
+      "message": "could be parameterized or driven through separate config/property",
+      "range": {
+        "startLine": 168,
+        "startChar": 57,
+        "endLine": 168,
+        "endChar": 58
+      },
+      "revId": "12599c2d567cf842f77f29edb52c538343591c05",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
