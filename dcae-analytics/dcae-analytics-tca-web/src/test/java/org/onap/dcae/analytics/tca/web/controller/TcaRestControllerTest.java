@@ -56,7 +56,8 @@ public class TcaRestControllerTest {
     List<String> cefMessages = Arrays.asList("Test1", "Test2");
     TcaPolicy tcaPolicy = Mockito.mock(TcaPolicy.class);
     List<TcaExecutionContext> executionContexts = Arrays.asList(tcaExecutionContext, tcaExecutionContext);
-    Mockito.when(tcaProcessingService.getTcaExecutionResults("requestId", "transactioId", tcaPolicy, cefMessages)).thenReturn(executionContexts);
+    Mockito.when(tcaProcessingService.getTcaExecutionResults("requestId", "transactioId", tcaPolicy, cefMessages))
+	       .thenReturn(executionContexts);
     TcaRestController restcontroller = new TcaRestController(tcaProcessingService, tcaPolicyWrapper);
     restcontroller.execute(tcaExecutionRequest);
   }

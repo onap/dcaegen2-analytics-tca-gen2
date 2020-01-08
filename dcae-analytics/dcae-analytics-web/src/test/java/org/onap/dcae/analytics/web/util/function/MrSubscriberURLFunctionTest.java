@@ -34,9 +34,13 @@ public class MrSubscriberURLFunctionTest {
     URL proxyURL = new URL("http://localhost");
     MrSubscriberPollingPreferences pollingPreferences = Mockito.mock(MrSubscriberPollingPreferences.class);
     HttpHeaders headers = Mockito.mock(HttpHeaders.class);
-    MrSubscriberPreferences subscriberPreferences = new MrSubscriberPreferences("http://localhost:8080",
-                                                                                "TestClientId", headers, "TestUserName", "TestPassword", proxyURL, true, false, "TestGroup",
-                                                                                Arrays.asList("TestId1", "TestId2"), new Integer(4), new Integer(3), pollingPreferences);
+    MrSubscriberPreferences subscriberPreferences =
+            	new MrSubscriberPreferences("http://localhost:8080",
+                                            "TestClientId", headers,
+											"TestUserName", "TestPassword",
+											proxyURL, true, false, "TestGroup",
+                                            Arrays.asList("TestId1", "TestId2"),
+											new Integer(4), new Integer(3), pollingPreferences);
     final List<URL> urls = new MrSubscriberURLFunction().apply(subscriberPreferences);
   }
 
