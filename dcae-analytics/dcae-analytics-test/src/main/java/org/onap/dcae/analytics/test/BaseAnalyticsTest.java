@@ -271,7 +271,7 @@ abstract class BaseAnalyticsTest {
      */
     public static <T> T deserializeJsonFileToModel(final String jsonFileLocation, final Class<T> modelClass,
                                                    final ObjectMapper objectMapper) {
-        try( final InputStream jsonFileInputStream =
+        try (final InputStream jsonFileInputStream =
                 BaseAnalyticsTest.class.getClassLoader().getResourceAsStream(jsonFileLocation)) {
             assertThat(jsonFileInputStream).as("Input JSON File location must be valid").isNotNull();
             return objectMapper.readValue(jsonFileInputStream, modelClass);
