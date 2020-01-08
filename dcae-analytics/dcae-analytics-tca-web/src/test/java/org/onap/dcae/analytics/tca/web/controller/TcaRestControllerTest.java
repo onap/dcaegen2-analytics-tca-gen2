@@ -33,7 +33,7 @@ import org.onap.dcae.analytics.tca.web.domain.TcaPolicyWrapper;
 import org.onap.dcae.analytics.tca.web.service.TcaProcessingService;
 
 public class TcaRestControllerTest {
-  
+
   @Test
   void getTcaPolicyResponseTest() throws Exception {
   TcaPolicyWrapper tcaPolicyWrapper = Mockito.mock(TcaPolicyWrapper.class);
@@ -46,7 +46,7 @@ public class TcaRestControllerTest {
     restcontroller.getTcaPolicy();
     restcontroller.setTcaPolicy(tcaPolicy);
   }
-  
+
   @Test
   void getTcaExecutionResponseTest() throws Exception {
     TcaPolicyWrapper tcaPolicyWrapper = Mockito.mock(TcaPolicyWrapper.class);
@@ -56,7 +56,8 @@ public class TcaRestControllerTest {
     List<String> cefMessages = Arrays.asList("Test1", "Test2");
     TcaPolicy tcaPolicy = Mockito.mock(TcaPolicy.class);
     List<TcaExecutionContext> executionContexts = Arrays.asList(tcaExecutionContext, tcaExecutionContext);
-    Mockito.when(tcaProcessingService.getTcaExecutionResults("requestId", "transactioId", tcaPolicy, cefMessages)).thenReturn(executionContexts);
+    Mockito.when(tcaProcessingService.getTcaExecutionResults("requestId", "transactioId", tcaPolicy, cefMessages))
+           .thenReturn(executionContexts);
     TcaRestController restcontroller = new TcaRestController(tcaProcessingService, tcaPolicyWrapper);
     restcontroller.execute(tcaExecutionRequest);
   }
