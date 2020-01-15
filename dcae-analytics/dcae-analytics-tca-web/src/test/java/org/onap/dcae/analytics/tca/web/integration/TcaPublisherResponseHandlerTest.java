@@ -29,41 +29,41 @@ import org.onap.dcae.analytics.tca.web.TcaAppProperties.Tca;
 
 public class TcaPublisherResponseHandlerTest {
 
-	static Map<String, Object> headers;
+    static Map<String, Object> headers;
 
-	@BeforeAll
-	static void initialize() {
-		headers = new HashMap<>();
-		headers.put("X-ECOMP-RequestID", "TestRequestID");
-		headers.put("X-ECOMP-TransactionID", "TestTransactionID");
-		headers.put("X-ECOMP-FromAppID", "TestFromAppID");
+    @BeforeAll
+    static void initialize() {
+        headers = new HashMap<>();
+        headers.put("X-ECOMP-RequestID", "TestRequestID");
+        headers.put("X-ECOMP-TransactionID", "TestTransactionID");
+        headers.put("X-ECOMP-FromAppID", "TestFromAppID");
 
-	}
+    }
 
-	@Test
-	void getHandleLoggingEnabledTest() throws Exception {
+    @Test
+    void getHandleLoggingEnabledTest() throws Exception {
 
-		TcaAppProperties tcaAppProperties = Mockito.mock(TcaAppProperties.class);
-		Tca tca = Mockito.mock(Tca.class);
-		Mockito.when(tcaAppProperties.getTca()).thenReturn(tca);
-		Mockito.when(tcaAppProperties.getTca().getEnableEcompLogging()).thenReturn(true);
+        TcaAppProperties tcaAppProperties = Mockito.mock(TcaAppProperties.class);
+        Tca tca = Mockito.mock(Tca.class);
+        Mockito.when(tcaAppProperties.getTca()).thenReturn(tca);
+        Mockito.when(tcaAppProperties.getTca().getEnableEcompLogging()).thenReturn(true);
 
-		TcaPublisherResponseHandler responseHandler = new TcaPublisherResponseHandler(tcaAppProperties);
-		responseHandler.handle("testpayload", headers);
+        TcaPublisherResponseHandler responseHandler = new TcaPublisherResponseHandler(tcaAppProperties);
+        responseHandler.handle("testpayload", headers);
 
-	}
+    }
 
-	@Test
-	void getHandleLoggingNotEnabledTest() throws Exception {
+    @Test
+    void getHandleLoggingNotEnabledTest() throws Exception {
 
-		TcaAppProperties tcaAppProperties = Mockito.mock(TcaAppProperties.class);
-		Tca tca = Mockito.mock(Tca.class);
-		Mockito.when(tcaAppProperties.getTca()).thenReturn(tca);
-		Mockito.when(tcaAppProperties.getTca().getEnableEcompLogging()).thenReturn(false);
+        TcaAppProperties tcaAppProperties = Mockito.mock(TcaAppProperties.class);
+        Tca tca = Mockito.mock(Tca.class);
+        Mockito.when(tcaAppProperties.getTca()).thenReturn(tca);
+        Mockito.when(tcaAppProperties.getTca().getEnableEcompLogging()).thenReturn(false);
 
-		TcaPublisherResponseHandler responseHandler = new TcaPublisherResponseHandler(tcaAppProperties);
-		responseHandler.handle("testpayload", headers);
+        TcaPublisherResponseHandler responseHandler = new TcaPublisherResponseHandler(tcaAppProperties);
+        responseHandler.handle("testpayload", headers);
 
-	}
+    }
 
 }
