@@ -31,7 +31,6 @@ import org.onap.dcae.analytics.model.AnalyticsProfile;
 import org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceConstants;
 import org.onap.dcae.analytics.model.util.function.JsonStringToMapFunction;
 import org.onap.dcae.analytics.web.config.SystemConfig;
-import org.onap.dcae.analytics.web.exception.AnalyticsValidationException;
 import org.onap.dcae.analytics.web.exception.EnvironmentLoaderException;
 import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.api.CbsClient;
 import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.api.CbsClientFactory;
@@ -241,12 +240,6 @@ public class ConfigBindingServiceEnvironmentPostProcessor implements Environment
         JsonElement jsonConfig = jsonObject.get(ConfigBindingServiceConstants.CONFIG);
 
         Optional<String> configServiceJsonOptional = Optional.of(jsonConfig.toString());
-        if (!configServiceJsonOptional.isPresent()) {
-            final String errorMessage =
-                    "Unable to get fetch application configuration from config binding service";
-            throw new AnalyticsValidationException(errorMessage,
-                    new IllegalStateException(errorMessage));
-        }
 
         // convert fetch config binding service json string to Map of property key and
         // values
