@@ -241,12 +241,6 @@ public class ConfigBindingServiceEnvironmentPostProcessor implements Environment
         JsonElement jsonConfig = jsonObject.get(ConfigBindingServiceConstants.CONFIG);
 
         Optional<String> configServiceJsonOptional = Optional.of(jsonConfig.toString());
-        if (!configServiceJsonOptional.isPresent()) {
-            final String errorMessage =
-                    "Unable to get fetch application configuration from config binding service";
-            throw new AnalyticsValidationException(errorMessage,
-                    new IllegalStateException(errorMessage));
-        }
 
         // convert fetch config binding service json string to Map of property key and
         // values
