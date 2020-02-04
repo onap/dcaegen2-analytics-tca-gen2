@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ ================================================================================
-  ~ Copyright (c) 2018-2019 AT&T Intellectual Property. All rights reserved.
+  ~ Copyright (c) 2018-2020 AT&T Intellectual Property. All rights reserved.
   ~ ================================================================================
   ~ Modifications Copyright (C) 2019 IBM
   ~ ================================================================================
@@ -160,11 +160,6 @@
 	             <configuration>
 		          <contextDirectory>${project.basedir}</contextDirectory>
 		          <repository>${docker.repository}/${docker.image.name}</repository>
-		          <imageTags>
-			         <tag>${project.version}</tag>
-			         <tag>latest</tag>
-			         <tag>${project.version}-${maven.build.timestamp}Z</tag>
-		          </imageTags>
 		          <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
 		       <buildArgs>
 			     <PROJECT_BUILD_DIR_NAME>target</PROJECT_BUILD_DIR_NAME>
@@ -174,16 +169,36 @@
 		       </buildArgs>
 	         </configuration>
 	         <executions>
-		        <execution>
-			       <id>default</id>
+			<execution>
+				<id>build-image</id>
+				<phase>install</phase>
+				<goals>
+					<goal>build</goal>
+				</goals>
+			</execution>
+			<execution>
+			       <id>tag-version</id>
 			       <phase>install</phase>
 			       <goals>
-				      <goal>build</goal>
+				      <goal>tag</goal>
 				      <goal>push</goal>
 			       </goals>
-		       </execution>
+            			<configuration>
+              				<tag>${project.version}</tag>
+            			</configuration>
+          		</execution>
+                        <execution>
+                               <id>tag-version-ts</id>
+                               <phase>install</phase>
+                               <goals>
+                                      <goal>tag</goal>
+                                      <goal>push</goal>
+                               </goals>
+                                <configuration>
+              				<tag>${project.version}-${maven.build.timestamp}Z</tag>
+                                </configuration>
+                        </execution>
 	        </executions>
-
            </plugin>
         </plugins>
     </build>
