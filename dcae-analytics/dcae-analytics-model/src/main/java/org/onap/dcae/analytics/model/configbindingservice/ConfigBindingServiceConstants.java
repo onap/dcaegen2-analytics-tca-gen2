@@ -56,6 +56,33 @@ public abstract class ConfigBindingServiceConstants {
     public static final String CONFIG = "config";
     public static final int CONFIG_SERVICE_REFRESHPERIOD = 1;
 
+    public static final String POLICY = "tca.policy";
+    public static final String PROCESSINGBATCHSIZE = "tca.processing_batch_size";
+    public static final String ENABLEABATEMENT = "tca.enable_abatement";
+    public static final String EnableEcompLogging = "tca.enable_ecomp_logging";
+    public static final String EnableEnrichment = "tca.aai.enable_enrichment";
+    public static final String AAIURL = "tca.aai.url";
+    public static final String AAIUSERNAME = "tca.aai.username";
+    public static final String AAIPASSWORD = "tca.aai.password";
+    public static final String AAIGENERICVNFPATH = "tca.aai.generic_vnf_path";
+    public static final String AAINODEQUERYPATH = "tca.aai.node_query_path";
+    public static final String PUBTOPICURL = "streams_publishes.tca_handle_out.dmaap_info";
+    public static final String PUBTYPE = "streams_publishes.tca_handle_out.type";
+    public static final String PUBKEY = "tca_handle_out";
+    public static final String SUBAUTOADJUSTINGSTEPUP = "streams_subscribes.tca_handle_in.polling.auto_adjusting.step_up";
+    public static final String SUBAUTOADJUSTINGSTEPDOWN = "streams_subscribes.tca_handle_in.polling.auto_adjusting.step_down";
+    public static final String SUBAUTOADJUSTINGMAX = "streams_subscribes.tca_handle_in.polling.auto_adjusting.max";
+    public static final String SUBAUTOADJUSTINGMIN = "streams_subscribes.tca_handle_in.polling.auto_adjusting.min";
+    public static final String SUBTOPICURL = "streams_publishes.tca_handle_out.dmaap_info.topic_url";
+    public static final String SUBFIXEDRATE = "streams_subscribes.tca_handle_in.polling.fixed_rate";
+    public static final String SUBTYPE = "streams_publishes.tca_handle_in.type";
+    public static final String SUBCONSUMERGROUP = "streams_subscribes.tca_handle_in.consumer_group";
+    public static final String SUBMESSAGELIMIT = "streams_subscribes.tca_handle_in.message_limit";
+    public static final String SUBTIMEOUT = "streams_subscribes.tca_handle_in.timeout";
+    public static final String SUBCONSUMERIDS0 = "streams_subscribes.tca_handle_in.consumer_ids[0]";
+    public static final String SUBCONSUMERIDS1 = "streams_subscribes.tca_handle_in.consumer_ids[1]";
+    public static final String SUBKEY = "tca_handle_in";
+    
     // ============== CONFIG BINDING SERVICE UTILS ========================= //
     /**
      * Predicate which can be used to filter message router publisher or subscriber details
