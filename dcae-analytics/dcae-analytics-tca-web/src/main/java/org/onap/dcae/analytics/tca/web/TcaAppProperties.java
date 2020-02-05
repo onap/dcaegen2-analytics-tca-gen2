@@ -1,6 +1,6 @@
 /*
  * ================================================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2019-2020 China Mobile. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,55 +19,47 @@
 
 package org.onap.dcae.analytics.tca.web;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import org.onap.dcae.analytics.model.TcaModelConstants;
 import org.onap.dcae.analytics.model.configbindingservice.BaseConfigBindingServiceProperties;
 import org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceConstants;
-import org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceModel;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.validation.annotation.Validated;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
+import org.springframework.stereotype.Component;
+
+import lombok.Data;
+import lombok.ToString;
 
 /**
- * @author Rajiv Singla
+ * @author Kai Lu
  */
-@Data
-@EqualsAndHashCode(callSuper = true)
-@ConfigurationProperties(ConfigBindingServiceConstants.CONFIG_BINDING_SERVICE_PROPERTIES_KEY)
-@Validated
+@Component
 public class TcaAppProperties extends BaseConfigBindingServiceProperties {
 
-    private static final long serialVersionUID = 1L;
-
-    private Tca tca;
+    @Autowired
+    private Environment env;
 
     /**
      * TCA Application properties
      */
     @Data
-    public static class Tca implements ConfigBindingServiceModel {
-
-        private static final long serialVersionUID = 1L;
-
+    public static class Tca {
         private String policy;
         private Integer processingBatchSize = TcaModelConstants.DEFAULT_TCA_PROCESSING_BATCH_SIZE;
         private Boolean enableAbatement = TcaModelConstants.DEFAULT_ABATEMENT_ENABLED;
         private Boolean enableEcompLogging = TcaModelConstants.DEFAULT_ECOMP_LOGGING_ENABLED;
         private Aai aai = new Aai();
-
     }
-
 
     /**
      * A&amp;AI properties
      */
     @Data
     @ToString(exclude = "password")
-    public static class Aai implements ConfigBindingServiceModel {
-
-        private static final long serialVersionUID = 1L;
+    public static class Aai {
 
         private Boolean enableEnrichment = TcaModelConstants.DEFAULT_AAI_ENRICHMENT_ENABLED;
         private String url;
@@ -82,5 +74,67 @@ public class TcaAppProperties extends BaseConfigBindingServiceProperties {
 
     }
 
+    public Tca getTca() {
+        Tca tca = new Tca();
+        tca.setPolicy(env.getProperty(ConfigBindingServiceConstants.POLICY));
+        tca.setProcessingBatchSize(env.getProperty(ConfigBindingServiceConstants.PROCESSINGBATCHSIZE, Integer.class));
+        tca.setEnableAbatement(env.getProperty(ConfigBindingServiceConstants.ENABLEABATEMENT, Boolean.class));
+        tca.setEnableEcompLogging(env.getProperty(ConfigBindingServiceConstants.EnableEcompLogging, Boolean.class));
+
+        Aai aai = tca.getAai();
+        aai.setEnableEnrichment(env.getProperty(ConfigBindingServiceConstants.EnableEnrichment, Boolean.class));
+        aai.setUrl(env.getProperty(ConfigBindingServiceConstants.AAIURL));
+        aai.setUsername(env.getProperty(ConfigBindingServiceConstants.AAIUSERNAME));
+        aai.setPassword(env.getProperty(ConfigBindingServiceConstants.AAIPASSWORD));
+        aai.setGenericVnfPath(ConfigBindingServiceConstants.AAIGENERICVNFPATH);
+        aai.setNodeQueryPath(env.getProperty(ConfigBindingServiceConstants.AAINODEQUERYPATH));
+        tca.setAai(aai);
+
+        return tca;
+    }
+
+    @Override
+    public Map<String, PublisherDetails> getStreamsPublishes() {
+        DmaapInfo dmaapInfo = new DmaapInfo();
+        dmaapInfo.setTopicUrl(env.getProperty(ConfigBindingServiceConstants.PUBTOPICURL));
+
+        PublisherDetails detail = new PublisherDetails();
+        detail.setType(env.getProperty(ConfigBindingServiceConstants.PUBTYPE));
+        detail.setDmaapInfo(dmaapInfo);
+        streamsPublishes.put(ConfigBindingServiceConstants.PUBKEY, detail);
+        return streamsPublishes;
+    }
+
+    @Override
+    public Map<String, SubscriberDetails> getStreamsSubscribes() {
+        DmaapInfo dmaapInfo = new DmaapInfo();
+        dmaapInfo.setTopicUrl(env.getProperty(ConfigBindingServiceConstants.SUBTOPICURL));
+
+        AutoAdjusting autoAdjust = new AutoAdjusting();
+        autoAdjust.setStepUp(env.getProperty(ConfigBindingServiceConstants.SUBAUTOADJUSTINGSTEPUP, Integer.class));
+        autoAdjust.setStepDown(env.getProperty(ConfigBindingServiceConstants.SUBAUTOADJUSTINGSTEPDOWN, Integer.class));
+        autoAdjust.setMax(env.getProperty(ConfigBindingServiceConstants.SUBAUTOADJUSTINGMAX, Integer.class));
+        autoAdjust.setMin(env.getProperty(ConfigBindingServiceConstants.SUBAUTOADJUSTINGMIN, Integer.class));
+
+        Polling poll = new Polling();
+        poll.setAutoAdjusting(autoAdjust);
+        poll.setFixedRate(env.getProperty(ConfigBindingServiceConstants.SUBFIXEDRATE, Integer.class));
+
+        SubscriberDetails detail = new SubscriberDetails();
+        detail.setType(env.getProperty(ConfigBindingServiceConstants.SUBTYPE));
+        detail.setDmaapInfo(dmaapInfo);
+        detail.setPolling(poll);
+
+        detail.setConsumerGroup(env.getProperty(ConfigBindingServiceConstants.SUBCONSUMERGROUP));
+        detail.setMessageLimit(env.getProperty(ConfigBindingServiceConstants.SUBMESSAGELIMIT, Integer.class));
+        detail.setTimeout(env.getProperty(ConfigBindingServiceConstants.SUBTIMEOUT, Integer.class));
+        List<String> consumerIds = new ArrayList<>();
+        consumerIds.add(env.getProperty(ConfigBindingServiceConstants.SUBCONSUMERIDS0));
+        consumerIds.add(env.getProperty(ConfigBindingServiceConstants.SUBCONSUMERIDS1));
+        detail.setConsumerIds(consumerIds);
+
+        streamsSubscribes.put(ConfigBindingServiceConstants.SUBKEY, detail);
+        return streamsSubscribes;
+    }
 
 }
