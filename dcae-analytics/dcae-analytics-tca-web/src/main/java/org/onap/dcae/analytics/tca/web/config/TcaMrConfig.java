@@ -73,7 +73,6 @@ public class TcaMrConfig {
         return new TcaAlertTransformer(tcaAppProperties);
     }
 
-
     @Bean
     public IntegrationFlow tcaMrFlow(final TcaPolicyWrapper tcaPolicyWrapper,
                                      final QueueChannel mrSubscriberOutputChannel,
