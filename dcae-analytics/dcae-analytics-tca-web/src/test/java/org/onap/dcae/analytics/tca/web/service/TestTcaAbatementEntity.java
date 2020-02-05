@@ -17,12 +17,25 @@
  *
  */
 
-package org.onap.dcae.analytics.model;
+package org.onap.dcae.analytics.tca.web.service;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+import java.util.Date;
+
+import org.onap.dcae.analytics.tca.core.service.TcaAbatementEntity;
 
 /**
- * Marker Interface for all DCAE Analytics Model implementations
- *
  * @author Rajiv Singla
  */
-public interface AnalyticsModel {
+@Data
+@AllArgsConstructor
+public class TestTcaAbatementEntity implements TcaAbatementEntity {
+
+    private Date lastModificationDate;
+    private String lookupKey;
+    private String requestId;
+    private boolean isAbatementAlertSent;
+
 }

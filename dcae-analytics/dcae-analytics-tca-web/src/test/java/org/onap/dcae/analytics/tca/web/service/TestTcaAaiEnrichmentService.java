@@ -17,12 +17,25 @@
  *
  */
 
-package org.onap.dcae.analytics.model;
+package org.onap.dcae.analytics.tca.web.service;
+
+import lombok.Data;
+
+import org.onap.dcae.analytics.tca.core.service.TcaAaiEnrichmentService;
+import org.onap.dcae.analytics.tca.core.service.TcaExecutionContext;
+import org.onap.dcae.analytics.tca.model.facade.TcaAlert;
 
 /**
- * Marker Interface for all DCAE Analytics Model implementations
- *
  * @author Rajiv Singla
  */
-public interface AnalyticsModel {
+@Data
+public class TestTcaAaiEnrichmentService implements TcaAaiEnrichmentService {
+
+    private TcaAlert enrichedTcaAlert;
+
+    @Override
+    public TcaAlert doAaiEnrichment(final TcaExecutionContext tcaExecutionContext) {
+        final TcaAlert tcaAlert = tcaExecutionContext.getTcaResultContext().getTcaAlert();
+        return enrichedTcaAlert == null ? tcaAlert : enrichedTcaAlert;
+    }
 }

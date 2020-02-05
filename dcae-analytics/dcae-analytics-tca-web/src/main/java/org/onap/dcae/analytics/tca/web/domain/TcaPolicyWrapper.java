@@ -21,78 +21,96 @@ package org.onap.dcae.analytics.tca.web.domain;
 
 import static org.onap.dcae.analytics.tca.model.util.json.TcaModelJsonConversion.TCA_POLICY_JSON_FUNCTION;
 
-import lombok.Getter;
-import lombok.ToString;
-
 import java.time.ZonedDateTime;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.onap.dcae.analytics.model.common.ConfigSource;
 import org.onap.dcae.analytics.tca.model.policy.TcaPolicy;
 import org.onap.dcae.analytics.tca.model.policy.TcaPolicyModel;
-import org.onap.dcae.analytics.tca.web.validation.TcaPolicyValidator;
+import org.onap.dcae.analytics.tca.web.TcaAppProperties;
 import org.onap.dcae.analytics.web.exception.AnalyticsParsingException;
-import org.onap.dcae.analytics.web.util.ValidationUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
  * @author Rajiv Singla
  */
-@Getter
-@ToString
 public class TcaPolicyWrapper implements TcaPolicyModel {
-
-    private static final long serialVersionUID = 1L;
 
     private static final Logger logger = LoggerFactory.getLogger(TcaPolicyWrapper.class);
 
     private final ZonedDateTime creationTime;
     private ZonedDateTime updateDateTime;
-    private TcaPolicy tcaPolicy;
+    private String tcaPolicy;
     private ConfigSource configSource;
     private AtomicInteger policyUpdateSequence;
     private String policyVersion;
 
-    public TcaPolicyWrapper(final String tcaPolicyString, final ConfigSource configSource) {
-        createOrUpdatePolicy(getTcaPolicy(tcaPolicyString), configSource);
+    private final TcaAppProperties tcaAppProperties;
+
+    public TcaPolicyWrapper(final TcaAppProperties tcaAppProperties) {
+        this.tcaAppProperties = tcaAppProperties;
         this.creationTime = ZonedDateTime.now();
-    }
-
-    public void setTcaPolicy(final String tcaPolicyString, final ConfigSource configSource) {
-        createOrUpdatePolicy(getTcaPolicy(tcaPolicyString), configSource);
-    }
-
-    public void setTcaPolicy(final TcaPolicy tcaPolicy, final ConfigSource configSource) {
-        createOrUpdatePolicy(tcaPolicy, configSource);
-    }
-
-    private void createOrUpdatePolicy(final TcaPolicy tcaPolicy, final ConfigSource configSource) {
-        ValidationUtils.validate(tcaPolicy, new TcaPolicyValidator());
-        this.tcaPolicy = tcaPolicy;
-        this.configSource = configSource;
+        this.tcaPolicy = tcaAppProperties.getTca().getPolicy();
+        policyUpdateSequence = new AtomicInteger(0);
         this.updateDateTime = ZonedDateTime.now();
-        if (policyUpdateSequence == null) {
-            policyUpdateSequence = new AtomicInteger(0);
-        } else {
-            policyUpdateSequence.getAndUpdate(sequence -> sequence + 1);
-        }
-        this.policyVersion = getPolicyVersion(policyUpdateSequence);
-        final String configSourceName = configSource.name();
-        logger.info("Updated Tca Policy Wrapper with policy: {}, from Source: {}, policy Version: {}",
-                tcaPolicy, configSourceName, policyVersion);
+        this.policyVersion = getPolicyVersion(new AtomicInteger(0));
     }
 
+    public TcaPolicy getTcaPolicy() {
+        String tcaPolicyString = tcaAppProperties.getTca().getPolicy();
+        boolean isConfigBindingServiceProfileActive = tcaAppProperties.isConfigBindingServiceProfileActive();
+        if (isConfigBindingServiceProfileActive) {
+            this.configSource = ConfigSource.CONFIG_BINDING_SERVICE;
+        } else {
+            this.configSource = ConfigSource.CLASSPATH;
+        }
 
-    private TcaPolicy getTcaPolicy(final String tcaPolicyString) {
+        if (!tcaPolicyString.equals(tcaPolicy)) {
+            this.tcaPolicy = tcaPolicyString;
+            this.updateDateTime = ZonedDateTime.now();
+            policyUpdateSequence.getAndUpdate(sequence -> sequence + 1);
+            this.policyVersion = getPolicyVersion(policyUpdateSequence);
+            logger.info("Updated Tca Policy Wrapper with policy: {}, from Source: {}, policy Version: {}",
+                    tcaPolicy, configSource.name(), policyVersion);
+        }
+
+        return convertTcaPolicy(tcaPolicyString);
+    }
+
+    public void setTcaPolicy(TcaPolicy tcaPolicy, ConfigSource configSource) {
+        this.tcaPolicy = tcaPolicy.toString();
+        this.configSource = configSource;
+    }
+
+    public TcaPolicy convertTcaPolicy(String tcaPolicyString) {
         return TCA_POLICY_JSON_FUNCTION.apply(tcaPolicyString).orElseThrow(
                 () -> new AnalyticsParsingException("Unable to parse Tca Policy String: " + tcaPolicyString,
                         new IllegalArgumentException()));
     }
 
-
     private static String getPolicyVersion(final AtomicInteger policyUpdateSequence) {
         return "version-" + policyUpdateSequence.intValue();
     }
+
+    public ZonedDateTime getCreationTime() {
+        return creationTime;
+    }
+
+    public ZonedDateTime getUpdateDateTime() {
+        return updateDateTime;
+    }
+
+    public ConfigSource getConfigSource() {
+        return configSource;
+    }
+
+    public AtomicInteger getPolicyUpdateSequence() {
+        return policyUpdateSequence;
+    }
+
+    public String getPolicyVersion() {
+        return policyVersion;
+    }   
 
 }
