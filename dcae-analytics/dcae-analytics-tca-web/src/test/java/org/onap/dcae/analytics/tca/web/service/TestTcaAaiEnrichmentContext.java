@@ -17,12 +17,20 @@
  *
  */
 
-package org.onap.dcae.analytics.model;
+package org.onap.dcae.analytics.tca.web.service;
+
+import lombok.Data;
+
+import org.onap.dcae.analytics.tca.core.service.TcaAaiEnrichmentContext;
+import org.onap.dcae.analytics.tca.core.service.TcaAaiEnrichmentService;
 
 /**
- * Marker Interface for all DCAE Analytics Model implementations
- *
  * @author Rajiv Singla
  */
-public interface AnalyticsModel {
+@Data
+public class TestTcaAaiEnrichmentContext implements TcaAaiEnrichmentContext {
+
+    private boolean isAaiEnrichmentEnabled = true;
+    private TcaAaiEnrichmentService aaiEnrichmentService = new TestTcaAaiEnrichmentService();
+
 }

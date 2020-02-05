@@ -45,7 +45,6 @@ public abstract class ConfigBindingServiceConstants {
             CONSUL_HOST_ENV_VARIABLE_VALUE, CONFIG_BINDING_SERVICE_ENV_VARIABLE_VALUE);
     public static final String CONFIG_SERVICE_QUERY_URL_STRING = "http://%s:%s/service_component/%s";
 
-
     public static final String CONFIG_BINDING_SERVICE_PROPERTIES_KEY = "config-binding-service";
 
     public static final Set<String> SPRING_RESERVED_PROPERTIES_KEY_PREFIXES =
@@ -56,6 +55,33 @@ public abstract class ConfigBindingServiceConstants {
     public static final String CONFIG = "config";
     public static final int CONFIG_SERVICE_REFRESHPERIOD = 1;
 
+    public static final String POLICY = "config-binding-service.tca.policy";
+    public static final String PROCESSINGBATCHSIZE = "config-binding-service.tca.processing_batch_size";
+    public static final String ENABLEABATEMENT = "config-binding-service.tca.enable_abatement";
+    public static final String EnableEcompLogging = "config-binding-service.tca.enable_ecomp_logging";
+    public static final String EnableEnrichment = "config-binding-service.tca.aai.enable_enrichment";
+    public static final String AAIURL = "config-binding-service.tca.aai.url";
+    public static final String AAIUSERNAME = "config-binding-service.tca.aai.username";
+    public static final String AAIPASSWORD = "config-binding-service.tca.aai.password";
+    public static final String AAIGENERICVNFPATH = "config-binding-service.tca.aai.generic_vnf_path";
+    public static final String AAINODEQUERYPATH = "config-binding-service.tca.aai.node_query_path";
+    public static final String PUBTOPICURL = "config-binding-service.streams_publishes.tca_handle_out.dmaap_info.topic_url";
+    public static final String PUBTYPE = "config-binding-service.streams_publishes.tca_handle_out.type";
+    public static final String PUBKEY = "tca_handle_out";
+    public static final String SUBAUTOADJUSTINGSTEPUP = "config-binding-service.streams_subscribes.tca_handle_in.polling.auto_adjusting.step_up";
+    public static final String SUBAUTOADJUSTINGSTEPDOWN = "config-binding-service.streams_subscribes.tca_handle_in.polling.auto_adjusting.step_down";
+    public static final String SUBAUTOADJUSTINGMAX = "config-binding-service.streams_subscribes.tca_handle_in.polling.auto_adjusting.max";
+    public static final String SUBAUTOADJUSTINGMIN = "config-binding-service.streams_subscribes.tca_handle_in.polling.auto_adjusting.min";
+    public static final String SUBTOPICURL = "config-binding-service.streams_subscribes.tca_handle_in.dmaap_info.topic_url";
+    public static final String SUBFIXEDRATE = "config-binding-service.streams_subscribes.tca_handle_in.polling.fixed_rate";
+    public static final String SUBTYPE = "config-binding-service.streams_subscribes.tca_handle_in.type";
+    public static final String SUBCONSUMERGROUP = "config-binding-service.streams_subscribes.tca_handle_in.consumer_group";
+    public static final String SUBMESSAGELIMIT = "config-binding-service.streams_subscribes.tca_handle_in.message_limit";
+    public static final String SUBTIMEOUT = "config-binding-service.streams_subscribes.tca_handle_in.timeout";
+    public static final String SUBCONSUMERIDS0 = "config-binding-service.streams_subscribes.tca_handle_in.consumer_ids[0]";
+    public static final String SUBCONSUMERIDS1 = "config-binding-service.streams_subscribes.tca_handle_in.consumer_ids[1]";
+    public static final String SUBKEY = "tca_handle_in";
+    
     // ============== CONFIG BINDING SERVICE UTILS ========================= //
     /**
      * Predicate which can be used to filter message router publisher or subscriber details
