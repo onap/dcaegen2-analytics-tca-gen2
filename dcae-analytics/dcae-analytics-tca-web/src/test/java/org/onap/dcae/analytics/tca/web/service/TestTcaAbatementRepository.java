@@ -17,12 +17,32 @@
  *
  */
 
-package org.onap.dcae.analytics.model;
+package org.onap.dcae.analytics.tca.web.service;
+
+import lombok.Data;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import org.onap.dcae.analytics.tca.core.service.TcaAbatementEntity;
+import org.onap.dcae.analytics.tca.core.service.TcaAbatementRepository;
 
 /**
- * Marker Interface for all DCAE Analytics Model implementations
- *
  * @author Rajiv Singla
  */
-public interface AnalyticsModel {
+@Data
+public class TestTcaAbatementRepository implements TcaAbatementRepository {
+
+    private List<TcaAbatementEntity> testLookupAbatementEntities = new LinkedList<>();
+
+    @Override
+    public void save(final TcaAbatementEntity tcaAbatementEntity) {
+        // do nothing
+    }
+
+    @Override
+    public List<TcaAbatementEntity> findByLookupKey(final String lookUpKey) {
+        return testLookupAbatementEntities;
+    }
+
 }

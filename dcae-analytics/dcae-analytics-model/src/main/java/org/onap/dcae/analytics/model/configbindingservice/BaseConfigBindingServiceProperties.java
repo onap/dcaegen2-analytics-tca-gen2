@@ -40,8 +40,6 @@ import java.util.Map;
 @Data
 public abstract class BaseConfigBindingServiceProperties implements ConfigBindingServiceModel {
 
-    private static final long serialVersionUID = 1L;
-
     protected Map<String, List<String>> servicesCalls = new LinkedHashMap<>();
     protected Map<String, PublisherDetails> streamsPublishes = new LinkedHashMap<>();
     protected Map<String, SubscriberDetails> streamsSubscribes = new LinkedHashMap<>();
@@ -51,9 +49,7 @@ public abstract class BaseConfigBindingServiceProperties implements ConfigBindin
      */
     @Data
     @ToString(exclude = "aafPassword")
-    public static class PubSubCommonDetails implements ConfigBindingServiceModel {
-
-        private static final long serialVersionUID = 1L;
+    public static class PubSubCommonDetails {
 
         private String type;
         private String aafUsername;
@@ -76,8 +72,6 @@ public abstract class BaseConfigBindingServiceProperties implements ConfigBindin
     @EqualsAndHashCode(callSuper = true)
     public static class PublisherDetails extends PubSubCommonDetails {
 
-        private static final long serialVersionUID = 1L;
-
     }
 
 
@@ -90,8 +84,6 @@ public abstract class BaseConfigBindingServiceProperties implements ConfigBindin
     @ToString(callSuper = true)
     @EqualsAndHashCode(callSuper = true)
     public static class SubscriberDetails extends PubSubCommonDetails {
-
-        private static final long serialVersionUID = 1L;
 
         // custom subscriber properties
         private String consumerGroup;
@@ -107,9 +99,7 @@ public abstract class BaseConfigBindingServiceProperties implements ConfigBindin
      * DMaaP Info
      */
     @Data
-    public static class DmaapInfo implements ConfigBindingServiceModel {
-
-        private static final long serialVersionUID = 1L;
+    public static class DmaapInfo {
 
         private String clientRole;
         private String clientId;
@@ -123,9 +113,7 @@ public abstract class BaseConfigBindingServiceProperties implements ConfigBindin
      * Polling Details
      */
     @Data
-    public static class Polling implements ConfigBindingServiceModel {
-
-        private static final long serialVersionUID = 1L;
+    public static class Polling {
 
         private Integer fixedRate;
         private AutoAdjusting autoAdjusting;
@@ -137,9 +125,7 @@ public abstract class BaseConfigBindingServiceProperties implements ConfigBindin
      * Auto Adjusting Polling Details
      */
     @Data
-    public static class AutoAdjusting implements ConfigBindingServiceModel {
-
-        private static final long serialVersionUID = 1L;
+    public static class AutoAdjusting {
 
         private Integer min;
         private Integer stepUp;
