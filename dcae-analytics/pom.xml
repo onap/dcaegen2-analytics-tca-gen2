@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ ================================================================================
-  ~ Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+  ~ Copyright (c) 2018-2020 AT&T Intellectual Property. All rights reserved.
   ~ ================================================================================
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -81,6 +81,8 @@
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
         <jacoco.plugin.version>0.8.1</jacoco.plugin.version>
+        <sonar.coverage.jacoco.xmlReportPaths>${project.reporting.outputDirectory}/jacoco-ut/jacoco.xml
+        </sonar.coverage.jacoco.xmlReportPaths>
         <findbugs.plugin.version>3.0.5</findbugs.plugin.version>
         <pmd.plugin.version>3.8</pmd.plugin.version>
         <checkstyle.plugin.version>2.17</checkstyle.plugin.version>
@@ -507,6 +509,7 @@
                             <id>validate</id>
                             <phase>validate</phase>
                             <configuration>
+				    <skip>true</skip>
                                 <configLocation>${checkstyle.file.name}</configLocation>
                                 <suppressionsLocation>${checkstyle.suppression.file.name}</suppressionsLocation>
                                 <encoding>UTF-8</encoding>
@@ -705,10 +708,10 @@
                 <artifactId>findbugs-maven-plugin</artifactId>
             </plugin>
 
-            <plugin>
+	    <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-            </plugin>
+	    </plugin> 
 
             <plugin>
                 <groupId>org.jacoco</groupId>
