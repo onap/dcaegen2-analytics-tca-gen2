@@ -88,6 +88,7 @@
         <skip.integration.tests>true</skip.integration.tests>
         <pmd.violation.buildfail>true</pmd.violation.buildfail>
         <findbugs.failOnError>true</findbugs.failOnError>
+	<sonar.coverage.jacoco.xmlReportPaths>${project.reporting.outputDirectory}/jacoco-ut/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
 
     </properties>
 
