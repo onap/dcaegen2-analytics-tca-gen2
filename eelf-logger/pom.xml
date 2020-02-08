@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ ================================================================================
-  ~ Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+  ~ Copyright (c) 2018-2020 AT&T Intellectual Property. All rights reserved.
   ~ ================================================================================
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -88,6 +88,7 @@
         <skip.integration.tests>true</skip.integration.tests>
         <pmd.violation.buildfail>true</pmd.violation.buildfail>
         <findbugs.failOnError>true</findbugs.failOnError>
+        <sonar.coverage.jacoco.xmlReportPaths>${project.reporting.outputDirectory}/jacoco-ut/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
 
     </properties>
 
