@@ -12,8 +12,13 @@ ARG FINAL_JAR
 ARG DEPENDENCIES_DIR
 ARG DOCKER_ARTIFACT_DIR
 
+RUN mkdir -p /var/log/ONAP/dcaegen2/analytics/tca-gen2
 #Add a new user and group to allow container to be run as non-root
-RUN addgroup -S tca-gen2 && adduser -S -G tca-gen2 tca-gen2
+RUN addgroup -S tca-gen2 && adduser -S -G tca-gen2 tca-gen2; \
+    chmod a+rwx /opt; \
+    chmod a+rwx /var/log/ONAP/dcaegen2/analytics/tca-gen2; \
+    chown -R tca-gen2:tca-gen2 /opt; \
+    chown -R tca-gen2:tca-gen2 /var/log/ONAP/dcaegen2/analytics/tca-gen2
 
 #Copy dependencies and executable jar
 WORKDIR ${DOCKER_ARTIFACT_DIR}
