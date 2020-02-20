@@ -44,7 +44,7 @@ public abstract class ConfigBindingServiceConstants {
     public static final String CONSUL_QUERY_URL_STRING = String.format("http://%s:8500/v1/catalog/service/%s",
             CONSUL_HOST_ENV_VARIABLE_VALUE, CONFIG_BINDING_SERVICE_ENV_VARIABLE_VALUE);
     public static final String CONFIG_SERVICE_QUERY_URL_STRING = "http://%s:%s/service_component/%s";
-
+    public static final String ENV_CBS_PORT = "CONFIG_BINDING_SERVICE_SERVICE_PORT";
     public static final String CONFIG_BINDING_SERVICE_PROPERTIES_KEY = "config-binding-service";
 
     public static final Set<String> SPRING_RESERVED_PROPERTIES_KEY_PREFIXES =

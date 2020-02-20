@@ -30,14 +30,11 @@ import java.util.stream.Collectors;
 import org.onap.dcae.analytics.model.AnalyticsProfile;
 import org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceConstants;
 import org.onap.dcae.analytics.model.util.function.JsonStringToMapFunction;
-import org.onap.dcae.analytics.web.config.SystemConfig;
-import org.onap.dcae.analytics.web.exception.EnvironmentLoaderException;
 import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.api.CbsClient;
 import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.api.CbsClientFactory;
 import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.api.CbsRequests;
+import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.model.CbsClientConfiguration;
 import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.model.CbsRequest;
-import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.model.EnvProperties;
-import org.onap.dcaegen2.services.sdk.rest.services.cbs.client.model.ImmutableEnvProperties;
 import org.onap.dcaegen2.services.sdk.rest.services.model.logging.RequestDiagnosticContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -177,21 +174,10 @@ public class ConfigBindingServiceEnvironmentPostProcessor implements Environment
      * @return environment properties.
      *
      */
-    public Mono<EnvProperties> readEnvironmentVariables() {
+    public Mono<CbsClientConfiguration> readEnvironmentVariables() {
         logger.trace("Loading configuration from system environment variables");
-        EnvProperties envProperties;
-        try {
-            envProperties = ImmutableEnvProperties.builder() //
-                    .consulHost(SystemConfig.getConsulHost()) //
-                    .consulPort(SystemConfig.getConsultPort()) //
-                    .cbsName(SystemConfig.getConfigBindingService()) //
-                    .appName(SystemConfig.getService()) //
-                    .build();
-        } catch (EnvironmentLoaderException e) {
-            return Mono.error(e);
-        }
-        logger.trace("Evaluated environment system variables {}", envProperties);
-        return Mono.just(envProperties);
+        CbsClientConfiguration cbsClientConfiguration = CbsClientConfiguration.fromEnvironment();
+        return Mono.just(cbsClientConfiguration);
     }
 
     /**
@@ -220,12 +206,12 @@ public class ConfigBindingServiceEnvironmentPostProcessor implements Environment
     /**
      * create CbsClient.
      *
-     * @param env environment properties
+     * @param cbsClientConfiguration cbs configuration
      * @return cbsclient
      *
      */
-    public Mono<CbsClient> createCbsClient(EnvProperties env) {
-        return CbsClientFactory.createCbsClient(env);
+    public Mono<CbsClient> createCbsClient(CbsClientConfiguration cbsClientConfiguration) {
+        return CbsClientFactory.createCbsClient(cbsClientConfiguration);
     }
 
     /**

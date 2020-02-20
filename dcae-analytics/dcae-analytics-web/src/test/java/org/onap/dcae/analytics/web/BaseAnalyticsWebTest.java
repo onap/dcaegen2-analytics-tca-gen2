@@ -27,6 +27,7 @@ import java.util.HashMap;
 import static org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceConstants.CONFIG_BINDING_SERVICE_ENV_VARIABLE_KEY;
 import static org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceConstants.CONSUL_HOST_ENV_VARIABLE_KEY;
 import static org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceConstants.SERVICE_NAME_ENV_VARIABLE_KEY;
+import static org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceConstants.ENV_CBS_PORT;
 
 /**
  * @author Rajiv Singla
@@ -42,6 +43,7 @@ public abstract class BaseAnalyticsWebTest extends BaseAnalyticsUnitTest {
         testEnvironmentVariables.put(CONSUL_HOST_ENV_VARIABLE_KEY, testConsulHostValue);
         testEnvironmentVariables.put(CONFIG_BINDING_SERVICE_ENV_VARIABLE_KEY, testConfigBindingService);
         testEnvironmentVariables.put(SERVICE_NAME_ENV_VARIABLE_KEY, testServiceName);
+        testEnvironmentVariables.put(ENV_CBS_PORT, "10000");
         setEnvironmentVariables(testEnvironmentVariables);
     }
 
