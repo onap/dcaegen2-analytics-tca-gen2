@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "14fc1a63_18cc8c01",
+        "filename": "dcae-analytics/dcae-analytics-model/src/main/java/org/onap/dcae/analytics/model/configbindingservice/ConfigBindingServiceConstants.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-02-20T19:09:42Z",
+      "side": 1,
+      "message": "These can be removed",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 101
+      },
+      "revId": "40ffc89f78576dc2f7da221c7f1ce7ba5e8f4112",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
