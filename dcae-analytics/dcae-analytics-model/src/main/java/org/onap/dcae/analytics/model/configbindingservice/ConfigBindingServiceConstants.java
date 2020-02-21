@@ -34,16 +34,9 @@ public abstract class ConfigBindingServiceConstants {
 
     // ================== CONFIG SERVICE CONSTANTS ============================== //
     public static final String CONSUL_HOST_ENV_VARIABLE_KEY = "CONSUL_HOST";
-    public static final Integer DEFAULT_CONSUL_PORT_ENV_VARIABLE_VALUE = 8500;
-    public static final String CONSUL_HOST_ENV_VARIABLE_VALUE = System.getenv(CONSUL_HOST_ENV_VARIABLE_KEY);
     public static final String CONFIG_BINDING_SERVICE_ENV_VARIABLE_KEY = "CONFIG_BINDING_SERVICE";
-    public static final String CONFIG_BINDING_SERVICE_ENV_VARIABLE_VALUE =
-            System.getenv(CONFIG_BINDING_SERVICE_ENV_VARIABLE_KEY);
     public static final String SERVICE_NAME_ENV_VARIABLE_KEY = "HOSTNAME";
     public static final String SERVICE_NAME_ENV_VARIABLE_VALUE = System.getenv(SERVICE_NAME_ENV_VARIABLE_KEY);
-    public static final String CONSUL_QUERY_URL_STRING = String.format("http://%s:8500/v1/catalog/service/%s",
-            CONSUL_HOST_ENV_VARIABLE_VALUE, CONFIG_BINDING_SERVICE_ENV_VARIABLE_VALUE);
-    public static final String CONFIG_SERVICE_QUERY_URL_STRING = "http://%s:%s/service_component/%s";
     public static final String ENV_CBS_PORT = "CONFIG_BINDING_SERVICE_SERVICE_PORT";
     public static final String CONFIG_BINDING_SERVICE_PROPERTIES_KEY = "config-binding-service";
 
@@ -58,8 +51,8 @@ public abstract class ConfigBindingServiceConstants {
     public static final String POLICY = "config-binding-service.tca.policy";
     public static final String PROCESSINGBATCHSIZE = "config-binding-service.tca.processing_batch_size";
     public static final String ENABLEABATEMENT = "config-binding-service.tca.enable_abatement";
-    public static final String EnableEcompLogging = "config-binding-service.tca.enable_ecomp_logging";
-    public static final String EnableEnrichment = "config-binding-service.tca.aai.enable_enrichment";
+    public static final String ENABLEECOMPLOGGING = "config-binding-service.tca.enable_ecomp_logging";
+    public static final String ENABLEENRICHMENT = "config-binding-service.tca.aai.enable_enrichment";
     public static final String AAIURL = "config-binding-service.tca.aai.url";
     public static final String AAIUSERNAME = "config-binding-service.tca.aai.username";
     public static final String AAIPASSWORD = "config-binding-service.tca.aai.password";
