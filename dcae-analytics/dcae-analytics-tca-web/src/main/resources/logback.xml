@@ -39,12 +39,13 @@
     <logger name="org.springframework.retry" level="INFO"/>
     <logger name="org.onap.dcae.analytics" level="INFO"/>
 
-    <root level="INFO">
+    <root level="DEBUG">
         <!-- required appenders -->
         <appender-ref ref="auditLogAppender"/>
         <appender-ref ref="metricLogAppender"/>
         <appender-ref ref="errorLogAppender"/>
-
+        <appender-ref ref="debugLogAppender"/>
+        <appender-ref ref="STDOUT"/>
         <!-- app properties -->
         <appender-ref ref="FILE"/>
     </root>

@@ -28,7 +28,7 @@
     <include resource="eelf-required-appenders.xml"/>
 
     <!-- ADD OPTIONAL APPENDERS: NOT ADDED BY DEFAULT -->
-    <!--<include resource="eelf-optional-appenders.xml"/>-->
+    <include resource="eelf-optional-appenders.xml"/>
 
 
     <root level="DEBUG">
@@ -36,10 +36,8 @@
         <appender-ref ref="auditLogAppender"/>
         <appender-ref ref="metricLogAppender"/>
         <appender-ref ref="errorLogAppender"/>
-
-        <!-- optional appenders: not added by default -->
-        <!--<appender-ref ref="debugLogAppender"/>-->
-        <!--<appender-ref ref="STDOUT"/>-->
+        <appender-ref ref="debugLogAppender"/>
+        <appender-ref ref="STDOUT"/>
     </root>
 
 </included>
