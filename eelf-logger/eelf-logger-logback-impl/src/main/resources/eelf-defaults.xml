@@ -25,7 +25,7 @@
 
     <!-- SETUP LOG DIRECTORIES -->
     <property scope="context" name="logDirectory" value="${logDir}/${componentName}"/>
-    <property scope="context" name="debugLogDirectory" value="${debugDir}/${componentName}"/>
+    <property scope="context" name="debugLogDirectory" value="${logDir}/${componentName}"/>
 
     <!--
     MODIFY LOG DIR ON WINDOWS OS SO THAT TEST LOGS ARE UNDER TARGET DIR CAN BE CLEANED AFTER TESTS AUTOMATICALLY
