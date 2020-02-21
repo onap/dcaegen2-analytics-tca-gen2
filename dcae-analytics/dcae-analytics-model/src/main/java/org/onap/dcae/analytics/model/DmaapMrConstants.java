@@ -64,7 +64,7 @@ public abstract class DmaapMrConstants {
     public static final String DMAAP_MR_SUBSCRIBER_OUTPUT_MESSAGE_STORE_GROUP_ID = "mrSubscriberMessageStoreGroup";
     public static final String DMAAP_MR_PUBLISHER_RECOVERY_MESSAGE_STORE_GROUP_ID = "mrPublisherRecoveryStoreGroup";
 
-    public DmaapMrConstants() {
+    private DmaapMrConstants() {
         // private constructor
     }
 }

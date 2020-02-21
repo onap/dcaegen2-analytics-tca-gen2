@@ -81,10 +81,10 @@ public class TcaAppProperties extends BaseConfigBindingServiceProperties {
         tca.setPolicy(environment.getProperty(ConfigBindingServiceConstants.POLICY));
         tca.setProcessingBatchSize(environment.getProperty(ConfigBindingServiceConstants.PROCESSINGBATCHSIZE, Integer.class));
         tca.setEnableAbatement(environment.getProperty(ConfigBindingServiceConstants.ENABLEABATEMENT, Boolean.class));
-        tca.setEnableEcompLogging(environment.getProperty(ConfigBindingServiceConstants.EnableEcompLogging, Boolean.class));
+        tca.setEnableEcompLogging(environment.getProperty(ConfigBindingServiceConstants.ENABLEECOMPLOGGING, Boolean.class));
 
         Aai aai = tca.getAai();
-        aai.setEnableEnrichment(environment.getProperty(ConfigBindingServiceConstants.EnableEnrichment, Boolean.class));
+        aai.setEnableEnrichment(environment.getProperty(ConfigBindingServiceConstants.ENABLEENRICHMENT, Boolean.class));
         aai.setUrl(environment.getProperty(ConfigBindingServiceConstants.AAIURL));
         aai.setUsername(environment.getProperty(ConfigBindingServiceConstants.AAIUSERNAME));
         aai.setPassword(environment.getProperty(ConfigBindingServiceConstants.AAIPASSWORD));
