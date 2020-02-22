@@ -27,8 +27,8 @@ import java.util.Date;
 import java.util.Map;
 
 import org.onap.dcae.analytics.model.ecomplogger.AnalyticsErrorType;
+import org.onap.dcae.analytics.tca.core.util.TcaUtils;
 import org.onap.dcae.analytics.tca.web.TcaAppProperties;
-import org.onap.dcae.analytics.tca.web.util.TcaUtils;
 import org.onap.dcae.analytics.web.util.AnalyticsHttpUtils;
 import org.onap.dcae.utils.eelf.logger.api.info.ResponseLogInfo;
 import org.onap.dcae.utils.eelf.logger.api.log.EELFLogFactory;

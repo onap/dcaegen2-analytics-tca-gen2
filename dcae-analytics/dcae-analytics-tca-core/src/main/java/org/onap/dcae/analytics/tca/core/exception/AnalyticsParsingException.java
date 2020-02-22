@@ -17,7 +17,7 @@
  *
  */
 
-package org.onap.dcae.analytics.web.exception;
+package org.onap.dcae.analytics.tca.core.exception;
 
 /**
  * @author Rajiv Singla
