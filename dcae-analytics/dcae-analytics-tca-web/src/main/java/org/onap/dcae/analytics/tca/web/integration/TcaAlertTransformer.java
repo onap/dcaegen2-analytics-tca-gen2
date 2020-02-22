@@ -29,9 +29,9 @@ import org.onap.dcae.analytics.model.AnalyticsHttpConstants;
 import org.onap.dcae.analytics.model.TcaModelConstants;
 import org.onap.dcae.analytics.model.ecomplogger.AnalyticsErrorType;
 import org.onap.dcae.analytics.tca.core.service.TcaExecutionContext;
+import org.onap.dcae.analytics.tca.core.util.TcaUtils;
 import org.onap.dcae.analytics.tca.model.facade.TcaAlert;
 import org.onap.dcae.analytics.tca.web.TcaAppProperties;
-import org.onap.dcae.analytics.tca.web.util.TcaUtils;
 import org.onap.dcae.analytics.web.util.AnalyticsHttpUtils;
 import org.onap.dcae.utils.eelf.logger.api.info.ErrorLogInfo;
 import org.onap.dcae.utils.eelf.logger.api.info.ResponseLogInfo;
@@ -150,10 +150,11 @@ public class TcaAlertTransformer extends AbstractTransformer {
         final AuditLogSpecImpl auditLogSpec = new AuditLogSpecImpl(requestIdLogInfo, TcaUtils.TCA_SERVICE_LOG_INFO,
                 requestTimingLogInfo, responseLogInfo);
         logger.auditLog().info("Request Id: {}, Transaction Id: {}, " +
-                        "Message counts - Received: {}, Errors: {}, Terminated Early: {}, Abated: {}, Alerts: {}",
+                        "Message counts - Received: {}, Errors: {}, Terminated Early: {}, Abated: {}, Alerts: {}, Alerts size: {}",
                 auditLogSpec, requestId, transactionId,
                 Integer.toString(tcaExecutionContexts.size()), Integer.toString(errorExecutionContexts.size()),
                 Integer.toString(earlyTerminationExecutionContexts.size()),
+                tcaAlerts.toString(),
                 Integer.toString(abatedExecutionContexts.size()), Integer.toString(tcaAlerts.size()));
     }
 }

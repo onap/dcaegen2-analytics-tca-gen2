@@ -19,9 +19,6 @@
 
 package org.onap.dcae.analytics.tca.web.controller;
 
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiOperation;
-
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -30,12 +27,12 @@ import org.onap.dcae.analytics.model.TcaModelConstants;
 import org.onap.dcae.analytics.model.common.ConfigSource;
 import org.onap.dcae.analytics.tca.core.service.TcaExecutionContext;
 import org.onap.dcae.analytics.tca.core.service.TcaResultContext;
+import org.onap.dcae.analytics.tca.core.util.TcaUtils;
 import org.onap.dcae.analytics.tca.model.policy.TcaPolicy;
 import org.onap.dcae.analytics.tca.model.restapi.TcaExecutionRequest;
 import org.onap.dcae.analytics.tca.model.restapi.TcaExecutionResponse;
 import org.onap.dcae.analytics.tca.web.domain.TcaPolicyWrapper;
 import org.onap.dcae.analytics.tca.web.service.TcaProcessingService;
-import org.onap.dcae.analytics.tca.web.util.TcaUtils;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -43,6 +40,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 
 /**
  * @author Rajiv Singla

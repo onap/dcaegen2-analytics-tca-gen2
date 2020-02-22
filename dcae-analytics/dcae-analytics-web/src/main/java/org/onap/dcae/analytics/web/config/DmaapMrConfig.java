@@ -63,7 +63,7 @@ import org.springframework.web.client.RestTemplate;
 public class DmaapMrConfig {
 
     private static final String[] DMAAP_MAPPED_REQUEST_HEADERS =
-            DmaapMrConstants.DMAAP_MAPPED_HEADERS.toArray(new String[DmaapMrConstants.DMAAP_MAPPED_HEADERS.size()]);
+            DmaapMrConstants.getDmaapmappedHeaders().toArray(new String[DmaapMrConstants.getDmaapmappedHeaders().size()]);
 
     @Bean(name = DmaapMrConstants.DMAAP_MR_SUBSCRIBER_OUTPUT_CHANNEL_NAME)
     public QueueChannel mrSubscriberOutputChannel(final BasicMessageGroupStore basicMessageGroupStore) {

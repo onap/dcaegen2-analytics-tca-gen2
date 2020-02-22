@@ -30,13 +30,6 @@ public abstract class DmaapMrConstants {
 
     // ================== DMaaP MR CONSTANTS ============================== //
 
-    public static final Set<String> DMAAP_MAPPED_HEADERS = Stream.of(
-            AnalyticsHttpConstants.REQUEST_ID_HEADER_KEY,
-            AnalyticsHttpConstants.REQUEST_TRANSACTION_ID_HEADER_KEY,
-            AnalyticsHttpConstants.REQUEST_BEGIN_TS_HEADER_KEY,
-            AnalyticsHttpConstants.REQUEST_END_TS_HEADER_KEY).collect(Collectors.toSet());
-
-
     // MR SUBSCRIBER
     public static final String SUBSCRIBER_EMPTY_MESSAGE_RESPONSE_STRING = "[]";
     public static final String SUBSCRIBER_RANDOM_CONSUMER_GROUP_PREFIX = "DCAE-SUB-";
@@ -66,5 +59,16 @@ public abstract class DmaapMrConstants {
 
     private DmaapMrConstants() {
         // private constructor
+    }
+
+    /**
+     * getDmaapmappedHeaders
+     */
+    public static final Set<String> getDmaapmappedHeaders () {
+         return Stream.of(
+                AnalyticsHttpConstants.REQUEST_ID_HEADER_KEY,
+                AnalyticsHttpConstants.REQUEST_TRANSACTION_ID_HEADER_KEY,
+                AnalyticsHttpConstants.REQUEST_BEGIN_TS_HEADER_KEY,
+                AnalyticsHttpConstants.REQUEST_END_TS_HEADER_KEY).collect(Collectors.toSet());
     }
 }
