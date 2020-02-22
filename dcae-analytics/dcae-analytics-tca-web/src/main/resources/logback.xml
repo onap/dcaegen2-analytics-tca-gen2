@@ -37,7 +37,7 @@
     <logger name="com.jayway" level="INFO"/>
 
     <logger name="org.springframework.retry" level="INFO"/>
-    <logger name="org.onap.dcae.analytics" level="INFO"/>
+    <logger name="org.onap.dcae.analytics" level="DEBUG"/>
 
     <root level="DEBUG">
         <!-- required appenders -->

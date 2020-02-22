@@ -34,9 +34,9 @@ import org.onap.dcae.analytics.tca.core.service.GenericTcaResultContext;
 import org.onap.dcae.analytics.tca.core.service.TcaAaiEnrichmentContext;
 import org.onap.dcae.analytics.tca.core.service.TcaAbatementContext;
 import org.onap.dcae.analytics.tca.core.service.TcaExecutionContext;
+import org.onap.dcae.analytics.tca.core.util.TcaUtils;
 import org.onap.dcae.analytics.tca.core.util.function.calculation.TcaCalculator;
 import org.onap.dcae.analytics.tca.model.policy.TcaPolicy;
-import org.onap.dcae.analytics.tca.web.util.TcaUtils;
 
 /**
  * @author Rajiv Singla

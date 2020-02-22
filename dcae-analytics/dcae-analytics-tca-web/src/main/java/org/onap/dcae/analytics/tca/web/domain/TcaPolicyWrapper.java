@@ -25,10 +25,10 @@ import java.time.ZonedDateTime;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import org.onap.dcae.analytics.model.common.ConfigSource;
+import org.onap.dcae.analytics.tca.core.exception.AnalyticsParsingException;
 import org.onap.dcae.analytics.tca.model.policy.TcaPolicy;
 import org.onap.dcae.analytics.tca.model.policy.TcaPolicyModel;
 import org.onap.dcae.analytics.tca.web.TcaAppProperties;
-import org.onap.dcae.analytics.web.exception.AnalyticsParsingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
