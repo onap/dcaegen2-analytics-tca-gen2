@@ -37,8 +37,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "tca_abatement")
 public class MongoAbatementEntity implements TcaAbatementEntity, TcaModel {
 
-    private static final long serialVersionUID = 1L;
-
     @Id
     private String lookupKey;
     private String requestId;

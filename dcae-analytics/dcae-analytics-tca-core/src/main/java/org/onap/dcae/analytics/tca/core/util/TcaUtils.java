@@ -17,7 +17,7 @@
  *
  */
 
-package org.onap.dcae.analytics.tca.web.util;
+package org.onap.dcae.analytics.tca.core.util;
 
 import static org.onap.dcae.analytics.tca.model.util.json.TcaModelJsonConversion.TCA_OBJECT_MAPPER;
 
@@ -30,8 +30,8 @@ import java.util.stream.Collectors;
 
 import org.onap.dcae.analytics.model.TcaModelConstants;
 import org.onap.dcae.analytics.model.cef.EventListener;
+import org.onap.dcae.analytics.tca.core.exception.AnalyticsParsingException;
 import org.onap.dcae.analytics.tca.model.policy.TcaPolicy;
-import org.onap.dcae.analytics.web.exception.AnalyticsParsingException;
 import org.onap.dcae.utils.eelf.logger.model.info.ServiceLogInfoImpl;
 
 /**

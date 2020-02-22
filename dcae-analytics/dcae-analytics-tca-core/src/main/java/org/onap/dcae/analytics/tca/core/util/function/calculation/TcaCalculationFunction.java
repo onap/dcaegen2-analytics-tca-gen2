@@ -21,10 +21,20 @@ package org.onap.dcae.analytics.tca.core.util.function.calculation;
 
 import java.util.function.Function;
 
+import org.onap.dcae.analytics.model.TcaModelConstants;
+import org.onap.dcae.analytics.model.ecomplogger.AnalyticsErrorType;
 import org.onap.dcae.analytics.tca.core.service.TcaExecutionContext;
 import org.onap.dcae.analytics.tca.core.service.TcaProcessingContext;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.onap.dcae.analytics.tca.core.util.TcaUtils;
+import org.onap.dcae.utils.eelf.logger.api.info.ErrorLogInfo;
+import org.onap.dcae.utils.eelf.logger.api.info.TargetServiceLogInfo;
+import org.onap.dcae.utils.eelf.logger.api.log.EELFLogFactory;
+import org.onap.dcae.utils.eelf.logger.api.log.EELFLogger;
+import org.onap.dcae.utils.eelf.logger.model.info.ErrorLogInfoImpl;
+import org.onap.dcae.utils.eelf.logger.model.info.RequestIdLogInfoImpl;
+import org.onap.dcae.utils.eelf.logger.model.info.TargetServiceLogInfoImpl;
+import org.onap.dcae.utils.eelf.logger.model.spec.DebugLogSpecImpl;
+import org.onap.dcae.utils.eelf.logger.model.spec.ErrorLogSpecImpl;
 
 /**
  * Functional interface which all TCA calculation functions should implement
@@ -34,10 +44,9 @@ import org.slf4j.LoggerFactory;
 @FunctionalInterface
 public interface TcaCalculationFunction extends Function<TcaExecutionContext, TcaExecutionContext> {
 
-    Logger logger = LoggerFactory.getLogger(TcaCalculationFunction.class);
+    EELFLogger logger = EELFLogFactory.getLogger(TcaCalculationFunction.class);
 
     TcaExecutionContext calculate(TcaExecutionContext tcaExecutionContext);
-
 
     default TcaExecutionContext preCalculation(TcaExecutionContext tcaExecutionContext) {
         // do nothing
@@ -69,12 +78,24 @@ public interface TcaCalculationFunction extends Function<TcaExecutionContext, Tc
                                                       final TcaExecutionContext tcaExecutionContext,
                                                       final boolean isErrorMessage) {
         final TcaProcessingContext tcaProcessingContext = tcaExecutionContext.getTcaProcessingContext();
+
+        final RequestIdLogInfoImpl requestIdLogInfo = new RequestIdLogInfoImpl(tcaExecutionContext.getRequestId());
+
         if (isErrorMessage) {
-            logger.error("Request Id: {}. Error Message: {}", tcaExecutionContext.getRequestId(), terminatingMessage);
+            final TargetServiceLogInfo targetServiceLogInfo = new TargetServiceLogInfoImpl(
+                    "DCAE-TCA", TcaModelConstants.TCA_SERVICE_NAME, "");
+            final ErrorLogInfo errorLogInfo =
+                    new ErrorLogInfoImpl(AnalyticsErrorType.SCHEMA_ERROR.getErrorCode(),
+                            AnalyticsErrorType.SCHEMA_ERROR.getErrorDescription());
+            final ErrorLogSpecImpl errorLogSpec = new ErrorLogSpecImpl(requestIdLogInfo,
+                    TcaUtils.TCA_SERVICE_LOG_INFO, targetServiceLogInfo, errorLogInfo);
+            logger.errorLog().error("Request Id: {}. Error Message: {}",
+                    errorLogSpec, tcaExecutionContext.getRequestId(), terminatingMessage);
             tcaProcessingContext.setErrorMessage(terminatingMessage);
         } else {
-            logger.debug("Request Id: {}. Early Termination Message: {}", tcaExecutionContext.getRequestId(),
-                    terminatingMessage);
+            final DebugLogSpecImpl debugLogSpec = new DebugLogSpecImpl(requestIdLogInfo);
+            logger.debugLog().debug("Request Id: {}. Early Termination Message: {}",
+                    debugLogSpec, tcaExecutionContext.getRequestId(), terminatingMessage);
             tcaProcessingContext.setEarlyTerminationMessage(terminatingMessage);
         }
         tcaProcessingContext.setContinueProcessing(false);
