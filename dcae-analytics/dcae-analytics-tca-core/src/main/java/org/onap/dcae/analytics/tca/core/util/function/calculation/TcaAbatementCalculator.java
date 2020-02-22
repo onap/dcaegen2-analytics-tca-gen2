@@ -36,15 +36,17 @@ import org.onap.dcae.analytics.tca.core.service.TcaResultContext;
 import org.onap.dcae.analytics.tca.model.policy.ClosedLoopEventStatus;
 import org.onap.dcae.analytics.tca.model.policy.MetricsPerEventName;
 import org.onap.dcae.analytics.tca.model.policy.Threshold;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.onap.dcae.utils.eelf.logger.api.log.EELFLogFactory;
+import org.onap.dcae.utils.eelf.logger.api.log.EELFLogger;
+import org.onap.dcae.utils.eelf.logger.model.info.RequestIdLogInfoImpl;
+import org.onap.dcae.utils.eelf.logger.model.spec.DebugLogSpecImpl;
 
 /**
  * @author Rajiv Singla
  */
 public class TcaAbatementCalculator implements TcaCalculationFunction {
 
-    private static final Logger logger = LoggerFactory.getLogger(TcaAbatementCalculator.class);
+    private static final EELFLogger logger = EELFLogFactory.getLogger(TcaAbatementCalculator.class);
 
     @Override
     public TcaExecutionContext calculate(final TcaExecutionContext tcaExecutionContext) {
@@ -70,8 +72,8 @@ public class TcaAbatementCalculator implements TcaCalculationFunction {
         final ClosedLoopEventStatus closedLoopEventStatus = violatedThreshold.getClosedLoopEventStatus();
         final String requestId = tcaExecutionContext.getRequestId();
         final String lookupKey = createLookupKey(eventListener, violatedMetricsPerEventName);
-
-
+        final RequestIdLogInfoImpl requestIdLogInfo = new RequestIdLogInfoImpl(requestId);
+        final DebugLogSpecImpl debugLogSpec = new DebugLogSpecImpl(requestIdLogInfo);
         switch (closedLoopEventStatus) {
 
             // ONSET - save alert info in database so that next abated event can fetch its request id for abated
@@ -80,9 +82,9 @@ public class TcaAbatementCalculator implements TcaCalculationFunction {
 
                 final TcaAbatementEntity tcaAbatementEntity =
                         abatementContext.create(lookupKey, requestId, false);
-                logger.debug("Request Id: {}. Alert ClosedLoop Status is ONSET. " +
+                logger.debugLog().debug("Request Id: {}. Alert ClosedLoop Status is ONSET. " +
                                 "Saving abatement Entity to repository with lookupKey: {}",
-                        requestId, tcaAbatementEntity.getLookupKey());
+                                debugLogSpec, requestId, tcaAbatementEntity.getLookupKey());
                 abatementPersistenceContext.save(tcaAbatementEntity);
                 return tcaExecutionContext;
 
@@ -99,8 +101,8 @@ public class TcaAbatementCalculator implements TcaCalculationFunction {
                     final TcaAbatementEntity previousTcaAbatementEntity =
                             previousTcaAbatementEntities.get(previousTcaAbatementEntities.size() - 1);
 
-                    logger.debug("Request Id: {}. Found previous Abatement Entity: {}", requestId,
-                            previousTcaAbatementEntity);
+                    logger.debugLog().debug("Request Id: {}. Found previous Abatement Entity with lookupKey: {}",
+                            debugLogSpec, requestId, previousTcaAbatementEntity.getLookupKey());
 
                     // previous abatement entity was found - but it was already sent before - so ignore alert creation
                     if (previousTcaAbatementEntity.isAbatementAlertSent()) {
@@ -113,14 +115,14 @@ public class TcaAbatementCalculator implements TcaCalculationFunction {
                     // no previous abatement was sent
                     final String previousRequestId = previousTcaAbatementEntity.getRequestId();
                     // set abated alert request id to previous ONSET alert request id
-                    logger.debug("Request Id: {}. No previous abated alert was sent. Setting previous request id: {}",
-                            requestId, previousRequestId);
+                    logger.debugLog().debug("Request Id: {}. No previous abated alert was sent. Setting previous request id: {}",
+                            debugLogSpec, requestId, previousRequestId);
                     resultContext.setPreviousRequestId(previousRequestId);
                     // save new entity with alert as sent
                     final TcaAbatementEntity newTcaAbatementEntity =
                             abatementContext.create(lookupKey, previousRequestId, true);
-                    logger.debug("Request Id: {}. Saving new entity with alert as sent: {}",
-                            requestId, newTcaAbatementEntity);
+                    logger.debugLog().debug("Request Id: {}. Saving new entity with alert as sent with lookupKey: {}",
+                            debugLogSpec, requestId, newTcaAbatementEntity.getLookupKey());
                     abatementPersistenceContext.save(newTcaAbatementEntity);
                     return tcaExecutionContext;
 

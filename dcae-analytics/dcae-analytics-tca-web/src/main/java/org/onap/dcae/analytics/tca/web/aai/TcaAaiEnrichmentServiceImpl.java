@@ -21,8 +21,6 @@ package org.onap.dcae.analytics.tca.web.aai;
 
 import static org.onap.dcae.analytics.tca.model.util.json.TcaModelJsonConversion.TCA_OBJECT_MAPPER;
 
-import com.fasterxml.jackson.databind.JsonNode;
-
 import java.io.IOException;
 import java.net.URI;
 import java.util.Collections;
@@ -34,11 +32,14 @@ import org.onap.dcae.analytics.model.AnalyticsHttpConstants;
 import org.onap.dcae.analytics.model.TcaModelConstants;
 import org.onap.dcae.analytics.tca.core.service.TcaAaiEnrichmentService;
 import org.onap.dcae.analytics.tca.core.service.TcaExecutionContext;
+import org.onap.dcae.analytics.tca.core.util.LogSpec;
 import org.onap.dcae.analytics.tca.model.facade.Aai;
 import org.onap.dcae.analytics.tca.model.facade.TcaAlert;
 import org.onap.dcae.analytics.tca.web.TcaAppProperties;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.onap.dcae.utils.eelf.logger.api.log.EELFLogFactory;
+import org.onap.dcae.utils.eelf.logger.api.log.EELFLogger;
+import org.onap.dcae.utils.eelf.logger.api.spec.DebugLogSpec;
+import org.onap.dcae.utils.eelf.logger.api.spec.ErrorLogSpec;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -47,12 +48,14 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
 /**
  * @author Rajiv Singla
  */
 public class TcaAaiEnrichmentServiceImpl implements TcaAaiEnrichmentService {
 
-    private static final Logger logger = LoggerFactory.getLogger(TcaAaiEnrichmentServiceImpl.class);
+    private static final EELFLogger logger = EELFLogFactory.getLogger(TcaAaiEnrichmentServiceImpl.class);
 
     private final TcaAppProperties tcaAppProperties;
     private final RestTemplate aaiRestTemplate;
@@ -100,7 +103,7 @@ public class TcaAaiEnrichmentServiceImpl implements TcaAaiEnrichmentService {
 
         // get resource link
         final String resourceLink =
-                getVMResourceLink(getAAIRestAPIResponse(aaiRestTemplate, nodeQueryUri, requestId, transactionId));
+                getVMResourceLink(requestId, getAAIRestAPIResponse(aaiRestTemplate, nodeQueryUri, requestId, transactionId));
         if (resourceLink == null) {
             return;
         }
@@ -115,7 +118,7 @@ public class TcaAaiEnrichmentServiceImpl implements TcaAaiEnrichmentService {
                 getAAIRestAPIResponse(aaiRestTemplate, vServerEnrichmentUri, requestId, transactionId);
 
         // do aai enrichment
-        enrichAAI(vServerEnrichmentDetails, tcaAlert, TcaModelConstants.AAI_VSERVER_KEY_PREFIX);
+        enrichAAI(requestId, vServerEnrichmentDetails, tcaAlert, TcaModelConstants.AAI_VSERVER_KEY_PREFIX);
     }
 
     private static void doAaiVnfEnrichment(final TcaExecutionContext tcaExecutionContext,
@@ -138,7 +141,7 @@ public class TcaAaiEnrichmentServiceImpl implements TcaAaiEnrichmentService {
         final String aaiResponse = getAAIRestAPIResponse(aaiRestTemplate, genericVnfUri, requestId, transactionId);
 
         // do AAI enrichment
-        enrichAAI(aaiResponse, tcaAlert, TcaModelConstants.AAI_VNF_KEY_PREFIX);
+        enrichAAI(requestId, aaiResponse, tcaAlert, TcaModelConstants.AAI_VNF_KEY_PREFIX);
     }
 
 
@@ -162,7 +165,9 @@ public class TcaAaiEnrichmentServiceImpl implements TcaAaiEnrichmentService {
             final HttpEntity<String> httpEntity = new HttpEntity<>(headers);
             aaiResponseEntity = aaiRestTemplate.exchange(aaiUri, HttpMethod.GET, httpEntity, String.class);
         } catch (Exception e) {
-            logger.debug("Request id: " + requestId + ". Unable to get A&AI enrichment details", e);
+            final ErrorLogSpec errorLogSpec = LogSpec.createErrorLogSpec(requestId);
+            logger.errorLog().error("Request id: " + requestId + ". Unable to get A&AI enrichment details",
+                    errorLogSpec, e.toString());
         }
 
         if (aaiResponseEntity != null && aaiResponseEntity.getStatusCode().is2xxSuccessful()) {
@@ -182,17 +187,20 @@ public class TcaAaiEnrichmentServiceImpl implements TcaAaiEnrichmentService {
      *
      * @return true if A&AI enrichment completed successfully
      */
-    private static boolean enrichAAI(final String aaiEnrichmentDetails, final TcaAlert tcaAlert,
+    private static boolean enrichAAI(final String requestId, final String aaiEnrichmentDetails, final TcaAlert tcaAlert,
                                      final String keyPrefix) {
 
         final Aai preEnrichmentAAI = tcaAlert.getAai();
+        final ErrorLogSpec errorLogSpec = LogSpec.createErrorLogSpec(requestId);
+        final DebugLogSpec debugLogSpec = LogSpec.createDebugLogSpec(requestId);
+
         if (aaiEnrichmentDetails == null) {
-            logger.warn("Request id: {}. No A&AI Enrichment possible. A&AI Enrichment details are absent.",
-                    tcaAlert.getRequestId());
+            logger.errorLog().error("Request id: {}. No A&AI Enrichment possible. A&AI Enrichment details are absent.",
+                    errorLogSpec, tcaAlert.getRequestId());
             return false;
         }
 
-        final Aai enrichedAAI = getNewEnrichedAAI(aaiEnrichmentDetails);
+        final Aai enrichedAAI = getNewEnrichedAAI(requestId, aaiEnrichmentDetails);
 
         if (enrichedAAI != null) {
             final Set<Map.Entry<String, Object>> enrichedAAIEntrySet =
@@ -205,11 +213,12 @@ public class TcaAaiEnrichmentServiceImpl implements TcaAaiEnrichmentService {
                         keyPrefix + enrichedAAIEntry.getKey(), enrichedAAIEntry.getValue());
             }
 
-            logger.debug("Request id: {}. A&AI Enrichment was completed successfully.", tcaAlert.getRequestId());
+            logger.debugLog().debug("Request id: {}. A&AI Enrichment was completed successfully.",
+                    debugLogSpec, tcaAlert.getRequestId());
             return true;
         } else {
-            logger.warn("Request id: {}. No A&AI Enrichment possible. Skipped - Invalid A&AI Response.",
-                    tcaAlert.getRequestId());
+            logger.errorLog().error("Request id: {}. No A&AI Enrichment possible. Skipped - Invalid A&AI Response.",
+                    errorLogSpec, tcaAlert.getRequestId());
             return false;
         }
 
@@ -222,7 +231,7 @@ public class TcaAaiEnrichmentServiceImpl implements TcaAaiEnrichmentService {
      *
      * @return new A&AI with only top level A&AI Enrichment details
      */
-    private static Aai getNewEnrichedAAI(final String aaiEnrichmentDetails) {
+    private static Aai getNewEnrichedAAI(final String requestId, final String aaiEnrichmentDetails) {
         try {
             final JsonNode rootNode = TCA_OBJECT_MAPPER.readTree(aaiEnrichmentDetails);
             final Iterator<Map.Entry<String, JsonNode>> fieldsIterator = rootNode.fields();
@@ -236,8 +245,10 @@ public class TcaAaiEnrichmentServiceImpl implements TcaAaiEnrichmentService {
             }
             return TCA_OBJECT_MAPPER.treeToValue(rootNode, Aai.class);
         } catch (IOException e) {
-            logger.error(
-                    "Failed to Parse AAI Enrichment Details from JSON: {}, Exception: {}.", aaiEnrichmentDetails, e);
+            final ErrorLogSpec errorLogSpec = LogSpec.createErrorLogSpec(requestId);
+            logger.errorLog().error(
+                    "Failed to Parse AAI Enrichment Details from JSON: {}, Exception: {}.",
+                    errorLogSpec, aaiEnrichmentDetails, e.toString());
         }
         return null;
     }
@@ -249,7 +260,7 @@ public class TcaAaiEnrichmentServiceImpl implements TcaAaiEnrichmentService {
      *
      * @return object resource link String
      */
-    private static String getVMResourceLink(final String vmAAIResourceLinkDetails) {
+    private static String getVMResourceLink(final String requestId, final String vmAAIResourceLinkDetails) {
         if (StringUtils.hasText(vmAAIResourceLinkDetails)) {
             try {
                 final JsonNode jsonNode = TCA_OBJECT_MAPPER.readTree(vmAAIResourceLinkDetails);
@@ -258,8 +269,9 @@ public class TcaAaiEnrichmentServiceImpl implements TcaAaiEnrichmentService {
                     return resourceLinkJsonNode.asText();
                 }
             } catch (IOException e) {
-                logger.error("Unable to determine VM Object link inside AAI Resource Link Response JSON: {}",
-                        vmAAIResourceLinkDetails, e);
+                final ErrorLogSpec errorLogSpec = LogSpec.createErrorLogSpec(requestId);
+                logger.errorLog().error("Unable to determine VM Object link inside AAI Resource Link Response JSON: {}",
+                        errorLogSpec, vmAAIResourceLinkDetails, e.toString());
             }
         }
         return null;

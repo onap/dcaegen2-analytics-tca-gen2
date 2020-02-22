@@ -25,16 +25,12 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+import org.onap.dcae.analytics.tca.core.exception.AnalyticsParsingException;
 import org.onap.dcae.analytics.tca.core.service.TcaAaiEnrichmentContext;
 import org.onap.dcae.analytics.tca.core.service.TcaAbatementContext;
 import org.onap.dcae.analytics.tca.core.service.TcaExecutionContext;
 import org.onap.dcae.analytics.tca.model.facade.TcaAlert;
 import org.onap.dcae.analytics.tca.model.policy.TcaPolicy;
-import org.onap.dcae.analytics.tca.web.TcaAppProperties;
-import org.onap.dcae.analytics.tca.web.domain.TcaPolicyWrapper;
-import org.onap.dcae.analytics.web.exception.AnalyticsParsingException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.env.Environment;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
