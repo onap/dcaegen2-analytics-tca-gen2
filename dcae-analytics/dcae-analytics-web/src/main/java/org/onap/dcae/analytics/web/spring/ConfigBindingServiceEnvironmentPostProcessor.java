@@ -240,7 +240,7 @@ public class ConfigBindingServiceEnvironmentPostProcessor implements Environment
 
             // remove config service key prefix on spring reserved property key prefixes
             final Set<String> springKeyPrefixes =
-                    ConfigBindingServiceConstants.SPRING_RESERVED_PROPERTIES_KEY_PREFIXES;
+                    ConfigBindingServiceConstants.getSpringReservedPropertiesKeyPrefixes();
             final Set<String> springKeys = springKeyPrefixes.stream()
                     .map(springKeyPrefix -> configServicePropertiesKey + "." + springKeyPrefix)
                     .collect(Collectors.toSet());

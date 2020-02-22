@@ -26,10 +26,12 @@ import java.util.function.Supplier;
 
 import org.onap.dcae.analytics.model.AnalyticsHttpConstants;
 import org.onap.dcae.analytics.model.util.supplier.UnboundedSupplier;
+import org.onap.dcae.analytics.tca.core.util.LogSpec;
 import org.onap.dcae.analytics.web.util.AnalyticsWebUtils;
 import org.onap.dcae.analytics.web.util.function.MrSubscriberURLFunction;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.onap.dcae.utils.eelf.logger.api.log.EELFLogFactory;
+import org.onap.dcae.utils.eelf.logger.api.log.EELFLogger;
+import org.onap.dcae.utils.eelf.logger.api.spec.DebugLogSpec;
 import org.springframework.integration.support.MessageBuilder;
 import org.springframework.messaging.Message;
 
@@ -40,7 +42,7 @@ import org.springframework.messaging.Message;
  */
 public class MrTriggerMessageProvider {
 
-    private static final Logger logger = LoggerFactory.getLogger(MrTriggerMessageProvider.class);
+    private static final EELFLogger logger = EELFLogFactory.getLogger(MrTriggerMessageProvider.class);
 
     public static final String TRIGGER_METHOD_NAME = "getTriggerMessage";
 
@@ -60,8 +62,9 @@ public class MrTriggerMessageProvider {
         final String requestId = AnalyticsWebUtils.REQUEST_ID_SUPPLIER.get();
         final String transactionId = AnalyticsWebUtils.RANDOM_ID_SUPPLIER.get();
         final String beginTimestamp = AnalyticsWebUtils.CREATION_TIMESTAMP_SUPPLIER.get();
-        logger.debug("Request Id: {}. Transaction Id: {}. Begin TS: {}. Starting new DMaaP MR Subscriber poll.",
-                requestId, transactionId, beginTimestamp);
+        final DebugLogSpec debugLogSpec = LogSpec.createDebugLogSpec(requestId);
+        logger.debugLog().debug("Request Id: {}. Transaction Id: {}. Begin TS: {}. Starting new DMaaP MR Subscriber poll.",
+                debugLogSpec, requestId, transactionId, beginTimestamp);
         return MessageBuilder
                 .withPayload(subscriberUrlSupplier.get().toString())
                 .setHeader(AnalyticsHttpConstants.REQUEST_ID_HEADER_KEY, requestId)

@@ -32,8 +32,6 @@ import org.onap.dcae.analytics.tca.model.TcaModel;
 @Data
 public class SimpleAbatementEntity implements TcaAbatementEntity, TcaModel {
 
-    private static final long serialVersionUID = 1L;
-
     protected String lookupKey;
     protected String requestId;
     protected boolean isAbatementAlertSent;
