@@ -49,6 +49,11 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>dcae-analytics-model</artifactId>
         </dependency>
+        <!-- PROJECT DEPENDENCIES -->
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>dcae-analytics-tca-core</artifactId>
+        </dependency>
 
         <!-- ECOMP LOGGER -->
         <dependency>

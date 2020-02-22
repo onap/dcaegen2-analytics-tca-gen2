@@ -24,7 +24,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import org.onap.dcae.analytics.model.AnalyticsHttpConstants;
 import org.onap.dcae.analytics.model.DmaapMrConstants;
+import org.onap.dcae.analytics.tca.core.util.LogSpec;
 import org.onap.dcae.analytics.web.util.AnalyticsHttpUtils;
+import org.onap.dcae.utils.eelf.logger.api.log.EELFLogFactory;
+import org.onap.dcae.utils.eelf.logger.api.log.EELFLogger;
+import org.onap.dcae.utils.eelf.logger.api.spec.DebugLogSpec;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -49,6 +53,7 @@ import org.springframework.messaging.Message;
 public class MrSubscriberPollingAdvice extends AbstractRequestHandlerAdvice {
 
     private static final Logger log = LoggerFactory.getLogger(MrSubscriberPollingAdvice.class);
+    private static final EELFLogger eelfLogger = EELFLogFactory.getLogger(MrMessageSplitter.class);
 
     private final DynamicPeriodicTrigger trigger;
     private final int minPollingInterval;
@@ -112,10 +117,10 @@ public class MrSubscriberPollingAdvice extends AbstractRequestHandlerAdvice {
 
             final String requestId = AnalyticsHttpUtils.getRequestId(message.getHeaders());
             final String transactionId = AnalyticsHttpUtils.getTransactionId(message.getHeaders());
-
-            log.debug("Request Id: {}, Transaction Id: {}, Messages Present: {}, " +
-                            "Next Polling Interval will be: {}", requestId, transactionId,
-                    areMessagesPresent, nextPollingInterval);
+            DebugLogSpec debugLogSpec = LogSpec.createDebugLogSpec(requestId); 
+            eelfLogger.debugLog().debug("Request Id: {}, Transaction Id: {}, Messages Present: {}, " +
+                            "Next Polling Interval will be: {}", debugLogSpec, requestId, transactionId,
+                            String.valueOf(areMessagesPresent), nextPollingInterval.toString());
 
             trigger.setPeriod(nextPollingInterval.get());
 

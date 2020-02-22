@@ -24,9 +24,6 @@ import static org.apache.commons.text.StringEscapeUtils.unescapeJson;
 import static org.onap.dcae.analytics.model.AnalyticsHttpConstants.REQUEST_ID_HEADER_KEY;
 import static org.onap.dcae.analytics.model.AnalyticsModelConstants.ANALYTICS_REQUEST_ID_DELIMITER;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.IOException;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -37,13 +34,21 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 import org.onap.dcae.analytics.model.DmaapMrConstants;
-import org.onap.dcae.analytics.web.exception.AnalyticsParsingException;
+import org.onap.dcae.analytics.tca.core.exception.AnalyticsParsingException;
+import org.onap.dcae.analytics.tca.core.util.LogSpec;
 import org.onap.dcae.analytics.web.util.AnalyticsHttpUtils;
+import org.onap.dcae.utils.eelf.logger.api.log.EELFLogFactory;
+import org.onap.dcae.utils.eelf.logger.api.log.EELFLogger;
+import org.onap.dcae.utils.eelf.logger.api.spec.DebugLogSpec;
+import org.onap.dcae.utils.eelf.logger.api.spec.ErrorLogSpec;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.integration.splitter.AbstractMessageSplitter;
 import org.springframework.integration.support.MessageBuilder;
 import org.springframework.messaging.Message;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * DMaaP MR message splitter split the incoming messages into batch of given batch size
@@ -53,6 +58,7 @@ import org.springframework.messaging.Message;
 public class MrMessageSplitter extends AbstractMessageSplitter {
 
     private static final Logger logger = LoggerFactory.getLogger(MrMessageSplitter.class);
+    private static final EELFLogger eelfLogger = EELFLogFactory.getLogger(MrMessageSplitter.class);
 
     private final ObjectMapper objectMapper;
     private final Integer batchSize;
@@ -66,18 +72,19 @@ public class MrMessageSplitter extends AbstractMessageSplitter {
     @Override
     protected Object splitMessage(final Message<?> message) {
 
-        final List<String> dmaapMessages = convertJsonToStringMessages(String.class.cast(message.getPayload()).trim());
-
         final String requestId = AnalyticsHttpUtils.getRequestId(message.getHeaders());
+        final List<String> dmaapMessages = convertJsonToStringMessages(requestId, String.class.cast(message.getPayload()).trim());
+
         final String transactionId = AnalyticsHttpUtils.getTransactionId(message.getHeaders());
 
         logger.info("Request Id: {}, Transaction Id: {}, Received new messages from DMaaP MR. Count: {}",
                 requestId, transactionId, dmaapMessages.size());
 
         final List<List<String>> messagePartitions = partition(dmaapMessages, batchSize);
-
-        logger.debug("Request Id: {}, Transaction Id: {},  Max allowed messages per batch: {}. " +
-                "No of batches created: {}", requestId, transactionId, batchSize, messagePartitions.size());
+        final DebugLogSpec debugLogSpec = LogSpec.createDebugLogSpec(requestId);
+        eelfLogger.debugLog().debug("Request Id: {}, Transaction Id: {},  Max allowed messages per batch: {}. " +
+                "No of batches created: {}",
+                debugLogSpec, requestId, transactionId, String.valueOf(batchSize), String.valueOf(messagePartitions.size()));
 
         // append batch id to request id header
         return messagePartitions.isEmpty() ? null : IntStream.range(0, messagePartitions.size())
@@ -100,7 +107,7 @@ public class MrMessageSplitter extends AbstractMessageSplitter {
      *
      * @return List containing DMaaP MR Messages
      */
-    private List<String> convertJsonToStringMessages(@Nullable final String messagesJsonString) {
+    private List<String> convertJsonToStringMessages(String requestId, @Nullable final String messagesJsonString) {
 
         final LinkedList<String> messages = new LinkedList<>();
 
@@ -128,9 +135,11 @@ public class MrMessageSplitter extends AbstractMessageSplitter {
                 }
 
             } catch (IOException e) {
-                final String errorMessage = String.format("Unable to convert subscriber Json String to Messages. " +
+                ErrorLogSpec errorLogSpec = LogSpec.createErrorLogSpec(requestId); 
+                eelfLogger.errorLog().error("Unable to convert subscriber Json String to Messages. " +
+                        "Subscriber Response String: {}, Json Error: {}", errorLogSpec, messagesJsonString, e.toString());
+                String errorMessage = String.format("Unable to convert subscriber Json String to Messages. " +
                         "Subscriber Response String: %s, Json Error: %s", messagesJsonString, e);
-                logger.error(errorMessage, e);
                 throw new AnalyticsParsingException(errorMessage, e);
             }
 
@@ -183,6 +192,4 @@ public class MrMessageSplitter extends AbstractMessageSplitter {
         }
         return result;
     }
-
-
 }

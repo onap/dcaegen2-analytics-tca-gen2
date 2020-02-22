@@ -40,8 +40,6 @@ public abstract class ConfigBindingServiceConstants {
     public static final String ENV_CBS_PORT = "CONFIG_BINDING_SERVICE_SERVICE_PORT";
     public static final String CONFIG_BINDING_SERVICE_PROPERTIES_KEY = "config-binding-service";
 
-    public static final Set<String> SPRING_RESERVED_PROPERTIES_KEY_PREFIXES =
-            Stream.of("spring", "endpoints", "server", "logging", "management").collect(Collectors.toSet());
     public static final String CONFIG_SERVICE_MESSAGE_ROUTER_VALUE = "message_router";
     // CONVERT JSON TO MAP
     public static final String KEY_SEPARATOR = ".";
@@ -85,5 +83,12 @@ public abstract class ConfigBindingServiceConstants {
 
     private ConfigBindingServiceConstants() {
         // private constructor
+    }
+
+    /**
+     * getSpringReservedPropertiesKeyPrefixes
+     */
+    public static final Set<String> getSpringReservedPropertiesKeyPrefixes() {
+        return Stream.of("spring", "endpoints", "server", "logging", "management").collect(Collectors.toSet());   
     }
 }
