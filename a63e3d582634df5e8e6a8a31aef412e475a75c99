@@ -1,0 +1,8 @@
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Code-Review+1: Jack Lucas <jflucas@research.att.com>
+Code-Review+2: Joseph O'Leary <joseph.o.leary@est.tech>
+Submitted-by: Joseph O'Leary <joseph.o.leary@est.tech>
+Submitted-at: Tue, 03 Mar 2020 08:21:47 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/dcaegen2/analytics/tca-gen2/+/102793
+Project: dcaegen2/analytics/tca-gen2
+Branch: refs/heads/master
