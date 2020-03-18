@@ -46,6 +46,9 @@ public class TcaAaiConfig {
     @Bean
     public RestTemplate aaiRestTemplate(final TcaAaiRestClientPreferences aaiRestClientPreferences,
                                         final RestTemplateBuilder restTemplateBuilder) {
+        if(aaiRestClientPreferences == null) {
+            return null;
+        }
         return restTemplateBuilder
                 .additionalCustomizers(new HttpClientPreferencesCustomizer<>(aaiRestClientPreferences))
                 .build();
@@ -54,6 +57,9 @@ public class TcaAaiConfig {
     @Bean
     public TcaAaiEnrichmentService aaiEnrichmentService(final TcaAppProperties tcaAppProperties,
                                                         final RestTemplate aaiRestTemplate) {
+        if (aaiRestTemplate == null) {
+            return null;
+        }
         return new TcaAaiEnrichmentServiceImpl(tcaAppProperties, aaiRestTemplate);
     }
 
@@ -61,6 +67,9 @@ public class TcaAaiConfig {
     @Bean
     public TcaAaiEnrichmentContext tcaAaiEnrichmentContext(final TcaAppProperties tcaAppProperties,
                                                            final TcaAaiEnrichmentService aaiEnrichmentService) {
+        if (aaiEnrichmentService == null) {
+            return null;
+        }
         return new TcaAaiEnrichmentContextImpl(tcaAppProperties, aaiEnrichmentService);
     }
 

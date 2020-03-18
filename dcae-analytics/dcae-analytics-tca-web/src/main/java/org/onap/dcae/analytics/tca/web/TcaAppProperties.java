@@ -88,7 +88,7 @@ public class TcaAppProperties extends BaseConfigBindingServiceProperties {
         aai.setUrl(environment.getProperty(ConfigBindingServiceConstants.AAIURL));
         aai.setUsername(environment.getProperty(ConfigBindingServiceConstants.AAIUSERNAME));
         aai.setPassword(environment.getProperty(ConfigBindingServiceConstants.AAIPASSWORD));
-        aai.setGenericVnfPath(ConfigBindingServiceConstants.AAIGENERICVNFPATH);
+        aai.setGenericVnfPath(environment.getProperty(ConfigBindingServiceConstants.AAIGENERICVNFPATH));
         aai.setNodeQueryPath(environment.getProperty(ConfigBindingServiceConstants.AAINODEQUERYPATH));
         tca.setAai(aai);
 
