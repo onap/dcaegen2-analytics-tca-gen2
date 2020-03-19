@@ -1,8 +1,8 @@
 {
   "self": {
-    "name": "docker.tca",
-    "version": "1.0.5",
-    "description": "TCA Docker Application",
+    "name": "docker-tcagen2",
+    "version": "1.0.0",
+    "description": "TCAGen2 Docker Application",
     "component_type": "docker"
   },
   "streams": {
@@ -11,15 +11,15 @@
         "config_key": "tca_handle_in",
         "format": "VES_specification",
         "version": "5.28.4",
-        "type": "message router"
+        "type": "message_router"
       }
     ],
     "publishes": [
       {
         "config_key": "tca_handle_out",
-        "format": "TCA Alert Definition",
-        "version": "1.0.0",
-        "type": "message router"
+        "format": "DCAE_CL_Output",
+        "version": "1.0.1",
+        "type": "message_router"
       }
     ]
   },
@@ -29,12 +29,12 @@
         "config_key": "aai_broker_handle",
         "verb": "GET",
         "request": {
-          "format": "get_with_query_params",
+          "format": "tca.aai",
           "version": "1.0.0"
         },
         "response": {
-          "format": "aai_broker_response",
-          "version": "3.0.0"
+          "format": "tca.aai",
+          "version": "1.0.0"
         }
       }
     ],
@@ -45,19 +45,29 @@
       "type": "http",
       "interval": "30s",
       "timeout": "10s",
-      "endpoint": "actuator/health"
-    }
+      "endpoint": "/actuator/health"
+    },
+    "ports": [
+      "9091:0"
+    ],
+    "log_info": {
+        "log_directory": "/opt/logs/dcae-analytics-tca"
+     },
+    "tls_info":{
+        "cert_directory":"/opt/app/dcae-certificate/",
+        "use_tls":true
+     }
   },
   "artifacts": [
     {
-      "uri": "docker_repository.com:5100/org.onap.dcae.analytics/dcae-analytics-web:1.0",
+      "uri": "nexus3.onap.org:10001/onap/org.onap.dcaegen2.analytics.tca-gen2.dcae-analytics-tca-web:1.0.0",
       "type": "docker image"
     }
   ],
   "parameters": [
     {
-      "name": "spring.mongodb.uri",
-      "value": "mongodb://localhost:27017/analytics-tca",
+      "name": "spring.data.mongodb.uri",
+      "value": "mongodb://dcae-mongohost/dcae-tcagen2",
       "description": "Mongodb database uri",
       "designer_editable": true,
       "sourced_at_deployment": true,
@@ -67,7 +77,7 @@
     },
     {
       "name": "tca.policy",
-      "value": "{\"domain\":\"measurementsForVfScaling\",\"metricsPerEventName\":[{\"eventName\":\"Mfvs_eNodeB_RANKPI\",\"controlLoopSchemaType\":\"VNF\",\"policyScope\":\"resource=vFirewall;type=configuration\",\"policyName\":\"configuration.dcae.microservice.tca.xml\",\"policyVersion\":\"v0.0.1\",\"thresholds\":[{\"closedLoopControlName\":\"CL-FRWL-LOW-TRAFFIC-SIG-d925ed73-8231-4d02-9545-db4e101f88f8\",\"closedLoopEventStatus\":\"ONSET\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\"thresholdValue\":4000,\"direction\":\"LESS_OR_EQUAL\",\"severity\":\"MAJOR\"},{\"closedLoopControlName\":\"CL-FRWL-HIGH-TRAFFIC-SIG-EA36FE84-9342-5E13-A656-EC5F21309A09\",\"closedLoopEventStatus\":\"ONSET\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\"thresholdValue\":20000,\"direction\":\"GREATER_OR_EQUAL\",\"severity\":\"CRITICAL\"},{\"closedLoopControlName\":\"CL-FRWL-HIGH-TRAFFIC-SIG-EA36FE84-9342-5E13-A656-EC5F21309A09\",\"closedLoopEventStatus\":\"ABATED\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\"thresholdValue\":0,\"direction\":\"EQUAL\",\"severity\":\"CRITICAL\"}]},{\"eventName\":\"vLoadBalancer\",\"controlLoopSchemaType\":\"VNF\",\"policyScope\":\"resource=vLoadBalancer;type=configuration\",\"policyName\":\"configuration.dcae.microservice.tca.xml\",\"policyVersion\":\"v0.0.1\",\"thresholds\":[{\"closedLoopControlName\":\"CL-LBAL-LOW-TRAFFIC-SIG-FB480F95-A453-6F24-B767-FD703241AB1A\",\"closedLoopEventStatus\":\"ONSET\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\"thresholdValue\":500,\"direction\":\"LESS_OR_EQUAL\",\"severity\":\"MAJOR\"},{\"closedLoopControlName\":\"CL-LBAL-LOW-TRAFFIC-SIG-0C5920A6-B564-8035-C878-0E814352BC2B\",\"closedLoopEventStatus\":\"ONSET\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\"thresholdValue\":5000,\"direction\":\"GREATER_OR_EQUAL\",\"severity\":\"CRITICAL\"}]},{\"eventName\":\"virtualVMEventName\",\"controlLoopSchemaType\":\"VM\",\"policyScope\":\"resource=virtualVM;type=configuration\",\"policyName\":\"configuration.dcae.microservice.tca.xml\",\"policyVersion\":\"v0.0.1\",\"thresholds\":[{\"closedLoopControlName\":\"CL-LBAL-LOW-TRAFFIC-SIG-FB480F95-A453-6F24-B767-FD703241AB1A\",\"closedLoopEventStatus\":\"ONSET\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\"thresholdValue\":500,\"direction\":\"LESS_OR_EQUAL\",\"severity\":\"MAJOR\"}]}]}",
+      "value" : "{\"domain\":\"measurementsForVfScaling\",\"metricsPerEventName\":[{\"eventName\":\"vFirewallBroadcastPackets\",\"controlLoopSchemaType\":\"VM\",\"policyScope\":\"DCAE\",\"policyName\":\"DCAE.Config_tca-hi-lo\",\"policyVersion\":\"v0.0.1\",\"thresholds\":[{\"closedLoopControlName\":\"ControlLoop-vFirewall-d0a1dfc6-94f5-4fd4-a5b5-4630b438850a\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedTotalPacketsDelta\",\"thresholdValue\":300,\"direction\":\"LESS_OR_EQUAL\",\"severity\":\"MAJOR\",\"closedLoopEventStatus\":\"ONSET\"},{\"closedLoopControlName\":\"ControlLoop-vFirewall-d0a1dfc6-94f5-4fd4-a5b5-4630b438850a\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedTotalPacketsDelta\",\"thresholdValue\":700,\"direction\":\"GREATER_OR_EQUAL\",\"severity\":\"CRITICAL\",\"closedLoopEventStatus\":\"ONSET\"}]},{\"eventName\":\"vLoadBalancer\",\"controlLoopSchemaType\":\"VM\",\"policyScope\":\"DCAE\",\"policyName\":\"DCAE.Config_tca-hi-lo\",\"policyVersion\":\"v0.0.1\",\"thresholds\":[{\"closedLoopControlName\":\"ControlLoop-vDNS-6f37f56d-a87d-4b85-b6a9-cc953cf779b3\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedTotalPacketsDelta\",\"thresholdValue\":300,\"direction\":\"GREATER_OR_EQUAL\",\"severity\":\"CRITICAL\",\"closedLoopEventStatus\":\"ONSET\"}]},{\"eventName\":\"Measurement_vGMUX\",\"controlLoopSchemaType\":\"VNF\",\"policyScope\":\"DCAE\",\"policyName\":\"DCAE.Config_tca-hi-lo\",\"policyVersion\":\"v0.0.1\",\"thresholds\":[{\"closedLoopControlName\":\"ControlLoop-vCPE-48f0c2c3-a172-4192-9ae3-052274181b6e\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.additionalMeasurements[*].arrayOfFields[0].value\",\"thresholdValue\":0,\"direction\":\"EQUAL\",\"severity\":\"MAJOR\",\"closedLoopEventStatus\":\"ABATED\"},{\"closedLoopControlName\":\"ControlLoop-vCPE-48f0c2c3-a172-4192-9ae3-052274181b6e\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.additionalMeasurements[*].arrayOfFields[0].value\",\"thresholdValue\":0,\"direction\":\"GREATER\",\"severity\":\"CRITICAL\",\"closedLoopEventStatus\":\"ONSET\"}]}]}",
       "description": "Threshold Crossing Alert Policy JSON as string",
       "designer_editable": false,
       "sourced_at_deployment": false,
@@ -87,7 +97,7 @@
     },
     {
       "name": "tca.enable_abatement",
-      "value": true,
+      "value": "true",
       "description": "Enables / Disables TCA Alerts Abatement",
       "designer_editable": true,
       "sourced_at_deployment": false,
@@ -97,7 +107,7 @@
     },
     {
       "name": "tca.enable_ecomp_logging",
-      "value": true,
+      "value": "true",
       "description": "Enables / Disables ECOMP Logging",
       "designer_editable": true,
       "sourced_at_deployment": false,
@@ -107,7 +117,7 @@
     },
     {
       "name": "tca.aai.enable_enrichment",
-      "value": false,
+      "value": "true",
       "description": "Enables / Disables TCA A&AI Enrichment",
       "designer_editable": true,
       "sourced_at_deployment": true,
@@ -117,7 +127,7 @@
     },
     {
       "name": "tca.aai.url",
-      "value": "http://localhost:8443",
+      "value": "http://aai.onap.svc.cluster.local",
       "description": "A&AI Enrichment Service URL. Required only if A&AI Enrichment is enabled",
       "designer_editable": true,
       "sourced_at_deployment": true,
@@ -216,7 +226,7 @@
       "required": false
     },
     {
-      "name": "streams_subscribes.tca_handle_in.polling.fixedRate",
+      "name": "streams_subscribes.tca_handle_in.polling.fixed_rate",
       "value": 0,
       "description": "Subscriber fixed polling interval in milliseconds. Value of 0 indicated auto adjusting polling will be used",
       "designer_editable": true,

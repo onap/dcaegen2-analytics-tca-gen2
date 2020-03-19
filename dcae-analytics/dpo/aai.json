@@ -1,0 +1,11 @@
+{
+  "self": {
+    "name": "tca.aai",
+    "version": "1.0.0",
+    "description": "aai request/response structure"
+  },
+  "dataformatversion": "1.0.0",
+  "unstructured": {
+    "encoding": "UTF-8"
+  }
+}
