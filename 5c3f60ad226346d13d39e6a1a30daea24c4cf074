@@ -22,6 +22,30 @@
       "revId": "5c3f60ad226346d13d39e6a1a30daea24c4cf074",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a97e8c40_469b4f72",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/src/main/java/org/onap/dcae/analytics/tca/web/util/function/TcaAppPropsToAaiRestClientPrefsFunction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6065
+      },
+      "writtenOn": "2020-03-19T08:50:30Z",
+      "side": 1,
+      "message": "yes, you are right. I will fix it.",
+      "parentUuid": "cfc19d79_c04dd30f",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 11
+      },
+      "revId": "5c3f60ad226346d13d39e6a1a30daea24c4cf074",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
