@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cfc19d79_c04dd30f",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/src/main/java/org/onap/dcae/analytics/tca/web/util/function/TcaAppPropsToAaiRestClientPrefsFunction.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-03-19T02:57:14Z",
+      "side": 1,
+      "message": "instead commenting the negative check, it will be better if the aai restclient creation is done only when tca.aai.enable_enrichment is true",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 11
+      },
+      "revId": "5c3f60ad226346d13d39e6a1a30daea24c4cf074",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
