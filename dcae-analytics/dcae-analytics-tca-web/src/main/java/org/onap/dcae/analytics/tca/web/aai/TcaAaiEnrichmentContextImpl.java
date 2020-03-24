@@ -22,6 +22,10 @@ package org.onap.dcae.analytics.tca.web.aai;
 import org.onap.dcae.analytics.tca.core.service.TcaAaiEnrichmentContext;
 import org.onap.dcae.analytics.tca.core.service.TcaAaiEnrichmentService;
 import org.onap.dcae.analytics.tca.web.TcaAppProperties;
+import org.onap.dcae.analytics.tca.web.util.function.TcaAppPropsToAaiRestClientPrefsFunction;
+import org.onap.dcae.analytics.web.http.HttpClientPreferencesCustomizer;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * @author Rajiv Singla
@@ -29,14 +33,13 @@ import org.onap.dcae.analytics.tca.web.TcaAppProperties;
 public class TcaAaiEnrichmentContextImpl implements TcaAaiEnrichmentContext {
 
     private final TcaAppProperties tcaAppProperties;
-    private final TcaAaiEnrichmentService tcaAaiEnrichmentService;
+    private final RestTemplateBuilder restTemplateBuilder;
 
     public TcaAaiEnrichmentContextImpl(final TcaAppProperties tcaAppProperties,
-                                       final TcaAaiEnrichmentService tcaAaiEnrichmentService) {
+            final RestTemplateBuilder restTemplateBuilder) {
         this.tcaAppProperties = tcaAppProperties;
-        this.tcaAaiEnrichmentService = tcaAaiEnrichmentService;
+        this.restTemplateBuilder = restTemplateBuilder;
     }
-
 
     @Override
     public boolean isAaiEnrichmentEnabled() {
@@ -45,6 +48,13 @@ public class TcaAaiEnrichmentContextImpl implements TcaAaiEnrichmentContext {
 
     @Override
     public TcaAaiEnrichmentService getAaiEnrichmentService() {
-        return tcaAaiEnrichmentService;
+        TcaAaiRestClientPreferences aaiRestClientPreferences = new TcaAppPropsToAaiRestClientPrefsFunction()
+                .apply(tcaAppProperties);
+        if (aaiRestClientPreferences == null) {
+            return null;
+        }
+        RestTemplate aaiRestTemplate = restTemplateBuilder
+                .additionalCustomizers(new HttpClientPreferencesCustomizer<>(aaiRestClientPreferences)).build();
+        return new TcaAaiEnrichmentServiceImpl(tcaAppProperties, aaiRestTemplate);
     }
 }
