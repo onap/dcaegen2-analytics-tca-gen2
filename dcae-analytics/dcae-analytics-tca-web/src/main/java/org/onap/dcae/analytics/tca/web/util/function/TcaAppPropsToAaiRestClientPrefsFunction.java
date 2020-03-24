@@ -40,9 +40,9 @@ public class TcaAppPropsToAaiRestClientPrefsFunction implements Function<TcaAppP
         final TcaAppProperties.Aai aai = tcaAppProperties.getTca().getAai();
 
         // if aai enrichment is not enabled no need to configure aai Rest client template
-        if (!tcaAppProperties.getTca().getAai().getEnableEnrichment()) {
-            return null;
-        }
+//        if (!tcaAppProperties.getTca().getAai().getEnableEnrichment()) {
+//            return null;
+//        }
 
         final HttpHeaders aaiHeaders = AnalyticsHttpUtils.createDefaultHttpHeaders();
         aaiHeaders.add("Real-Time", "true");
