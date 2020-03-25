@@ -170,7 +170,7 @@
             <dependency>
                 <groupId>org.onap.dcaegen2.analytics.tca-gen2</groupId>
                 <artifactId>eelf-logger-logback-impl</artifactId>
-                <version>${eelf.logger.version}</version>
+                <version>${project.version}</version>
             </dependency>
 
             <!-- UTILITIES -->
