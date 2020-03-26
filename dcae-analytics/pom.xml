@@ -31,7 +31,6 @@
 	</parent>
 
     <artifactId>dcae-analytics</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>DCAE Analytics Parent</name>

@@ -30,8 +30,6 @@
 	</parent>
 
     <artifactId>eelf-logger</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
-
     <name>EELF Logger Parent</name>
     <packaging>pom</packaging>
 
