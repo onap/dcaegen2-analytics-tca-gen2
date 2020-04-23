@@ -49,7 +49,6 @@ import org.springframework.core.env.StandardEnvironment;
 import org.springframework.util.ClassUtils;
 import org.springframework.web.context.support.StandardServletEnvironment;
 
-import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 
 import reactor.core.Disposable;
@@ -223,9 +222,7 @@ public class ConfigBindingServiceEnvironmentPostProcessor implements Environment
      */
     public String parseTcaConfig(JsonObject jsonObject) {
 
-        JsonElement jsonConfig = jsonObject.get(ConfigBindingServiceConstants.CONFIG);
-
-        Optional<String> configServiceJsonOptional = Optional.of(jsonConfig.toString());
+        Optional<String> configServiceJsonOptional = Optional.of(jsonObject.toString());
 
         // convert fetch config binding service json string to Map of property key and
         // values
