@@ -30,6 +30,11 @@ import org.onap.dcae.analytics.model.configbindingservice.BaseConfigBindingServi
 import org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceConstants;
 import org.springframework.core.env.Environment;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import lombok.Data;
 import lombok.ToString;
 
@@ -78,7 +83,7 @@ public class TcaAppProperties extends BaseConfigBindingServiceProperties {
 
     public Tca getTca() {
         Tca tca = new Tca();
-        tca.setPolicy(environment.getProperty(ConfigBindingServiceConstants.POLICY));
+        tca.setPolicy(getPolicy());
         tca.setProcessingBatchSize(environment.getProperty(ConfigBindingServiceConstants.PROCESSINGBATCHSIZE, Integer.class));
         tca.setEnableAbatement(environment.getProperty(ConfigBindingServiceConstants.ENABLEABATEMENT, Boolean.class));
         tca.setEnableEcompLogging(environment.getProperty(ConfigBindingServiceConstants.ENABLEECOMPLOGGING, Boolean.class));
@@ -93,6 +98,26 @@ public class TcaAppProperties extends BaseConfigBindingServiceProperties {
         tca.setAai(aai);
 
         return tca;
+    }
+
+    /**
+     * Check policies items exist, and return policy.
+     * @return Policy policy
+     */
+    private String getPolicy() {
+
+        String policies = environment.getProperty(ConfigBindingServiceConstants.POLICIES);
+        if (policies == null) {
+            return environment.getProperty(ConfigBindingServiceConstants.POLICY);
+        }
+        JsonObject policiesObject = new JsonParser().parse(policies).getAsJsonObject();
+        JsonArray items = policiesObject.get(ConfigBindingServiceConstants.ITEMS).getAsJsonArray();
+        JsonElement policy = items.get(0)
+                                 .getAsJsonObject().get(ConfigBindingServiceConstants.CONFIG)
+                                 .getAsJsonObject().get(ConfigBindingServiceConstants.TCAPOLICY);
+
+        return policy.toString();
+
     }
 
     @Override
