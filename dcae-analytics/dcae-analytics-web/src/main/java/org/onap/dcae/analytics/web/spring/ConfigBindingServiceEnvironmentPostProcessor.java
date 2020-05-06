@@ -223,9 +223,14 @@ public class ConfigBindingServiceEnvironmentPostProcessor implements Environment
      */
     public String parseTcaConfig(JsonObject jsonObject) {
 
+        Optional<String> configServiceJsonOptional;
         JsonElement jsonConfig = jsonObject.get(ConfigBindingServiceConstants.CONFIG);
 
-        Optional<String> configServiceJsonOptional = Optional.of(jsonConfig.toString());
+        if (jsonConfig.getAsJsonObject().get(ConfigBindingServiceConstants.CONFIG) != null) {
+            configServiceJsonOptional = Optional.of(jsonConfig.toString());
+        } else {
+            configServiceJsonOptional = Optional.of(jsonObject.toString());
+        }
 
         // convert fetch config binding service json string to Map of property key and
         // values
