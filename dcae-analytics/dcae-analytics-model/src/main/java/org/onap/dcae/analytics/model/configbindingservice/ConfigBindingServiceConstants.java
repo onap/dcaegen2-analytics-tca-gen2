@@ -39,7 +39,7 @@ public abstract class ConfigBindingServiceConstants {
     public static final String SERVICE_NAME_ENV_VARIABLE_VALUE = System.getenv(SERVICE_NAME_ENV_VARIABLE_KEY);
     public static final String ENV_CBS_PORT = "CONFIG_BINDING_SERVICE_SERVICE_PORT";
     public static final String CONFIG_BINDING_SERVICE_PROPERTIES_KEY = "config-binding-service";
-
+    public static final String SPRING_CONFIG_BINDING_SERVICE_PROPERTIES_KEY = "config-binding-service.config";
     public static final String CONFIG_SERVICE_MESSAGE_ROUTER_VALUE = "message_router";
     // CONVERT JSON TO MAP
     public static final String KEY_SEPARATOR = ".";

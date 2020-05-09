@@ -81,6 +81,9 @@ public class ConfigBindingServiceEnvironmentPostProcessor implements Environment
     private String configServicePropertiesKey =
             ConfigBindingServiceConstants.CONFIG_BINDING_SERVICE_PROPERTIES_KEY;
 
+    private String springConfigServicePropertiesKey =
+            ConfigBindingServiceConstants.SPRING_CONFIG_BINDING_SERVICE_PROPERTIES_KEY;
+
     @Override
     public void postProcessEnvironment(final ConfigurableEnvironment environment,
             final SpringApplication application) {
@@ -247,13 +250,13 @@ public class ConfigBindingServiceEnvironmentPostProcessor implements Environment
             final Set<String> springKeyPrefixes =
                     ConfigBindingServiceConstants.getSpringReservedPropertiesKeyPrefixes();
             final Set<String> springKeys = springKeyPrefixes.stream()
-                    .map(springKeyPrefix -> configServicePropertiesKey + "." + springKeyPrefix)
+                    .map(springKeyPrefix -> springConfigServicePropertiesKey + "." + springKeyPrefix)
                     .collect(Collectors.toSet());
 
             filterKeyMap = configPropertiesMap.entrySet().stream()
                     .collect(Collectors.toMap((Map.Entry<String, Object> e) -> springKeys.stream()
                             .anyMatch(springKey -> e.getKey().startsWith(springKey))
-                                    ? e.getKey().substring(configServicePropertiesKey.toCharArray().length + 1)
+                                    ? e.getKey().substring(springConfigServicePropertiesKey.toCharArray().length + 1)
                                     : e.getKey(),
                             Map.Entry::getValue));
 
