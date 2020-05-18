@@ -22,7 +22,7 @@ package org.onap.dcae.analytics.tca.web.service;
 import java.util.List;
 
 import org.onap.dcae.analytics.tca.core.service.TcaExecutionContext;
-import org.onap.dcae.analytics.tca.model.policy.TcaPolicy;
+import org.onap.dcae.analytics.tca.web.domain.TcaPolicyWrapper;
 
 /**
  * Provides TCA functionality
@@ -36,13 +36,13 @@ public interface TcaProcessingService {
      *
      * @param requestId request id associated with tca execution request
      * @param transactionId transaction id associated with the tca execution request
-     * @param tcaPolicy tca policy that needs to be applied to CEF messages
+     * @param tcaPolicyWrapper tca policy that needs to be applied to CEF messages
      * @param cefMessages list of CEF messages that needs to be processed by TCA
      *
      * @return results of TCA Processing
      */
     List<TcaExecutionContext> getTcaExecutionResults(String requestId, String transactionId,
-                                                     TcaPolicy tcaPolicy,
+                                                     TcaPolicyWrapper tcaPolicyWrapper,
                                                      List<String> cefMessages);
 
 

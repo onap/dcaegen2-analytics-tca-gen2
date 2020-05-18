@@ -82,10 +82,11 @@ public class TcaRestController {
     @ApiOperation(value = "Applies TCA to provided execution request and generated TCA execution response")
     public ResponseEntity<List<TcaExecutionResponse>> execute(@RequestBody final TcaExecutionRequest
                                                                       tcaExecutionRequest) {
+        
         // process tca execution request
         final List<TcaExecutionContext> executionContexts = tcaProcessingService.getTcaExecutionResults(
                 tcaExecutionRequest.getRequestId(), tcaExecutionRequest.getTransactionId(),
-                tcaExecutionRequest.getTcaPolicy(), TcaUtils.getCefMessagesFromEventListeners
+                tcaPolicyWrapper, TcaUtils.getCefMessagesFromEventListeners
                         (tcaExecutionRequest.getEventListeners()));
         // create execution response
         final List<TcaExecutionResponse> tcaExecutionResponses = executionContexts.stream().map(tcaExecutionContext -> {

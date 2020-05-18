@@ -32,8 +32,6 @@ import org.onap.dcae.analytics.tca.model.policy.TcaPolicy;
 @Data
 public class TcaExecutionRequest implements TcaRestApiModel {
 
-    private static final long serialVersionUID = 1L;
-
     private String requestId;
     private String transactionId;
     private TcaPolicy tcaPolicy;

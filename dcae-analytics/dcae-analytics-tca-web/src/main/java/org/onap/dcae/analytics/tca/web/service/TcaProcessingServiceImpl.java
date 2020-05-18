@@ -37,6 +37,7 @@ import org.onap.dcae.analytics.tca.core.service.TcaExecutionContext;
 import org.onap.dcae.analytics.tca.core.util.TcaUtils;
 import org.onap.dcae.analytics.tca.core.util.function.calculation.TcaCalculator;
 import org.onap.dcae.analytics.tca.model.policy.TcaPolicy;
+import org.onap.dcae.analytics.tca.web.domain.TcaPolicyWrapper;
 
 /**
  * @author Rajiv Singla
@@ -56,10 +57,10 @@ public class TcaProcessingServiceImpl implements TcaProcessingService {
     @Override
     public List<TcaExecutionContext> getTcaExecutionResults(final String requestId,
                                                             final String transactionId,
-                                                            final TcaPolicy tcaPolicy,
+                                                            final TcaPolicyWrapper tcaPolicyWrapper,
                                                             final List<String> cefMessages) {
         // create tca policy deep copy as it should be same for current execution
-        final TcaPolicy tcaPolicyDeepCopy = TcaUtils.getTcaPolicyDeepCopy(tcaPolicy);
+        final TcaPolicy tcaPolicyDeepCopy = TcaUtils.getTcaPolicyDeepCopy(tcaPolicyWrapper.getTcaPolicy());
         // create new request id if not present
         final String executionRequestId = isPresent(requestId) ? requestId : REQUEST_ID_SUPPLIER.get();
         // create transaction id if not present

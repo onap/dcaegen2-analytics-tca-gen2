@@ -86,7 +86,7 @@ public class TcaMrConfig {
                         tcaProcessingService.getTcaExecutionResults(
                                 headers.getOrDefault(REQUEST_ID_HEADER_KEY, headers.get(MessageHeaders.ID)).toString(),
                                 headers.getOrDefault(REQUEST_TRANSACTION_ID_HEADER_KEY, "").toString(),
-                                tcaPolicyWrapper.getTcaPolicy(), cefMessages))
+                                tcaPolicyWrapper, cefMessages))
                 // transform tca execution results to alerts - if not alerts are detected terminate further processing
                 .transform(tcaAlertTransformer, c -> c.requiresReply(false))
                 // post messages to dmaap publisher input channel
