@@ -21,14 +21,33 @@ package org.onap.dcae.utils.eelf.logger.api.info;
 
 /**
  * Enum for Nagios monitoring/alerting codes as per table below.
- * <p>
- * <table cellspacing=0 border=1>
- * <tr><th>Return Code</th><th>Service State</th><th>Host State</th></tr>
- * <tr><td>0</td><td>OK</td><td>UP</td></tr>
- * <tr><td>1</td><td>WARNING</td><td>UP or DOWN/UNREACHABLE*</td></tr>
- * <tr><td>2</td><td>CRITICAL</td><td>DOWN/UNREACHABLE</td></tr>
- * <tr><td>3</td><td>UNKNOWN</td><td>DOWN/UNREACHABLE</td></tr>
- * </table>
+ *
+ *
+ * <div style="display: flex">
+ *         <div style="border-left: 2px solid black; border-right: 2px solid black;">
+ *             <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">Return Code</p>
+ *             <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">0</p>
+ *             <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">1</p>
+ *             <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">2</p>
+ *             <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;border-bottom: 2px solid black;">3</p>
+ *         </div>
+ *         <div style="border-right: 2px solid black;">
+ *             <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">Service State</p>
+ *             <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">OK</p>
+ *             <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">WARNING</p>
+ *             <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">CRITICAL</p>
+ *             <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;border-bottom: 2px solid black;">
+ *                 UNKNOWN</p>
+ *         </div>
+ *         <div style="border-right: 2px solid black;">
+ *             <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">Host State</p>
+ *             <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">UP</p>
+ *             <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">UP or DOWN/UNREACHABLE*</p>
+ *             <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">DOWN/UNREACHABLE</p>
+ *             <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;border-bottom: 2px solid black;">
+ *                 DOWN/UNREACHABLE</p>
+ *         </div>
+ * </div>
  *
  * @author Rajiv Singla
  */

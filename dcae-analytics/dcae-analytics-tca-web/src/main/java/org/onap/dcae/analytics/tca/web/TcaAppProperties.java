@@ -30,11 +30,6 @@ import org.onap.dcae.analytics.model.configbindingservice.BaseConfigBindingServi
 import org.onap.dcae.analytics.model.configbindingservice.ConfigBindingServiceConstants;
 import org.springframework.core.env.Environment;
 
-import com.google.gson.JsonArray;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
-
 import lombok.Data;
 import lombok.ToString;
 
@@ -106,17 +101,12 @@ public class TcaAppProperties extends BaseConfigBindingServiceProperties {
      */
     private String getPolicy() {
 
-        String policies = environment.getProperty(ConfigBindingServiceConstants.POLICIES);
+        String policies = environment.getProperty(ConfigBindingServiceConstants.WITHPOLICIES);
         if (policies == null) {
             return environment.getProperty(ConfigBindingServiceConstants.POLICY);
         }
-        JsonObject policiesObject = new JsonParser().parse(policies).getAsJsonObject();
-        JsonArray items = policiesObject.get(ConfigBindingServiceConstants.ITEMS).getAsJsonArray();
-        JsonElement policy = items.get(0)
-                                 .getAsJsonObject().get(ConfigBindingServiceConstants.CONFIG)
-                                 .getAsJsonObject().get(ConfigBindingServiceConstants.TCAPOLICY);
 
-        return policy.toString();
+        return policies;
 
     }
 

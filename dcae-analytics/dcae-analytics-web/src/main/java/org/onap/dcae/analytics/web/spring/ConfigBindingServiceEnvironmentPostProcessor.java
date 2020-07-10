@@ -229,8 +229,13 @@ public class ConfigBindingServiceEnvironmentPostProcessor implements Environment
         Optional<String> configServiceJsonOptional;
         JsonElement jsonConfig = jsonObject.get(ConfigBindingServiceConstants.CONFIG);
 
+        String policies = null;
         if (jsonConfig.getAsJsonObject().get(ConfigBindingServiceConstants.CONFIG) != null) {
             configServiceJsonOptional = Optional.of(jsonConfig.toString());
+            policies = jsonConfig.getAsJsonObject().get(ConfigBindingServiceConstants.POLICIES)
+                                 .getAsJsonObject().getAsJsonArray(ConfigBindingServiceConstants.ITEMS).get(0)
+                                 .getAsJsonObject().get(ConfigBindingServiceConstants.CONFIG)
+                                 .getAsJsonObject().get(ConfigBindingServiceConstants.TCAPOLICY).toString();
         } else {
             configServiceJsonOptional = Optional.of(jsonObject.toString());
         }
@@ -239,7 +244,9 @@ public class ConfigBindingServiceEnvironmentPostProcessor implements Environment
         // values
         Map<String, Object> configPropertiesMap = configServiceJsonOptional
                 .map(new JsonStringToMapFunction(configServicePropertiesKey)).orElse(Collections.emptyMap());
-
+        if (policies != null) {
+            configPropertiesMap.put(ConfigBindingServiceConstants.CONFIG_POLICIES, policies);
+        }
         if (configPropertiesMap.isEmpty()) {
 
             logger.warn("No properties found in config binding service");
@@ -264,7 +271,7 @@ public class ConfigBindingServiceEnvironmentPostProcessor implements Environment
                     .info("Adding property from config service in spring context: {} -> {}", key, value));
             MutablePropertySources sources = env.getPropertySources();
             addJsonPropertySource(sources, new MapPropertySource(configServicePropertiesKey, filterKeyMap));
-
+            
         }
         return configServiceJsonOptional.get();
     }

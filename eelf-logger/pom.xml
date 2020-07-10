@@ -39,10 +39,7 @@
         <module>eelf-logger-logback-impl</module>
     </modules>
 
-
-
     <properties>
-
         <!-- PROJECT SETTINGS-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -54,32 +51,30 @@
         <!-- PROJECT DEPENDENCIES -->
         <slf4j.version>1.7.5</slf4j.version>
         <logback.version>1.2.3</logback.version>
-        <lombok.version>1.16.10</lombok.version>
-
+        <lombok.version>1.18.12</lombok.version>
 
         <!--TESTING DEPENDENCIES -->
         <junit.version>4.12</junit.version>
-        <mockito.version>2.2.11</mockito.version>
+        <mockito.version>2.22.0</mockito.version>
         <assertj-core.version>2.6.0</assertj-core.version>
 
 
         <!-- PLUGINS VERSIONS -->
-        <compiler.plugin.version>3.3</compiler.plugin.version>
+        <compiler.plugin.version>3.8.0</compiler.plugin.version>
         <surefire.plugin.version>2.19.1</surefire.plugin.version>
         <failsafe.plugin.version>2.19.1</failsafe.plugin.version>
-        <findbugs.plugin.version>3.0.2</findbugs.plugin.version>
 
-        <pmd.plugin.version>3.5</pmd.plugin.version>
-        <javadoc.plugin.version>2.10.4</javadoc.plugin.version>
-        <source.plugin.version>2.4</source.plugin.version>
+        <pmd.plugin.version>3.11.0</pmd.plugin.version>
+        <javadoc.plugin.version>3.0.0</javadoc.plugin.version>
+        <source.plugin.version>3.2.1</source.plugin.version>
         <jar.plugin.version>2.4</jar.plugin.version>
         <deploy.plugin.version>2.8</deploy.plugin.version>
-        <lombok.plugin.version>1.16.10.0</lombok.plugin.version>
+        <lombok.plugin.version>1.18.0.0</lombok.plugin.version>
         <maven.site.plugin>3.5.1</maven.site.plugin>
 
         <!--PLUGIN SETTINGS -->
-        <compiler.source.version>1.7</compiler.source.version>
-        <compiler.target.version>1.7</compiler.target.version>
+        <compiler.source.version>11</compiler.source.version>
+        <compiler.target.version>11</compiler.target.version>
         <unit.test.pattern>**/*Test.java</unit.test.pattern>
         <skip.unit.tests>false</skip.unit.tests>
         <integration.test.pattern>**/*IT.java</integration.test.pattern>
@@ -293,19 +288,22 @@
 
                 <!-- FIND BUGS (STATIC CODE ANALYSIS) PLUGIN -->
                 <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>findbugs-maven-plugin</artifactId>
-                    <version>${findbugs.plugin.version}</version>
+                    <groupId>com.github.spotbugs</groupId>
+                    <artifactId>spotbugs-maven-plugin</artifactId>
+                    <version>4.0.4</version>
                     <configuration>
-                        <effort>Max</effort>
-                        <threshold>Low</threshold>
-                        <xmlOutput>true</xmlOutput>
-                        <!-- BUILD FAIL ON FINDBUGS ERRORS -->
-                        <failOnError>${findbugs.failOnError}</failOnError>
-                        <excludeFilterFile>${main.basedir}/findbugs-exclude.xml</excludeFilterFile>
-                        <outputDirectory>${project.reporting.outputDirectory}/findbugs</outputDirectory>
-                        <findbugsXmlOutputDirectory>${project.reporting.outputDirectory}/findbugs
-                        </findbugsXmlOutputDirectory>
+                        <plugins>
+                            <plugin>
+                                <groupId>com.h3xstream.findsecbugs</groupId>
+                                <artifactId>findsecbugs-plugin</artifactId>
+                                <version>1.10.1</version>
+                            </plugin>
+                            <plugin>
+                                <groupId>com.mebigfatguy.fb-contrib</groupId>
+                                <artifactId>fb-contrib</artifactId>
+                                <version>7.4.7</version>
+                            </plugin>
+                        </plugins>
                     </configuration>
                     <executions>
                         <execution>
@@ -452,10 +450,6 @@
                 <artifactId>maven-pmd-plugin</artifactId>
             </plugin>
 
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-            </plugin>
         </plugins>
 
     </build>
