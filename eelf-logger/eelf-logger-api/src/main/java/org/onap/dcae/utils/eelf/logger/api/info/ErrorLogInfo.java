@@ -30,36 +30,29 @@ public interface ErrorLogInfo extends LogInfo {
     /**
      * Required field contains an error code representing the error condition. The codes can be chose by
      * the logging application but they should adhere to the guidelines embodied in the table below:
-     * <table summary="Error Codes" cellspacing=0 border=1>
-     * <tr>
-     * <td style=min-width:50px>Error type</td>
-     * <td style=min-width:50px>Notes</td>
-     * </tr>
-     * <tr>
-     * <td style=min-width:50px>100</td>
-     * <td style=min-width:50px>Permission errors</td>
-     * </tr>
-     * <tr>
-     * <td style=min-width:50px>200</td>
-     * <td style=min-width:50px>Availability errors/Timeouts</td>
-     * </tr>
-     * <tr>
-     * <td style=min-width:50px>300</td>
-     * <td style=min-width:50px>Data errors</td>
-     * </tr>
-     * <tr>
-     * <td style=min-width:50px>400</td>
-     * <td style=min-width:50px>Schema errors</td>
-     * </tr>
-     * <tr>
-     * <td style=min-width:50px>500</td>
-     * <td style=min-width:50px>Business process errors</td>
-     * </tr>
-     * <tr>
-     * <td style=min-width:50px>900</td>
-     * <td style=min-width:50px>Unknown Errors</td>
-     * </tr>
-     * </table>
+     *
+     * <div style="display: flex">
+     *     <div style="border-left: 2px solid black; border-right: 2px solid black;">
+     *         <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">Error Type</p>
+     *         <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">100</p>
+     *         <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">200</p>
+     *         <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">300</p>
+     *         <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">400</p>
+     *         <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">500</p>
+     *         <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;border-bottom: 2px solid black;">
+     *             900</p>
+     *     </div>
+     *     <div style="border-right: 2px solid black;">
+     *         <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">Notes</p>
+     *         <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">Permission errors</p>
+     *         <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">Availability errors/Timeouts</p>
+     *         <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">Data errors</p>
+     *         <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">Schema errors</p>
+     *         <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;">Business process errors</p>
+     *         <p style="margin: 0;padding: 0 1px 0;border-top: 2px solid black;border-bottom: 2px solid black;">
+     *             Unknown Errors</p>
+     *     </div>
+     * </div>
      *
      * @return error Code
      */
