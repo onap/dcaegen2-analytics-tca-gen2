@@ -29,7 +29,7 @@ public interface AppLogInfo extends LogInfo {
 
     /**
      * Required field contains UUID which identifies this service instance inside an inventory management system
-     * (e.g. A&AI) to reference/manage this service as a unit
+     * to reference/manage this service as a unit
      *
      * @return remote VM Name or service the request is acting upon.
      */

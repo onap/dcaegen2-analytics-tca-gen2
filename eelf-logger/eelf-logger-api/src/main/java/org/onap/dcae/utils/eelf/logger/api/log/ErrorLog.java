@@ -57,6 +57,7 @@ public interface ErrorLog {
      *
      * @param message log message
      * @param errorLogSpec error log spec
+     * @param optionalLogSpec optional log spec
      * @param args argument values for log message interpolation
      */
     void error(String message, ErrorLogSpec errorLogSpec, OptionalLogSpec optionalLogSpec, String... args);
@@ -76,6 +77,7 @@ public interface ErrorLog {
      *
      * @param message log message
      * @param errorLogSpec error log spec
+     * @param optionalLogSpec optional log spec
      * @param args argument values for log message interpolation
      */
     void warn(String message, ErrorLogSpec errorLogSpec, OptionalLogSpec optionalLogSpec, String... args);

@@ -55,7 +55,7 @@
 
         <!-- DEPENDENCIES VERSION -->
         <eelf.logger.version>1.0.1-SNAPSHOT</eelf.logger.version>
-        <spring.boot.version>2.0.5.RELEASE</spring.boot.version>
+        <spring.boot.version>2.0.9.RELEASE</spring.boot.version>
         <spring.cloud.version>Finchley.RC2</spring.cloud.version>
         <spring.version>5.0.11.RELEASE</spring.version>
         <commons.text.version>1.4</commons.text.version>
@@ -64,36 +64,34 @@
         <findbugs.annotations.version>3.0.1</findbugs.annotations.version>
 
         <!-- TEST DEPENDENCIES -->
-        <junit-jupiter.version>5.0.2</junit-jupiter.version>
-        <junit-platform.version>1.0.2</junit-platform.version>
+        <junit-jupiter.version>5.6.2</junit-jupiter.version>
+        <junit-platform.version>1.6.2</junit-platform.version>
         <apiguardian-api.version>1.0.0</apiguardian-api.version>
 
         <!--TEST SETTINGS -->
         <surefire.redirectTestOutputToFile>true</surefire.redirectTestOutputToFile>
         <!-- PLUGINS VERSIONS -->
-        <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
         <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
         <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
-        <maven-javadoc-plugin.version>3.0.0-M1</maven-javadoc-plugin.version>
-        <maven-surefire-plugin.version>2.19</maven-surefire-plugin.version>
-        <maven-failsafe-plugin.version>2.19.1</maven-failsafe-plugin.version>
+        <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
+        <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
         <jacoco.plugin.version>0.8.1</jacoco.plugin.version>
         <sonar.coverage.jacoco.xmlReportPaths>${project.reporting.outputDirectory}/jacoco-ut/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
-        <findbugs.plugin.version>3.0.5</findbugs.plugin.version>
-        <pmd.plugin.version>3.8</pmd.plugin.version>
+        <pmd.plugin.version>3.11.0</pmd.plugin.version>
         <checkstyle.plugin.version>2.17</checkstyle.plugin.version>
-        <lombok.plugin.version>1.16.18.1</lombok.plugin.version>
+        <lombok.plugin.version>1.18.0.0</lombok.plugin.version>
         <gitcommitid.plugin.version>2.2.3</gitcommitid.plugin.version>
         <maven.build.helper.plugin.version>3.0.0</maven.build.helper.plugin.version>
-        <!--<dockerfile-maven-version>1.4.3</dockerfile-maven-version>-->
-	<docker-maven-version>1.0.0</docker-maven-version>
+	    <docker-maven-version>1.0.0</docker-maven-version>
 
         <!--PLUGIN SETTINGS -->
-        <compiler.source.version>1.8</compiler.source.version>
-        <compiler.target.version>1.8</compiler.target.version>
+        <compiler.source.version>11</compiler.source.version>
+        <compiler.target.version>11</compiler.target.version>
         <unit.test.pattern>**/*Test.java</unit.test.pattern>
         <skip.unit.tests>false</skip.unit.tests>
         <integration.test.pattern>**/*IT.java</integration.test.pattern>
@@ -110,7 +108,10 @@
         <snapshots.path>content/repositories/snapshots/</snapshots.path>
         <releases.path>content/repositories/releases/</releases.path>
         <docker.repository>nexus3.onap.org:10003</docker.repository>
-
+        <jackson.version>2.10.3</jackson.version>
+        <undertow.version>2.0.27</undertow.version>
+        <spring-webflux.version>5.2.6.RELEASE</spring-webflux.version>
+        <spring-swagger-ui.version>2.10.5</spring-swagger-ui.version>
 
         <!-- SONAR EXCLUSIONS -->
         <!-- EXCLUDE TEST COVERAGE ON
@@ -164,7 +165,6 @@
                 <version>${project.version}</version>
             </dependency>
 
-
             <!-- EELF LOGGER -->
             <dependency>
                 <groupId>org.onap.dcaegen2.analytics.tca-gen2</groupId>
@@ -188,7 +188,7 @@
             <dependency>
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
-                <version>${springfox-swagger2.version}</version>
+                <version>${spring-swagger-ui.version}</version>
             </dependency>
 
             <!-- FIND BUGS -->
@@ -224,16 +224,28 @@
                 <version>${junit-jupiter.version}</version>
                 <scope>test</scope>
             </dependency>
+		    <dependency>
+		        <groupId>junit</groupId>
+		        <artifactId>junit</artifactId>
+		        <version>4.13</version>
+		        <scope>test</scope>
+		    </dependency>
+		    <dependency>
+		        <groupId>org.junit.vintage</groupId>
+		        <artifactId>junit-vintage-engine</artifactId>
+		        <version>5.6.2</version>
+		        <scope>test</scope>
+		    </dependency>
             <dependency>
                 <groupId>org.junit.platform</groupId>
                 <artifactId>junit-platform-engine</artifactId>
-                <version>${junit-platform.version}</version>
+                <version>1.6.2</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.junit.platform</groupId>
                 <artifactId>junit-platform-launcher</artifactId>
-                <version>${junit-platform.version}</version>
+                <version>1.6.2</version>
                 <scope>test</scope>
             </dependency>
             <dependency>
@@ -253,6 +265,34 @@
                   <groupId>org.springframework</groupId>
                   <artifactId>spring-web</artifactId>
                 </exclusion>
+                <exclusion>
+		            <groupId>org.springframework.boot</groupId>
+		            <artifactId>spring-boot-starter-test</artifactId>
+                </exclusion>
+                <exclusion>
+	                <groupId>org.mockito</groupId>
+	                <artifactId>mockito-core</artifactId>
+                </exclusion>
+                <exclusion>
+			        <groupId>io.undertow</groupId>
+			        <artifactId>undertow-core</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-webflux</artifactId>
+                </exclusion>
+                <exclusion>
+		            <groupId>com.fasterxml.jackson.core</groupId>
+		            <artifactId>jackson-databind</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.fasterxml.jackson.core</groupId>
+                    <artifactId>jackson-core</artifactId>
+                </exclusion>
+                <exclusion>
+		            <groupId>com.fasterxml.jackson.dataformat</groupId>
+		            <artifactId>jackson-dataformat-smile</artifactId>
+                </exclusion>
               </exclusions>
                 <type>pom</type>
                 <scope>import</scope>
@@ -265,11 +305,47 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+			<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-webflux</artifactId>
+			    <version>${spring-webflux.version}</version>
+			</dependency>
           <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
             <version>${spring.version}</version>
           </dependency>
+          <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-starter-test</artifactId>
+            <version>2.2.0.RELEASE</version>
+          </dependency>
+          <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>2.23.4</version>
+          </dependency>
+	      <dependency>
+	        <groupId>io.undertow</groupId>
+	        <artifactId>undertow-core</artifactId>
+	        <version>2.0.27.Final</version>
+	      </dependency>
+	        <dependency>
+	            <groupId>com.fasterxml.jackson.core</groupId>
+	            <artifactId>jackson-databind</artifactId>
+                <version>2.10.3</version>
+	        </dependency>
+	        <dependency>
+			    <groupId>com.fasterxml.jackson.core</groupId>
+			    <artifactId>jackson-core</artifactId>
+			    <version>2.10.3</version>
+            </dependency>
+			<dependency>
+			   <groupId>com.fasterxml.jackson.dataformat</groupId>
+			   <artifactId>jackson-dataformat-smile</artifactId>
+			   <version>2.10.3</version>
+			</dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -383,13 +459,6 @@
                             <exclude>${integration.test.pattern}</exclude>
                         </excludes>
                     </configuration>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.junit.platform</groupId>
-                            <artifactId>junit-platform-surefire-provider</artifactId>
-                            <version>${junit-platform.version}</version>
-                        </dependency>
-                    </dependencies>
                 </plugin>
 
                 <!-- FAIL SAFE PLUGIN FOR INTEGRATION TEST -->
@@ -397,13 +466,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>${maven-failsafe-plugin.version}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.junit.platform</groupId>
-                            <artifactId>junit-platform-surefire-provider</artifactId>
-                            <version>${junit-platform.version}</version>
-                        </dependency>
-                    </dependencies>
                     <executions>
                         <execution>
                             <id>integration-tests</id>
@@ -426,34 +488,6 @@
                                     <logging.config>classpath:logback-test.xml</logging.config>
                                 </systemPropertyVariables>
                             </configuration>
-                        </execution>
-                    </executions>
-                </plugin>
-
-
-                <!-- FIND BUGS (STATIC CODE ANALYSIS) PLUGIN -->
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>findbugs-maven-plugin</artifactId>
-                    <version>${findbugs.plugin.version}</version>
-                    <configuration>
-                        <effort>Max</effort>
-                        <threshold>Low</threshold>
-                        <xmlOutput>true</xmlOutput>
-                        <!-- BUILD FAIL ON FINDBUGS ERRORS -->
-                        <failOnError>${findbugs.failOnError}</failOnError>
-                        <excludeFilterFile>${main.basedir}/findbugs-exclude.xml</excludeFilterFile>
-                        <outputDirectory>${project.reporting.outputDirectory}/findbugs</outputDirectory>
-                        <findbugsXmlOutputDirectory>${project.reporting.outputDirectory}/findbugs
-                        </findbugsXmlOutputDirectory>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>analyze-compile</id>
-                            <phase>compile</phase>
-                            <goals>
-                                <goal>check</goal>
-                            </goals>
                         </execution>
                     </executions>
                 </plugin>
@@ -700,11 +734,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-            </plugin>
-
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
             </plugin>
 
 	    <plugin>
