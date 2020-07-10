@@ -64,8 +64,8 @@
         <findbugs.annotations.version>3.0.1</findbugs.annotations.version>
 
         <!-- TEST DEPENDENCIES -->
-        <junit-jupiter.version>5.0.2</junit-jupiter.version>
-        <junit-platform.version>1.0.2</junit-platform.version>
+        <junit-jupiter.version>5.6.2</junit-jupiter.version>
+        <junit-platform.version>1.3.2</junit-platform.version>
         <apiguardian-api.version>1.0.0</apiguardian-api.version>
 
         <!--TEST SETTINGS -->
@@ -74,26 +74,24 @@
         <maven-compiler-plugin.version>3.7.0</maven-compiler-plugin.version>
         <maven-jar-plugin.version>3.0.2</maven-jar-plugin.version>
         <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
-        <maven-javadoc-plugin.version>3.0.0-M1</maven-javadoc-plugin.version>
-        <maven-surefire-plugin.version>2.19</maven-surefire-plugin.version>
-        <maven-failsafe-plugin.version>2.19.1</maven-failsafe-plugin.version>
+        <maven-javadoc-plugin.version>3.0.0</maven-javadoc-plugin.version>
+        <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
+        <maven-failsafe-plugin.version>3.0.0-M3</maven-failsafe-plugin.version>
         <maven-source-plugin.version>3.0.1</maven-source-plugin.version>
         <maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
         <jacoco.plugin.version>0.8.1</jacoco.plugin.version>
         <sonar.coverage.jacoco.xmlReportPaths>${project.reporting.outputDirectory}/jacoco-ut/jacoco.xml
         </sonar.coverage.jacoco.xmlReportPaths>
-        <findbugs.plugin.version>3.0.5</findbugs.plugin.version>
-        <pmd.plugin.version>3.8</pmd.plugin.version>
+        <pmd.plugin.version>3.11.0</pmd.plugin.version>
         <checkstyle.plugin.version>2.17</checkstyle.plugin.version>
-        <lombok.plugin.version>1.16.18.1</lombok.plugin.version>
+        <lombok.plugin.version>1.18.0.0</lombok.plugin.version>
         <gitcommitid.plugin.version>2.2.3</gitcommitid.plugin.version>
         <maven.build.helper.plugin.version>3.0.0</maven.build.helper.plugin.version>
-        <!--<dockerfile-maven-version>1.4.3</dockerfile-maven-version>-->
-	<docker-maven-version>1.0.0</docker-maven-version>
+	    <docker-maven-version>1.0.0</docker-maven-version>
 
         <!--PLUGIN SETTINGS -->
-        <compiler.source.version>1.8</compiler.source.version>
-        <compiler.target.version>1.8</compiler.target.version>
+        <compiler.source.version>11</compiler.source.version>
+        <compiler.target.version>11</compiler.target.version>
         <unit.test.pattern>**/*Test.java</unit.test.pattern>
         <skip.unit.tests>false</skip.unit.tests>
         <integration.test.pattern>**/*IT.java</integration.test.pattern>
@@ -110,7 +108,10 @@
         <snapshots.path>content/repositories/snapshots/</snapshots.path>
         <releases.path>content/repositories/releases/</releases.path>
         <docker.repository>nexus3.onap.org:10003</docker.repository>
-
+        <jackson.version>2.10.3</jackson.version>
+        <undertow.version>2.0.27</undertow.version>
+        <spring-webflux.version>5.2.6.RELEASE</spring-webflux.version>
+        <spring-swagger-ui.version>5.2.6.RELEASE</spring-swagger-ui.version>
 
         <!-- SONAR EXCLUSIONS -->
         <!-- EXCLUDE TEST COVERAGE ON
@@ -163,7 +164,6 @@
                 <artifactId>dcae-analytics-tca-core</artifactId>
                 <version>${project.version}</version>
             </dependency>
-
 
             <!-- EELF LOGGER -->
             <dependency>
@@ -430,23 +430,24 @@
                     </executions>
                 </plugin>
 
-
-                <!-- FIND BUGS (STATIC CODE ANALYSIS) PLUGIN -->
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>findbugs-maven-plugin</artifactId>
-                    <version>${findbugs.plugin.version}</version>
-                    <configuration>
-                        <effort>Max</effort>
-                        <threshold>Low</threshold>
-                        <xmlOutput>true</xmlOutput>
-                        <!-- BUILD FAIL ON FINDBUGS ERRORS -->
-                        <failOnError>${findbugs.failOnError}</failOnError>
-                        <excludeFilterFile>${main.basedir}/findbugs-exclude.xml</excludeFilterFile>
-                        <outputDirectory>${project.reporting.outputDirectory}/findbugs</outputDirectory>
-                        <findbugsXmlOutputDirectory>${project.reporting.outputDirectory}/findbugs
-                        </findbugsXmlOutputDirectory>
-                    </configuration>
+				<plugin>
+				    <groupId>com.github.spotbugs</groupId>
+				    <artifactId>spotbugs-maven-plugin</artifactId>
+				    <version>4.0.4</version>
+				    <configuration>
+				        <plugins>
+				            <plugin>
+				                <groupId>com.h3xstream.findsecbugs</groupId>
+				                <artifactId>findsecbugs-plugin</artifactId>
+				                <version>1.10.1</version>
+				            </plugin>
+				            <plugin>
+				                <groupId>com.mebigfatguy.fb-contrib</groupId>
+				                <artifactId>fb-contrib</artifactId>
+				                <version>7.4.7</version>
+				            </plugin>
+				        </plugins>
+				    </configuration>
                     <executions>
                         <execution>
                             <id>analyze-compile</id>
@@ -456,7 +457,7 @@
                             </goals>
                         </execution>
                     </executions>
-                </plugin>
+				</plugin>
 
                 <!-- PMD PLUGIN SETUP -->
                 <plugin>

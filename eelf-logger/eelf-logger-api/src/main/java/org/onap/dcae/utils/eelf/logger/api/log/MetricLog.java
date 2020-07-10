@@ -59,6 +59,7 @@ public interface MetricLog {
      *
      * @param message log message
      * @param metricLogSpec metric log spec
+     * @param optionalLogSpec optional log spec
      * @param args argument values for log message interpolation
      */
     void info(String message, MetricLogSpec metricLogSpec, OptionalLogSpec optionalLogSpec, String... args);
@@ -78,6 +79,7 @@ public interface MetricLog {
      *
      * @param message log message
      * @param metricLogSpec metric log spec
+     * @param optionalLogSpec optional log spec
      * @param args argument values for log message interpolation
      */
     void warn(String message, MetricLogSpec metricLogSpec, OptionalLogSpec optionalLogSpec, String... args);
@@ -96,6 +98,7 @@ public interface MetricLog {
      *
      * @param message log message
      * @param metricLogSpec metric log spec
+     * @param optionalLogSpec optional log spec
      * @param args argument values for log message interpolation
      */
     void error(String message, MetricLogSpec metricLogSpec, OptionalLogSpec optionalLogSpec, String... args);
@@ -114,6 +117,7 @@ public interface MetricLog {
      *
      * @param message log message
      * @param metricLogSpec metric log spec
+     * @param optionalLogSpec optional log spec
      * @param args argument values for log message interpolation
      */
     void fatal(String message, MetricLogSpec metricLogSpec, OptionalLogSpec optionalLogSpec, String... args);

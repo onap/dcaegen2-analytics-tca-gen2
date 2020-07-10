@@ -46,10 +46,12 @@ public abstract class ConfigBindingServiceConstants {
     public static final String CONFIG = "config";
     public static final String TCAPOLICY = "tca.policy";
     public static final String ITEMS = "items";
+    public static final String POLICIES = "policies";
     public static final int CONFIG_SERVICE_REFRESHPERIOD = 1;
+    public static final String CONFIG_POLICIES = "config-binding-service.config.policies.items[0].config.tca.policy";
 
     public static final String POLICY = "config-binding-service.config.tca.policy";
-    public static final String POLICIES = "config-binding-service.policies";
+    public static final String WITHPOLICIES = "config-binding-service.policies.items[0].tca.policy";
     public static final String PROCESSINGBATCHSIZE = "config-binding-service.config.tca.processing_batch_size";
     public static final String ENABLEABATEMENT = "config-binding-service.config.tca.enable_abatement";
     public static final String ENABLEECOMPLOGGING = "config-binding-service.config.tca.enable_ecomp_logging";
