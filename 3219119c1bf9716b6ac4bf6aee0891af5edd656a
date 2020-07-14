@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5710cefa_f308049d",
+        "filename": "dcae-analytics/dcae-analytics-model/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-14T20:29:10Z",
+      "side": 1,
+      "message": "bump up version in https://git.onap.org/dcaegen2/analytics/tca-gen2/tree/pom.xml to 1.2.0 and change parent reference in all submodules",
+      "range": {
+        "startLine": 30,
+        "startChar": 17,
+        "endLine": 30,
+        "endChar": 31
+      },
+      "revId": "3219119c1bf9716b6ac4bf6aee0891af5edd656a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15a438ab_375472d4",
+        "filename": "dcae-analytics/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-14T20:29:10Z",
+      "side": 1,
+      "message": "SECCOM revised recommended version to 2.11.0 recently; pls use this version",
+      "range": {
+        "startLine": 111,
+        "startChar": 25,
+        "endLine": 111,
+        "endChar": 31
+      },
+      "revId": "3219119c1bf9716b6ac4bf6aee0891af5edd656a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c2aa6db0_c94a9ed8",
+        "filename": "dcae-analytics/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2020-07-14T20:29:10Z",
+      "side": 1,
+      "message": "5.2.7.RELEASE",
+      "range": {
+        "startLine": 113,
+        "startChar": 32,
+        "endLine": 113,
+        "endChar": 45
+      },
+      "revId": "3219119c1bf9716b6ac4bf6aee0891af5edd656a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
