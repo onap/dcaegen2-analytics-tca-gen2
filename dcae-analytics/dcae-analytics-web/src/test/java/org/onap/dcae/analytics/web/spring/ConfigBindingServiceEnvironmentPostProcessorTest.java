@@ -219,34 +219,32 @@ public class ConfigBindingServiceEnvironmentPostProcessorTest extends BaseAnalyt
                 "            \"items\": [{\r\n" + 
                 "                \"policyName\": \"onap.vfirewall.tca.1-0-0.xml\",\r\n" + 
                 "                \"name\": \"onap.vfirewall.tca\",\r\n" + 
-                "                \"config\": {\r\n" + 
-                "                    \"tca.policy\": {\r\n" + 
-                "                        \"domain\": \"measurementsForVfScaling\",\r\n" + 
-                "                        \"metricsPerEventName\": [{\r\n" + 
-                "                            \"policyName\": \"onap.vfirewall.tca\",\r\n" + 
-                "                            \"policyScope\": \"resource=vLoadBalancer;type=configuration\",\r\n" + 
-                "                            \"thresholds\": [{\r\n" + 
-                "                                \"direction\": \"LESS_OR_EQUAL\",\r\n" + 
-                "                                \"severity\": \"MAJOR\",\r\n" + 
-                "                                \"closedLoopControlName\": \"VVK_ControlLoop-vFirewall-d0a1dfc6-94f5-4fd4-a5b5-4630b438850a\",\r\n" + 
-                "                                \"fieldPath\": \"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\r\n" + 
-                "                                \"version\": \"1.0.2\",\r\n" + 
-                "                                \"closedLoopEventStatus\": \"ONSET\",\r\n" + 
-                "                                \"thresholdValue\": 500\r\n" + 
-                "                            }, {\r\n" + 
-                "                                \"direction\": \"GREATER_OR_EQUAL\",\r\n" + 
-                "                                \"severity\": \"CRITICAL\",\r\n" + 
-                "                                \"closedLoopControlName\": \"VVK_ControlLoop-vFirewall-d0a1dfc6-94f5-4fd4-a5b5-4630b438850a\",\r\n" + 
-                "                                \"fieldPath\": \"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\r\n" + 
-                "                                \"version\": \"1.0.2\",\r\n" + 
-                "                                \"closedLoopEventStatus\": \"ONSET\",\r\n" + 
-                "                                \"thresholdValue\": 5000\r\n" + 
-                "                            }],\r\n" + 
-                "                            \"eventName\": \"vLoadBalancer\",\r\n" + 
-                "                            \"controlLoopSchemaType\": \"VNF\",\r\n" + 
-                "                            \"policyVersion\": \"v0.0.1\"\r\n" + 
-                "                        }]\r\n" + 
-                "                    }\r\n" + 
+                "                \"tca.policy\": {\r\n" + 
+                "                    \"domain\": \"measurementsForVfScaling\",\r\n" + 
+                "                    \"metricsPerEventName\": [{\r\n" + 
+                "                        \"policyName\": \"onap.vfirewall.tca\",\r\n" + 
+                "                        \"policyScope\": \"resource=vLoadBalancer;type=configuration\",\r\n" + 
+                "                        \"thresholds\": [{\r\n" + 
+                "                            \"direction\": \"LESS_OR_EQUAL\",\r\n" + 
+                "                            \"severity\": \"MAJOR\",\r\n" + 
+                "                            \"closedLoopControlName\": \"VVK_ControlLoop-vFirewall-d0a1dfc6-94f5-4fd4-a5b5-4630b438850a\",\r\n" + 
+                "                            \"fieldPath\": \"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\r\n" + 
+                "                            \"version\": \"1.0.2\",\r\n" + 
+                "                            \"closedLoopEventStatus\": \"ONSET\",\r\n" + 
+                "                            \"thresholdValue\": 500\r\n" + 
+                "                        }, {\r\n" + 
+                "                            \"direction\": \"GREATER_OR_EQUAL\",\r\n" + 
+                "                            \"severity\": \"CRITICAL\",\r\n" + 
+                "                            \"closedLoopControlName\": \"VVK_ControlLoop-vFirewall-d0a1dfc6-94f5-4fd4-a5b5-4630b438850a\",\r\n" + 
+                "                            \"fieldPath\": \"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\r\n" + 
+                "                            \"version\": \"1.0.2\",\r\n" + 
+                "                            \"closedLoopEventStatus\": \"ONSET\",\r\n" + 
+                "                            \"thresholdValue\": 5000\r\n" + 
+                "                        }],\r\n" + 
+                "                        \"eventName\": \"vLoadBalancer\",\r\n" + 
+                "                        \"controlLoopSchemaType\": \"VNF\",\r\n" + 
+                "                        \"policyVersion\": \"v0.0.1\"\r\n" + 
+                "                    }]\r\n" + 
                 "                },\r\n" + 
                 "                \"type_version\": \"1.0.0\",\r\n" + 
                 "                \"version\": \"1.0.0\",\r\n" + 
@@ -312,34 +310,32 @@ public class ConfigBindingServiceEnvironmentPostProcessorTest extends BaseAnalyt
                 "        \"items\": [{\r\n" + 
                 "            \"policyName\": \"onap.vfirewall.tca.1-0-0.xml\",\r\n" + 
                 "            \"name\": \"onap.vfirewall.tca\",\r\n" + 
-                "            \"config\": {\r\n" + 
-                "                \"tca.policy\": {\r\n" + 
-                "                    \"domain\": \"measurementsForVfScaling\",\r\n" + 
-                "                    \"metricsPerEventName\": [{\r\n" + 
-                "                        \"policyName\": \"onap.vfirewall.tca\",\r\n" + 
-                "                        \"policyScope\": \"resource=vLoadBalancer;type=configuration\",\r\n" + 
-                "                        \"thresholds\": [{\r\n" + 
-                "                            \"direction\": \"LESS_OR_EQUAL\",\r\n" + 
-                "                            \"severity\": \"MAJOR\",\r\n" + 
-                "                            \"closedLoopControlName\": \"VVK_ControlLoop-vFirewall-d0a1dfc6-94f5-4fd4-a5b5-4630b438850a\",\r\n" + 
-                "                            \"fieldPath\": \"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\r\n" + 
-                "                            \"version\": \"1.0.2\",\r\n" + 
-                "                            \"closedLoopEventStatus\": \"ONSET\",\r\n" + 
-                "                            \"thresholdValue\": 500\r\n" + 
-                "                        }, {\r\n" + 
-                "                            \"direction\": \"GREATER_OR_EQUAL\",\r\n" + 
-                "                            \"severity\": \"CRITICAL\",\r\n" + 
-                "                            \"closedLoopControlName\": \"VVK_ControlLoop-vFirewall-d0a1dfc6-94f5-4fd4-a5b5-4630b438850a\",\r\n" + 
-                "                            \"fieldPath\": \"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\r\n" + 
-                "                            \"version\": \"1.0.2\",\r\n" + 
-                "                            \"closedLoopEventStatus\": \"ONSET\",\r\n" + 
-                "                            \"thresholdValue\": 5000\r\n" + 
-                "                        }],\r\n" + 
-                "                        \"eventName\": \"vLoadBalancer\",\r\n" + 
-                "                        \"controlLoopSchemaType\": \"VNF\",\r\n" + 
-                "                        \"policyVersion\": \"v0.0.1\"\r\n" + 
-                "                    }]\r\n" + 
-                "                }\r\n" + 
+                "            \"tca.policy\": {\r\n" + 
+                "                \"domain\": \"measurementsForVfScaling\",\r\n" + 
+                "                \"metricsPerEventName\": [{\r\n" + 
+                "                    \"policyName\": \"onap.vfirewall.tca\",\r\n" + 
+                "                    \"policyScope\": \"resource=vLoadBalancer;type=configuration\",\r\n" + 
+                "                    \"thresholds\": [{\r\n" + 
+                "                        \"direction\": \"LESS_OR_EQUAL\",\r\n" + 
+                "                        \"severity\": \"MAJOR\",\r\n" + 
+                "                        \"closedLoopControlName\": \"VVK_ControlLoop-vFirewall-d0a1dfc6-94f5-4fd4-a5b5-4630b438850a\",\r\n" + 
+                "                        \"fieldPath\": \"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\r\n" + 
+                "                        \"version\": \"1.0.2\",\r\n" + 
+                "                        \"closedLoopEventStatus\": \"ONSET\",\r\n" + 
+                "                        \"thresholdValue\": 500\r\n" + 
+                "                    }, {\r\n" + 
+                "                        \"direction\": \"GREATER_OR_EQUAL\",\r\n" + 
+                "                        \"severity\": \"CRITICAL\",\r\n" + 
+                "                        \"closedLoopControlName\": \"VVK_ControlLoop-vFirewall-d0a1dfc6-94f5-4fd4-a5b5-4630b438850a\",\r\n" + 
+                "                        \"fieldPath\": \"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedBroadcastPacketsAccumulated\",\r\n" + 
+                "                        \"version\": \"1.0.2\",\r\n" + 
+                "                        \"closedLoopEventStatus\": \"ONSET\",\r\n" + 
+                "                        \"thresholdValue\": 5000\r\n" + 
+                "                    }],\r\n" + 
+                "                    \"eventName\": \"vLoadBalancer\",\r\n" + 
+                "                    \"controlLoopSchemaType\": \"VNF\",\r\n" + 
+                "                    \"policyVersion\": \"v0.0.1\"\r\n" + 
+                "                }]\r\n" + 
                 "            },\r\n" + 
                 "            \"type_version\": \"1.0.0\",\r\n" + 
                 "            \"version\": \"1.0.0\",\r\n" + 

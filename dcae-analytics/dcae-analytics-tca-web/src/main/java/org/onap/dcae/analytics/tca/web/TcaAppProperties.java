@@ -101,12 +101,8 @@ public class TcaAppProperties extends BaseConfigBindingServiceProperties {
      */
     private String getPolicy() {
 
-        String policies = environment.getProperty(ConfigBindingServiceConstants.WITHPOLICIES);
-        if (policies == null) {
-            return environment.getProperty(ConfigBindingServiceConstants.POLICY);
-        }
-
-        return policies;
+        String policy = environment.getProperty(ConfigBindingServiceConstants.POLICY);
+        return policy;
 
     }
 
