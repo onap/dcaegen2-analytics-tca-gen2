@@ -245,7 +245,7 @@ public class ConfigBindingServiceEnvironmentPostProcessor implements Environment
         Map<String, Object> configPropertiesMap = configServiceJsonOptional
                 .map(new JsonStringToMapFunction(configServicePropertiesKey)).orElse(Collections.emptyMap());
         if (policies != null) {
-            configPropertiesMap.put(ConfigBindingServiceConstants.CONFIG_POLICIES, policies);
+            configPropertiesMap.put(ConfigBindingServiceConstants.POLICY, policies);
         }
         if (configPropertiesMap.isEmpty()) {
 
