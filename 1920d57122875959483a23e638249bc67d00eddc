@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "77fcf731_8275e4d7",
+        "filename": "dcae-analytics/dcae-analytics-web/src/main/java/org/onap/dcae/analytics/web/spring/ConfigBindingServiceEnvironmentPostProcessor.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2020-07-28T12:11:19Z",
+      "side": 1,
+      "message": "add 2020 china mobile",
+      "revId": "1920d57122875959483a23e638249bc67d00eddc",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
