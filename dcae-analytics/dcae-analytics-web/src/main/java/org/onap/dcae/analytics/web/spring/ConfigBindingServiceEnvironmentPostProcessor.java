@@ -227,32 +227,28 @@ public class ConfigBindingServiceEnvironmentPostProcessor implements Environment
      */
     public String parseTcaConfig(JsonObject jsonObject) {
 
-        Optional<String> configServiceJsonOptional;
-        JsonElement jsonConfig = jsonObject.get(ConfigBindingServiceConstants.CONFIG);
+        Optional<String> configServiceJsonOptional = Optional.of(jsonObject.toString());
+
+        JsonElement jsonPolicyConfig = jsonObject.get(ConfigBindingServiceConstants.POLICIES);
 
         String policies = null;
-        if (jsonConfig.getAsJsonObject().get(ConfigBindingServiceConstants.CONFIG) != null) {
-            configServiceJsonOptional = Optional.of(jsonConfig.toString());
-            policies = jsonConfig.getAsJsonObject().get(ConfigBindingServiceConstants.POLICIES)
-                                 .getAsJsonObject().getAsJsonArray(ConfigBindingServiceConstants.ITEMS).get(0)
-                                 .getAsJsonObject().get(ConfigBindingServiceConstants.TCAPOLICY).toString();
-        } else {
-            configServiceJsonOptional = Optional.of(jsonObject.toString());
+        if (jsonPolicyConfig != null) {
+            policies = jsonPolicyConfig.getAsJsonObject().getAsJsonArray(ConfigBindingServiceConstants.ITEMS).get(0)
+                                       .getAsJsonObject().get(ConfigBindingServiceConstants.TCAPOLICY).toString();
         }
 
         // convert fetch config binding service json string to Map of property key and
         // values
         Map<String, Object> configPropertiesMap = configServiceJsonOptional
                 .map(new JsonStringToMapFunction(configServicePropertiesKey)).orElse(Collections.emptyMap());
+
         if (policies != null) {
             configPropertiesMap.put(ConfigBindingServiceConstants.POLICY, policies);
         }
         if (configPropertiesMap.isEmpty()) {
-
             logger.warn("No properties found in config binding service");
 
         } else {
-
             // remove config service key prefix on spring reserved property key prefixes
             final Set<String> springKeyPrefixes =
                     ConfigBindingServiceConstants.getSpringReservedPropertiesKeyPrefixes();
