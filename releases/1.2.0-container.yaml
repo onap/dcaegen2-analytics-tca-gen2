@@ -1,0 +1,9 @@
+distribution_type: 'container'
+version: '1.2.0'
+project: 'dcaegen2-analytics-tcagen2'
+log_dir: 'dcaegen2-analytics-tca-gen2-maven-docker-stage-master/414/'
+containers:
+  - name: 'org.onap.dcaegen2.analytics.tca-gen2.dcae-analytics-tca-web'
+    version: '1.2.0-20200817T205211Z'
+container_release_tag: '1.2.0'
+ref: 'effaf6e52639284b18b2359bde7691c713688407' 
