@@ -1,0 +1,4 @@
+distribution_type: 'maven'
+version: '1.2.0'
+project: 'dcaegen2-analytics-tcagen2'
+log_dir: 'dcaegen2-analytics-tca-gen2-maven-stage-master/156'
