@@ -234,6 +234,7 @@ public class ConfigBindingServiceEnvironmentPostProcessor implements Environment
         String policies = null;
         if (jsonPolicyConfig != null) {
             policies = jsonPolicyConfig.getAsJsonObject().getAsJsonArray(ConfigBindingServiceConstants.ITEMS).get(0)
+            		                   .getAsJsonObject().get(ConfigBindingServiceConstants.CONFIG)
                                        .getAsJsonObject().get(ConfigBindingServiceConstants.TCAPOLICY).toString();
         }
 
