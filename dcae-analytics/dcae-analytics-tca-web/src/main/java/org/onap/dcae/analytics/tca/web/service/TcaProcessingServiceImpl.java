@@ -69,8 +69,7 @@ public class TcaProcessingServiceImpl implements TcaProcessingService {
         return IntStream.range(0, cefMessages.size())
                 // generate initial Processing contexts
                 .mapToObj(cefMessageIndex -> GenericTcaExecutionContext.builder()
-                        .requestId(executionRequestId +
-                                AnalyticsModelConstants.ANALYTICS_REQUEST_ID_DELIMITER + cefMessageIndex)
+                        .requestId(executionRequestId)
                         .transactionId(executionTransactionId)
                         .messageIndex(cefMessageIndex)
                         .cefMessage(cefMessages.get(cefMessageIndex))
