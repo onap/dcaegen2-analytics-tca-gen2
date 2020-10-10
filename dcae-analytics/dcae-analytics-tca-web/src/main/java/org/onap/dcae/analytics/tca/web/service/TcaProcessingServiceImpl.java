@@ -27,7 +27,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import org.onap.dcae.analytics.model.AnalyticsModelConstants;
 import org.onap.dcae.analytics.tca.core.service.GenericTcaExecutionContext;
 import org.onap.dcae.analytics.tca.core.service.GenericTcaProcessingContext;
 import org.onap.dcae.analytics.tca.core.service.GenericTcaResultContext;
@@ -69,8 +68,7 @@ public class TcaProcessingServiceImpl implements TcaProcessingService {
         return IntStream.range(0, cefMessages.size())
                 // generate initial Processing contexts
                 .mapToObj(cefMessageIndex -> GenericTcaExecutionContext.builder()
-                        .requestId(executionRequestId +
-                                AnalyticsModelConstants.ANALYTICS_REQUEST_ID_DELIMITER + cefMessageIndex)
+                        .requestId(executionRequestId)
                         .transactionId(executionTransactionId)
                         .messageIndex(cefMessageIndex)
                         .cefMessage(cefMessages.get(cefMessageIndex))

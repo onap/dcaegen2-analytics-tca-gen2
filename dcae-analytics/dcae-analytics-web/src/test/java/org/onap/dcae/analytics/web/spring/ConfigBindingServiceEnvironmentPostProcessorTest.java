@@ -211,6 +211,7 @@ public class ConfigBindingServiceEnvironmentPostProcessorTest extends BaseAnalyt
                 "    \"policies\": {\r\n" + 
                 "        \"event\": {},\r\n" + 
                 "        \"items\": [{\r\n" + 
+                "        \"config\": {\r\n" + 
                 "            \"tca.policy\": {\r\n" + 
                 "                \"domain\": \"measurementsForVfScaling\",\r\n" + 
                 "                \"metricsPerEventName\": [{\r\n" + 
@@ -237,6 +238,7 @@ public class ConfigBindingServiceEnvironmentPostProcessorTest extends BaseAnalyt
                 "                    \"controlLoopSchemaType\": \"VNF\",\r\n" + 
                 "                    \"policyVersion\": \"v0.0.1\"\r\n" + 
                 "                }]\r\n" + 
+                "            }\r\n" + 
                 "            }\r\n" + 
                 "        }]\r\n" + 
                 "    }\r\n" + 
@@ -286,6 +288,7 @@ public class ConfigBindingServiceEnvironmentPostProcessorTest extends BaseAnalyt
                 "    \"policies\": {\r\n" + 
                 "        \"event\": {},\r\n" + 
                 "        \"items\": [{\r\n" + 
+                "        \"config\": {\r\n" + 
                 "            \"tca.policy\": {\r\n" + 
                 "                \"domain\": \"measurementsForVfScaling\",\r\n" + 
                 "                \"metricsPerEventName\": [{\r\n" + 
@@ -312,6 +315,7 @@ public class ConfigBindingServiceEnvironmentPostProcessorTest extends BaseAnalyt
                 "                    \"controlLoopSchemaType\": \"VNF\",\r\n" + 
                 "                    \"policyVersion\": \"v0.0.1\"\r\n" + 
                 "                }]\r\n" + 
+                "            }\r\n" + 
                 "            }\r\n" + 
                 "        }]\r\n" + 
                 "    }\r\n" + 
