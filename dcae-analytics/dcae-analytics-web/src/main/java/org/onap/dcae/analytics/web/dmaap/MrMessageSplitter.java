@@ -22,7 +22,6 @@ package org.onap.dcae.analytics.web.dmaap;
 import static org.apache.commons.text.StringEscapeUtils.unescapeJava;
 import static org.apache.commons.text.StringEscapeUtils.unescapeJson;
 import static org.onap.dcae.analytics.model.AnalyticsHttpConstants.REQUEST_ID_HEADER_KEY;
-import static org.onap.dcae.analytics.model.AnalyticsModelConstants.ANALYTICS_REQUEST_ID_DELIMITER;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -95,8 +94,7 @@ public class MrMessageSplitter extends AbstractMessageSplitter {
                         MessageBuilder
                                 .withPayload(messagePartitions.get(0))
                                 .copyHeaders(message.getHeaders())
-                                .setHeader(REQUEST_ID_HEADER_KEY,
-                                        requestId + ANALYTICS_REQUEST_ID_DELIMITER + batchIndex)
+                                .setHeader(REQUEST_ID_HEADER_KEY, requestId)
                                 .build()
 
                 );
