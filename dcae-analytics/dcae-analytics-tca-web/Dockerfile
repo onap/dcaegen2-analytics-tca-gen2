@@ -3,7 +3,7 @@
 # Only changes made in docker/Dockerfile template file will be persistent
 # ==========================================================================
 
-FROM openjdk:11-jre-slim
+FROM nexus3.onap.org:10001/onap/integration-java11
 
 MAINTAINER Rajiv Singla <rs153v@att.com>
 
