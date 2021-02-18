@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "47cb3697_d65cf5b2",
+        "filename": "dcae-analytics/dcae-analytics-model/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2021-02-18T07:50:23Z",
+      "side": 1,
+      "message": "Bump the version please, I think 1.2.1 is released.",
+      "range": {
+        "startLine": 30,
+        "startChar": 17,
+        "endLine": 30,
+        "endChar": 31
+      },
+      "revId": "b69f6cdb98e8a1720845b616dd3130bce3609a96",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
