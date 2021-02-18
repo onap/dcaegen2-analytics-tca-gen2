@@ -3,7 +3,7 @@
 # Only changes made in docker/Dockerfile template file will be persistent
 # ==========================================================================
 
-FROM openjdk:11-jre-slim
+FROM nexus3.onap.org:10001/onap/integration-java11:8.0.0
 
 MAINTAINER Rajiv Singla <rs153v@att.com>
 
@@ -12,12 +12,13 @@ ARG FINAL_JAR
 ARG DEPENDENCIES_DIR
 ARG DOCKER_ARTIFACT_DIR
 
+USER root
 RUN mkdir -p /var/log/ONAP/dcaegen2/analytics/tca-gen2
 #Add a new user and group to allow container to be run as non-root
-RUN groupadd tca-gen2 && useradd -g tca-gen2 tca-gen2; \
-    chmod a+rwx /opt; \
-    chmod a+rwx /var/log/ONAP/dcaegen2/analytics/tca-gen2; \
-    chown -R tca-gen2:tca-gen2 /opt; \
+RUN addgroup tca-gen2 && adduser --ingroup tca-gen2 tca-gen2 && \
+    chmod u+rwx /opt; \
+    chmod u+rw /var/log/ONAP/dcaegen2/analytics/tca-gen2 && \
+    chown -R tca-gen2:tca-gen2 /opt && \
     chown -R tca-gen2:tca-gen2 /var/log/ONAP/dcaegen2/analytics/tca-gen2
 
 #Copy dependencies and executable jar
