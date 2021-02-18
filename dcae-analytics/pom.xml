@@ -19,16 +19,16 @@
   -->
 
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>org.onap.dcaegen2.analytics.tca-gen2</groupId>
-		<artifactId>tca-gen2-parent</artifactId>
-		<version>1.2.1-SNAPSHOT</version>
-	</parent>
+    <parent>
+        <groupId>org.onap.dcaegen2.analytics.tca-gen2</groupId>
+        <artifactId>tca-gen2-parent</artifactId>
+        <version>1.2.1-SNAPSHOT</version>
+    </parent>
 
     <artifactId>dcae-analytics</artifactId>
     <packaging>pom</packaging>
@@ -48,7 +48,7 @@
 
     <properties>
 
-        <!-- PROJECT SETTINGS-->
+        <!-- PROJECT SETTINGS -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <main.basedir>${project.basedir}</main.basedir>
@@ -59,7 +59,7 @@
         <spring.cloud.version>Finchley.RC2</spring.cloud.version>
         <spring.version>5.0.11.RELEASE</spring.version>
         <commons.text.version>1.4</commons.text.version>
-        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <springfox-swagger2.version>3.0.0</springfox-swagger2.version>
         <findbugs.jsr305.version>3.0.2</findbugs.jsr305.version>
         <findbugs.annotations.version>3.0.1</findbugs.annotations.version>
 
@@ -87,7 +87,7 @@
         <lombok.plugin.version>1.18.0.0</lombok.plugin.version>
         <gitcommitid.plugin.version>2.2.3</gitcommitid.plugin.version>
         <maven.build.helper.plugin.version>3.0.0</maven.build.helper.plugin.version>
-	    <docker-maven-version>1.0.0</docker-maven-version>
+        <docker-maven-version>1.0.0</docker-maven-version>
 
         <!--PLUGIN SETTINGS -->
         <compiler.source.version>11</compiler.source.version>
@@ -109,20 +109,16 @@
         <releases.path>content/repositories/releases/</releases.path>
         <docker.repository>nexus3.onap.org:10003</docker.repository>
         <jackson.version>2.11.0</jackson.version>
-        <undertow.version>2.0.27</undertow.version>
+        <undertow.version>2.2.2.Final</undertow.version>
         <spring-webflux.version>5.2.7.RELEASE</spring-webflux.version>
         <spring-swagger-ui.version>2.10.5</spring-swagger-ui.version>
 
         <!-- SONAR EXCLUSIONS -->
-        <!-- EXCLUDE TEST COVERAGE ON
-          TEST PACKAGES - USED FOR TESTING - NOT FOR DEPLOYMENT
-          MODEL PACKAGES - MODELS ONLY CONTAINS POJOs AND NO BUSINESS LOGIC,
-          CONFIG PACKAGE -  CONTAINS WIRINGS OF SPRING BEANS,
-          EXCEPTIONS PACKAGE - CONTAINS CUSTOM EXCEPTIONS - NO BUSINESS LOGIC,
-          PREFERENCES CLASSES - JUST POJOS
-          CONTEXTS CLASSES - JUST POJOS
-          ENTITY CLASSES - JUST POJOS
-          -->
+        <!-- EXCLUDE TEST COVERAGE ON TEST PACKAGES - USED FOR TESTING - NOT FOR 
+            DEPLOYMENT MODEL PACKAGES - MODELS ONLY CONTAINS POJOs AND NO BUSINESS LOGIC, 
+            CONFIG PACKAGE - CONTAINS WIRINGS OF SPRING BEANS, EXCEPTIONS PACKAGE - CONTAINS 
+            CUSTOM EXCEPTIONS - NO BUSINESS LOGIC, PREFERENCES CLASSES - JUST POJOS CONTEXTS 
+            CLASSES - JUST POJOS ENTITY CLASSES - JUST POJOS -->
         <sonar.coverage.exclusions>**/test/**,**/model/**,**/config/**,**/exception/**,**/*Preferences.java,**/*Context*.java,**/*Entity.java</sonar.coverage.exclusions>
 
     </properties>
@@ -190,6 +186,16 @@
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${spring-swagger-ui.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.plugin</groupId>
+                <artifactId>spring-plugin-core</artifactId>
+                <version>2.0.0.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.plugin</groupId>
+                <artifactId>spring-plugin-metadata</artifactId>
+                <version>2.0.0.RELEASE</version>
+            </dependency>
 
             <!-- FIND BUGS -->
             <dependency>
@@ -224,18 +230,18 @@
                 <version>${junit-jupiter.version}</version>
                 <scope>test</scope>
             </dependency>
-		    <dependency>
-		        <groupId>junit</groupId>
-		        <artifactId>junit</artifactId>
-		        <version>4.13</version>
-		        <scope>test</scope>
-		    </dependency>
-		    <dependency>
-		        <groupId>org.junit.vintage</groupId>
-		        <artifactId>junit-vintage-engine</artifactId>
-		        <version>5.6.2</version>
-		        <scope>test</scope>
-		    </dependency>
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.13</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.vintage</groupId>
+                <artifactId>junit-vintage-engine</artifactId>
+                <version>5.6.2</version>
+                <scope>test</scope>
+            </dependency>
             <dependency>
                 <groupId>org.junit.platform</groupId>
                 <artifactId>junit-platform-engine</artifactId>
@@ -260,40 +266,40 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring.boot.version}</version>
-              <exclusions>
-                <exclusion>
-                  <groupId>org.springframework</groupId>
-                  <artifactId>spring-web</artifactId>
-                </exclusion>
-                <exclusion>
-		            <groupId>org.springframework.boot</groupId>
-		            <artifactId>spring-boot-starter-test</artifactId>
-                </exclusion>
-                <exclusion>
-	                <groupId>org.mockito</groupId>
-	                <artifactId>mockito-core</artifactId>
-                </exclusion>
-                <exclusion>
-			        <groupId>io.undertow</groupId>
-			        <artifactId>undertow-core</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring-webflux</artifactId>
-                </exclusion>
-                <exclusion>
-		            <groupId>com.fasterxml.jackson.core</groupId>
-		            <artifactId>jackson-databind</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>com.fasterxml.jackson.core</groupId>
-                    <artifactId>jackson-core</artifactId>
-                </exclusion>
-                <exclusion>
-		            <groupId>com.fasterxml.jackson.dataformat</groupId>
-		            <artifactId>jackson-dataformat-smile</artifactId>
-                </exclusion>
-              </exclusions>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-web</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-test</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.mockito</groupId>
+                        <artifactId>mockito-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>io.undertow</groupId>
+                        <artifactId>undertow-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework</groupId>
+                        <artifactId>spring-webflux</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                        <artifactId>jackson-databind</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.fasterxml.jackson.core</groupId>
+                        <artifactId>jackson-core</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.fasterxml.jackson.dataformat</groupId>
+                        <artifactId>jackson-dataformat-smile</artifactId>
+                    </exclusion>
+                </exclusions>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -305,46 +311,46 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-			<dependency>
-			    <groupId>org.springframework</groupId>
-			    <artifactId>spring-webflux</artifactId>
-			    <version>${spring-webflux.version}</version>
-			</dependency>
-          <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>${spring.version}</version>
-          </dependency>
-          <dependency>
-             <groupId>org.springframework.boot</groupId>
-             <artifactId>spring-boot-starter-test</artifactId>
-            <version>2.2.0.RELEASE</version>
-          </dependency>
-          <dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webflux</artifactId>
+                <version>${spring-webflux.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>2.2.0.RELEASE</version>
+            </dependency>
+            <dependency>
                 <groupId>org.mockito</groupId>
                 <artifactId>mockito-core</artifactId>
                 <version>2.23.4</version>
-          </dependency>
-	      <dependency>
-	        <groupId>io.undertow</groupId>
-	        <artifactId>undertow-core</artifactId>
-	        <version>2.0.27.Final</version>
-	      </dependency>
-	        <dependency>
-	            <groupId>com.fasterxml.jackson.core</groupId>
-	            <artifactId>jackson-databind</artifactId>
-                <version>${jackson.version}</version>
-	        </dependency>
-	        <dependency>
-			    <groupId>com.fasterxml.jackson.core</groupId>
-			    <artifactId>jackson-core</artifactId>
-			    <version>${jackson.version}</version>
             </dependency>
-			<dependency>
-			   <groupId>com.fasterxml.jackson.dataformat</groupId>
-			   <artifactId>jackson-dataformat-smile</artifactId>
-			   <version>${jackson.version}</version>
-			</dependency>
+            <dependency>
+                <groupId>io.undertow</groupId>
+                <artifactId>undertow-core</artifactId>
+                <version>${undertow.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-smile</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
 
         </dependencies>
     </dependencyManagement>
@@ -435,7 +441,8 @@
                     <version>${maven-surefire-plugin.version}</version>
                     <configuration>
                         <skipTests>${skip.unit.tests}</skipTests>
-                        <argLine>-Xmx2048m -Djava.awt.headless=true -XX:+UseConcMarkSweepGC
+                        <argLine>-Xmx2048m -Djava.awt.headless=true
+                            -XX:+UseConcMarkSweepGC
                             -XX:OnOutOfMemoryError="kill -9 %p" -XX:+HeapDumpOnOutOfMemoryError ${surefireArgLine}
                         </argLine>
                         <redirectTestOutputToFile>${surefire.redirectTestOutputToFile}</redirectTestOutputToFile>
@@ -542,7 +549,7 @@
                             <id>validate</id>
                             <phase>validate</phase>
                             <configuration>
-				    <skip>true</skip>
+                                <skip>true</skip>
                                 <configLocation>${checkstyle.file.name}</configLocation>
                                 <suppressionsLocation>${checkstyle.suppression.file.name}</suppressionsLocation>
                                 <encoding>UTF-8</encoding>
@@ -677,17 +684,9 @@
                 </plugin>
 
                 <!-- DOCKER PLUGIN -->
-		<!--
-                <plugin>
-                    <groupId>com.spotify</groupId>
-                    <artifactId>docker-maven-plugin</artifactId>
-                    <version>${docker-maven-version}</version>
-                    <configuration>
-                        <repository>${docker.repository}/onap/${project.groupId}.${project.artifactId}</repository>
-                        <tag>${project.version}</tag>
-                    </configuration>
-                </plugin>
-		-->
+                <!-- <plugin> <groupId>com.spotify</groupId> <artifactId>docker-maven-plugin</artifactId> 
+                    <version>${docker-maven-version}</version> <configuration> <repository>${docker.repository}/onap/${project.groupId}.${project.artifactId}</repository> 
+                    <tag>${project.version}</tag> </configuration> </plugin> -->
 
             </plugins>
 
@@ -736,10 +735,10 @@
                 <artifactId>maven-pmd-plugin</artifactId>
             </plugin>
 
-	    <plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-	    </plugin> 
+            </plugin>
 
             <plugin>
                 <groupId>org.jacoco</groupId>
