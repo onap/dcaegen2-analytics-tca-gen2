@@ -19,8 +19,8 @@
   -->
 
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -33,16 +33,17 @@
     <artifactId>dcae-analytics-model</artifactId>
     <packaging>jar</packaging>
 
-    <!-- THIS MODULE CONTAINS MODELS COMMON FOR ALL DCAE ANALYTICS MODULES.
-     NOTE: THIS MODULE MUST NOT DEPEND ON ANY OTHER ANALYTICS MODULE IN COMPILE SCOPE. -->
+    <!-- THIS MODULE CONTAINS MODELS COMMON FOR ALL DCAE ANALYTICS MODULES. 
+        NOTE: THIS MODULE MUST NOT DEPEND ON ANY OTHER ANALYTICS MODULE IN COMPILE 
+        SCOPE. -->
     <name>DCAE Analytics Model</name>
     <description>Contains models (e.g. Common Event Format) which are common to DCAE Analytics</description>
 
-	<properties>
-		<main.basedir>${project.parent.basedir}</main.basedir>
-		<sdk.version>1.3.3</sdk.version>
-		<immutable.version>2.7.1</immutable.version>
-	</properties>
+    <properties>
+        <main.basedir>${project.parent.basedir}</main.basedir>
+        <sdk.version>1.5.0</sdk.version>
+        <immutable.version>2.7.1</immutable.version>
+    </properties>
 
     <dependencies>
 
@@ -62,8 +63,8 @@
             <artifactId>jackson-core</artifactId>
         </dependency>
         <dependency>
-           <groupId>com.fasterxml.jackson.dataformat</groupId>
-           <artifactId>jackson-dataformat-smile</artifactId>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-smile</artifactId>
         </dependency>
 
         <!-- JSON PATH -->
@@ -85,48 +86,51 @@
             <artifactId>dcae-analytics-test</artifactId>
         </dependency>
 
-	<dependency>
-		<groupId>org.onap.dcaegen2.services.sdk.rest.services</groupId>
-		<artifactId>cbs-client</artifactId>
-		<version>${sdk.version}</version>
-	</dependency>
-	<dependency>
-		<groupId>org.onap.dcaegen2.services.sdk.rest.services</groupId>
-		<artifactId>dmaap-client</artifactId>
-		<version>${sdk.version}</version>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-beans</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-context</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework</groupId>
-		<artifactId>spring-webflux</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-autoconfigure</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>javax.validation</groupId>
-		<artifactId>validation-api</artifactId>
-	</dependency>
         <dependency>
-                <groupId>org.immutables</groupId>
-                <artifactId>value</artifactId>
-                <version>${immutable.version}</version>
-                <scope>provided</scope>
+            <groupId>org.onap.dcaegen2.services.sdk.rest.services</groupId>
+            <artifactId>cbs-client</artifactId>
+            <version>${sdk.version}</version>
         </dependency>
-
-		<dependency>
-			<groupId>org.onap.dcaegen2.analytics.tca-gen2</groupId>
-			<artifactId>eelf-logger-logback-impl</artifactId>
-		</dependency>
-
-	</dependencies>
+        <dependency>
+            <groupId>org.onap.dcaegen2.services.sdk.rest.services</groupId>
+            <artifactId>dmaap-client</artifactId>
+            <version>${sdk.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor.netty</groupId>
+            <artifactId>reactor-netty</artifactId>
+            <version>0.9.12.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webflux</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.immutables</groupId>
+            <artifactId>value</artifactId>
+            <version>${immutable.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.onap.dcaegen2.analytics.tca-gen2</groupId>
+            <artifactId>eelf-logger-logback-impl</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
