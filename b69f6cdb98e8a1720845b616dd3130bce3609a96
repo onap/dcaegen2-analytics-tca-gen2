@@ -22,6 +22,30 @@
       "revId": "b69f6cdb98e8a1720845b616dd3130bce3609a96",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "99930771_f0fa0014",
+        "filename": "dcae-analytics/dcae-analytics-model/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 6065
+      },
+      "writtenOn": "2021-02-18T08:55:29Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "47cb3697_d65cf5b2",
+      "range": {
+        "startLine": 30,
+        "startChar": 17,
+        "endLine": 30,
+        "endChar": 31
+      },
+      "revId": "b69f6cdb98e8a1720845b616dd3130bce3609a96",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
