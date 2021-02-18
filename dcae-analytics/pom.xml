@@ -59,7 +59,7 @@
         <spring.cloud.version>Finchley.RC2</spring.cloud.version>
         <spring.version>5.0.11.RELEASE</spring.version>
         <commons.text.version>1.4</commons.text.version>
-        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <springfox-swagger2.version>3.0.0</springfox-swagger2.version>
         <findbugs.jsr305.version>3.0.2</findbugs.jsr305.version>
         <findbugs.annotations.version>3.0.1</findbugs.annotations.version>
 
@@ -109,7 +109,7 @@
         <releases.path>content/repositories/releases/</releases.path>
         <docker.repository>nexus3.onap.org:10003</docker.repository>
         <jackson.version>2.11.0</jackson.version>
-        <undertow.version>2.0.27</undertow.version>
+        <undertow.version>2.2.2.Final</undertow.version>
         <spring-webflux.version>5.2.7.RELEASE</spring-webflux.version>
         <spring-swagger-ui.version>2.10.5</spring-swagger-ui.version>
 
@@ -189,6 +189,16 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${spring-swagger-ui.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.plugin</groupId>
+                <artifactId>spring-plugin-core</artifactId>
+                <version>2.0.0.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.plugin</groupId>
+                <artifactId>spring-plugin-metadata</artifactId>
+                <version>2.0.0.RELEASE</version>
             </dependency>
 
             <!-- FIND BUGS -->
@@ -328,7 +338,7 @@
 	      <dependency>
 	        <groupId>io.undertow</groupId>
 	        <artifactId>undertow-core</artifactId>
-	        <version>2.0.27.Final</version>
+	        <version>${undertow.version}</version>
 	      </dependency>
 	        <dependency>
 	            <groupId>com.fasterxml.jackson.core</groupId>
