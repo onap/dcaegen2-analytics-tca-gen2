@@ -97,7 +97,7 @@
     },
     {
       "name": "tca.enable_abatement",
-      "value": "true",
+      "value": true,
       "description": "Enables / Disables TCA Alerts Abatement",
       "designer_editable": true,
       "sourced_at_deployment": false,
@@ -107,7 +107,7 @@
     },
     {
       "name": "tca.enable_ecomp_logging",
-      "value": "true",
+      "value": true,
       "description": "Enables / Disables ECOMP Logging",
       "designer_editable": true,
       "sourced_at_deployment": false,
@@ -117,7 +117,7 @@
     },
     {
       "name": "tca.aai.enable_enrichment",
-      "value": "true",
+      "value": true,
       "description": "Enables / Disables TCA A&AI Enrichment",
       "designer_editable": true,
       "sourced_at_deployment": true,
