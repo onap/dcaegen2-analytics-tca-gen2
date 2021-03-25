@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bc7178e9_aa7c1772",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/Dockerfile",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 7352
+      },
+      "writtenOn": "2021-03-25T00:50:28Z",
+      "side": 0,
+      "message": "this seemed outdated",
+      "revId": "5ff6820d13c499828312bd736f485051a450c4f0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
