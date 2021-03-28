@@ -22,6 +22,30 @@
       "revId": "d2bfae5db3da00f7016b49cd759cbe9baf6e5289",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6539150c_af53c5bd",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/Dockerfile",
+        "patchSetId": 5
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2021-03-28T16:10:18Z",
+      "side": 1,
+      "message": "agreed, a+rwx is seldom a good choice\nif tca-gen2 needs to have write permission in there, then set the group privileges\n(e.g., mode 775)",
+      "parentUuid": "334ff794_cbaac259",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 21,
+        "endChar": 1
+      },
+      "revId": "d2bfae5db3da00f7016b49cd759cbe9baf6e5289",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
