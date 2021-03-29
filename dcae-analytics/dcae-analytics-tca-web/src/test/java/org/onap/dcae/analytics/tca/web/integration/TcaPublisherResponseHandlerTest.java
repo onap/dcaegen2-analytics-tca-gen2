@@ -26,17 +26,19 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.onap.dcae.analytics.tca.web.TcaAppProperties;
 import org.onap.dcae.analytics.tca.web.TcaAppProperties.Tca;
+import org.springframework.messaging.MessageHeaders;
 
 public class TcaPublisherResponseHandlerTest {
 
-    static Map<String, Object> headers;
+    static MessageHeaders messageHeaders;
 
     @BeforeAll
     static void initialize() {
-        headers = new HashMap<>();
+        Map headers = new HashMap<>();
         headers.put("X-ECOMP-RequestID", "TestRequestID");
         headers.put("X-ECOMP-TransactionID", "TestTransactionID");
         headers.put("X-ECOMP-FromAppID", "TestFromAppID");
+        messageHeaders = new MessageHeaders(headers);
 
     }
 
@@ -49,7 +51,7 @@ public class TcaPublisherResponseHandlerTest {
         Mockito.when(tcaAppProperties.getTca().getEnableEcompLogging()).thenReturn(true);
 
         TcaPublisherResponseHandler responseHandler = new TcaPublisherResponseHandler(tcaAppProperties);
-        responseHandler.handle("testpayload", headers);
+        responseHandler.handle("testpayload", messageHeaders);
 
     }
 
@@ -62,8 +64,9 @@ public class TcaPublisherResponseHandlerTest {
         Mockito.when(tcaAppProperties.getTca().getEnableEcompLogging()).thenReturn(false);
 
         TcaPublisherResponseHandler responseHandler = new TcaPublisherResponseHandler(tcaAppProperties);
-        responseHandler.handle("testpayload", headers);
+        responseHandler.handle("testpayload", messageHeaders);
 
     }
 
 }
+

@@ -19,8 +19,6 @@
 
 package org.onap.dcae.analytics.web.config;
 
-import java.util.concurrent.TimeUnit;
-
 import org.onap.dcae.analytics.model.AnalyticsProfile;
 import org.onap.dcae.analytics.web.dmaap.MrSubscriberPollingAdvice;
 import org.onap.dcae.analytics.web.dmaap.MrSubscriberPollingPreferences;
@@ -56,7 +54,7 @@ public class DmaapPollerConfig {
         final MrSubscriberPollingPreferences pollingPreferences = mrSubscriberPreferences.getPollingPreferences();
         final int minInterval = pollingPreferences.getMinPollingInterval();
         final DynamicPeriodicTrigger dynamicPeriodicTrigger =
-                new DynamicPeriodicTrigger(minInterval, TimeUnit.MILLISECONDS);
+                new DynamicPeriodicTrigger(minInterval);
         dynamicPeriodicTrigger.setFixedRate(true);
         return dynamicPeriodicTrigger;
     }
@@ -77,3 +75,4 @@ public class DmaapPollerConfig {
     }
 
 }
+

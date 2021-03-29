@@ -71,7 +71,7 @@ public class TcaAlertTransformer extends AbstractTransformer {
 
     @Override
     @SuppressWarnings("unchecked")
-    protected Object doTransform(final Message<?> message) throws Exception {
+    protected Object doTransform(final Message<?> message) {
 
         final Object messagePayload = message.getPayload();
 
@@ -158,3 +158,4 @@ public class TcaAlertTransformer extends AbstractTransformer {
                 Integer.toString(abatedExecutionContexts.size()), Integer.toString(tcaAlerts.size()));
     }
 }
+
