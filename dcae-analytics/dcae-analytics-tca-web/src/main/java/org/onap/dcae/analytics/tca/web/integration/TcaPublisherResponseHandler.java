@@ -24,7 +24,6 @@ import static org.onap.dcae.analytics.model.AnalyticsHttpConstants.REQUEST_BEGIN
 import static org.onap.dcae.analytics.model.AnalyticsHttpConstants.REQUEST_END_TS_HEADER_KEY;
 
 import java.util.Date;
-import java.util.Map;
 
 import org.onap.dcae.analytics.model.ecomplogger.AnalyticsErrorType;
 import org.onap.dcae.analytics.tca.core.util.TcaUtils;
@@ -60,7 +59,7 @@ public class TcaPublisherResponseHandler implements GenericHandler<String> {
     }
 
     @Override
-    public Object handle(final String payload, final Map<String, Object> headers) {
+    public Object handle(final String payload, MessageHeaders headers) {
 
         final MessageHeaders messageHeaders = new MessageHeaders(headers);
         final String requestId = AnalyticsHttpUtils.getRequestId(messageHeaders);
@@ -99,3 +98,4 @@ public class TcaPublisherResponseHandler implements GenericHandler<String> {
     }
 
 }
+
