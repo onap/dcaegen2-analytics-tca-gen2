@@ -1,6 +1,7 @@
 /*
  * ================================================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2021 China Mobile Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +25,6 @@ import static org.onap.dcae.analytics.model.AnalyticsHttpConstants.REQUEST_BEGIN
 import static org.onap.dcae.analytics.model.AnalyticsHttpConstants.REQUEST_END_TS_HEADER_KEY;
 
 import java.util.Date;
-import java.util.Map;
 
 import org.onap.dcae.analytics.model.ecomplogger.AnalyticsErrorType;
 import org.onap.dcae.analytics.tca.core.util.TcaUtils;
@@ -60,7 +60,7 @@ public class TcaPublisherResponseHandler implements GenericHandler<String> {
     }
 
     @Override
-    public Object handle(final String payload, final Map<String, Object> headers) {
+    public Object handle(final String payload, MessageHeaders headers) {
 
         final MessageHeaders messageHeaders = new MessageHeaders(headers);
         final String requestId = AnalyticsHttpUtils.getRequestId(messageHeaders);
@@ -99,3 +99,4 @@ public class TcaPublisherResponseHandler implements GenericHandler<String> {
     }
 
 }
+

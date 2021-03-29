@@ -1,6 +1,7 @@
 /*
  * ================================================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2021 China Mobile Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -71,7 +72,7 @@ public class TcaAlertTransformer extends AbstractTransformer {
 
     @Override
     @SuppressWarnings("unchecked")
-    protected Object doTransform(final Message<?> message) throws Exception {
+    protected Object doTransform(final Message<?> message) {
 
         final Object messagePayload = message.getPayload();
 
@@ -158,3 +159,4 @@ public class TcaAlertTransformer extends AbstractTransformer {
                 Integer.toString(abatedExecutionContexts.size()), Integer.toString(tcaAlerts.size()));
     }
 }
+

@@ -1,6 +1,7 @@
 /*
  * ================================================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2021 China Mobile Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +19,6 @@
  */
 
 package org.onap.dcae.analytics.web.config;
-
-import java.util.concurrent.TimeUnit;
 
 import org.onap.dcae.analytics.model.AnalyticsProfile;
 import org.onap.dcae.analytics.web.dmaap.MrSubscriberPollingAdvice;
@@ -56,7 +55,7 @@ public class DmaapPollerConfig {
         final MrSubscriberPollingPreferences pollingPreferences = mrSubscriberPreferences.getPollingPreferences();
         final int minInterval = pollingPreferences.getMinPollingInterval();
         final DynamicPeriodicTrigger dynamicPeriodicTrigger =
-                new DynamicPeriodicTrigger(minInterval, TimeUnit.MILLISECONDS);
+                new DynamicPeriodicTrigger(minInterval);
         dynamicPeriodicTrigger.setFixedRate(true);
         return dynamicPeriodicTrigger;
     }
@@ -77,3 +76,4 @@ public class DmaapPollerConfig {
     }
 
 }
+

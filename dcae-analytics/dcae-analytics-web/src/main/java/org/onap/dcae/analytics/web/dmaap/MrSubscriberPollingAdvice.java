@@ -1,6 +1,8 @@
 /*
  * ================================================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2021 China Mobile Property. All rights reserved.
+ * Copyright (c) 2021 Nokia Intellectual Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +21,7 @@
 
 package org.onap.dcae.analytics.web.dmaap;
 
+import java.time.Duration;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -84,8 +87,7 @@ public class MrSubscriberPollingAdvice extends AbstractRequestHandlerAdvice {
 
     @Override
     @SuppressWarnings("unchecked")
-    protected Object doInvoke(final ExecutionCallback callback, final Object target, final Message<?> message)
-            throws Exception {
+    protected Object doInvoke(final ExecutionCallback callback, final Object target, final Message<?> message) {
 
         // execute call back
         Object result = callback.execute();
@@ -98,14 +100,7 @@ public class MrSubscriberPollingAdvice extends AbstractRequestHandlerAdvice {
         final MessageBuilder<String> resultMessageBuilder = (MessageBuilder<String>) result;
         final String payload = resultMessageBuilder.getPayload();
         final Map<String, Object> headers = resultMessageBuilder.getHeaders();
-        final Object httpStatusCode = headers.get(AnalyticsHttpConstants.HTTP_STATUS_CODE_HEADER_KEY);
-
-        // get http status code
-        if (httpStatusCode == null) {
-            return result;
-        }
-        final HttpStatus httpStatus = HttpStatus.resolve(Integer.parseInt(httpStatusCode.toString()));
-
+        final HttpStatus httpStatus = (HttpStatus) headers.get(AnalyticsHttpConstants.HTTP_STATUS_CODE_HEADER_KEY);
 
         // if status code is present and successful apply polling adjustments
         if (httpStatus != null && httpStatus.is2xxSuccessful()) {
@@ -119,7 +114,7 @@ public class MrSubscriberPollingAdvice extends AbstractRequestHandlerAdvice {
                             "Next Polling Interval will be: {}", debugLogSpec, requestId, transactionId,
                             String.valueOf(areMessagesPresent), nextPollingInterval.toString());
 
-            trigger.setPeriod(nextPollingInterval.get());
+            trigger.setDuration(Duration.ofMillis(nextPollingInterval.get()));
 
             // if no messages were found in dmaap poll - terminate further processing
             if (!areMessagesPresent) {
@@ -148,3 +143,4 @@ public class MrSubscriberPollingAdvice extends AbstractRequestHandlerAdvice {
         }
     }
 }
+
