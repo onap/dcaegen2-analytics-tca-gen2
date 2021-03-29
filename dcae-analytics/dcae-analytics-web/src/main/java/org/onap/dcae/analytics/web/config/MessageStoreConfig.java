@@ -1,6 +1,7 @@
 /*
  * ================================================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2021 Nokia Intellectual Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +24,7 @@ import org.onap.dcae.analytics.model.AnalyticsProfile;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
-import org.springframework.data.mongodb.MongoDbFactory;
+import org.springframework.data.mongodb.MongoDatabaseFactory;
 import org.springframework.integration.mongodb.store.MongoDbChannelMessageStore;
 import org.springframework.integration.store.BasicMessageGroupStore;
 import org.springframework.integration.store.SimpleMessageStore;
@@ -43,7 +44,7 @@ public class MessageStoreConfig {
 
     @Bean
     @Profile(AnalyticsProfile.MONGO_PROFILE_NAME)
-    public BasicMessageGroupStore mongoMessageGroupStore(final MongoDbFactory mongoDbFactory) {
+    public BasicMessageGroupStore mongoMessageGroupStore(final MongoDatabaseFactory mongoDbFactory) {
         final MongoDbChannelMessageStore store = new MongoDbChannelMessageStore(mongoDbFactory);
         store.setPriorityEnabled(true);
         return store;

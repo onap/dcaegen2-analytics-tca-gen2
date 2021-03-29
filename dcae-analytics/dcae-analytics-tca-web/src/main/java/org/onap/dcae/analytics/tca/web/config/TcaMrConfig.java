@@ -1,6 +1,7 @@
 /*
  * ================================================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2021 China Mobile Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +24,6 @@ import static org.onap.dcae.analytics.model.AnalyticsHttpConstants.REQUEST_ID_HE
 import static org.onap.dcae.analytics.model.AnalyticsHttpConstants.REQUEST_TRANSACTION_ID_HEADER_KEY;
 
 import java.util.List;
-import java.util.Map;
 
 import org.onap.dcae.analytics.model.AnalyticsProfile;
 import org.onap.dcae.analytics.model.DmaapMrConstants;
@@ -44,6 +44,7 @@ import org.springframework.integration.channel.NullChannel;
 import org.springframework.integration.channel.QueueChannel;
 import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.dsl.IntegrationFlows;
+import org.springframework.integration.handler.GenericHandler;
 import org.springframework.messaging.MessageHeaders;
 
 /**
@@ -82,11 +83,16 @@ public class TcaMrConfig {
         // get messages from dmaap subscriber channel
         return IntegrationFlows.from(mrSubscriberOutputChannel)
                 // handle incoming message from dmaap
-                .handle((List<String> cefMessages, Map<String, Object> headers) ->
+                .handle(new GenericHandler<List<String>>() {
+                    @Override
+                    public Object handle(List<String> cefMessages, MessageHeaders headers) {
                         tcaProcessingService.getTcaExecutionResults(
                                 headers.getOrDefault(REQUEST_ID_HEADER_KEY, headers.get(MessageHeaders.ID)).toString(),
                                 headers.getOrDefault(REQUEST_TRANSACTION_ID_HEADER_KEY, "").toString(),
-                                tcaPolicyWrapper, cefMessages))
+                                tcaPolicyWrapper, cefMessages);
+                            return cefMessages;
+                    }                    
+                })
                 // transform tca execution results to alerts - if not alerts are detected terminate further processing
                 .transform(tcaAlertTransformer, c -> c.requiresReply(false))
                 // post messages to dmaap publisher input channel
