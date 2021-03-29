@@ -42,7 +42,7 @@
     <properties>
         <main.basedir>${project.parent.basedir}</main.basedir>
         <docker.image.name>onap/${project.groupId}.${project.artifactId}</docker.image.name>
-	<maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>	
+    <maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>    
     </properties>
 
     <dependencies>
@@ -68,7 +68,6 @@
                     <artifactId>undertow-core</artifactId>
               </exclusion>
             </exclusions>
-
         </dependency>
         <dependency>
             <groupId>io.micrometer</groupId>
@@ -106,6 +105,10 @@
             <artifactId>springfox-swagger2</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.plugin</groupId>
+            <artifactId>spring-plugin-core</artifactId>
+        </dependency>
+        <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
         </dependency>
@@ -116,32 +119,12 @@
             <artifactId>dcae-analytics-test</artifactId>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.undertow/undertow-core -->
-      <dependency>
-        <groupId>io.undertow</groupId>
-        <artifactId>undertow-core</artifactId>
-      </dependency>
         <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-handler</artifactId>
-            <version>4.1.54.Final</version>
-        </dependency>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-handler-proxy</artifactId>
-            <version>4.1.54.Final</version>
+            <groupId>io.undertow</groupId>
+            <artifactId>undertow-core</artifactId>
         </dependency>
 
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-core</artifactId>
-                <version>5.1.12.RELEASE</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <build>
         <resources>
@@ -164,39 +147,39 @@
             </plugin>
             <!-- DOCKER PLUGIN -->
             <plugin>
-	           <groupId>com.spotify</groupId>
-	           <artifactId>dockerfile-maven-plugin</artifactId>
-	           <version>1.4.10</version>
-	             <configuration>
-		          <contextDirectory>${project.basedir}</contextDirectory>
-		          <repository>${docker.repository}/${docker.image.name}</repository>
-		          <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
-		       <buildArgs>
-			     <PROJECT_BUILD_DIR_NAME>target</PROJECT_BUILD_DIR_NAME>
-			     <DEPENDENCIES_DIR>${dependency.dir.name}</DEPENDENCIES_DIR>
-			     <DOCKER_ARTIFACT_DIR>/opt</DOCKER_ARTIFACT_DIR>
-			     <FINAL_JAR>${project.build.finalName}.jar</FINAL_JAR>
-		       </buildArgs>
-	         </configuration>
-	         <executions>
-			<execution>
-				<id>build-image</id>
-				<phase>install</phase>
-				<goals>
-					<goal>build</goal>
-				</goals>
-			</execution>
-			<execution>
-			       <id>tag-version</id>
-			       <phase>install</phase>
-			       <goals>
-				      <goal>tag</goal>
-				      <goal>push</goal>
-			       </goals>
-            			<configuration>
-              				<tag>${project.version}</tag>
-            			</configuration>
-          		</execution>
+               <groupId>com.spotify</groupId>
+               <artifactId>dockerfile-maven-plugin</artifactId>
+               <version>1.4.10</version>
+                 <configuration>
+                  <contextDirectory>${project.basedir}</contextDirectory>
+                  <repository>${docker.repository}/${docker.image.name}</repository>
+                  <useMavenSettingsForAuth>true</useMavenSettingsForAuth>
+               <buildArgs>
+                 <PROJECT_BUILD_DIR_NAME>target</PROJECT_BUILD_DIR_NAME>
+                 <DEPENDENCIES_DIR>${dependency.dir.name}</DEPENDENCIES_DIR>
+                 <DOCKER_ARTIFACT_DIR>/opt</DOCKER_ARTIFACT_DIR>
+                 <FINAL_JAR>${project.build.finalName}.jar</FINAL_JAR>
+               </buildArgs>
+             </configuration>
+             <executions>
+            <execution>
+                <id>build-image</id>
+                <phase>install</phase>
+                <goals>
+                    <goal>build</goal>
+                </goals>
+            </execution>
+            <execution>
+                   <id>tag-version</id>
+                   <phase>install</phase>
+                   <goals>
+                      <goal>tag</goal>
+                      <goal>push</goal>
+                   </goals>
+                        <configuration>
+                              <tag>${project.version}</tag>
+                        </configuration>
+                  </execution>
                         <execution>
                                <id>tag-version-ts</id>
                                <phase>install</phase>
@@ -205,10 +188,10 @@
                                       <goal>push</goal>
                                </goals>
                                 <configuration>
-              				<tag>${project.version}-${maven.build.timestamp}Z</tag>
+                              <tag>${project.version}-${maven.build.timestamp}Z</tag>
                                 </configuration>
                         </execution>
-	        </executions>
+            </executions>
            </plugin>
         </plugins>
     </build>
