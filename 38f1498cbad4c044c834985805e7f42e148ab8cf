@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "07b3b3d9_5a047843",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-03-29T15:00:16Z",
+      "side": 1,
+      "message": "update commit msg to include bug fix",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 33
+      },
+      "revId": "38f1498cbad4c044c834985805e7f42e148ab8cf",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f83d545a_a83f1563",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-03-29T15:00:16Z",
+      "side": 1,
+      "message": "Include DCAEGEN2-2654",
+      "revId": "38f1498cbad4c044c834985805e7f42e148ab8cf",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0dc9691e_d64dee20",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/Dockerfile",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-03-29T15:00:16Z",
+      "side": 1,
+      "message": "mongo profile required",
+      "revId": "38f1498cbad4c044c834985805e7f42e148ab8cf",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc8bf84e_051b212f",
+        "filename": "dcae-analytics/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-03-29T15:00:16Z",
+      "side": 1,
+      "message": "update version to 1.3.0 to capture all new version bump",
+      "range": {
+        "startLine": 30,
+        "startChar": 17,
+        "endLine": 30,
+        "endChar": 30
+      },
+      "revId": "38f1498cbad4c044c834985805e7f42e148ab8cf",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
