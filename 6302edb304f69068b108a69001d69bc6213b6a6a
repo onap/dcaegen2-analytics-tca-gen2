@@ -22,6 +22,30 @@
       "revId": "6302edb304f69068b108a69001d69bc6213b6a6a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2814c092_13b4e257",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/Dockerfile",
+        "patchSetId": 7
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7352
+      },
+      "writtenOn": "2021-04-09T16:32:00Z",
+      "side": 1,
+      "message": "It has 0 effect in this case:\n\"Note that when specifying a group for the user, the user will have only the specified group membership. Any other configured group memberships will be ignored.\"\nAs the user is only in this group anyway it was superfluous and looked a bit weird.\nVerification (with locally build img pushed to local registry)\n$ docker run -it --entrypoint /bin/sh localhost:5000/onap/org.onap.dcaegen2.analytics.tca-gen2.dcae-analytics-tca-web:1.3.0-SNAPSHOT\n/opt $ whoami \ntca-gen2\n/opt $ groups\ntca-gen2\n/opt $",
+      "parentUuid": "5c45677a_87322d8a",
+      "range": {
+        "startLine": 30,
+        "startChar": 5,
+        "endLine": 30,
+        "endChar": 10
+      },
+      "revId": "6302edb304f69068b108a69001d69bc6213b6a6a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
