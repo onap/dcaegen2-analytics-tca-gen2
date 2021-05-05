@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ec9bbb5_6ccf72ef",
+        "filename": "dcae-analytics/dcae-analytics-web/src/main/java/org/onap/dcae/analytics/web/dmaap/MrSubscriberPollingAdvice.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2021-05-05T15:26:06Z",
+      "side": 1,
+      "message": "Needs some refactor",
+      "range": {
+        "startLine": 108,
+        "startChar": 7,
+        "endLine": 108,
+        "endChar": 116
+      },
+      "revId": "e3f9dcfb1465fabd1a1e8d2ceba83056b72f25c3",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
