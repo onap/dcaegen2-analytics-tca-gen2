@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "01657f2b_6748b5e7",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/Dockerfile",
+        "patchSetId": 6
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 7352
+      },
+      "writtenOn": "2021-05-05T14:14:46Z",
+      "side": 1,
+      "message": "It\u0027s best to give minimal permissions needed: a-\u003eu.",
+      "range": {
+        "startLine": 17,
+        "startChar": 10,
+        "endLine": 17,
+        "endChar": 11
+      },
+      "revId": "fb1a4c37ed81a1512639f489d6ada61ae9f34662",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50a24c86_969093ad",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/Dockerfile",
+        "patchSetId": 6
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 7352
+      },
+      "writtenOn": "2021-05-05T14:14:46Z",
+      "side": 1,
+      "message": "directories prior to tca-gen2 are still owned by root user, best to remove highlighted part and add -R flag to chmod to chmod them recursively.\nSame as above, u+rwx should suffice, unless something later uses onap user defined in integration image.",
+      "range": {
+        "startLine": 18,
+        "startChar": 30,
+        "endLine": 18,
+        "endChar": 57
+      },
+      "revId": "fb1a4c37ed81a1512639f489d6ada61ae9f34662",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d3ddf634_b0a7f3de",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/Dockerfile",
+        "patchSetId": 6
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 7352
+      },
+      "writtenOn": "2021-05-05T14:14:46Z",
+      "side": 1,
+      "message": "remove highlighted, reason same as above",
+      "range": {
+        "startLine": 20,
+        "startChar": 40,
+        "endLine": 20,
+        "endChar": 67
+      },
+      "revId": "fb1a4c37ed81a1512639f489d6ada61ae9f34662",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2dca9ccb_7522e0ca",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/Dockerfile",
+        "patchSetId": 6
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 7352
+      },
+      "writtenOn": "2021-05-05T14:14:46Z",
+      "side": 1,
+      "message": "https://docs.docker.com/engine/reference/builder/#user\nNote that when specifying a group for the user, the user will have only the specified group membership. Any other configured group memberships will be ignored.\nIn case of this Docker it should not change anything (tca-gen2 user is only in tca-gen2 group anyway)",
+      "range": {
+        "startLine": 30,
+        "startChar": 10,
+        "endLine": 30,
+        "endChar": 17
+      },
+      "revId": "fb1a4c37ed81a1512639f489d6ada61ae9f34662",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    }
+  ]
+}
