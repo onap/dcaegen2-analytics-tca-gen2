@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "50c0bbe8_d9ba80b0",
+        "filename": "dcae-analytics/dcae-analytics-web/src/main/java/org/onap/dcae/analytics/web/config/DmaapMrConfig.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 154,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2021-05-12T15:42:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6d893973_0280f64c",
+      "range": {
+        "startLine": 150,
+        "startChar": 0,
+        "endLine": 154,
+        "endChar": 102
+      },
+      "revId": "5b89561a190abdb01a003d983afd4420c51a5779",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2fa2513d_6ee4f0fb",
         "filename": "dcae-analytics/pom.xml",
         "patchSetId": 9
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "5fa2b0ca_be8a38ab",
+        "filename": "dcae-analytics/pom.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2021-05-12T15:42:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2fa2513d_6ee4f0fb",
+      "range": {
+        "startLine": 62,
+        "startChar": 8,
+        "endLine": 62,
+        "endChar": 64
+      },
+      "revId": "5b89561a190abdb01a003d983afd4420c51a5779",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7b4bf3b5_e1db00ee",
         "filename": "dcae-analytics/pom.xml",
         "patchSetId": 9
@@ -68,6 +116,30 @@
       "revId": "5b89561a190abdb01a003d983afd4420c51a5779",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4789d687_425ff1ff",
+        "filename": "dcae-analytics/pom.xml",
+        "patchSetId": 9
+      },
+      "lineNbr": 626,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2021-05-12T15:42:22Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7b4bf3b5_e1db00ee",
+      "range": {
+        "startLine": 616,
+        "startChar": 0,
+        "endLine": 626,
+        "endChar": 19
+      },
+      "revId": "5b89561a190abdb01a003d983afd4420c51a5779",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
