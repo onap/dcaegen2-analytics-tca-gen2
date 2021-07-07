@@ -20,6 +20,7 @@
 package org.onap.dcae.analytics.web.http;
 
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.security.KeyManagementException;
@@ -46,6 +47,8 @@ import org.apache.http.ssl.SSLContextBuilder;
 import org.onap.dcae.analytics.model.AnalyticsHttpConstants;
 import org.onap.dcae.analytics.model.util.function.StringToURLFunction;
 import org.onap.dcae.analytics.web.util.AnalyticsWebUtils;
+import org.onap.dcaegen2.services.sdk.security.ssl.Password;
+import org.onap.dcaegen2.services.sdk.security.ssl.Passwords;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.client.RestTemplateCustomizer;
@@ -221,6 +224,7 @@ public class HttpClientPreferencesCustomizer<T extends HttpClientPreferences> im
 
         if (!ignoreSSLValidation) {
             logger.info("SSL Validation will be enforced for Http Client Id: {}", httpClientId);
+            setSslContextFromEnvironment(httpClientBuilder);
             return;
         }
 
@@ -234,6 +238,30 @@ public class HttpClientPreferencesCustomizer<T extends HttpClientPreferences> im
         }
         httpClientBuilder.setSSLHostnameVerifier(NoopHostnameVerifier.INSTANCE);
 
+    }
+
+    private void setSslContextFromEnvironment(HttpClientBuilder httpClientBuilder) {
+        final String caCertPath = System.getenv("DCAE_CA_CERTPATH");
+        if (!StringUtils.hasText(caCertPath)) {
+            return;
+        }
+        final SSLContextBuilder sslContextBuilder = new SSLContextBuilder();
+        final String truststoreFilename = "trust.jks";
+        final String truststorePassFilename = "trust.pass";
+        final String certDirPath = caCertPath.substring(0, caCertPath.lastIndexOf("/"));
+        final File truststoreFile = new File(certDirPath, truststoreFilename);
+        final File truststorePassFile = new File(certDirPath, truststorePassFilename);
+        final Password password = Passwords.fromFile(truststorePassFile);
+        password.use(chars -> {
+            try {
+                sslContextBuilder.loadTrustMaterial(truststoreFile, chars);
+                httpClientBuilder.setSSLContext(sslContextBuilder.build());
+            } catch (NoSuchAlgorithmException | KeyStoreException | CertificateException | IOException |
+                KeyManagementException e) {
+                logger.warn("Could not load trusted certificates from environment");
+            }
+            return null;
+        });
     }
 
 
