@@ -26,9 +26,9 @@ package org.onap.dcae.analytics.model;
  */
 public abstract class AnalyticsHttpConstants {
 
-    public static final String REQUEST_ID_HEADER_KEY = "X-ECOMP-RequestID";
-    public static final String REQUEST_TRANSACTION_ID_HEADER_KEY = "X-ECOMP-TransactionID";
-    public static final String REQUEST_APP_NAME_HEADER_KEY = "X-ECOMP-FromAppID";
+    public static final String REQUEST_ID_HEADER_KEY = "X-RequestID";
+    public static final String REQUEST_TRANSACTION_ID_HEADER_KEY = "X-TransactionID";
+    public static final String REQUEST_APP_NAME_HEADER_KEY = "X-FromAppID";
     public static final String REQUEST_BEGIN_TS_HEADER_KEY = "X-Begin-Timestamp";
     public static final String REQUEST_END_TS_HEADER_KEY = "X-End-Timestamp";
 
