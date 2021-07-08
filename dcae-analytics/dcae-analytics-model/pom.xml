@@ -42,7 +42,7 @@
 
     <properties>
         <main.basedir>${project.parent.basedir}</main.basedir>
-        <sdk.version>1.5.0</sdk.version>
+        <sdk.version>1.8.6</sdk.version>
         <immutable.version>2.7.1</immutable.version>
     </properties>
 
