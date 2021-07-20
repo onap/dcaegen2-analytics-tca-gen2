@@ -4,6 +4,7 @@
   ~ Copyright (c) 2018-2020 AT&T Intellectual Property. All rights reserved.
   ~ Copyright (c) 2021 Samsung Electronics. All rights reserved.
   ~ Copyright (c) 2021 Nokia Intellectual Property. All rights reserved.
+  ~ Copyright (c) 2021 Wipro Limited.
   ~ ================================================================================
   ~ Modifications Copyright (C) 2019 IBM
   ~ ================================================================================
@@ -31,7 +32,7 @@
     <parent>
         <groupId>org.onap.dcaegen2.analytics.tca-gen2</groupId>
         <artifactId>dcae-analytics</artifactId>
-        <version>1.3.1-SNAPSHOT</version>
+        <version>1.3.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>dcae-analytics-tca-web</artifactId>
@@ -42,8 +43,9 @@
     <description>Contains Web related code for TCA</description>
 
     <properties>
-        <main.basedir>${project.parent.basedir}</main.basedir>
-        <docker.image.name>onap/${project.groupId}.${project.artifactId}</docker.image.name>
+	    <main.basedir>${project.parent.basedir}</main.basedir>
+	    <undertow-core.version>2.2.7.Final</undertow-core.version>
+	    <docker.image.name>onap/${project.groupId}.${project.artifactId}</docker.image.name>
     <maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>
     </properties>
 
@@ -67,7 +69,7 @@
             <exclusions>
                 <exclusion>
                     <groupId>io.undertow</groupId>
-                    <artifactId>undertow-core</artifactId>
+		    <artifactId>undertow-core</artifactId>
               </exclusion>
             </exclusions>
         </dependency>
@@ -123,7 +125,8 @@
         <!-- https://mvnrepository.com/artifact/io.undertow/undertow-core -->
         <dependency>
             <groupId>io.undertow</groupId>
-            <artifactId>undertow-core</artifactId>
+	    <artifactId>undertow-core</artifactId>
+	    <version>${undertow-core.version}</version>
         </dependency>
 
     </dependencies>

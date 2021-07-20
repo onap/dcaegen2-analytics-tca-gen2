@@ -4,6 +4,7 @@
   ~ Copyright (c) 2018-2019 AT&T Intellectual Property. All rights reserved.
   ~ Copyright (c) 2021 Samsung Electronics. All rights reserved.
   ~ Copyright (c) 2021 Nokia Intellectual Property. All rights reserved.
+  ~ Copyright (c) 2021 Wipro Limited.
   ~ ================================================================================
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -29,7 +30,7 @@
     <parent>
         <groupId>org.onap.dcaegen2.analytics.tca-gen2</groupId>
         <artifactId>dcae-analytics</artifactId>
-        <version>1.3.1-SNAPSHOT</version>
+        <version>1.3.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>dcae-analytics-web</artifactId>
@@ -40,7 +41,9 @@
     <description>Contains common web code for all DCAE Analytics Modules</description>
 
     <properties>
-        <main.basedir>${project.parent.basedir}</main.basedir>
+	    <main.basedir>${project.parent.basedir}</main.basedir>
+	    <undertow-core.version>2.2.7.Final</undertow-core.version>
+	    <httpclient.version>4.5.13</httpclient.version>
     </properties>
 
 
@@ -71,11 +74,11 @@
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
+		    <artifactId>spring-boot-starter-tomcat</artifactId>
                 </exclusion>
                 <exclusion>
                     <groupId>io.undertow</groupId>
-                    <artifactId>undertow-core</artifactId>
+		    <artifactId>undertow-core</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -86,7 +89,7 @@
             <exclusions>
                 <exclusion>
                     <groupId>io.undertow</groupId>
-                    <artifactId>undertow-websockets-jsr</artifactId>
+		    <artifactId>undertow-websockets-jsr</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
@@ -113,7 +116,8 @@
         <!-- APACHE HTTP CLIENT -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
+	    <artifactId>httpclient</artifactId>
+	    <version>${httpclient.version}</version>
         </dependency>
 
         <!-- UTILITIES -->
@@ -147,7 +151,8 @@
          <!-- https://mvnrepository.com/artifact/io.undertow/undertow-core -->
         <dependency>
             <groupId>io.undertow</groupId>
-            <artifactId>undertow-core</artifactId>
+	    <artifactId>undertow-core</artifactId>
+	    <version>${undertow-core.version}</version>
         </dependency>
 
     </dependencies>
