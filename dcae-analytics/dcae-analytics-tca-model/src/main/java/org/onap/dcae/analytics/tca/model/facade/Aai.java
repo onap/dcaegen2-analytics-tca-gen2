@@ -19,16 +19,18 @@
 
 package org.onap.dcae.analytics.tca.model.facade;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
 import org.onap.dcae.analytics.model.common.BaseDynamicPropertiesProvider;
+import org.onap.dcae.analytics.tca.model.util.json.serializer.AaiSerializer;
 
 /**
  * @author Rajiv Singla
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
+@JsonSerialize(using = AaiSerializer.class)
 public class Aai extends BaseDynamicPropertiesProvider implements TcaFacadeModel {
 
     private static final long serialVersionUID = 1L;
