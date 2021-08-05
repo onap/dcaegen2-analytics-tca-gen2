@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a87bd870_df2ff1f2",
+        "filename": "dcae-analytics/dcae-analytics-tca-model/src/main/java/org/onap/dcae/analytics/tca/model/util/json/serializer/AaiSerializer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2021-08-05T21:32:00Z",
+      "side": 1,
+      "message": "missing copyright",
+      "revId": "580c3cd04f392ab7320f85a60575635555e571c9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
