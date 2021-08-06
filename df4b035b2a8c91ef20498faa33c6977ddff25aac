@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "77ffb0e7_db0771d4",
+        "filename": "dcae-analytics/dcae-analytics-tca-model/src/main/java/org/onap/dcae/analytics/tca/model/facade/Aai.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 3699
+      },
+      "writtenOn": "2021-08-06T06:59:31Z",
+      "side": 1,
+      "message": "Please add Copyright entry also here",
+      "revId": "df4b035b2a8c91ef20498faa33c6977ddff25aac",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
