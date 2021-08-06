@@ -16,6 +16,24 @@
       "revId": "580c3cd04f392ab7320f85a60575635555e571c9",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "69e43eba_dc8ed646",
+        "filename": "dcae-analytics/dcae-analytics-tca-model/src/main/java/org/onap/dcae/analytics/tca/model/util/json/serializer/AaiSerializer.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 5335
+      },
+      "writtenOn": "2021-08-06T06:56:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a87bd870_df2ff1f2",
+      "revId": "580c3cd04f392ab7320f85a60575635555e571c9",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
