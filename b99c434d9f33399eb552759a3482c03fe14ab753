@@ -1,0 +1,8 @@
+Code-Review+1: Krystian Kedron <k.kedron@partner.samsung.com>
+Code-Review+2: Joanna Jeremicz <joanna.jeremicz@nokia.com>
+Verified+1: ONAP Jobbuilder <onap-jobbuilder@jenkins.onap.org>
+Submitted-by: Joanna Jeremicz <joanna.jeremicz@nokia.com>
+Submitted-at: Fri, 06 Aug 2021 13:19:44 +0000
+Reviewed-on: https://gerrit.onap.org/r/c/dcaegen2/analytics/tca-gen2/+/122908
+Project: dcaegen2/analytics/tca-gen2
+Branch: refs/heads/honolulu
