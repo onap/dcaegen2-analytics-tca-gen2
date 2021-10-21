@@ -1,0 +1,323 @@
+{
+  "self": {
+    "name": "dcae-tcagen2",
+    "version": "1.3.1",
+    "description": "TCAGen2 Docker Application",
+    "component_type": "docker"
+  },
+  "streams": {
+    "subscribes": [
+      {
+        "config_key": "tca_handle_in",
+        "format": "VES_specification",
+        "version": "5.28.4",
+        "type": "message_router"
+      }
+    ],
+    "publishes": [
+      {
+        "config_key": "tca_handle_out",
+        "format": "DCAE_CL_Output",
+        "version": "1.0.1",
+        "type": "message_router"
+      }
+    ]
+  },
+  "services": {
+    "calls": [
+      {
+        "config_key": "aai_broker_handle",
+        "verb": "GET",
+        "request": {
+          "format": "tca.aai",
+          "version": "1.0.0"
+        },
+        "response": {
+          "format": "tca.aai",
+          "version": "1.0.0"
+        }
+      }
+    ],
+    "provides": []
+  },
+  "auxilary": {
+    "helm": {
+      "service": {
+        "type": "ClusterIP",
+        "name": "dcae-tcagen2",
+        "ports": [
+         {
+            "name": "http",
+            "port": 9091
+         }
+        ]
+      }
+    },
+    "healthcheck": {
+      "type": "HTTP",
+      "interval": "30s",
+      "timeout": "10s",
+      "port": 9091,
+      "endpoint": "/actuator/health"
+    },
+    "ports": [
+      "9091:0"
+    ],
+    "log_info": {
+        "log_directory": "/opt/logs/dcae-analytics-tca"
+     },
+    "tls_info":{
+        "cert_directory":"/opt/app/dcae-certificate/",
+        "use_tls":true
+     }
+  },
+  "artifacts": [
+    {
+      "uri": "onap/org.onap.dcaegen2.analytics.tca-gen2.dcae-analytics-tca-web:1.3.1",
+      "type": "docker image"
+    }
+  ],
+  "policy_info":{
+    "policy": [
+    {
+      "node_label": "tca_policy_00",
+      "policy_model_id": "onap.policies.monitoring.cdap.tca.hi.lo.app",
+      "policy_id": "onap.vfirewall.tca"
+    },
+    {
+      "node_label":"tca_policy_01",
+      "policy_model_id":"onap.policies.monitoring.cdap.tca.hi.lo.app",
+      "policy_id":"onap.vdns.tca"
+    }
+    ]
+  },
+  "parameters": [
+    {
+      "name": "spring.data.mongodb.uri",
+      "value": "mongodb://dcae-mongohost/dcae-tcagen2",
+      "description": "Mongodb database uri",
+      "designer_editable": true,
+      "sourced_at_deployment": true,
+      "policy_editable": false,
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "streams_publishes",
+      "value": "{\"tca_handle_out\":{\"dmaap_info\":{\"topic_url\":\"http:\/\/message-router:3904\/events\/unauthenticated.DCAE_CL_OUTPUT\"},\"type\":\"message_router\"}}",
+      "description": "standard http port collector will open for listening;",
+      "sourced_at_deployment": false,
+      "policy_editable": false,
+      "designer_editable": false
+    },
+    {
+      "name": "streams_subscribes",
+      "value": "{\"tca_handle_in\":{\"dmaap_info\":{\"topic_url\":\"http:\/\/message-router:3904\/events\/unauthenticated.VES_MEASUREMENT_OUTPUT\"},\"type\":\"message_router\"}}",
+      "description": "standard http port collector will open for listening;",
+      "sourced_at_deployment": false,
+      "policy_editable": false,
+      "designer_editable": false
+    },
+    {
+      "name": "tca.policy",
+      "value" : "{\"domain\":\"measurementsForVfScaling\",\"metricsPerEventName\":[{\"eventName\":\"vFirewallBroadcastPackets\",\"controlLoopSchemaType\":\"VM\",\"policyScope\":\"DCAE\",\"policyName\":\"DCAE.Config_tca-hi-lo\",\"policyVersion\":\"v0.0.1\",\"thresholds\":[{\"closedLoopControlName\":\"ControlLoop-vFirewall-d0a1dfc6-94f5-4fd4-a5b5-4630b438850a\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedTotalPacketsDelta\",\"thresholdValue\":300,\"direction\":\"LESS_OR_EQUAL\",\"severity\":\"MAJOR\",\"closedLoopEventStatus\":\"ONSET\"},{\"closedLoopControlName\":\"ControlLoop-vFirewall-d0a1dfc6-94f5-4fd4-a5b5-4630b438850a\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedTotalPacketsDelta\",\"thresholdValue\":700,\"direction\":\"GREATER_OR_EQUAL\",\"severity\":\"CRITICAL\",\"closedLoopEventStatus\":\"ONSET\"}]},{\"eventName\":\"vLoadBalancer\",\"controlLoopSchemaType\":\"VM\",\"policyScope\":\"DCAE\",\"policyName\":\"DCAE.Config_tca-hi-lo\",\"policyVersion\":\"v0.0.1\",\"thresholds\":[{\"closedLoopControlName\":\"ControlLoop-vDNS-6f37f56d-a87d-4b85-b6a9-cc953cf779b3\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.vNicPerformanceArray[*].receivedTotalPacketsDelta\",\"thresholdValue\":300,\"direction\":\"GREATER_OR_EQUAL\",\"severity\":\"CRITICAL\",\"closedLoopEventStatus\":\"ONSET\"}]},{\"eventName\":\"Measurement_vGMUX\",\"controlLoopSchemaType\":\"VNF\",\"policyScope\":\"DCAE\",\"policyName\":\"DCAE.Config_tca-hi-lo\",\"policyVersion\":\"v0.0.1\",\"thresholds\":[{\"closedLoopControlName\":\"ControlLoop-vCPE-48f0c2c3-a172-4192-9ae3-052274181b6e\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.additionalMeasurements[*].arrayOfFields[0].value\",\"thresholdValue\":0,\"direction\":\"EQUAL\",\"severity\":\"MAJOR\",\"closedLoopEventStatus\":\"ABATED\"},{\"closedLoopControlName\":\"ControlLoop-vCPE-48f0c2c3-a172-4192-9ae3-052274181b6e\",\"version\":\"1.0.2\",\"fieldPath\":\"$.event.measurementsForVfScalingFields.additionalMeasurements[*].arrayOfFields[0].value\",\"thresholdValue\":0,\"direction\":\"GREATER\",\"severity\":\"CRITICAL\",\"closedLoopEventStatus\":\"ONSET\"}]}]}",
+      "description": "Threshold Crossing Alert Policy JSON as string",
+      "designer_editable": false,
+      "sourced_at_deployment": false,
+      "policy_editable": true,
+      "type": "string",
+      "required": true
+    },
+    {
+      "name": "tca.processing_batch_size",
+      "value": 10000,
+      "description": "Batch size for TCA Application Transaction",
+      "designer_editable": true,
+      "sourced_at_deployment": false,
+      "policy_editable": false,
+      "type": "number",
+      "required": false
+    },
+    {
+      "name": "tca.enable_abatement",
+      "value": true,
+      "description": "Enables / Disables TCA Alerts Abatement",
+      "designer_editable": true,
+      "sourced_at_deployment": false,
+      "policy_editable": false,
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "tca.enable_ecomp_logging",
+      "value": true,
+      "description": "Enables / Disables ECOMP Logging",
+      "designer_editable": true,
+      "sourced_at_deployment": false,
+      "policy_editable": false,
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "tca.aai.enable_enrichment",
+      "value": true,
+      "description": "Enables / Disables TCA A&AI Enrichment",
+      "designer_editable": true,
+      "sourced_at_deployment": true,
+      "policy_editable": false,
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "tca.aai.url",
+      "value": "http://aai.onap.svc.cluster.local",
+      "description": "A&AI Enrichment Service URL. Required only if A&AI Enrichment is enabled",
+      "designer_editable": true,
+      "sourced_at_deployment": true,
+      "policy_editable": false,
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "tca.aai.username",
+      "value": "DCAE",
+      "description": "A&AI Enrichment Service basic authentication user name",
+      "designer_editable": true,
+      "sourced_at_deployment": true,
+      "policy_editable": false,
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "tca.aai.password",
+      "value": "DCAE",
+      "description": "A&AI Enrichment Service basic authentication user password",
+      "designer_editable": true,
+      "sourced_at_deployment": true,
+      "policy_editable": false,
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "tca.aai.generic_vnf_path",
+      "value": "aai/v11/network/generic-vnfs/generic-vnf",
+      "description": "A&AI Enrichment Service VNF query endpoint path",
+      "designer_editable": true,
+      "sourced_at_deployment": false,
+      "policy_editable": false,
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "tca.aai.node_query_path",
+      "value": "aai/v11/search/nodes-query",
+      "description": "A&AI Enrichment Service Node query endpoint path",
+      "designer_editable": true,
+      "sourced_at_deployment": false,
+      "policy_editable": false,
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "streams_subscribes.tca_handle_in.consumer_group",
+      "value": "cg1",
+      "description": "Subscriber consumer group",
+      "designer_editable": true,
+      "sourced_at_deployment": false,
+      "policy_editable": false,
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "streams_subscribes.tca_handle_in.consumer_ids[0]",
+      "value": "c0",
+      "description": "Subscriber first consumer id",
+      "designer_editable": true,
+      "sourced_at_deployment": false,
+      "policy_editable": false,
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "streams_subscribes.tca_handle_in.consumer_ids[1]",
+      "value": "c1",
+      "description": "Subscriber second consumer id",
+      "designer_editable": true,
+      "sourced_at_deployment": false,
+      "policy_editable": false,
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "streams_subscribes.tca_handle_in.message_limit",
+      "value": 50000,
+      "description": "Maximum message fetched by TCA Subscriber",
+      "designer_editable": true,
+      "sourced_at_deployment": false,
+      "policy_editable": false,
+      "type": "number",
+      "required": true
+    },
+    {
+      "name": "streams_subscribes.tca_handle_in.timeout",
+      "value": -1,
+      "description": "Timeout for TCA Subscriber",
+      "designer_editable": true,
+      "sourced_at_deployment": false,
+      "policy_editable": false,
+      "type": "number",
+      "required": false
+    },
+    {
+      "name": "streams_subscribes.tca_handle_in.polling.fixed_rate",
+      "value": 0,
+      "description": "Subscriber fixed polling interval in milliseconds. Value of 0 indicated auto adjusting polling will be used",
+      "designer_editable": true,
+      "sourced_at_deployment": false,
+      "policy_editable": false,
+      "type": "number",
+      "required": false
+    },
+    {
+      "name": "streams_subscribes.tca_handle_in.polling.auto_adjusting.min",
+      "value": 30000,
+      "description": "Subscriber Auto Adjusting polling minimum interval in milliseconds",
+      "designer_editable": true,
+      "sourced_at_deployment": false,
+      "policy_editable": false,
+      "type": "number",
+      "required": false
+    },
+    {
+      "name": "streams_subscribes.tca_handle_in.polling.auto_adjusting.step_up",
+      "value": 10000,
+      "description": "Subscriber Auto Adjusting polling step up delta in milliseconds when message is not found",
+      "designer_editable": true,
+      "sourced_at_deployment": false,
+      "policy_editable": false,
+      "type": "number",
+      "required": false
+    },
+    {
+      "name": "streams_subscribes.tca_handle_in.polling.auto_adjusting.max",
+      "value": 60000,
+      "description": "Subscriber Auto Adjusting polling maximum interval in milliseconds",
+      "designer_editable": true,
+      "sourced_at_deployment": false,
+      "policy_editable": false,
+      "type": "number",
+      "required": false
+    },
+    {
+      "name": "streams_subscribes.tca_handle_in.polling.auto_adjusting.step_down",
+      "value": 30000,
+      "description": "Subscriber Auto Adjusting polling step down delta in milliseconds when message is found",
+      "designer_editable": true,
+      "sourced_at_deployment": false,
+      "policy_editable": false,
+      "type": "number",
+      "required": false
+    }
+  ]
+}
+
