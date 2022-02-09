@@ -4,7 +4,7 @@
   ~ Copyright (c) 2018-2020 AT&T Intellectual Property. All rights reserved.
   ~ Copyright (c) 2021 Samsung Electronics. All rights reserved.
   ~ Copyright (c) 2021 Nokia Intellectual Property. All rights reserved.
-  ~ Copyright (c) 2021 Wipro Limited.
+  ~ Copyright (c) 2021-2022 Wipro Limited.
   ~ ================================================================================
   ~ Modifications Copyright (C) 2019 IBM
   ~ ================================================================================
@@ -44,7 +44,7 @@
 
     <properties>
 	    <main.basedir>${project.parent.basedir}</main.basedir>
-	    <undertow-core.version>2.2.7.Final</undertow-core.version>
+	    <undertow-core.version>2.2.14.Final</undertow-core.version>
 	    <docker.image.name>onap/${project.groupId}.${project.artifactId}</docker.image.name>
     <maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>
     </properties>

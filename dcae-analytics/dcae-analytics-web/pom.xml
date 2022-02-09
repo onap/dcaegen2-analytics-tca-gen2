@@ -4,7 +4,7 @@
   ~ Copyright (c) 2018-2019 AT&T Intellectual Property. All rights reserved.
   ~ Copyright (c) 2021 Samsung Electronics. All rights reserved.
   ~ Copyright (c) 2021 Nokia Intellectual Property. All rights reserved.
-  ~ Copyright (c) 2021 Wipro Limited.
+  ~ Copyright (c) 2021-2022 Wipro Limited.
   ~ ================================================================================
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@
 
     <properties>
 	    <main.basedir>${project.parent.basedir}</main.basedir>
-	    <undertow-core.version>2.2.7.Final</undertow-core.version>
+	    <undertow-core.version>2.2.14.Final</undertow-core.version>
 	    <httpclient.version>4.5.13</httpclient.version>
     </properties>
 
