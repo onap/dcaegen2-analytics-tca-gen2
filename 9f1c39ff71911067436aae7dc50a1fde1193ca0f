@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "512ccd98_64eda7b3",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2022-02-09T08:26:14Z",
+      "side": 1,
+      "message": "I think this should also be updated as well as other poms",
+      "range": {
+        "startLine": 35,
+        "startChar": 17,
+        "endLine": 35,
+        "endChar": 31
+      },
+      "revId": "9f1c39ff71911067436aae7dc50a1fde1193ca0f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bebd27e2_669dada6",
+        "filename": "dcae-analytics/dcae-analytics-web/pom.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 6044
+      },
+      "writtenOn": "2022-02-09T08:26:14Z",
+      "side": 1,
+      "message": "I think this should also be updated",
+      "range": {
+        "startLine": 33,
+        "startChar": 17,
+        "endLine": 33,
+        "endChar": 31
+      },
+      "revId": "9f1c39ff71911067436aae7dc50a1fde1193ca0f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
