@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f5127f32_6afcd12e",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-11T01:34:29Z",
+      "side": 1,
+      "message": "there should be a LICENSE_START line to match the LICENSE_END line",
+      "revId": "7acc08a1f24f337a0d08d0c5553f64c62c70debb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c8fa7bdd_2d5cf7bd",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-11T01:34:29Z",
+      "side": 1,
+      "message": "while you\u0027re in here, please change the tabs to spaces",
+      "revId": "7acc08a1f24f337a0d08d0c5553f64c62c70debb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9fa481a6_0af45c14",
+        "filename": "dcae-analytics/dcae-analytics-web/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-11T01:34:29Z",
+      "side": 1,
+      "message": "there should be a LICENSE_START line to match the LICENSE_END line",
+      "revId": "7acc08a1f24f337a0d08d0c5553f64c62c70debb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c2ce2b52_701f6713",
+        "filename": "dcae-analytics/dcae-analytics-web/pom.xml",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-11T01:34:29Z",
+      "side": 1,
+      "message": "while you\u0027re in here, please change the tabs to spaces",
+      "revId": "7acc08a1f24f337a0d08d0c5553f64c62c70debb",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
