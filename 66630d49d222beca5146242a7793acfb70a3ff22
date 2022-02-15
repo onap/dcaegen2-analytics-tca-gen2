@@ -1,0 +1,276 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "59108401_e6c9e2de",
+        "filename": "dcae-analytics/dcae-analytics-model/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-15T15:59:46Z",
+      "side": 1,
+      "message": "missing LICENSE_START line to match the LICENSE_END line",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9b792fdc_0386154d",
+        "filename": "dcae-analytics/dcae-analytics-tca-core/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-15T15:59:46Z",
+      "side": 1,
+      "message": "missing LICENSE_START line to match the LICENSE_END line",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "49aa35c7_ed2b7602",
+        "filename": "dcae-analytics/dcae-analytics-tca-model/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-15T15:59:46Z",
+      "side": 1,
+      "message": "missing LICENSE_START line to match the LICENSE_END line",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3e0464b8_1ca743b8",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-15T15:59:46Z",
+      "side": 1,
+      "message": "missing LICENSE_START line to match the LICENSE_END line",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fdab5201_00b4d7d5",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-15T15:59:46Z",
+      "side": 1,
+      "message": "there should not be a separator line in the copyright list\nand \"Modifications\" is not required on the following line",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "57ecd2c8_4201f805",
+        "filename": "dcae-analytics/dcae-analytics-test/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-15T15:59:46Z",
+      "side": 1,
+      "message": "missing LICENSE_START line to match the LICENSE_END line",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "70df4182_0b628a92",
+        "filename": "dcae-analytics/dcae-analytics-web/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-15T15:59:46Z",
+      "side": 1,
+      "message": "missing LICENSE_START line to match the LICENSE_END line",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3255781e_a686f2b7",
+        "filename": "dcae-analytics/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-15T15:59:46Z",
+      "side": 1,
+      "message": "missing LICENSE_START line to match the LICENSE_END line",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a25d026_84e3271c",
+        "filename": "dcae-analytics/version.properties",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-15T15:59:46Z",
+      "side": 1,
+      "message": "missing LICENSE_START line to match the LICENSE_END line",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "39bed485_39390c21",
+        "filename": "dcae-analytics/version.properties",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-15T15:59:46Z",
+      "side": 1,
+      "message": "should add 2022 copyright info",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4f8c67df_5494da76",
+        "filename": "eelf-logger/eelf-logger-api/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-15T15:59:46Z",
+      "side": 1,
+      "message": "missing LICENSE_START line to match the LICENSE_END line",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1275e2d_854468ec",
+        "filename": "eelf-logger/eelf-logger-logback-impl/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-15T15:59:46Z",
+      "side": 1,
+      "message": "missing LICENSE_START line to match the LICENSE_END line",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1feeaf31_ffb90f24",
+        "filename": "eelf-logger/eelf-logger-model/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-15T15:59:46Z",
+      "side": 1,
+      "message": "missing LICENSE_START line to match the LICENSE_END line",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b4da7bdd_16eb7810",
+        "filename": "eelf-logger/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-15T15:59:46Z",
+      "side": 1,
+      "message": "missing LICENSE_START line to match the LICENSE_END line",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1d539e6a_8e81041c",
+        "filename": "pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-15T15:59:46Z",
+      "side": 1,
+      "message": "missing LICENSE_START line to match the LICENSE_END line",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0e68354c_5e08230b",
+        "filename": "tatus",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-15T15:59:46Z",
+      "side": 1,
+      "message": "I think this file might be a mistake and might need to be removed",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
