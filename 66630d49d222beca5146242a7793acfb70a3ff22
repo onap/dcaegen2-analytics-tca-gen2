@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "f1f6f065_b48fb476",
+        "filename": "dcae-analytics/dcae-analytics-tca-core/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-18T13:44:05Z",
+      "side": 1,
+      "message": "missed this LICENSE_START line",
+      "parentUuid": "6603d0fc_c63cb8da",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "49aa35c7_ed2b7602",
         "filename": "dcae-analytics/dcae-analytics-tca-model/pom.xml",
         "patchSetId": 5
@@ -104,6 +122,24 @@
       "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "797d0c28_e75f4665",
+        "filename": "dcae-analytics/dcae-analytics-tca-model/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-18T13:44:05Z",
+      "side": 1,
+      "message": "missed this LICENSE_START line",
+      "parentUuid": "934ec986_dcccb228",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     },
     {
       "key": {
@@ -419,6 +455,24 @@
       "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "183948b8_b725fff2",
+        "filename": "eelf-logger/eelf-logger-logback-impl/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-18T13:44:05Z",
+      "side": 1,
+      "message": "missed this LICENSE_START",
+      "parentUuid": "d8d534a8_3c3b2c13",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     },
     {
       "key": {

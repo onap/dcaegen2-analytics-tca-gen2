@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2223e17f_6d43fb93",
+        "filename": "dcae-analytics/dcae-analytics-tca-core/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-18T13:44:05Z",
+      "side": 1,
+      "message": "Copyright, not COpyright",
+      "revId": "e2c7386ad1d7390b20a97a29e8bd390df396472d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee210c8f_43c1ff43",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/pom.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-02-18T13:44:05Z",
+      "side": 1,
+      "message": "while you have this file open, can you fix the tabs on this line?",
+      "revId": "e2c7386ad1d7390b20a97a29e8bd390df396472d",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
