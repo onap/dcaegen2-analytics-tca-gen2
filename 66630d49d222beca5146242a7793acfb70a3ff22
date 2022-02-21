@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "fa0286ec_19c24ece",
+        "filename": "dcae-analytics/dcae-analytics-tca-core/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7656
+      },
+      "writtenOn": "2022-02-21T04:19:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f1f6f065_b48fb476",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "49aa35c7_ed2b7602",
         "filename": "dcae-analytics/dcae-analytics-tca-model/pom.xml",
         "patchSetId": 5
@@ -473,6 +491,24 @@
       "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2b7c235_f6274ce2",
+        "filename": "eelf-logger/eelf-logger-logback-impl/pom.xml",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 7656
+      },
+      "writtenOn": "2022-02-21T04:19:37Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "183948b8_b725fff2",
+      "revId": "66630d49d222beca5146242a7793acfb70a3ff22",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
