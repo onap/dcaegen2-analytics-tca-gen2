@@ -16,6 +16,24 @@
       "revId": "824aba4c58182be4c55322bc768ffdbcec9cff81",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "590c257b_1e496e29",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/pom.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 7656
+      },
+      "writtenOn": "2022-02-21T05:10:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "017c4d88_14192acd",
+      "revId": "824aba4c58182be4c55322bc768ffdbcec9cff81",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
