@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f85d315d_911a52d8",
+        "filename": "releases/1.3.2-container.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-03-17T14:50:01Z",
+      "side": 1,
+      "message": "should be bb538188c06094fba7185ba0f729d899737f7ed3",
+      "range": {
+        "startLine": 9,
+        "startChar": 6,
+        "endLine": 9,
+        "endChar": 46
+      },
+      "revId": "c4f895d1fcace286f275163c255039b68346e3a6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
