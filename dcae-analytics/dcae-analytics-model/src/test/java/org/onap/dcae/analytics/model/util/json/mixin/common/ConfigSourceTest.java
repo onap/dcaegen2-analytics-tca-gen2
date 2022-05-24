@@ -1,6 +1,5 @@
 /*
  * ============LICENSE_START=======================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
  * Copyright (c) 2022 Huawei. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,18 +16,20 @@
  * ============LICENSE_END=========================================================
  *
  */
-
-package org.onap.dcae.analytics.web.config;
+package org.onap.dcae.analytics.model.util.json.mixin.common;
 
 import org.junit.jupiter.api.Test;
+import org.onap.dcae.analytics.model.common.ConfigSource;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class AnalyticsWebTestConfig {
-
+public class ConfigSourceTest {
     @Test
-    public void AnalyticsWebTestConfigTest () throws Exception {
-        AnalyticsWebConfig analyticsWebConfig = new AnalyticsWebConfig();
-        assertNotNull(analyticsWebConfig);
+    public void testConfigSource () throws Exception {
+        assertEquals("CONFIG_BINDING_SERVICE", ConfigSource.CONFIG_BINDING_SERVICE.toString());
+        assertEquals("CLASSPATH", ConfigSource.CLASSPATH.toString());
+        assertEquals("MONGO", ConfigSource.MONGO.toString());
+        assertEquals("REDIS", ConfigSource.REDIS.toString());
+        assertEquals("REST_API", ConfigSource.REST_API.toString());
     }
 }

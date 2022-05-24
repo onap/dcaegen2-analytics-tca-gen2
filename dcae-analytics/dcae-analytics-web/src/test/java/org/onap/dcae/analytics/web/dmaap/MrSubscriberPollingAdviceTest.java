@@ -1,6 +1,5 @@
 /*
  * ============LICENSE_START=======================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
  * Copyright (c) 2022 Huawei. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,17 +17,23 @@
  *
  */
 
-package org.onap.dcae.analytics.web.config;
+package org.onap.dcae.analytics.web.dmaap;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import org.springframework.integration.handler.advice.AbstractRequestHandlerAdvice;
+import org.springframework.integration.util.DynamicPeriodicTrigger;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class AnalyticsWebTestConfig {
+public class MrSubscriberPollingAdviceTest {
 
     @Test
-    public void AnalyticsWebTestConfigTest () throws Exception {
-        AnalyticsWebConfig analyticsWebConfig = new AnalyticsWebConfig();
-        assertNotNull(analyticsWebConfig);
+    public void mrSubscriberPollingAdviceTest () throws Exception {
+        DynamicPeriodicTrigger dynamicPeriodicTrigger = Mockito.mock(DynamicPeriodicTrigger.class);
+        MrSubscriberPollingAdvice mrSubscriberPollingAdvice =
+                new MrSubscriberPollingAdvice(dynamicPeriodicTrigger,30000, 0,
+                        30000, 0);
+        assertNotNull(mrSubscriberPollingAdvice);
     }
 }

@@ -1,6 +1,5 @@
 /*
  * ============LICENSE_START=======================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
  * Copyright (c) 2022 Huawei. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,18 +16,26 @@
  * ============LICENSE_END=========================================================
  *
  */
-
-package org.onap.dcae.analytics.web.config;
+package org.onap.dcae.analytics.model.util.supplier;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.Date;
+
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class AnalyticsWebTestConfig {
+public class CreationTimestampSupplierTest {
+    @Test
+    public void getTest () throws Exception {
+        CreationTimestampSupplier creationTimestampSupplier =
+                new CreationTimestampSupplier();
+        String str = creationTimestampSupplier.get();
+        assertNotNull(str);
+    }
 
     @Test
-    public void AnalyticsWebTestConfigTest () throws Exception {
-        AnalyticsWebConfig analyticsWebConfig = new AnalyticsWebConfig();
-        assertNotNull(analyticsWebConfig);
+    public void getParsedDateTest () throws Exception {
+        Date date = CreationTimestampSupplier.getParsedDate("2020-08-24T21:49:31.702+0400");
+        assertNotNull(date.getTime());
     }
 }

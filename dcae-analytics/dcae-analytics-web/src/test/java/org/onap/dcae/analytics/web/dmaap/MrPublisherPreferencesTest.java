@@ -1,6 +1,5 @@
 /*
  * ============LICENSE_START=======================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
  * Copyright (c) 2022 Huawei. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,17 +17,28 @@
  *
  */
 
-package org.onap.dcae.analytics.web.config;
+package org.onap.dcae.analytics.web.dmaap;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import org.springframework.http.HttpHeaders;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import java.net.URL;
 
-public class AnalyticsWebTestConfig {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class MrPublisherPreferencesTest {
 
     @Test
-    public void AnalyticsWebTestConfigTest () throws Exception {
-        AnalyticsWebConfig analyticsWebConfig = new AnalyticsWebConfig();
-        assertNotNull(analyticsWebConfig);
+    public void mrPublisherPreferencesTest () throws Exception {
+        URL url = new URL("http", "8088", "test");
+        HttpHeaders headers = Mockito.mock(HttpHeaders.class);
+        MrPublisherPreferences mrPublisherPreferences =
+                new MrPublisherPreferences("http://localhost:8080",
+                        "TestClientId", headers,
+                        "TestUserName", "TestPassword",
+                        url, false, false);
+        assertEquals("TestClientId", mrPublisherPreferences.getHttpClientId());
+
     }
 }

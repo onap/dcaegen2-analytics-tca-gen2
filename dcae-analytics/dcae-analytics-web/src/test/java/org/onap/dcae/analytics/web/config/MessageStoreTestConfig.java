@@ -1,6 +1,5 @@
 /*
  * ============LICENSE_START=======================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
  * Copyright (c) 2022 Huawei. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,14 +20,25 @@
 package org.onap.dcae.analytics.web.config;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import org.springframework.data.mongodb.MongoDatabaseFactory;
+import org.springframework.integration.store.BasicMessageGroupStore;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class AnalyticsWebTestConfig {
+public class MessageStoreTestConfig {
+    @Test
+    public void simpleMessageGroupStoreTest () {
+        MessageStoreConfig messageStoreConfig = new MessageStoreConfig();
+        BasicMessageGroupStore basicMessageGroupStore = messageStoreConfig.simpleMessageGroupStore();
+        assertNotNull(basicMessageGroupStore);
+    }
 
     @Test
-    public void AnalyticsWebTestConfigTest () throws Exception {
-        AnalyticsWebConfig analyticsWebConfig = new AnalyticsWebConfig();
-        assertNotNull(analyticsWebConfig);
+    public void mongoMessageGroupStoreTest () {
+        MessageStoreConfig messageStoreConfig = new MessageStoreConfig();
+        MongoDatabaseFactory mongoDatabaseFactory = Mockito.mock(MongoDatabaseFactory.class);
+        BasicMessageGroupStore basicMessageGroupStore = messageStoreConfig.mongoMessageGroupStore(mongoDatabaseFactory);
+        assertNotNull(basicMessageGroupStore);
     }
 }

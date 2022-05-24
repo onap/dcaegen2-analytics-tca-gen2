@@ -1,6 +1,5 @@
 /*
  * ============LICENSE_START=======================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
  * Copyright (c) 2022 Huawei. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,18 +16,27 @@
  * ============LICENSE_END=========================================================
  *
  */
-
-package org.onap.dcae.analytics.web.config;
+package org.onap.dcae.analytics.model.util.function;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import java.net.URL;
+import java.util.Optional;
 
-public class AnalyticsWebTestConfig {
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+public class StringToURLFunctionTest {
+    @Test
+    public void apply () throws Exception {
+        StringToURLFunction stringToURLFunction = new StringToURLFunction ();
+        Optional<URL> optionalURL = stringToURLFunction.apply("https://localhost:8080/test");
+        assertTrue(optionalURL.isPresent());
+    }
 
     @Test
-    public void AnalyticsWebTestConfigTest () throws Exception {
-        AnalyticsWebConfig analyticsWebConfig = new AnalyticsWebConfig();
-        assertNotNull(analyticsWebConfig);
+    public void applyException () throws Exception {
+        StringToURLFunction stringToURLFunction = new StringToURLFunction ();
+        Optional<URL> optionalURL = stringToURLFunction.apply("");
+        assertTrue(optionalURL.isEmpty());
     }
 }

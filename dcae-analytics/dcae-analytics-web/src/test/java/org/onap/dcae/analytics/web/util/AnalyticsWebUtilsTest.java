@@ -1,6 +1,5 @@
 /*
  * ============LICENSE_START=======================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
  * Copyright (c) 2022 Huawei. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,17 +17,24 @@
  *
  */
 
-package org.onap.dcae.analytics.web.config;
+
+package org.onap.dcae.analytics.web.util;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.function.Supplier;
+
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class AnalyticsWebTestConfig {
+public class AnalyticsWebUtilsTest {
 
     @Test
-    public void AnalyticsWebTestConfigTest () throws Exception {
-        AnalyticsWebConfig analyticsWebConfig = new AnalyticsWebConfig();
-        assertNotNull(analyticsWebConfig);
+    public void AnalyticsWebUtilsTst () throws Exception {
+        Supplier<String> creationTimestampSupplier = AnalyticsWebUtils.CREATION_TIMESTAMP_SUPPLIER;
+        Supplier<String> randomIdSupplier = AnalyticsWebUtils.RANDOM_ID_SUPPLIER;
+        Supplier<String> requestIdSupplier = AnalyticsWebUtils.REQUEST_ID_SUPPLIER;
+        assertNotNull(creationTimestampSupplier);
+        assertNotNull(randomIdSupplier.toString());
+        assertNotNull(requestIdSupplier);
     }
 }
