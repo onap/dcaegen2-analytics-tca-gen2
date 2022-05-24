@@ -1,6 +1,5 @@
 /*
  * ============LICENSE_START=======================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
  * Copyright (c) 2022 Huawei. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,18 +16,18 @@
  * ============LICENSE_END=========================================================
  *
  */
-
-package org.onap.dcae.analytics.web.config;
+package org.onap.dcae.analytics.model;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import java.util.Set;
 
-public class AnalyticsWebTestConfig {
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
+public class DmaapMrConstantsTest {
     @Test
-    public void AnalyticsWebTestConfigTest () throws Exception {
-        AnalyticsWebConfig analyticsWebConfig = new AnalyticsWebConfig();
-        assertNotNull(analyticsWebConfig);
+    public void DmaapHeadersTest () throws Exception {
+        Set<String> dmaapConstatnts =  DmaapMrConstants.getDmaapmappedHeaders();
+        assertEquals("X-RequestID", dmaapConstatnts.iterator().next());
     }
 }

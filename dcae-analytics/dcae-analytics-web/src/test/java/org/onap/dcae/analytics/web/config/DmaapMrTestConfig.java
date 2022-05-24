@@ -1,6 +1,7 @@
 /*
- * ================================================================================
+ * ============LICENSE_START=======================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2022 Huawei. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,55 +20,116 @@
 
 package org.onap.dcae.analytics.web.config;
 
-import org.onap.dcae.analytics.model.AnalyticsProfile;
-import org.onap.dcae.analytics.web.BaseAnalyticsWebSpringBootIT;
-import org.onap.dcae.analytics.web.dmaap.MrPublisherPreferences;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import org.onap.dcae.analytics.web.dmaap.MrSubscriberPollingPreferences;
 import org.onap.dcae.analytics.web.dmaap.MrSubscriberPreferences;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Profile;
+import org.onap.dcae.analytics.web.dmaap.MrTriggerMessageProvider;
+import org.onap.dcae.analytics.web.dmaap.MrSubscriberPollingAdvice;
+import org.onap.dcae.analytics.web.dmaap.MrMessageSplitter;
+import org.onap.dcae.analytics.web.dmaap.MrPublisherPreferences;
+import org.springframework.http.HttpHeaders;
 import org.springframework.integration.channel.DirectChannel;
 import org.springframework.integration.channel.QueueChannel;
+import org.springframework.integration.core.MessageSource;
 import org.springframework.integration.dsl.IntegrationFlow;
-import org.springframework.integration.dsl.IntegrationFlows;
-import org.springframework.integration.handler.LoggingHandler;
+import org.springframework.integration.handler.advice.RequestHandlerRetryAdvice;
+import org.springframework.integration.scheduling.PollerMetadata;
+import org.springframework.integration.store.BasicMessageGroupStore;
+import org.springframework.web.client.RestTemplate;
 
-/**
- * @author Rajiv Singla
- */
-@Configuration
-@Profile({AnalyticsProfile.DMAAP_PROFILE_NAME})
+import java.net.URL;
+import java.util.Arrays;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class DmaapMrTestConfig {
 
-    @Bean
-    public MrSubscriberPreferences mrSubscriberPreferences() {
-        return new MrSubscriberPreferences(BaseAnalyticsWebSpringBootIT.TEST_SUBSCRIBER_TOPIC_URL, null,
-                null, BaseAnalyticsWebSpringBootIT.TEST_SUBSCRIBER_AAF_USERNAME,
-                BaseAnalyticsWebSpringBootIT.TEST_SUBSCRIBER_AAF_PASSWORD,
-                null, null, null,
-                BaseAnalyticsWebSpringBootIT.TEST_SUBSCRIBER_CONSUMER_GROUP,
-                BaseAnalyticsWebSpringBootIT.TEST_SUBSCRIBER_CONSUMER_IDS,
-                null, null, null);
+    @Test
+    public void mrPublisherInputChannelTest () throws Exception {
+        DmaapMrConfig dmaapMrConfig = new DmaapMrConfig();
+        DirectChannel directChannel = dmaapMrConfig.mrPublisherInputChannel();
+        assertNotNull(directChannel);
     }
 
-    @Bean
-    public MrPublisherPreferences mrPublisherPreferences() {
-        return new MrPublisherPreferences(BaseAnalyticsWebSpringBootIT.TEST_PUBLISHER_TOPIC_URL);
+    @Test
+    public void mrTriggerMessageProviderTest () throws Exception {
+        URL proxyURL = new URL("http://localhost");
+        MrSubscriberPollingPreferences pollingPreferences = Mockito.mock(MrSubscriberPollingPreferences.class);
+        HttpHeaders headers = Mockito.mock(HttpHeaders.class);
+        MrSubscriberPreferences subscriberPreferences =
+                new MrSubscriberPreferences("http://localhost:8080",
+                        "TestClientId", headers,
+                        "TestUserName", "TestPassword",
+                        proxyURL, true, false, "TestGroup",
+                        Arrays.asList("TestId1"),
+                        new Integer(4), new Integer(3), pollingPreferences);
+        DmaapMrConfig dmaapMrConfig = new DmaapMrConfig();
+        MrTriggerMessageProvider mrTriggerMessageProvider = dmaapMrConfig.mrTriggerMessageProvider(subscriberPreferences);
+        assertEquals("getTriggerMessage", mrTriggerMessageProvider.TRIGGER_METHOD_NAME);
+        assertEquals("http://localhost:8080/TestGroup/TestId1?limit=4&timeout=3",
+                mrTriggerMessageProvider.getTriggerMessage().getPayload());
     }
 
-    @Bean
-    public Integer processingBatchSize() {
-        return 1;
+    @Test
+    public void mrMessageSourceTest () throws Exception {
+        URL proxyURL = new URL("http://localhost");
+        MrSubscriberPollingPreferences pollingPreferences = Mockito.mock(MrSubscriberPollingPreferences.class);
+        HttpHeaders headers = Mockito.mock(HttpHeaders.class);
+        MrSubscriberPreferences subscriberPreferences =
+                new MrSubscriberPreferences("http://localhost:8080",
+                        "TestClientId", headers,
+                        "TestUserName", "TestPassword",
+                        proxyURL, true, false, "TestGroup",
+                        Arrays.asList("TestId1", "TestId2"),
+                        new Integer(4), new Integer(3), pollingPreferences);
+        DmaapMrConfig dmaapMrConfig = new DmaapMrConfig();
+        MrTriggerMessageProvider mrTriggerMessageProvider = dmaapMrConfig.mrTriggerMessageProvider(subscriberPreferences);
+        MessageSource messageSource = dmaapMrConfig.mrMessageSource(mrTriggerMessageProvider);
+        assertEquals("inbound_channel_adapter", messageSource.getIntegrationPatternType().name());
     }
 
-
-    @Bean
-    public IntegrationFlow noOperationMrFlow(final QueueChannel mrSubscriberOutputChannel,
-                                             final DirectChannel mrPublisherInputChannel) {
-        return IntegrationFlows.from(mrSubscriberOutputChannel)
-                .log(LoggingHandler.Level.INFO)
-                .channel(mrPublisherInputChannel)
-                .get();
+    @Test
+    public void mrSubscriberOutputChannelTest () throws Exception {
+        BasicMessageGroupStore basicMessageGroupStore = Mockito.mock(BasicMessageGroupStore.class);
+        DmaapMrConfig dmaapMrConfig = new DmaapMrConfig();
+        QueueChannel queueChannel = dmaapMrConfig.mrSubscriberOutputChannel(basicMessageGroupStore);
+        assertTrue(queueChannel.getRemainingCapacity() > 0);
     }
 
+    @Test
+    public void mrSubscriberFlowTest () throws Exception {
+        PollerMetadata pollerMetadata = Mockito.mock(PollerMetadata.class);
+        QueueChannel queueChannel = Mockito.mock(QueueChannel.class);
+        RestTemplate restTemplate = Mockito.mock(RestTemplate.class);
+        MessageSource messageSource = Mockito.mock(MessageSource.class);
+        MrMessageSplitter mrMessageSplitter = Mockito.mock(MrMessageSplitter.class);
+        MrSubscriberPollingAdvice mrSubscriberPollingAdvice = Mockito.mock(MrSubscriberPollingAdvice.class);
+        DmaapMrConfig dmaapMrConfig = new DmaapMrConfig();
+        IntegrationFlow integratedFlow = dmaapMrConfig.mrSubscriberFlow(pollerMetadata,restTemplate,messageSource,queueChannel, mrMessageSplitter, mrSubscriberPollingAdvice);
+        assertNotNull(integratedFlow.getInputChannel());
+    }
+
+    @Test
+    public void mrPublisherFlowTest () throws Exception {
+        RequestHandlerRetryAdvice requestHandlerRetryAdvice = Mockito.mock(RequestHandlerRetryAdvice.class);
+        DirectChannel directChannel = Mockito.mock(DirectChannel.class);
+        RestTemplate restTemplate = Mockito.mock(RestTemplate.class);
+        MrPublisherPreferences mrPublisherPreferences = Mockito.mock(MrPublisherPreferences.class);
+        DmaapMrConfig dmaapMrConfig = new DmaapMrConfig();
+        IntegrationFlow integratedFlow = dmaapMrConfig.mrPublisherFlow(mrPublisherPreferences,restTemplate,directChannel,requestHandlerRetryAdvice);
+        assertNotNull(integratedFlow.getInputChannel());
+    }
+
+    @Test
+    public void mrMessageSplitterTest () throws Exception {
+        ObjectMapper objectMapper = new ObjectMapper();
+        int processingBatchSize = 100;
+        DmaapMrConfig dmaapMrConfig = new DmaapMrConfig();
+        MrMessageSplitter mrMessageSplitter = dmaapMrConfig.mrMessageSplitter(objectMapper, processingBatchSize);
+        assertNotNull(mrMessageSplitter);
+    }
 }

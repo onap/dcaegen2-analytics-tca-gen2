@@ -1,6 +1,7 @@
 /*
- * ================================================================================
+ * ============LICENSE_START=======================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2022 Huawei. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +20,7 @@
 
 package org.onap.dcae.analytics.model.util.json.mixin.cef;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.onap.dcae.analytics.model.util.json.AnalyticsModelJsonConversion.ANALYTICS_MODEL_OBJECT_MAPPER;
 
 import org.assertj.core.api.Assertions;
@@ -49,6 +51,15 @@ class AlertTypeMixinTest extends BaseAnalyticsModelTest {
         Assertions.assertThat(alertType)
                 .as("Json String for CARD ANOMALY with hyphen can be converted back to Alert Type")
                 .isEqualTo(AlertType.CARD_ANOMALY);
+    }
+
+    @Test
+    public void forvalueTest() throws Exception {
+        assertEquals(AlertType.CARD_ANOMALY, AlertTypeMixin.forValue("CARD-ANOMALY"));
+        assertEquals(AlertType.ELEMENT_ANOMALY, AlertTypeMixin.forValue("ELEMENT-ANOMALY"));
+        assertEquals(AlertType.INTERFACE_ANOMALY, AlertTypeMixin.forValue("INTERFACE-ANOMALY"));
+        assertEquals(AlertType.SERVICE_ANOMALY, AlertTypeMixin.forValue("SERVICE-ANOMALY"));
+        assertEquals(AlertType.UNKNOWN, AlertTypeMixin.forValue("UNKNOWN"));
     }
 
 }

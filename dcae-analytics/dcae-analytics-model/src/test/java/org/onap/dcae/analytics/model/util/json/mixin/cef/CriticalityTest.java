@@ -1,6 +1,5 @@
 /*
  * ============LICENSE_START=======================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
  * Copyright (c) 2022 Huawei. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,18 +16,19 @@
  * ============LICENSE_END=========================================================
  *
  */
-
-package org.onap.dcae.analytics.web.config;
+package org.onap.dcae.analytics.model.util.json.mixin.cef;
 
 import org.junit.jupiter.api.Test;
+import org.onap.dcae.analytics.model.cef.Criticality;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class AnalyticsWebTestConfig {
+public class CriticalityTest {
 
     @Test
-    public void AnalyticsWebTestConfigTest () throws Exception {
-        AnalyticsWebConfig analyticsWebConfig = new AnalyticsWebConfig();
-        assertNotNull(analyticsWebConfig);
+    public void testCriticality () throws Exception {
+        assertEquals("UNKNOWN", Criticality.UNKNOWN.toString());
+        assertEquals("MAJ", Criticality.MAJ.toString());
+        assertEquals("CRIT", Criticality.CRIT.toString());
     }
 }
