@@ -3,6 +3,7 @@
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
  * ================================================================================
  * Copyright Copyright (c) 2019 IBM
+ * Copyright (c) 2022 Huawei. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -50,6 +51,7 @@ public class GenericValidationResponseTest {
         Assertions.assertEquals(map, genericValidationResponse.getValidationResultsAsMap());
         Assertions.assertEquals(errorMsg, genericValidationResponse.getAllErrorMessage());
         Assertions.assertEquals(errorMsg, genericValidationResponse.getAllErrorMessage("testMsg"));
-
+        genericValidationResponse.addErrorMessage("test", "test message");
+        Assertions.assertEquals("test message", genericValidationResponse.getAllErrorMessage("test"));
     }
 }

@@ -1,6 +1,5 @@
 /*
  * ================================================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
  * Copyright (c) 2022 Huawei. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -20,19 +19,21 @@
 
 package org.onap.dcae.analytics.web.config;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import org.junit.jupiter.api.Test;
-import org.onap.dcae.analytics.model.util.json.AnalyticsModelJsonConversion;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
+import org.mockito.Mockito;
+import org.springframework.data.mongodb.MongoDatabaseFactory;
 
-public class AnalyticsWebTestConfig {
+public class MessageStoreTestConfig {
+    @Test
+    public void simpleMessageGroupStoreTest () {
+        MessageStoreConfig messageStoreConfig = new MessageStoreConfig();
+        messageStoreConfig.simpleMessageGroupStore();
+    }
 
     @Test
-    public void AnalyticsWebTestConfigTest () throws Exception {
-        AnalyticsWebConfig analyticsWebConfig = new AnalyticsWebConfig();
+    public void mongoMessageGroupStoreTest () {
+        MessageStoreConfig messageStoreConfig = new MessageStoreConfig();
+        MongoDatabaseFactory mongoDatabaseFactory = Mockito.mock(MongoDatabaseFactory.class);
+        messageStoreConfig.mongoMessageGroupStore(mongoDatabaseFactory);
     }
 }
