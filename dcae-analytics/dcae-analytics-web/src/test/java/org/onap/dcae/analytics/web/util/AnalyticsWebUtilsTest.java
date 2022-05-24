@@ -1,6 +1,5 @@
 /*
  * ================================================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
  * Copyright (c) 2022 Huawei. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,21 +17,19 @@
  *
  */
 
-package org.onap.dcae.analytics.web.config;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+package org.onap.dcae.analytics.web.util;
 
 import org.junit.jupiter.api.Test;
-import org.onap.dcae.analytics.model.util.json.AnalyticsModelJsonConversion;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 
-public class AnalyticsWebTestConfig {
+import java.util.function.Supplier;
+
+public class AnalyticsWebUtilsTest {
 
     @Test
-    public void AnalyticsWebTestConfigTest () throws Exception {
-        AnalyticsWebConfig analyticsWebConfig = new AnalyticsWebConfig();
+    public void AnalyticsWebUtilsTst () throws Exception {
+        Supplier<String> creationTimestampSupplier = AnalyticsWebUtils.CREATION_TIMESTAMP_SUPPLIER;
+        Supplier<String> randomIdSupplier = AnalyticsWebUtils.RANDOM_ID_SUPPLIER;
+        Supplier<String> requestIdSupplier = AnalyticsWebUtils.REQUEST_ID_SUPPLIER;
     }
 }
