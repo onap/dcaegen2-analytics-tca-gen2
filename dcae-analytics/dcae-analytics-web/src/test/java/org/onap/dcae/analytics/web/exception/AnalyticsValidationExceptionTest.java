@@ -1,6 +1,5 @@
 /*
  * ============LICENSE_START=======================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
  * Copyright (c) 2022 Huawei. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,17 +17,23 @@
  *
  */
 
-package org.onap.dcae.analytics.web.config;
+package org.onap.dcae.analytics.web.exception;
 
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-public class AnalyticsWebTestConfig {
+public class AnalyticsValidationExceptionTest {
 
     @Test
-    public void AnalyticsWebTestConfigTest () throws Exception {
-        AnalyticsWebConfig analyticsWebConfig = new AnalyticsWebConfig();
-        assertNotNull(analyticsWebConfig);
+    public void AnalyticsValidationExceptionTst() throws Exception {
+        AnalyticsValidationException analyticsValidationException = new AnalyticsValidationException("Exception",
+                null);
+        assertEquals("Exception", analyticsValidationException.getMessage());
+    }
+
+    @Test
+    public void EnvironmentLoaderExceptionTst() throws Exception {
+        EnvironmentLoaderException environmentLoaderException = new EnvironmentLoaderException("Exception");
+        assertEquals("Exception", environmentLoaderException.getMessage());
     }
 }

@@ -1,6 +1,5 @@
 /*
  * ============LICENSE_START=======================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
  * Copyright (c) 2022 Huawei. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,18 +16,19 @@
  * ============LICENSE_END=========================================================
  *
  */
-
-package org.onap.dcae.analytics.web.config;
+package org.onap.dcae.analytics.model.ecomplogger;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class AnalyticsWebTestConfig {
-
+public class AnalyticsErrorTypeTest {
     @Test
-    public void AnalyticsWebTestConfigTest () throws Exception {
-        AnalyticsWebConfig analyticsWebConfig = new AnalyticsWebConfig();
-        assertNotNull(analyticsWebConfig);
+    public void getErrorCodeTest () throws Exception {
+        AnalyticsErrorType analyticsErrorType = AnalyticsErrorType.SCHEMA_ERROR;
+        int errCode = analyticsErrorType.getErrorCode();
+        String errDesc = analyticsErrorType.getErrorDescription();
+        assertEquals(400, errCode);
+        assertEquals("Schema Error", errDesc);
     }
 }

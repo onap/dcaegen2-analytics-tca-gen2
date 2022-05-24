@@ -1,6 +1,5 @@
 /*
  * ============LICENSE_START=======================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
  * Copyright (c) 2022 Huawei. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,18 +16,25 @@
  * ============LICENSE_END=========================================================
  *
  */
-
-package org.onap.dcae.analytics.web.config;
+package org.onap.dcae.analytics.model.util.function;
 
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Optional;
 
-public class AnalyticsWebTestConfig {
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
+public class URLToHttpGetFunctionTest {
     @Test
-    public void AnalyticsWebTestConfigTest () throws Exception {
-        AnalyticsWebConfig analyticsWebConfig = new AnalyticsWebConfig();
-        assertNotNull(analyticsWebConfig);
+    public void apply () throws Exception {
+        URL url = new URL("http://localhost:8080");
+        URLToHttpGetFunction urlToHttpGetFunction = new URLToHttpGetFunction();
+        HttpURLConnection httpURLConnection = Mockito.mock(HttpURLConnection.class);
+        Mockito.when(httpURLConnection.getResponseCode()).thenReturn(200);
+        Optional<String> optional =  urlToHttpGetFunction.apply(url);
+        assertTrue(optional.isEmpty());
     }
 }
