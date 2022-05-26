@@ -1,0 +1,837 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a4a3500c_b64d2dfc",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/AnalyticsWebTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d3cafe2_c556fa00",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "LICENSE_START line is missing",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a482daf1_c7359e90",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "import * is not allowed",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb63e55b_834e80e1",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "99b6c13a_9670de21",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?\nwhat happens to the output?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "389ceb61_82279759",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?\nwhat happens to the output?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95194960_4ddbd5e0",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 99,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40f51e1b_ad8da9e8",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 109,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "83b6e79f_4debff5a",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d703315b_e613b2b6",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapPollerTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "LICENSE_START line is missing",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aa7988e4_8f23baf7",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapPollerTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1f25fd2_d98f867c",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapPollerTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "792ed2e7_4ce74104",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapPollerTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "258868ef_472967a0",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapPollerTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fde65c75_42cda557",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "LICENSE_START line is missing",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "68e45d04_4cc55a8d",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11072f36_bed3ea73",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a16fff0_9237042b",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11d722bf_6397d8c4",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "941c231a_4c4b5bb6",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5b28c24d_65b26601",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6beed2ec_4ba0a4bd",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "42a5fabf_0c4c9f08",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab1551ba_160dbd71",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/MessageStoreTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "LICENSE_START line is missing",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1353cd26_7953904e",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/MessageStoreTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d0b88460_1c7471c3",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/MessageStoreTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b70aae1_a632ca74",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrPublisherPreferencesTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "LICENSE_START line is missing",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "84a94835_4358e227",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrPublisherPreferencesTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ba059fc_482fdff4",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrSubscriberPollingAdviceTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "LICENSE_START line is missing",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0b1db87f_d35480c1",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrSubscriberPollingAdviceTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e7b68ad_64508e98",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrSubscriberPreferencesTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "LICENSE_START line is missing",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "de9eff09_651fcb45",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrSubscriberPreferencesTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c694fa1a_0a786e7d",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrSubscriberPreferencesTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9583c7ff_693483ed",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/exception/AnalyticsValidationExceptionTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "LICENSE_START line is missing",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0146b3e4_90e7dddd",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/exception/AnalyticsValidationExceptionTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11bd7ba8_c4e27562",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/exception/AnalyticsValidationExceptionTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0ad003ca_8d79a2cf",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "LICENSE_START line is missing",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e0725f4_27306289",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion, here and below?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40d7dc76_36a291a8",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "51963ee3_d415f273",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4319a850_94f36181",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06e2addf_fc9c5e71",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c3d5723e_2447fce0",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d6d3c4ce_3edb63fb",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsWebUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "LICENSE_START line is missing",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f64b4a4_93857999",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsWebUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "where is the test assertion?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "67a4f319_0eca7498",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/ValidationUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "LICENSE_START line is missing",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cd45d5f4_c30b7e80",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/validation/GenericValidationResponseTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "LICENSE_START line is missing",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "424a4467_37f84e5f",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/validation/GenericValidationResponseTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "this extra \u003d\u003d\u003d\u003d line should be removed",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9cde4e74_75b7b33f",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/validation/GenericValidationResponseTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-05-26T00:28:22Z",
+      "side": 1,
+      "message": "should there be an assertion after this?",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
