@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "184754a9_8f843d9d",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-03T19:36:04Z",
+      "side": 1,
+      "message": "Please change the above line to look like \n\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003dLICENSE_START\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nThis is a long-standing ONAP requirement that we are better enforcing now.",
+      "parentUuid": "c39e13b1_4d30ce64",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a482daf1_c7359e90",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
         "patchSetId": 3
@@ -208,6 +226,24 @@
     },
     {
       "key": {
+        "uuid": "3d6301d6_4508c819",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapPollerTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-03T19:36:04Z",
+      "side": 1,
+      "message": "Please change the above line to look like \n\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003dLICENSE_START\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nThis is a long-standing ONAP requirement that we are better enforcing now.",
+      "parentUuid": "89f1a605_efb7bd6d",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "aa7988e4_8f23baf7",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapPollerTestConfig.java",
         "patchSetId": 3
@@ -308,6 +344,24 @@
       "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f4f1ee4d_d3782e9f",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-03T19:36:04Z",
+      "side": 1,
+      "message": "Please change the above line to look like \n\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003dLICENSE_START\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nThis is a long-standing ONAP requirement that we are better enforcing now.",
+      "parentUuid": "6c7a696e_0dca21d7",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     },
     {
       "key": {
@@ -482,6 +536,24 @@
     },
     {
       "key": {
+        "uuid": "16777966_1e8c5439",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/MessageStoreTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-03T19:36:04Z",
+      "side": 1,
+      "message": "Please change the above line to look like \n\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003dLICENSE_START\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nThis is a long-standing ONAP requirement that we are better enforcing now.",
+      "parentUuid": "8505cb29_d07997d7",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1353cd26_7953904e",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/MessageStoreTestConfig.java",
         "patchSetId": 3
@@ -551,6 +623,24 @@
     },
     {
       "key": {
+        "uuid": "3797c79f_5281a053",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrPublisherPreferencesTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-03T19:36:04Z",
+      "side": 1,
+      "message": "Please change the above line to look like \n\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003dLICENSE_START\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nThis is a long-standing ONAP requirement that we are better enforcing now.",
+      "parentUuid": "e22d62ec_9aba2a11",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "84a94835_4358e227",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrPublisherPreferencesTest.java",
         "patchSetId": 3
@@ -603,6 +693,24 @@
     },
     {
       "key": {
+        "uuid": "bf224466_4137bacd",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrSubscriberPollingAdviceTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-03T19:36:04Z",
+      "side": 1,
+      "message": "Please change the above line to look like \n\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003dLICENSE_START\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nThis is a long-standing ONAP requirement that we are better enforcing now.",
+      "parentUuid": "0fb9e6de_ac8bdaab",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0b1db87f_d35480c1",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrSubscriberPollingAdviceTest.java",
         "patchSetId": 3
@@ -652,6 +760,24 @@
       "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d25b43bd_f1e7beb3",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrSubscriberPreferencesTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-03T19:36:04Z",
+      "side": 1,
+      "message": "Please change the above line to look like \n\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003dLICENSE_START\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nThis is a long-standing ONAP requirement that we are better enforcing now.",
+      "parentUuid": "4ea03d59_95489a7d",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     },
     {
       "key": {
@@ -724,6 +850,24 @@
     },
     {
       "key": {
+        "uuid": "e140e454_66ccfed5",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/exception/AnalyticsValidationExceptionTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-03T19:36:04Z",
+      "side": 1,
+      "message": "Please change the above line to look like \n\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003dLICENSE_START\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nThis is a long-standing ONAP requirement that we are better enforcing now.",
+      "parentUuid": "60863101_76b5e2ae",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "0146b3e4_90e7dddd",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/exception/AnalyticsValidationExceptionTest.java",
         "patchSetId": 3
@@ -790,6 +934,24 @@
       "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "06b56b14_f530eb60",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-03T19:36:04Z",
+      "side": 1,
+      "message": "Please change the above line to look like \n\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003dLICENSE_START\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nThis is a long-standing ONAP requirement that we are better enforcing now.",
+      "parentUuid": "5c14e3af_709327fb",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     },
     {
       "key": {
@@ -930,6 +1092,24 @@
     },
     {
       "key": {
+        "uuid": "3c0c0be6_c97c8d0c",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsWebUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-03T19:36:04Z",
+      "side": 1,
+      "message": "Please change the above line to look like \n\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003dLICENSE_START\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nThis is a long-standing ONAP requirement that we are better enforcing now.",
+      "parentUuid": "491d5715_eceb0f88",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7f64b4a4_93857999",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsWebUtilsTest.java",
         "patchSetId": 3
@@ -982,6 +1162,24 @@
     },
     {
       "key": {
+        "uuid": "b33ee862_ef02faeb",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/ValidationUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-03T19:36:04Z",
+      "side": 1,
+      "message": "Please change the above line to look like \n\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003dLICENSE_START\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nThis is a long-standing ONAP requirement that we are better enforcing now.",
+      "parentUuid": "bef57158_4c7a4fcb",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "cd45d5f4_c30b7e80",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/validation/GenericValidationResponseTest.java",
         "patchSetId": 3
@@ -1014,6 +1212,24 @@
       "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6e64d247_dbe48733",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/validation/GenericValidationResponseTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-03T19:36:04Z",
+      "side": 1,
+      "message": "Please change the above line to look like \n\n\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003dLICENSE_START\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\u003d\nThis is a long-standing ONAP requirement that we are better enforcing now.",
+      "parentUuid": "d4362209_5afce40f",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     },
     {
       "key": {
