@@ -16,6 +16,24 @@
       "revId": "7f521798aa7ffbb4b5453115741474c815ebc1ad",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9283bb15_e34d4444",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/AnalyticsWebTestConfig.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6073
+      },
+      "writtenOn": "2022-06-16T16:32:39Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "360a43ea_6e341e15",
+      "revId": "7f521798aa7ffbb4b5453115741474c815ebc1ad",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
