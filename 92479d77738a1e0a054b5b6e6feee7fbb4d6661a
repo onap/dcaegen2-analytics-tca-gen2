@@ -16,6 +16,24 @@
       "revId": "92479d77738a1e0a054b5b6e6feee7fbb4d6661a",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6fda2181_664c6806",
+        "filename": "ChangeLog.md",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:45:31Z",
+      "side": 1,
+      "message": "Vijay disagreed. So forget this",
+      "parentUuid": "1429f7cb_3edd9e25",
+      "revId": "92479d77738a1e0a054b5b6e6feee7fbb4d6661a",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
