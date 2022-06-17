@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7267f1e2_a3021ef3",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/AnalyticsWebTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a4a3500c_b64d2dfc",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5d3cafe2_c556fa00",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
         "patchSetId": 3
@@ -90,6 +108,24 @@
     },
     {
       "key": {
+        "uuid": "ad3367ea_886dfeed",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "184754a9_8f843d9d",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a482daf1_c7359e90",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
         "patchSetId": 3
@@ -116,6 +152,24 @@
         "id": 6073
       },
       "writtenOn": "2022-06-17T06:04:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a482daf1_c7359e90",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "360dbce2_50ea5de6",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "a482daf1_c7359e90",
@@ -157,6 +211,24 @@
       "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "89bf00b3_80199a3c",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "This is still missing a test assertion",
+      "parentUuid": "12f802b5_cb364ba0",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     },
     {
       "key": {
@@ -406,6 +478,24 @@
     },
     {
       "key": {
+        "uuid": "8bb6708e_0ee47f38",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapPollerTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3d6301d6_4508c819",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "aa7988e4_8f23baf7",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapPollerTestConfig.java",
         "patchSetId": 3
@@ -432,6 +522,24 @@
         "id": 6073
       },
       "writtenOn": "2022-06-17T06:04:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "aa7988e4_8f23baf7",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e570b1c_285fd4f3",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapPollerTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "aa7988e4_8f23baf7",
@@ -476,6 +584,24 @@
     },
     {
       "key": {
+        "uuid": "4fd18456_6dcb6d36",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapPollerTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c1f25fd2_d98f867c",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "792ed2e7_4ce74104",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapPollerTestConfig.java",
         "patchSetId": 3
@@ -511,6 +637,24 @@
     },
     {
       "key": {
+        "uuid": "a6e82b73_227602e9",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapPollerTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "792ed2e7_4ce74104",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "258868ef_472967a0",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapPollerTestConfig.java",
         "patchSetId": 3
@@ -537,6 +681,24 @@
         "id": 6073
       },
       "writtenOn": "2022-06-17T06:04:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "258868ef_472967a0",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "39df6dfa_3fd1a208",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapPollerTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "258868ef_472967a0",
@@ -617,6 +779,24 @@
     },
     {
       "key": {
+        "uuid": "83eec7f8_5a9038d2",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f4f1ee4d_d3782e9f",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "68e45d04_4cc55a8d",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
         "patchSetId": 3
@@ -643,6 +823,24 @@
         "id": 6073
       },
       "writtenOn": "2022-06-17T06:04:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "68e45d04_4cc55a8d",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f17d14f9_59dd779f",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "68e45d04_4cc55a8d",
@@ -687,6 +885,24 @@
     },
     {
       "key": {
+        "uuid": "0de41c06_87684db1",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11072f36_bed3ea73",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6a16fff0_9237042b",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
         "patchSetId": 3
@@ -713,6 +929,24 @@
         "id": 6073
       },
       "writtenOn": "2022-06-17T06:04:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6a16fff0_9237042b",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fed52607_179fda16",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "6a16fff0_9237042b",
@@ -757,6 +991,24 @@
     },
     {
       "key": {
+        "uuid": "17a773d9_9611a1a5",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11d722bf_6397d8c4",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "941c231a_4c4b5bb6",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
         "patchSetId": 3
@@ -783,6 +1035,24 @@
         "id": 6073
       },
       "writtenOn": "2022-06-17T06:04:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "941c231a_4c4b5bb6",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9bf1f9f1_dc9f4cc2",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "941c231a_4c4b5bb6",
@@ -827,6 +1097,24 @@
     },
     {
       "key": {
+        "uuid": "c8f224b4_32761172",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5b28c24d_65b26601",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6beed2ec_4ba0a4bd",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
         "patchSetId": 3
@@ -862,6 +1150,24 @@
     },
     {
       "key": {
+        "uuid": "c04c1d5b_7f775034",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6beed2ec_4ba0a4bd",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "42a5fabf_0c4c9f08",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
         "patchSetId": 3
@@ -888,6 +1194,24 @@
         "id": 6073
       },
       "writtenOn": "2022-06-17T06:04:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "42a5fabf_0c4c9f08",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6f00e22f_317a9e0e",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapRetryTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "42a5fabf_0c4c9f08",
@@ -968,6 +1292,24 @@
     },
     {
       "key": {
+        "uuid": "fc731c9c_e08d9208",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/MessageStoreTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "16777966_1e8c5439",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1353cd26_7953904e",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/MessageStoreTestConfig.java",
         "patchSetId": 3
@@ -1003,6 +1345,24 @@
     },
     {
       "key": {
+        "uuid": "1213bda4_8195a6a6",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/MessageStoreTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1353cd26_7953904e",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d0b88460_1c7471c3",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/MessageStoreTestConfig.java",
         "patchSetId": 3
@@ -1029,6 +1389,24 @@
         "id": 6073
       },
       "writtenOn": "2022-06-17T06:04:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d0b88460_1c7471c3",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1c71235d_4e108a22",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/MessageStoreTestConfig.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "d0b88460_1c7471c3",
@@ -1109,6 +1487,24 @@
     },
     {
       "key": {
+        "uuid": "68fd64b8_2b23f4e6",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrPublisherPreferencesTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3797c79f_5281a053",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "84a94835_4358e227",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrPublisherPreferencesTest.java",
         "patchSetId": 3
@@ -1135,6 +1531,24 @@
         "id": 6073
       },
       "writtenOn": "2022-06-17T06:04:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "84a94835_4358e227",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1fe0eff2_dd19e11b",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrPublisherPreferencesTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "84a94835_4358e227",
@@ -1215,6 +1629,24 @@
     },
     {
       "key": {
+        "uuid": "899747b7_3e2c886a",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrSubscriberPollingAdviceTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bf224466_4137bacd",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0b1db87f_d35480c1",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrSubscriberPollingAdviceTest.java",
         "patchSetId": 3
@@ -1241,6 +1673,24 @@
         "id": 6073
       },
       "writtenOn": "2022-06-17T06:04:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0b1db87f_d35480c1",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3a1056ee_f47b418a",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrSubscriberPollingAdviceTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "0b1db87f_d35480c1",
@@ -1321,6 +1771,24 @@
     },
     {
       "key": {
+        "uuid": "b4d09c62_f6d68388",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrSubscriberPreferencesTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d25b43bd_f1e7beb3",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "de9eff09_651fcb45",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrSubscriberPreferencesTest.java",
         "patchSetId": 3
@@ -1356,6 +1824,24 @@
     },
     {
       "key": {
+        "uuid": "288d52dd_6a809f07",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrSubscriberPreferencesTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "de9eff09_651fcb45",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c694fa1a_0a786e7d",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrSubscriberPreferencesTest.java",
         "patchSetId": 3
@@ -1382,6 +1868,24 @@
         "id": 6073
       },
       "writtenOn": "2022-06-17T06:04:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c694fa1a_0a786e7d",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cfb7579a_b85b6710",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/dmaap/MrSubscriberPreferencesTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "c694fa1a_0a786e7d",
@@ -1444,6 +1948,24 @@
     },
     {
       "key": {
+        "uuid": "82ce89de_c8250ac1",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/exception/AnalyticsValidationExceptionTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e140e454_66ccfed5",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0146b3e4_90e7dddd",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/exception/AnalyticsValidationExceptionTest.java",
         "patchSetId": 3
@@ -1461,6 +1983,24 @@
     },
     {
       "key": {
+        "uuid": "1811aa3c_fde32759",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/exception/AnalyticsValidationExceptionTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "0146b3e4_90e7dddd",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "11bd7ba8_c4e27562",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/exception/AnalyticsValidationExceptionTest.java",
         "patchSetId": 3
@@ -1475,6 +2015,24 @@
       "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b70e9236_2db42086",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/exception/AnalyticsValidationExceptionTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "11bd7ba8_c4e27562",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -1549,6 +2107,24 @@
     },
     {
       "key": {
+        "uuid": "f297d74d_3cddb6f9",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "06b56b14_f530eb60",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9e0725f4_27306289",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
         "patchSetId": 3
@@ -1575,6 +2151,24 @@
         "id": 6073
       },
       "writtenOn": "2022-06-17T06:04:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9e0725f4_27306289",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c83c8652_7e4197da",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "9e0725f4_27306289",
@@ -1619,6 +2213,24 @@
     },
     {
       "key": {
+        "uuid": "1774f75e_a9dac7a2",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "40d7dc76_36a291a8",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "51963ee3_d415f273",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
         "patchSetId": 3
@@ -1645,6 +2257,24 @@
         "id": 6073
       },
       "writtenOn": "2022-06-17T06:04:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "51963ee3_d415f273",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7c80e2fe_81f8a71c",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "51963ee3_d415f273",
@@ -1689,6 +2319,24 @@
     },
     {
       "key": {
+        "uuid": "9e79efc5_b9cf8633",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4319a850_94f36181",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "06e2addf_fc9c5e71",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
         "patchSetId": 3
@@ -1724,6 +2372,24 @@
     },
     {
       "key": {
+        "uuid": "216444cb_bc6b3a97",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "06e2addf_fc9c5e71",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c3d5723e_2447fce0",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
         "patchSetId": 3
@@ -1750,6 +2416,24 @@
         "id": 6073
       },
       "writtenOn": "2022-06-17T06:04:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c3d5723e_2447fce0",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "59fd1cef_7b4a8560",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsHttpUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "c3d5723e_2447fce0",
@@ -1830,6 +2514,24 @@
     },
     {
       "key": {
+        "uuid": "5443f906_3aff335d",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsWebUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c0c0be6_c97c8d0c",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7f64b4a4_93857999",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsWebUtilsTest.java",
         "patchSetId": 3
@@ -1856,6 +2558,24 @@
         "id": 6073
       },
       "writtenOn": "2022-06-17T06:04:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7f64b4a4_93857999",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bf8b8d7d_bdfed48d",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/AnalyticsWebUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "7f64b4a4_93857999",
@@ -1936,6 +2656,24 @@
     },
     {
       "key": {
+        "uuid": "99208dd9_60601a06",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/util/ValidationUtilsTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b33ee862_ef02faeb",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cd45d5f4_c30b7e80",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/validation/GenericValidationResponseTest.java",
         "patchSetId": 3
@@ -1998,6 +2736,24 @@
         "id": 6073
       },
       "writtenOn": "2022-06-17T06:04:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6e64d247_dbe48733",
+      "revId": "7e733df5d526164e319b45159cdd53ccaed90e55",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "431aba9e_0aca7023",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/validation/GenericValidationResponseTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-17T13:42:34Z",
       "side": 1,
       "message": "Done",
       "parentUuid": "6e64d247_dbe48733",
