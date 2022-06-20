@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fd04020c_faf8166c",
+        "filename": "dcae-analytics/dcae-analytics-model/src/test/java/org/onap/dcae/analytics/model/util/json/mixin/cef/AlertTypeMixinTest.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-20T23:55:37Z",
+      "side": 1,
+      "message": "LICENSE_START not found in the previous line",
+      "revId": "491ac14d0541fbb0c5a3798735667db478635248",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e4e48caf_a64fc6af",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-20T23:55:37Z",
+      "side": 1,
+      "message": "import * not allowed",
+      "revId": "491ac14d0541fbb0c5a3798735667db478635248",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b96c881b_d3526998",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapPollerTestConfig.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-20T23:55:37Z",
+      "side": 1,
+      "message": "import * not allowed",
+      "revId": "491ac14d0541fbb0c5a3798735667db478635248",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7d4a8cf1_1b9db710",
+        "filename": "pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-20T23:55:37Z",
+      "side": 1,
+      "message": "this is missing a Huawei copyright",
+      "revId": "491ac14d0541fbb0c5a3798735667db478635248",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2eb52fa_b5135fb2",
+        "filename": "version.properties",
+        "patchSetId": 8
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-06-20T23:55:37Z",
+      "side": 1,
+      "message": "this is missing a Huawei copyright",
+      "revId": "491ac14d0541fbb0c5a3798735667db478635248",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
