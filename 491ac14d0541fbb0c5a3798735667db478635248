@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "1ac57cb6_89162503",
+        "filename": "dcae-analytics/dcae-analytics-model/src/test/java/org/onap/dcae/analytics/model/util/json/mixin/cef/AlertTypeMixinTest.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 6073
+      },
+      "writtenOn": "2022-06-21T03:48:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fd04020c_faf8166c",
+      "revId": "491ac14d0541fbb0c5a3798735667db478635248",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e4e48caf_a64fc6af",
         "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
         "patchSetId": 8
@@ -33,6 +51,24 @@
       "revId": "491ac14d0541fbb0c5a3798735667db478635248",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b345e937_bf2afa79",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapMrTestConfig.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 6073
+      },
+      "writtenOn": "2022-06-21T03:48:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4e48caf_a64fc6af",
+      "revId": "491ac14d0541fbb0c5a3798735667db478635248",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "788679b9_e12f2b7b",
+        "filename": "dcae-analytics/dcae-analytics-web/src/test/java/org/onap/dcae/analytics/web/config/DmaapPollerTestConfig.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 6073
+      },
+      "writtenOn": "2022-06-21T03:48:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b96c881b_d3526998",
+      "revId": "491ac14d0541fbb0c5a3798735667db478635248",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7d4a8cf1_1b9db710",
         "filename": "pom.xml",
         "patchSetId": 8
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "04ba65e2_f46052c4",
+        "filename": "pom.xml",
+        "patchSetId": 8
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 6073
+      },
+      "writtenOn": "2022-06-21T03:48:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7d4a8cf1_1b9db710",
+      "revId": "491ac14d0541fbb0c5a3798735667db478635248",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a2eb52fa_b5135fb2",
         "filename": "version.properties",
         "patchSetId": 8
@@ -84,6 +156,24 @@
       "revId": "491ac14d0541fbb0c5a3798735667db478635248",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11ab35e0_edbe2054",
+        "filename": "version.properties",
+        "patchSetId": 8
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 6073
+      },
+      "writtenOn": "2022-06-21T03:48:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "a2eb52fa_b5135fb2",
+      "revId": "491ac14d0541fbb0c5a3798735667db478635248",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
