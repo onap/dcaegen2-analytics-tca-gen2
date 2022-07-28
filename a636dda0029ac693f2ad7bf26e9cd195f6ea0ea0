@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "d4069174_eccbd882",
+        "filename": "dcae-analytics/dcae-analytics-model/src/main/java/org/onap/dcae/analytics/model/util/json/module/CommonEventFormatModule.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-07-28T21:11:06Z",
+      "side": 1,
+      "message": "28.3.0 represent v5.. latest v7 is  30.2.1",
+      "range": {
+        "startLine": 82,
+        "startChar": 28,
+        "endLine": 82,
+        "endChar": 37
+      },
+      "revId": "a636dda0029ac693f2ad7bf26e9cd195f6ea0ea0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c40086af_25da58c2",
         "filename": "dcae-analytics/dcae-analytics-tca-core/src/main/java/org/onap/dcae/analytics/tca/core/util/function/calculation/TcaDomainFilter.java",
         "patchSetId": 3
@@ -155,6 +178,29 @@
       "writtenOn": "2022-07-28T20:18:52Z",
       "side": 1,
       "message": "fix the tabs - should be spaces",
+      "revId": "a636dda0029ac693f2ad7bf26e9cd195f6ea0ea0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b5787f33_eab1fc8f",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/src/test/java/org/onap/dcae/analytics/tca/web/service/TcaProcessingServiceImplTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 561,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-07-28T21:11:06Z",
+      "side": 1,
+      "message": "Suggest separating the tests for v7 and v5",
+      "range": {
+        "startLine": 549,
+        "startChar": 1,
+        "endLine": 561,
+        "endChar": 0
+      },
       "revId": "a636dda0029ac693f2ad7bf26e9cd195f6ea0ea0",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
