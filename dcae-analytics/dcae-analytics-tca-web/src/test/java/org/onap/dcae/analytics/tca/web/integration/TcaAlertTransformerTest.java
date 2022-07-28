@@ -1,8 +1,9 @@
 /*
- * ================================================================================
+ * =============LICENSE_START======================================================
  * Copyright (c) 2020 ChinaMobile. All rights reserved.
+ * Copyright (c) 2022 Wipro Limited Intellectual Property. All rights reserved.
  * ================================================================================
- * Copyright Copyright (c) 2019 IBM
+ * Copyright (c) 2019 IBM
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -54,7 +55,7 @@ public class TcaAlertTransformerTest extends BaseAnalyticsSpringBootIT {
 
     protected static final String TEST_POLICY_JSON_STRING;
     protected static final String TEST_REQUEST_ID = "testRequestId";
-    protected static final TcaPolicy TEST_TCA_POLICY;
+    protected static final List<TcaPolicy> TEST_TCA_POLICY;
 
     static {
 
@@ -94,7 +95,7 @@ public class TcaAlertTransformerTest extends BaseAnalyticsSpringBootIT {
     }
 
     protected GenericTcaExecutionContextBuilder getTestExecutionContextBuilder(
-            final String cefMessage, final TcaPolicy tcaPolicy, final TcaAbatementContext tcaAbatementContext) {
+            final String cefMessage, final List<TcaPolicy> tcaPolicy, final TcaAbatementContext tcaAbatementContext) {
 
         final TcaProcessingContext tcaProcessingContext = new GenericTcaProcessingContext();
         final TcaResultContext tcaResultContext = new GenericTcaResultContext();
