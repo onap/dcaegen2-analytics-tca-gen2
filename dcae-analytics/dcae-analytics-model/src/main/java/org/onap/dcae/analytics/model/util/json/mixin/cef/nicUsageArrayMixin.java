@@ -1,6 +1,5 @@
 /*
  * ============LICENSE_START=======================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
  * Copyright (c) 2022 Wipro Limited Intellectual Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,26 +17,19 @@
  *
  */
 
-package org.onap.dcae.analytics.model.cef;
+package org.onap.dcae.analytics.model.util.json.mixin.cef;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 /**
- * Common Event Format - Base Event Listener
- *
- * @author Rajiv Singla
+ * nicUsageArray mixin class
  */
-@Data
-@EqualsAndHashCode(callSuper = true)
-public class EventListener extends BaseCEFModel {
+public abstract class nicUsageArrayMixin extends BaseCEFModelMixin {
 
+    @JsonSetter("nicIdentifier")
+    public abstract void setVNicIdentifier(String name);
 
-    private static final long serialVersionUID = 1L;
+    @JsonSetter("nicIdentifier")
+    public abstract String setVNicIdentifier();
 
-    /**
-     * Common Event Format - Event
-     */
-    private Event event;
-    private EventV7 eventV7;
 }

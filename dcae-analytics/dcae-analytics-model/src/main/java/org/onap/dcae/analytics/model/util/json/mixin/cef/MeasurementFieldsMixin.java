@@ -1,6 +1,5 @@
 /*
  * ============LICENSE_START=======================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
  * Copyright (c) 2022 Wipro Limited Intellectual Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,26 +17,23 @@
  *
  */
 
-package org.onap.dcae.analytics.model.cef;
+package org.onap.dcae.analytics.model.util.json.mixin.cef;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
+import java.util.List;
+
+import org.onap.dcae.analytics.model.cef.NicPerformance;
 
 /**
- * Common Event Format - Base Event Listener
- *
- * @author Rajiv Singla
+ * Measurement Fields Mixin class
  */
-@Data
-@EqualsAndHashCode(callSuper = true)
-public class EventListener extends BaseCEFModel {
+public abstract class MeasurementFieldsMixin extends BaseCEFModelMixin {
 
+    @JsonGetter("nicPerformanceArray")
+    public abstract List<NicPerformance> getVNicPerformanceArray();
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Common Event Format - Event
-     */
-    private Event event;
-    private EventV7 eventV7;
+    @JsonSetter("nicPerformanceArray")
+    public abstract void setVNicPerformanceArray(List<NicPerformance> vNicPerformances);
 }

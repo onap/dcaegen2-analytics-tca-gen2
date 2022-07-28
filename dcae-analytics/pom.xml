@@ -113,6 +113,7 @@
         <releases.path>content/repositories/releases/</releases.path>
         <docker.repository>nexus3.onap.org:10003</docker.repository>
         <spring-swagger-ui.version>2.10.5</spring-swagger-ui.version>
+        <onap-gerrit-review>-changelog-missing</onap-gerrit-review>
 
         <!-- SONAR EXCLUSIONS -->
         <!-- EXCLUDE TEST COVERAGE ON
@@ -127,8 +128,6 @@
         <sonar.coverage.exclusions>**/test/**,**/model/**,**/config/**,**/exception/**,**/*Preferences.java,**/*Context*.java,**/*Entity.java</sonar.coverage.exclusions>
 
     </properties>
-
-
 
     <dependencyManagement>
 
