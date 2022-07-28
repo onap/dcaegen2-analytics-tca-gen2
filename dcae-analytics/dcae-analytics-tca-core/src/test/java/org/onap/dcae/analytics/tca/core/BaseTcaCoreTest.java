@@ -1,6 +1,7 @@
 /*
  * ================================================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2022 Wipro Limited Intellectual Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,6 +19,8 @@
  */
 
 package org.onap.dcae.analytics.tca.core;
+
+import java.util.List;
 
 import org.onap.dcae.analytics.model.cef.EventListener;
 import org.onap.dcae.analytics.model.util.json.AnalyticsModelJsonConversion;
@@ -47,7 +50,7 @@ public abstract class BaseTcaCoreTest extends BaseAnalyticsUnitTest {
     protected static final String TEST_CEF_JSON_MESSAGE_WITH_ABATEMENT_STRING;
     protected static final String TEST_CEF_JSON_MESSAGE_WITH_INAPPLICABLE_EVENT_NAME;
     protected static final String TEST_REQUEST_ID = "testRequestId";
-    protected static final TcaPolicy TEST_TCA_POLICY;
+    protected static final List<TcaPolicy> TEST_TCA_POLICY;
 
     static {
 
@@ -102,7 +105,7 @@ public abstract class BaseTcaCoreTest extends BaseAnalyticsUnitTest {
     }
 
     protected GenericTcaExecutionContextBuilder getTestExecutionContextBuilder(
-            final String cefMessage, final TcaPolicy tcaPolicy, final TcaAbatementContext tcaAbatementContext) {
+            final String cefMessage, final List<TcaPolicy> tcaPolicy, final TcaAbatementContext tcaAbatementContext) {
 
         final TcaProcessingContext tcaProcessingContext = new GenericTcaProcessingContext();
         final TcaResultContext tcaResultContext = new GenericTcaResultContext();

@@ -1,6 +1,7 @@
 /*
  * ================================================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2022 Wipro Limited Intellectual Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,14 +65,14 @@ public class TcaRestController {
 
     @GetMapping(value = TcaModelConstants.TCA_POLICY_ENDPOINT, produces = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Provides current TCA Policy")
-    public ResponseEntity<TcaPolicy> getTcaPolicy() {
+    public ResponseEntity<List<TcaPolicy>> getTcaPolicy() {
         return getTcaPolicyResponse(tcaPolicyWrapper);
     }
 
     @PostMapping(value = TcaModelConstants.TCA_POLICY_ENDPOINT, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     @ApiOperation(value = "Sets new value for TCA Policy and returns current Policy")
-    public ResponseEntity<TcaPolicy> setTcaPolicy(@RequestBody final TcaPolicy tcaPolicy) {
+    public ResponseEntity<List<TcaPolicy>> setTcaPolicy(@RequestBody final List<TcaPolicy> tcaPolicy) {
         tcaPolicyWrapper.setTcaPolicy(tcaPolicy, ConfigSource.REST_API);
         return getTcaPolicyResponse(tcaPolicyWrapper);
     }
@@ -103,7 +104,7 @@ public class TcaRestController {
     }
 
 
-    private static ResponseEntity<TcaPolicy> getTcaPolicyResponse(final TcaPolicyWrapper tcaPolicyWrapper) {
+    private static ResponseEntity<List<TcaPolicy>> getTcaPolicyResponse(final TcaPolicyWrapper tcaPolicyWrapper) {
         return ResponseEntity.ok()
                 .header(TcaModelConstants.TCA_POLICY_SOURCE_HEADER_KEY, tcaPolicyWrapper.getConfigSource().name())
                 .header(TcaModelConstants.TCA_POLICY_CREATION_HEADER_KEY,

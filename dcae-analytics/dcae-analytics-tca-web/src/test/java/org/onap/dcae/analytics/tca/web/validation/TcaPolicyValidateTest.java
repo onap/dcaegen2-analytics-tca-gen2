@@ -1,6 +1,7 @@
 /*
  * ================================================================================
  * Copyright (c) 2020 ChinaMobile. All rights reserved.
+ * Copyright (c) 2022 Wipro Limited. All rights reserved.
  * ================================================================================
  * Copyright Copyright (c) 2019 IBM
  * ================================================================================
@@ -19,6 +20,8 @@
  *
  */
 package org.onap.dcae.analytics.tca.web.validation;
+
+import java.util.List;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -46,7 +49,7 @@ public class TcaPolicyValidateTest extends BaseAnalyticsSpringBootIT {
         Errors errors = Mockito.mock(Errors.class);
         TcaPolicyWrapper tcaPolicyWrapper = new TcaPolicyWrapper(properties);
         tcaPolicyWrapper.getConfigSource();
-        TcaPolicy tcaPolicy = tcaPolicyWrapper.getTcaPolicy();
+        List<TcaPolicy> tcaPolicy = tcaPolicyWrapper.getTcaPolicy();
         validate.validate(tcaPolicy, errors);        
         validate.apply(tcaPolicy);
         Assertions.assertEquals("version-0", tcaPolicyWrapper.getPolicyVersion());

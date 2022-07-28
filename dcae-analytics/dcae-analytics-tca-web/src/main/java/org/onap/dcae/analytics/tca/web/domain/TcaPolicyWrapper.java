@@ -1,6 +1,7 @@
 /*
  * ================================================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2022 Wipro Limited Intellectual Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +24,7 @@ import static org.onap.dcae.analytics.tca.model.util.json.TcaModelJsonConversion
 
 import java.time.ZonedDateTime;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.List;
 
 import org.onap.dcae.analytics.model.common.ConfigSource;
 import org.onap.dcae.analytics.tca.core.exception.AnalyticsParsingException;
@@ -57,7 +59,7 @@ public class TcaPolicyWrapper implements TcaPolicyModel {
         this.policyVersion = getPolicyVersion(new AtomicInteger(0));
     }
 
-    public TcaPolicy getTcaPolicy() {
+    public List<TcaPolicy> getTcaPolicy() {
         String tcaPolicyString = tcaAppProperties.getTca().getPolicy();
         boolean isConfigBindingServiceProfileActive = tcaAppProperties.isConfigBindingServiceProfileActive();
         if (isConfigBindingServiceProfileActive) {
@@ -78,12 +80,12 @@ public class TcaPolicyWrapper implements TcaPolicyModel {
         return convertTcaPolicy(tcaPolicyString);
     }
 
-    public void setTcaPolicy(TcaPolicy tcaPolicy, ConfigSource configSource) {
+    public void setTcaPolicy(List<TcaPolicy> tcaPolicy, ConfigSource configSource) {
         this.tcaPolicy = tcaPolicy.toString();
         this.configSource = configSource;
     }
 
-    public TcaPolicy convertTcaPolicy(String tcaPolicyString) {
+    public List<TcaPolicy> convertTcaPolicy(String tcaPolicyString) {
         return TCA_POLICY_JSON_FUNCTION.apply(tcaPolicyString).orElseThrow(
                 () -> new AnalyticsParsingException("Unable to parse Tca Policy String: " + tcaPolicyString,
                         new IllegalArgumentException()));

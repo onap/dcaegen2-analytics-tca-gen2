@@ -1,6 +1,7 @@
 /*
  * ================================================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2022 Wipro Limited Intellectual Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +25,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.Optional;
 import java.util.function.Function;
+import java.util.List;
 
 import org.onap.dcae.analytics.model.util.function.JsonToJavaObjectBiFunction;
 import org.onap.dcae.analytics.tca.model.facade.TcaAlert;
@@ -38,7 +40,7 @@ public abstract class TcaModelJsonConversion {
     public static final ObjectMapper TCA_OBJECT_MAPPER = new TcaObjectMapperSupplier().get();
 
     // Type reference to convert tca policy string to tca policy object
-    private static final TypeReference<TcaPolicy> TCA_POLICY_TYPE_REF = new TypeReference<TcaPolicy>() {
+    private static final TypeReference<List<TcaPolicy>> TCA_POLICY_TYPE_REF = new TypeReference<List<TcaPolicy>>() {
     };
 
     // Type reference to convert tca alert string to tca alert
@@ -46,8 +48,8 @@ public abstract class TcaModelJsonConversion {
     };
 
     // Tca Policy JSON conversion function
-    public static final Function<String, Optional<TcaPolicy>> TCA_POLICY_JSON_FUNCTION = new
-            JsonToJavaObjectBiFunction<TcaPolicy>(TCA_OBJECT_MAPPER).curry(TCA_POLICY_TYPE_REF);
+    public static final Function<String, Optional<List<TcaPolicy>>> TCA_POLICY_JSON_FUNCTION = new
+            JsonToJavaObjectBiFunction<List<TcaPolicy>>(TCA_OBJECT_MAPPER).curry(TCA_POLICY_TYPE_REF);
 
     // Tca Alert JSON conversion function
     public static final Function<String, Optional<TcaAlert>> TCA_ALERT_JSON_FUNCTION = new

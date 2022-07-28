@@ -1,6 +1,7 @@
 /*
  * ================================================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2022 Wipro Limited Intellectual Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,12 +20,14 @@
 
 package org.onap.dcae.analytics.tca.core.util.function.calculation;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.onap.dcae.analytics.model.cef.CommonEventHeader;
 import org.onap.dcae.analytics.model.cef.Domain;
 import org.onap.dcae.analytics.model.cef.Event;
 import org.onap.dcae.analytics.model.cef.EventListener;
+import org.onap.dcae.analytics.tca.model.policy.TcaPolicy;
 import org.onap.dcae.analytics.tca.core.service.TcaExecutionContext;
 import org.onap.dcae.analytics.tca.core.service.TcaProcessingContext;
 
@@ -54,19 +57,24 @@ public class TcaDomainFilter implements TcaCalculationFunction {
         }
 
         // Get Policy and CEF Message Domain
-        final String policyDomain = tcaExecutionContext.getTcaPolicy().getDomain();
+        final List<TcaPolicy> tcaPolicy = tcaExecutionContext.getTcaPolicy();
         final String cefMessageDomain = domainOptional.get().name();
-
-        // Check Policy domain matches CEF message domain
-        if (!policyDomain.equalsIgnoreCase(cefMessageDomain)) {
-            final String earlyTerminationMessage = String.format(
-                    "Policy Domain does not match CEF Message Domain. Policy Domain: %s, CEF  Message Domain: %s",
-                    policyDomain, cefMessageDomain);
-            setTerminatingMessage(earlyTerminationMessage, tcaExecutionContext, false);
-            return tcaExecutionContext;
+         
+        for( TcaPolicy tcaPol : tcaPolicy){	
+            String policyDomain = tcaPol.getDomain();
+            int count = 0;
+            // Check Policy domain matches CEF message domain
+            if (!policyDomain.equalsIgnoreCase(cefMessageDomain)) {
+                count++;
+                if (count == 2){
+                    final String earlyTerminationMessage = String.format(
+                        "Policy Domain does not match CEF Message Domain. Policy Domain: %s, CEF  Message Domain: %s",
+                         policyDomain, cefMessageDomain);
+                    setTerminatingMessage(earlyTerminationMessage, tcaExecutionContext, false);
+                    return tcaExecutionContext;
+                 }
+            }
         }
-
-
         // Policy Domain and CEF Message Domain match successful
         // do nothing
 

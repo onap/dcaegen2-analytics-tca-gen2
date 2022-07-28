@@ -1,7 +1,6 @@
 /*
  * ================================================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
- * Copyright (c) 2022 Wipro Limited. All rights reserved.
+ * Copyright (c) 2022 Wipro Limited Intellectual Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,20 +23,28 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * Common Event Format - Base Event Listener
+ * Generic Event Format
  *
- * @author Rajiv Singla
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class EventListener extends BaseCEFModel {
+public class EventV7 extends BaseCEFModel {
 
 
     private static final long serialVersionUID = 1L;
 
     /**
-     * Common Event Format - Event
+     * Fields common to all Events
      */
-    private Event event;
-    private EventV7 eventV7;
+    private CommonEventHeaderV7 commonEventHeader;
+
+    /**
+     * Measurements for Vf scaling fields
+     */
+    private MeasurementFields measurementFields;
+
+    /**
+     * Threshold crossing alert Fields.
+     */
+    private ThresholdCrossingAlertFields thresholdCrossingAlertFields;
 }

@@ -1,7 +1,6 @@
 /*
  * ================================================================================
- * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
- * Copyright (c) 2022 Wipro Limited. All rights reserved.
+ * Copyright (c) 2022 Wipro Limited Intellectual Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,26 +17,8 @@
  *
  */
 
-package org.onap.dcae.analytics.model.cef;
-
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-
-/**
- * Common Event Format - Base Event Listener
- *
- * @author Rajiv Singla
- */
-@Data
-@EqualsAndHashCode(callSuper = true)
-public class EventListener extends BaseCEFModel {
+package org.onap.dcae.analytics.model.util.json.mixin.cef;
 
 
-    private static final long serialVersionUID = 1L;
-
-    /**
-     * Common Event Format - Event
-     */
-    private Event event;
-    private EventV7 eventV7;
+public abstract class CommonEventHeaderV7Mixin extends BaseCEFModelMixin {
 }

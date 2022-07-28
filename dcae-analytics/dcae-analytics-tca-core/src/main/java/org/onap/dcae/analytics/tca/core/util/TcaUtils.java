@@ -1,6 +1,7 @@
 /*
  * ================================================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2022 Wipro Limited Intellectual Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,6 +24,7 @@ import static org.onap.dcae.analytics.tca.model.util.json.TcaModelJsonConversion
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -52,14 +54,19 @@ public abstract class TcaUtils {
      *
      * @return deep copy of provided tca policy
      */
-    public static TcaPolicy getTcaPolicyDeepCopy(final TcaPolicy tcaPolicy) {
+    public static List<TcaPolicy> getTcaPolicyDeepCopy(final List<TcaPolicy> tcaPolicy) {
         if (tcaPolicy != null) {
-            try {
-                return TCA_OBJECT_MAPPER.treeToValue(TCA_OBJECT_MAPPER.valueToTree(tcaPolicy), TcaPolicy.class);
+          List<TcaPolicy> tcaList =  new ArrayList<TcaPolicy>();		
+          for( TcaPolicy tcaPol : tcaPolicy) {		
+             try {
+                tcaList.add(TCA_OBJECT_MAPPER.treeToValue(TCA_OBJECT_MAPPER.valueToTree(tcaPol), TcaPolicy.class));
             } catch (JsonProcessingException e) {
-                throw new AnalyticsParsingException("Unable to create deep copy of TCA Policy: " + tcaPolicy, e);
+                throw new AnalyticsParsingException("Unable to create deep copy of TCA Policy: " + tcaPol, e);
             }
-        } else {
+	  }
+          return tcaList;	  
+        } 
+	else {
             final String errorMessage = "Invalid application state. TCA Policy must not be null";
             throw new AnalyticsParsingException(errorMessage, new IllegalStateException(errorMessage));
         }

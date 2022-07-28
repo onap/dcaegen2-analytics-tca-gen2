@@ -1,6 +1,7 @@
 /*
  * ================================================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2022 Wipro Limited Intellectual Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,6 +40,7 @@ import java.util.stream.Collectors;
 import javax.annotation.Nonnull;
 
 import org.onap.dcae.analytics.model.cef.CommonEventHeader;
+import org.onap.dcae.analytics.model.cef.Domain;
 import org.onap.dcae.analytics.model.cef.Event;
 import org.onap.dcae.analytics.model.cef.EventListener;
 import org.onap.dcae.analytics.tca.core.exception.TcaProcessingException;
@@ -52,13 +54,14 @@ import org.onap.dcae.analytics.tca.model.policy.Threshold;
  * @author Rajiv Singla
  */
 public class TcaThresholdViolationCalculator implements TcaCalculationFunction {
-
+    
     @Override
     public TcaExecutionContext calculate(final TcaExecutionContext tcaExecutionContext) {
 
         final String cefMessage = tcaExecutionContext.getCefMessage();
         final EventListener eventListener = tcaExecutionContext.getTcaProcessingContext().getEventListener();
-        final TcaPolicy tcaPolicy = tcaExecutionContext.getTcaPolicy();
+        final List<TcaPolicy> tcaPolicy = tcaExecutionContext.getTcaPolicy();
+        TcaPolicy tcaPolicyFinal = null;
 
         // Get CEF Event Name
         final String cefEventName = Optional.ofNullable(eventListener)
@@ -66,18 +69,33 @@ public class TcaThresholdViolationCalculator implements TcaCalculationFunction {
                 .map(Event::getCommonEventHeader)
                 .map(CommonEventHeader::getEventName)
                 .orElseThrow(() -> new TcaProcessingException("Required Field: EventName not present"));
+        
+        final Optional<Domain> domainName = Optional.ofNullable(eventListener)
+                .map(EventListener::getEvent)
+                .map(Event::getCommonEventHeader)
+                .map(CommonEventHeader::getDomain);
 
+        final String cefMessageDomain = domainName.get().name();
+
+        for(TcaPolicy tca : tcaPolicy){
+           if (tca.getDomain().equalsIgnoreCase(cefMessageDomain)){
+               tcaPolicyFinal = tca;
+               break;
+           }
+           else
+              continue;
+        }
+                
         // Get Policy's metrics per event name matching CEF message event name
-        final MetricsPerEventName policyMetricsPerEventName =
-                tcaPolicy.getMetricsPerEventName().stream()
-                        .filter(m -> m.getEventName().equalsIgnoreCase(cefEventName))
-                        .findFirst().orElseThrow(() ->
-                        new TcaProcessingException("Required Field: MetricsPerEventName not present"));
-
-
+        final MetricsPerEventName policyMetricsPerEventName = 
+              tcaPolicyFinal.getMetricsPerEventName().stream()
+                 .filter(m -> m.getEventName().equalsIgnoreCase(cefEventName))
+                 .findFirst().orElseThrow(() ->
+                              new TcaProcessingException("Required Field: MetricsPerEventName not present"));
+        
         // get violated policy threshold for cef event name sorted by severity
         final Optional<Threshold> thresholdOptional =
-                getViolatedThreshold(policyMetricsPerEventName.getThresholds(), cefMessage);
+              getViolatedThreshold(policyMetricsPerEventName.getThresholds(), cefMessage);
 
 
         // Check if threshold violation is present
@@ -85,17 +103,17 @@ public class TcaThresholdViolationCalculator implements TcaCalculationFunction {
             final String earlyTerminationMessage = "No Policy Threshold violation detected in CEF Message";
             setTerminatingMessage(earlyTerminationMessage, tcaExecutionContext, false);
             return tcaExecutionContext;
-        }
-
+        } 
+        
 
         // Threshold violations are present - update tca processing result context
         final MetricsPerEventName violatedMetricsPerEventName = copyMetricsPerEventName(policyMetricsPerEventName);
         final Threshold violatedThreshold = thresholdOptional.get();
         violatedMetricsPerEventName.setThresholds(Collections.singletonList(violatedThreshold));
         final TcaResultContext tcaResultContext =
-                tcaExecutionContext.getTcaResultContext();
+                   tcaExecutionContext.getTcaResultContext();
         tcaResultContext.setViolatedMetricsPerEventName(violatedMetricsPerEventName);
-
+        
         return tcaExecutionContext;
     }
 
@@ -226,7 +244,6 @@ public class TcaThresholdViolationCalculator implements TcaCalculationFunction {
                 }
             }
         }
-
         return jsonFieldPathMap;
     }
 

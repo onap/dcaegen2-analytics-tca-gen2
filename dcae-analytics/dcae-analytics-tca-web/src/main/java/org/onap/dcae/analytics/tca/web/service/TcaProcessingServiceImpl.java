@@ -1,6 +1,7 @@
 /*
  * ================================================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2022 Wipro Limited Intellectual Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -59,7 +60,7 @@ public class TcaProcessingServiceImpl implements TcaProcessingService {
                                                             final TcaPolicyWrapper tcaPolicyWrapper,
                                                             final List<String> cefMessages) {
         // create tca policy deep copy as it should be same for current execution
-        final TcaPolicy tcaPolicyDeepCopy = TcaUtils.getTcaPolicyDeepCopy(tcaPolicyWrapper.getTcaPolicy());
+        final List<TcaPolicy> tcaPolicyDeepCopy = TcaUtils.getTcaPolicyDeepCopy(tcaPolicyWrapper.getTcaPolicy());
         // create new request id if not present
         final String executionRequestId = isPresent(requestId) ? requestId : REQUEST_ID_SUPPLIER.get();
         // create transaction id if not present
