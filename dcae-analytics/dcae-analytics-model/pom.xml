@@ -47,6 +47,7 @@
         <main.basedir>${project.parent.basedir}</main.basedir>
         <sdk.version>1.8.6</sdk.version>
         <immutable.version>2.7.1</immutable.version>
+        <onap-gerrit-review>-changelog-missing</onap-gerrit-review>
     </properties>
 
     <dependencies>

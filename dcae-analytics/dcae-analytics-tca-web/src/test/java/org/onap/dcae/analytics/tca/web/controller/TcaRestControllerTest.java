@@ -1,6 +1,7 @@
 /*
- * ================================================================================
+ * ============LICENSE_START====================================================================
  * Copyright (c) 2019 IBM Intellectual Property. All rights reserved.
+ * Copyright (c) 2022 Wipro Limited Intellectual Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +22,10 @@ package org.onap.dcae.analytics.tca.web.controller;
 
 import java.time.ZonedDateTime;
 import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.onap.dcae.analytics.model.common.ConfigSource;
@@ -39,12 +42,18 @@ public class TcaRestControllerTest {
   TcaPolicyWrapper tcaPolicyWrapper = Mockito.mock(TcaPolicyWrapper.class);
     TcaProcessingService tcaProcessingService = Mockito.mock(TcaProcessingService.class);
     TcaPolicy tcaPolicy = Mockito.mock(TcaPolicy.class);
+    List<TcaPolicy> TcaList = new ArrayList<TcaPolicy>();
+    TcaList.add(tcaPolicy);
     Mockito.when(tcaPolicyWrapper.getConfigSource()).thenReturn(ConfigSource.valueOf("MONGO"));
-    Mockito.when(tcaPolicyWrapper.getTcaPolicy()).thenReturn(tcaPolicy);
+    Mockito.when(tcaPolicyWrapper.getTcaPolicy()).thenReturn(TcaList);
     Mockito.when(tcaPolicyWrapper.getCreationTime()).thenReturn(ZonedDateTime.now());
     TcaRestController restcontroller = new TcaRestController(tcaProcessingService, tcaPolicyWrapper);
     restcontroller.getTcaPolicy();
-    restcontroller.setTcaPolicy(tcaPolicy);
+    restcontroller.setTcaPolicy(TcaList);
+    assertThat(TcaList).isNotNull();
+    assertThat(restcontroller.getTcaPolicy()).isNotNull();
+    assertThat(restcontroller.setTcaPolicy(TcaList).getStatusCodeValue()).isEqualTo(200);
+    
   }
 
   @Test
@@ -59,6 +68,7 @@ public class TcaRestControllerTest {
            .thenReturn(executionContexts);
     TcaRestController restcontroller = new TcaRestController(tcaProcessingService, tcaPolicyWrapper);
     restcontroller.execute(tcaExecutionRequest);
+    assertThat(restcontroller.execute(tcaExecutionRequest).getStatusCodeValue()).isEqualTo(200);
   }
 
 }

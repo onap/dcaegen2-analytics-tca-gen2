@@ -1,6 +1,7 @@
 /*
- * ================================================================================
+ * ============LICENSE_START=======================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2022 Wipro Limited Intellectual Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,6 +20,7 @@
 
 package org.onap.dcae.analytics.tca.core.service;
 
+import java.util.List;
 import org.onap.dcae.analytics.tca.model.policy.TcaPolicy;
 
 /**
@@ -65,7 +67,7 @@ public interface TcaExecutionContext {
      *
      * @return TCA Policy associated with processing context
      */
-    TcaPolicy getTcaPolicy();
+    List<TcaPolicy> getTcaPolicy();
 
 
     /**

@@ -1,6 +1,7 @@
 /*
- * ================================================================================
+ * =============LICENSE_START===================================================================
  * Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+ * Copyright (c) 2022 Wipro Limited Intellectual Property. All rights reserved.
  * ================================================================================
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,6 +35,7 @@ import java.util.Set;
 import java.util.function.Supplier;
 
 import org.onap.dcae.analytics.model.util.json.module.CommonEventFormatModule;
+import org.onap.dcae.analytics.model.util.json.module.CommonEventFormatModuleV7;
 import org.onap.dcae.analytics.model.util.json.module.ConfigBindingServiceModule;
 import org.onap.dcae.analytics.model.util.json.module.DynamicPropertiesModule;
 
@@ -96,6 +98,8 @@ public abstract class BaseObjectMapperSupplier implements Supplier<ObjectMapper>
         objectMapper.registerModule(new ConfigBindingServiceModule());
         // register common event format module
         objectMapper.registerModule(new CommonEventFormatModule());
+        // register common event format module for v7
+        objectMapper.registerModule(new CommonEventFormatModuleV7());
 
         // register custom modules
         registerCustomModules(objectMapper);

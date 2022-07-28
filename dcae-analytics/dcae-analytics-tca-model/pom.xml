@@ -42,7 +42,8 @@
     <description>Contains models for TCA (Threshold Crossing Alert) micro service</description>
 
     <properties>
-        <main.basedir>${project.parent.basedir}</main.basedir>
+         <main.basedir>${project.parent.basedir}</main.basedir>
+         <onap-gerrit-review>-changelog-missing</onap-gerrit-review>
     </properties>
 
 
