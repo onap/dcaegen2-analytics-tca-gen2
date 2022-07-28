@@ -180,7 +180,6 @@
                    <phase>install</phase>
                    <goals>
                         <goal>tag</goal>
-                        <goal>push</goal>
                    </goals>
                         <configuration>
                               <tag>${project.version}</tag>
@@ -190,8 +189,8 @@
                                <id>tag-version-ts</id>
                                <phase>install</phase>
                                <goals>
-                                   <goal>tag</goal>
-                                   <goal>push</goal>
+				   <goal>tag</goal>
+				   <goal>push</goal>
                                </goals>
                                 <configuration>
                               <tag>${project.version}-${maven.build.timestamp}Z</tag>
