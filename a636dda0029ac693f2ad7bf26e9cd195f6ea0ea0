@@ -56,6 +56,108 @@
       "revId": "a636dda0029ac693f2ad7bf26e9cd195f6ea0ea0",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe55efbc_2cf80be6",
+        "filename": "dcae-analytics/dcae-analytics-tca-model/src/test/java/org/onap/dcae/analytics/tca/model/util/json/mixin/policy/TcaPolicyMixinTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-07-28T20:18:52Z",
+      "side": 1,
+      "message": "should there be an assertion here?",
+      "revId": "a636dda0029ac693f2ad7bf26e9cd195f6ea0ea0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eea26c7f_88be5e4e",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/src/test/java/org/onap/dcae/analytics/tca/web/controller/TcaRestControllerTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-07-28T20:18:52Z",
+      "side": 1,
+      "message": "should there be an assertion here?",
+      "revId": "a636dda0029ac693f2ad7bf26e9cd195f6ea0ea0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35094e58_997d0740",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/src/test/java/org/onap/dcae/analytics/tca/web/controller/TcaRestControllerTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-07-28T20:18:52Z",
+      "side": 1,
+      "message": "should there be an assertion here?",
+      "revId": "a636dda0029ac693f2ad7bf26e9cd195f6ea0ea0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1095961c_268c9440",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/src/test/java/org/onap/dcae/analytics/tca/web/integration/TcaAlertTransformerTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-07-28T20:18:52Z",
+      "side": 1,
+      "message": "should there be an assertion here?",
+      "revId": "a636dda0029ac693f2ad7bf26e9cd195f6ea0ea0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "446fc763_e837f63f",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/src/test/java/org/onap/dcae/analytics/tca/web/service/TcaProcessingServiceImplTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-07-28T20:18:52Z",
+      "side": 1,
+      "message": "commented-out lines should be removed",
+      "revId": "a636dda0029ac693f2ad7bf26e9cd195f6ea0ea0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "394732bb_2b1cef71",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/src/test/java/org/onap/dcae/analytics/tca/web/service/TcaProcessingServiceImplTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-07-28T20:18:52Z",
+      "side": 1,
+      "message": "fix the tabs - should be spaces",
+      "revId": "a636dda0029ac693f2ad7bf26e9cd195f6ea0ea0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
