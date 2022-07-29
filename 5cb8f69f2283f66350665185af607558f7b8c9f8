@@ -16,6 +16,98 @@
       "revId": "5cb8f69f2283f66350665185af607558f7b8c9f8",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d1a313e5_71fb216e",
+        "filename": "dcae-analytics/dcae-analytics-model/src/main/java/org/onap/dcae/analytics/model/util/json/module/CommonEventFormatModule.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-07-29T19:38:27Z",
+      "side": 1,
+      "message": "Is this required? Since this is handled in CommonEventFormatModuleV7.java",
+      "range": {
+        "startLine": 100,
+        "startChar": 8,
+        "endLine": 100,
+        "endChar": 76
+      },
+      "revId": "5cb8f69f2283f66350665185af607558f7b8c9f8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c6bd669a_01b1e2e1",
+        "filename": "dcae-analytics/dcae-analytics-model/src/main/java/org/onap/dcae/analytics/model/util/json/module/CommonEventFormatModule.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-07-29T19:38:27Z",
+      "side": 1,
+      "message": "same as above",
+      "range": {
+        "startLine": 102,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 40
+      },
+      "revId": "5cb8f69f2283f66350665185af607558f7b8c9f8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b4b6270e_21f39a2d",
+        "filename": "dcae-analytics/dcae-analytics-tca-core/src/main/java/org/onap/dcae/analytics/tca/core/util/function/calculation/TcaDomainFilter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-07-29T19:38:27Z",
+      "side": 1,
+      "message": "If tcaPolList contains only single policy, this check would never be true. This comparison should be done against tcaPolList.size (this was among my earlier comment, probably dint clarify it clearly)",
+      "range": {
+        "startLine": 69,
+        "startChar": 20,
+        "endLine": 69,
+        "endChar": 29
+      },
+      "revId": "5cb8f69f2283f66350665185af607558f7b8c9f8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3687dfc5_8fe39fbf",
+        "filename": "dcae-analytics/dcae-analytics-tca-core/src/main/java/org/onap/dcae/analytics/tca/core/util/function/calculation/TcaEventNameFilter.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-07-29T19:38:27Z",
+      "side": 1,
+      "message": "same as earlier comment",
+      "range": {
+        "startLine": 69,
+        "startChar": 20,
+        "endLine": 69,
+        "endChar": 34
+      },
+      "revId": "5cb8f69f2283f66350665185af607558f7b8c9f8",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     }
   ]
 }
