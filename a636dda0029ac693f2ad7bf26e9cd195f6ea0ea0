@@ -201,6 +201,24 @@
     },
     {
       "key": {
+        "uuid": "26fe095b_bb5186e5",
+        "filename": "dcae-analytics/dcae-analytics-tca-model/src/test/java/org/onap/dcae/analytics/tca/model/util/json/mixin/policy/TcaPolicyMixinTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-07-29T14:48:47Z",
+      "side": 1,
+      "message": "I took a look at testSerialization(). It throws its own exceptions on failure, so you are covered.",
+      "parentUuid": "18d3bf23_344583ca",
+      "revId": "a636dda0029ac693f2ad7bf26e9cd195f6ea0ea0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "eea26c7f_88be5e4e",
         "filename": "dcae-analytics/dcae-analytics-tca-web/src/test/java/org/onap/dcae/analytics/tca/web/controller/TcaRestControllerTest.java",
         "patchSetId": 3
@@ -303,6 +321,24 @@
       "revId": "a636dda0029ac693f2ad7bf26e9cd195f6ea0ea0",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bc4ab6f4_1b65927c",
+        "filename": "dcae-analytics/dcae-analytics-tca-web/src/test/java/org/onap/dcae/analytics/tca/web/integration/TcaAlertTransformerTest.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 105
+      },
+      "writtenOn": "2022-07-29T14:48:47Z",
+      "side": 1,
+      "message": "where is it?",
+      "parentUuid": "b64e41ec_a9e10feb",
+      "revId": "a636dda0029ac693f2ad7bf26e9cd195f6ea0ea0",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
     },
     {
       "key": {
