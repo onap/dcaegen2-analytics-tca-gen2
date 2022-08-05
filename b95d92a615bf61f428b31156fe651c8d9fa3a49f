@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "db6ca685_a5d3b50f",
+        "filename": "dcae-analytics/dcae-analytics-test/src/main/resources/data/json/policy/tca_policy.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 7661
+      },
+      "writtenOn": "2022-08-05T06:58:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3e91b1cf_d794cda2",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 112,
+        "endChar": 1
+      },
+      "revId": "b95d92a615bf61f428b31156fe651c8d9fa3a49f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4e5f813a_346addbc",
         "filename": "dcae-analytics/dcae-analytics-test/src/main/resources/data/json/policy/tca_policy.json",
         "patchSetId": 7
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "7e63a462_666dad10",
+        "filename": "dcae-analytics/dcae-analytics-test/src/main/resources/data/json/policy/tca_policy.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 7661
+      },
+      "writtenOn": "2022-08-05T06:58:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4e5f813a_346addbc",
+      "range": {
+        "startLine": 125,
+        "startChar": 0,
+        "endLine": 130,
+        "endChar": 0
+      },
+      "revId": "b95d92a615bf61f428b31156fe651c8d9fa3a49f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e369a266_28919e7a",
         "filename": "dcae-analytics/dcae-analytics-test/src/main/resources/data/json/policy/tca_policy.json",
         "patchSetId": 7
@@ -68,6 +116,30 @@
       "revId": "b95d92a615bf61f428b31156fe651c8d9fa3a49f",
       "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12526181_a1ca34a6",
+        "filename": "dcae-analytics/dcae-analytics-test/src/main/resources/data/json/policy/tca_policy.json",
+        "patchSetId": 7
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 7661
+      },
+      "writtenOn": "2022-08-05T06:58:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e369a266_28919e7a",
+      "range": {
+        "startLine": 143,
+        "startChar": 0,
+        "endLine": 158,
+        "endChar": 8
+      },
+      "revId": "b95d92a615bf61f428b31156fe651c8d9fa3a49f",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": false
     }
   ]
 }
