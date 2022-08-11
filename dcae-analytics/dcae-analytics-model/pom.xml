@@ -46,6 +46,8 @@
     <properties>
         <main.basedir>${project.parent.basedir}</main.basedir>
         <sdk.version>1.8.6</sdk.version>
+        <spring.version>5.3.20</spring.version>
+        <jackson.version>2.13.3</jackson.version>
         <immutable.version>2.7.1</immutable.version>
         <onap-gerrit-review>-changelog-missing</onap-gerrit-review>
     </properties>
@@ -62,14 +64,22 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+	    <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-smile</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
 
         <!-- JSON PATH -->
@@ -104,14 +114,17 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-beans</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webflux</artifactId>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
