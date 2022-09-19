@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "311b284e_d0925904",
+        "filename": "releases/1.3.4-container.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-09-19T14:53:56Z",
+      "side": 1,
+      "message": "Job# not valid for container identified for release",
+      "range": {
+        "startLine": 4,
+        "startChar": 64,
+        "endLine": 4,
+        "endChar": 67
+      },
+      "revId": "7bf11f1f1e41cff6eb79e52334040a3f01241c03",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
