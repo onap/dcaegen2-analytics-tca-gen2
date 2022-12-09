@@ -1,6 +1,7 @@
 <!--
+    ============LICENSE_START=======================================================
   ~ ================================================================================
-  ~ Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
+  ~ Copyright (c) 2022 AT&T Intellectual Property. All rights reserved.
   ~ ================================================================================
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -47,5 +48,9 @@
     <!-- ASYNC APPENDER DEFAULT SETTINGS -->
     <property scope="context" name="queueSize" value="1024"/>
     <property scope="context" name="maxFlushTime" value="5000"/>
+
+    <!-- JSON CONSOLE PROPERTIES -->
+    <property scope="context" name="springAppName" value="spring.application.name"/>
+    <property scope="context" name="username" value="security.auth.username"/>
 
 </included>
