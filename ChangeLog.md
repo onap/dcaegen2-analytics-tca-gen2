@@ -3,7 +3,9 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
-
+## [1.3.5] - 2022/12/12
+         - [DCAEGEN2-3257] - Align DCAE components with the new logging GR.
+         
 ## [1.3.4] - 2022/07/28
          - [DCAEGEN2-2976](https://jira.onap.org/browse/DCAEGEN2-2976) - Support 7.2.1 VES in TCAGEN2
          - [DCAEGEN2-3210](https://jira.onap.org/browse/DCAEGEN2-3210) - Update vulnerabilities for TCAGEN2
