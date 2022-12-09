@@ -53,16 +53,30 @@
       ============================= CONSOLE APPENDER ================================
      -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-
-        <filter class="org.onap.dcae.utils.eelf.logger.logback.filter.MarkerFilter">
-            <markers>METRIC_LOG,AUDIT_LOG,ERROR_LOG,DEBUG_LOG</markers>
-            <onMatch>ACCEPT</onMatch>
-            <onMismatch>DENY</onMismatch>
-        </filter>
-
-        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
-            <layout class="org.onap.dcae.utils.eelf.logger.logback.layout.ConsoleLayout"/>
-        </encoder>
+      <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+        <providers>
+            <pattern>
+                <omitEmptyFields>true</omitEmptyFields>
+                <pattern>
+                    {
+                        "logTimeStamp": "${currentTimeStamp:-}",
+                        "logTypeName": "",
+                        "logLevel": "%level",
+                        "traceId": "%X(traceId:-}",
+                        "statusCode": "",
+                        "principalId": "${username:-}",
+                        "serviceName": "${springAppName:-}",
+                        "message": "%message",
+                        "spanId": "%X(spanId:-)",
+                        "processId": "${PID:-)",
+                        "threadName": "%thread",
+                        "class": "%logger{40}",
+                        "exception": "%WEx"
+                    }
+                </pattern>
+            </pattern>
+        </providers>
+      </encoder>
     </appender>
 
 </included>
