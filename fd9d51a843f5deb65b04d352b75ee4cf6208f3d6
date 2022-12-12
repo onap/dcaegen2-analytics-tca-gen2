@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "34fe40c9_0c532cdb",
+        "filename": "eelf-logger/eelf-logger-logback-impl/src/main/resources/eelf-defaults.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-12-12T23:03:54Z",
+      "side": 1,
+      "message": "2018-2022",
+      "range": {
+        "startLine": 4,
+        "startChar": 18,
+        "endLine": 4,
+        "endChar": 23
+      },
+      "revId": "fd9d51a843f5deb65b04d352b75ee4cf6208f3d6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef669a0e_2671699e",
+        "filename": "eelf-logger/eelf-logger-logback-impl/src/main/resources/eelf-logback.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-12-12T23:03:54Z",
+      "side": 1,
+      "message": "2018-2022",
+      "range": {
+        "startLine": 4,
+        "startChar": 18,
+        "endLine": 4,
+        "endChar": 23
+      },
+      "revId": "fd9d51a843f5deb65b04d352b75ee4cf6208f3d6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "515fdec9_2efdf25c",
+        "filename": "eelf-logger/eelf-logger-logback-impl/src/main/resources/eelf-optional-appenders.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-12-12T23:03:54Z",
+      "side": 1,
+      "message": "2018-2022",
+      "range": {
+        "startLine": 4,
+        "startChar": 18,
+        "endLine": 4,
+        "endChar": 23
+      },
+      "revId": "fd9d51a843f5deb65b04d352b75ee4cf6208f3d6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "abc30700_9ba4824d",
+        "filename": "pom.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 93
+      },
+      "writtenOn": "2022-12-12T23:03:54Z",
+      "side": 1,
+      "message": "2018-2022",
+      "range": {
+        "startLine": 6,
+        "startChar": 18,
+        "endLine": 6,
+        "endChar": 23
+      },
+      "revId": "fd9d51a843f5deb65b04d352b75ee4cf6208f3d6",
+      "serverId": "14b4e41f-c4e3-4fb9-9955-6a9b5656895a",
+      "unresolved": true
+    }
+  ]
+}
