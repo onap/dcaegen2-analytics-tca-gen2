@@ -7,6 +7,7 @@
   ~ Copyright (c) 2021 Samsung Electronics. All rights reserved.
   ~ Copyright (c) 2021 China Mobile Property. All rights reserved.
   ~ Copyright (c) 2022 Wipro Limited.
+  ~ Copyright (C) 2023 Deutsche Telekom AG. All rights reserved.
   ~ ================================================================================
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -112,7 +113,7 @@
         <snapshots.path>content/repositories/snapshots/</snapshots.path>
         <releases.path>content/repositories/releases/</releases.path>
         <docker.repository>nexus3.onap.org:10003</docker.repository>
-        <spring-swagger-ui.version>2.10.5</spring-swagger-ui.version>
+        <spring-swagger-ui.version>3.0.0</spring-swagger-ui.version>
         <onap-gerrit-review>-changelog-missing</onap-gerrit-review>
 
         <!-- SONAR EXCLUSIONS -->

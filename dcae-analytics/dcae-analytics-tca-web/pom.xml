@@ -8,6 +8,7 @@
   ~ Copyright (c) 2021 Samsung Electronics. All rights reserved.
   ~ Copyright (c) 2021 Nokia Intellectual Property. All rights reserved.
   ~ Copyright (c) 2021-2022 Wipro Limited.
+  ~ Copyright (C) 2023 Deutsche Telekom AG. All rights reserved.
   ~ ================================================================================
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -45,7 +46,7 @@
 
     <properties>
             <main.basedir>${project.parent.basedir}</main.basedir>
-            <undertow-core.version>2.2.17.Final</undertow-core.version>
+            <undertow-core.version>2.3.0.Final</undertow-core.version>
             <docker.image.name>onap/${project.groupId}.${project.artifactId}</docker.image.name>
             <onap-gerrit-review>-changelog-missing</onap-gerrit-review>
     <maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>

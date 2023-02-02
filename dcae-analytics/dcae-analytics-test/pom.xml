@@ -6,6 +6,7 @@
   ~ Copyright (c) 2018 AT&T Intellectual Property. All rights reserved.
   ~ Copyright (c) 2021 Samsung Electronics. All rights reserved.
   ~ Copyright (c) 2022 Wipro Limited.
+  ~ Copyright (C) 2023 Deutsche Telekom AG. All rights reserved.
   ~ ================================================================================
   ~ Licensed under the Apache License, Version 2.0 (the "License");
   ~ you may not use this file except in compliance with the License.
@@ -43,7 +44,7 @@
 
     <properties>
          <main.basedir>${project.parent.basedir}</main.basedir>
-         <jackson.version>2.13.3</jackson.version>
+         <jackson.version>2.14.1</jackson.version>
          <onap-gerrit-review>-changelog-missing</onap-gerrit-review>
     </properties>
 
