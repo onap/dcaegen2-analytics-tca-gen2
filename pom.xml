@@ -38,6 +38,12 @@
 
     <properties>
         <revision>1.4.0-SNAPSHOT</revision>
+        <!-- CI-only and Dependabot changes (e.g. .github/workflows updates) do not
+             touch a user-facing changelog; suppress the onap-gerrit-review check that
+             requires a ChangeLog.md/releases file to be modified in every change. -->
+        <onap-gerrit-review>
+            -changelog-or-release-file-missing
+        </onap-gerrit-review>
     </properties>
 
     <name>dcaegen2-analytics-tca-gen2</name>
